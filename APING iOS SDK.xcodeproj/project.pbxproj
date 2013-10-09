@@ -1,0 +1,1111 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4039D22C17795F0300DAF28A /* NSURL+APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 4039D22B17795F0300DAF28A /* NSURL+APING.m */; };
+		4039D22D17795F0300DAF28A /* NSURL+APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 4039D22B17795F0300DAF28A /* NSURL+APING.m */; };
+		4039D234177972B900DAF28A /* NSURL+APINGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4039D233177972B900DAF28A /* NSURL+APINGTests.m */; };
+		408CAAEE177C941600F2E9BF /* BNGTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 408CAAED177C941600F2E9BF /* BNGTimeRange.m */; };
+		408CAAEF177C941600F2E9BF /* BNGTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 408CAAED177C941600F2E9BF /* BNGTimeRange.m */; };
+		408CAAFB1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 408CAAFA1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m */; };
+		408CAAFC1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 408CAAFA1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m */; };
+		40B61E3D17788A2300CFA44A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E3C17788A2300CFA44A /* Foundation.framework */; };
+		40B61E4217788A2400CFA44A /* APING.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40B61E4117788A2400CFA44A /* APING.h */; };
+		40B61E4417788A2400CFA44A /* APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B61E4317788A2400CFA44A /* APING.m */; };
+		40B61E4C17788A2400CFA44A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E4B17788A2400CFA44A /* SenTestingKit.framework */; };
+		40B61E4F17788A2400CFA44A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E3C17788A2300CFA44A /* Foundation.framework */; };
+		40B61E5217788A2400CFA44A /* libAPING iOS SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E3917788A2300CFA44A /* libAPING iOS SDK.a */; };
+		40B61E5817788A2400CFA44A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40B61E5617788A2400CFA44A /* InfoPlist.strings */; };
+		40EA8B63177B276200B82C48 /* BNGMarketFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40EA8B62177B276200B82C48 /* BNGMarketFilterTests.m */; };
+		7117B41817BE800E004FABA6 /* NSNumber+DecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7117B41717BE800E004FABA6 /* NSNumber+DecimalConversion.m */; };
+		7117B41917BE800E004FABA6 /* NSNumber+DecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7117B41717BE800E004FABA6 /* NSNumber+DecimalConversion.m */; };
+		712632C317F06416006EA29C /* BNGTestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 712632C217F06416006EA29C /* BNGTestUtilities.m */; };
+		712B382017EA08BF007B1163 /* BNGAccount.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CAE917BEC52800D25D3B /* BNGAccount.h */; };
+		712B382117EA0907007B1163 /* BNGDictionaryRepresentation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408CAAF1177CB0A700F2E9BF /* BNGDictionaryRepresentation.h */; };
+		712B382317EA0907007B1163 /* NSNumber+DecimalConversion.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7117B41617BE800E004FABA6 /* NSNumber+DecimalConversion.h */; };
+		712B382417EA0907007B1163 /* NSString+RandomCustomerReferenceId.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76F9110917C57AA4006EC523 /* NSString+RandomCustomerReferenceId.h */; };
+		712B382517EA0907007B1163 /* NSString+URLEncoding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A8BF8217E757A9007CB80D /* NSString+URLEncoding.h */; };
+		712B382617EA0907007B1163 /* NSURL+APING.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4039D22A17795F0300DAF28A /* NSURL+APING.h */; };
+		712B382717EA0907007B1163 /* NSURLConnection+BNGJSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408CAAF91782B0C600F2E9BF /* NSURLConnection+BNGJSON.h */; };
+		712B382817EA0907007B1163 /* NSURLRequest+HTTPBody.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A8BF8417E757A9007CB80D /* NSURLRequest+HTTPBody.h */; };
+		712B382917EA0907007B1163 /* BNGAccountDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CAF417BECC2E00D25D3B /* BNGAccountDetails.h */; };
+		712B382A17EA0907007B1163 /* BNGAccountFunds.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CAF017BECB7000D25D3B /* BNGAccountFunds.h */; };
+		712B382B17EA0907007B1163 /* BNGAPIError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76A92C1B1779738B00B67230 /* BNGAPIError.h */; };
+		712B382C17EA0907007B1163 /* BNGAPIError_Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408CAB001782B9DA00F2E9BF /* BNGAPIError_Private.h */; };
+		712B382D17EA0907007B1163 /* BNGAPIResponseParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71EC886E17BD3F1100AC6E36 /* BNGAPIResponseParser.h */; };
+		712B382E17EA0907007B1163 /* BNGCancelExecutionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76F910FA17C566A0006EC523 /* BNGCancelExecutionReport.h */; };
+		712B382F17EA0907007B1163 /* BNGCancelInstruction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76F9110217C56BA3006EC523 /* BNGCancelInstruction.h */; };
+		712B383017EA0907007B1163 /* BNGCancelInstructionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76F910FE17C56958006EC523 /* BNGCancelInstructionReport.h */; };
+		712B383117EA0907007B1163 /* BNGCompetition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D6617B526E50077ACF8 /* BNGCompetition.h */; };
+		712B383217EA0907007B1163 /* BNGCompetitionResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D6A17B5272B0077ACF8 /* BNGCompetitionResult.h */; };
+		712B383317EA0907007B1163 /* BNGCurrentOrderSummaryReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 766B66CC17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.h */; };
+		712B383417EA0907007B1163 /* BNGEvent.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76A92C151779718100B67230 /* BNGEvent.h */; };
+		712B383517EA0907007B1163 /* BNGEventResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 717858C117AC026D00E27DD1 /* BNGEventResult.h */; };
+		712B383617EA0907007B1163 /* BNGEventType.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76A92C1117795F7200B67230 /* BNGEventType.h */; };
+		712B383717EA0907007B1163 /* BNGEventTypeResult.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 766B66BB17BFC60D00FEA9E9 /* BNGEventTypeResult.h */; };
+		712B383817EA0907007B1163 /* BNGExBestOffersOverrides.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71361FEF17CC9A4C00C7DAFA /* BNGExBestOffersOverrides.h */; };
+		712B383917EA0907007B1163 /* BNGExchangePrices.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D5E17B523810077ACF8 /* BNGExchangePrices.h */; };
+		712B383A17EA0907007B1163 /* BNGExecutionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF8017CE7EDD0090A59F /* BNGExecutionReport.h */; };
+		712B383B17EA0907007B1163 /* BNGInstructionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF8817CE84310090A59F /* BNGInstructionReport.h */; };
+		712B383C17EA0907007B1163 /* BNGLimitOnCloseOrder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CB0317BF5D7700D25D3B /* BNGLimitOnCloseOrder.h */; };
+		712B383D17EA0907007B1163 /* BNGLimitOrder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D7A17B52CE70077ACF8 /* BNGLimitOrder.h */; };
+		712B383E17EA0907007B1163 /* BNGLoginURLProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A8BF8A17E7580F007CB80D /* BNGLoginURLProtocol.h */; };
+		712B383F17EA0907007B1163 /* BNGMarketBook.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D4B17B51A340077ACF8 /* BNGMarketBook.h */; };
+		712B384017EA0907007B1163 /* BNGMarketCatalogue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CAF817BED39800D25D3B /* BNGMarketCatalogue.h */; };
+		712B384117EA0907007B1163 /* BNGMarketCatalogueDescription.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 766B66AC17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.h */; };
+		712B384217EA0907007B1163 /* BNGMarketCatalogueFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CAFF17BED61800D25D3B /* BNGMarketCatalogueFilter.h */; };
+		712B384317EA0907007B1163 /* BNGMarketFilter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76A92C1F1779763F00B67230 /* BNGMarketFilter.h */; };
+		712B384417EA0907007B1163 /* BNGMarketOnCloseOrder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7626CB0717BF5D8900D25D3B /* BNGMarketOnCloseOrder.h */; };
+		712B384517EA0907007B1163 /* BNGMatch.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D7217B529210077ACF8 /* BNGMatch.h */; };
+		712B384617EA0907007B1163 /* BNGMutableURLRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 76A92C231779812600B67230 /* BNGMutableURLRequest.h */; };
+		712B384717EA0907007B1163 /* BNGOrder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D6E17B527C20077ACF8 /* BNGOrder.h */; };
+		712B384817EA0907007B1163 /* BNGPlaceExecutionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D8217B52E220077ACF8 /* BNGPlaceExecutionReport.h */; };
+		712B384917EA0907007B1163 /* BNGPlaceInstruction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D7617B52C2B0077ACF8 /* BNGPlaceInstruction.h */; };
+		712B384A17EA0907007B1163 /* BNGPlaceInstructionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D8617B5306B0077ACF8 /* BNGPlaceInstructionReport.h */; };
+		712B384B17EA0907007B1163 /* BNGPriceProjection.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71361FEB17CC965600C7DAFA /* BNGPriceProjection.h */; };
+		712B384C17EA0907007B1163 /* BNGPriceSize.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D6217B523D20077ACF8 /* BNGPriceSize.h */; };
+		712B384D17EA0907007B1163 /* BNGReplaceExecutionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF7817CE7E2E0090A59F /* BNGReplaceExecutionReport.h */; };
+		712B384E17EA0907007B1163 /* BNGReplaceInstruction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF7C17CE7E850090A59F /* BNGReplaceInstruction.h */; };
+		712B384F17EA0907007B1163 /* BNGReplaceInstructionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF8417CE82FE0090A59F /* BNGReplaceInstructionReport.h */; };
+		712B385017EA0907007B1163 /* BNGRunner.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D5617B51D580077ACF8 /* BNGRunner.h */; };
+		712B385117EA0907007B1163 /* BNGStartingPrices.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A52D5A17B520660077ACF8 /* BNGStartingPrices.h */; };
+		712B385217EA0907007B1163 /* BNGTimeRange.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 408CAAEC177C941600F2E9BF /* BNGTimeRange.h */; };
+		712B385317EA0907007B1163 /* BNGUpdateExecutionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF9317CEA3E70090A59F /* BNGUpdateExecutionReport.h */; };
+		712B385417EA0907007B1163 /* BNGUpdateInstruction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF9717CEA5AB0090A59F /* BNGUpdateInstruction.h */; };
+		712B385517EA0907007B1163 /* BNGUpdateInstructionReport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7695AF9B17CEA8F40090A59F /* BNGUpdateInstructionReport.h */; };
+		71361FED17CC965800C7DAFA /* BNGPriceProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 71361FEC17CC965700C7DAFA /* BNGPriceProjection.m */; };
+		71361FEE17CC965800C7DAFA /* BNGPriceProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 71361FEC17CC965700C7DAFA /* BNGPriceProjection.m */; };
+		71361FF117CC9A4F00C7DAFA /* BNGExBestOffersOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 71361FF017CC9A4D00C7DAFA /* BNGExBestOffersOverrides.m */; };
+		71361FF217CC9A4F00C7DAFA /* BNGExBestOffersOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 71361FF017CC9A4D00C7DAFA /* BNGExBestOffersOverrides.m */; };
+		717858C317AC026D00E27DD1 /* BNGEventResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 717858C217AC026D00E27DD1 /* BNGEventResult.m */; };
+		717858C417AC026D00E27DD1 /* BNGEventResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 717858C217AC026D00E27DD1 /* BNGEventResult.m */; };
+		717858C717AC056300E27DD1 /* BNGMutableURLRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 717858C617AC056200E27DD1 /* BNGMutableURLRequestTests.m */; };
+		71A52D4D17B51A340077ACF8 /* BNGMarketBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D4C17B51A340077ACF8 /* BNGMarketBook.m */; };
+		71A52D4E17B51A340077ACF8 /* BNGMarketBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D4C17B51A340077ACF8 /* BNGMarketBook.m */; };
+		71A52D5817B51D590077ACF8 /* BNGRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D5717B51D580077ACF8 /* BNGRunner.m */; };
+		71A52D5917B51D590077ACF8 /* BNGRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D5717B51D580077ACF8 /* BNGRunner.m */; };
+		71A52D5C17B520660077ACF8 /* BNGStartingPrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D5B17B520660077ACF8 /* BNGStartingPrices.m */; };
+		71A52D5D17B520660077ACF8 /* BNGStartingPrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D5B17B520660077ACF8 /* BNGStartingPrices.m */; };
+		71A52D6017B523820077ACF8 /* BNGExchangePrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D5F17B523810077ACF8 /* BNGExchangePrices.m */; };
+		71A52D6117B523820077ACF8 /* BNGExchangePrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D5F17B523810077ACF8 /* BNGExchangePrices.m */; };
+		71A52D6417B523D30077ACF8 /* BNGPriceSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6317B523D20077ACF8 /* BNGPriceSize.m */; };
+		71A52D6517B523D30077ACF8 /* BNGPriceSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6317B523D20077ACF8 /* BNGPriceSize.m */; };
+		71A52D6817B526E70077ACF8 /* BNGCompetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6717B526E60077ACF8 /* BNGCompetition.m */; };
+		71A52D6917B526E70077ACF8 /* BNGCompetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6717B526E60077ACF8 /* BNGCompetition.m */; };
+		71A52D6C17B5272C0077ACF8 /* BNGCompetitionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6B17B5272C0077ACF8 /* BNGCompetitionResult.m */; };
+		71A52D6D17B5272C0077ACF8 /* BNGCompetitionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6B17B5272C0077ACF8 /* BNGCompetitionResult.m */; };
+		71A52D7017B527C30077ACF8 /* BNGOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6F17B527C30077ACF8 /* BNGOrder.m */; };
+		71A52D7117B527C30077ACF8 /* BNGOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D6F17B527C30077ACF8 /* BNGOrder.m */; };
+		71A52D7417B529230077ACF8 /* BNGMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D7317B529220077ACF8 /* BNGMatch.m */; };
+		71A52D7517B529230077ACF8 /* BNGMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D7317B529220077ACF8 /* BNGMatch.m */; };
+		71A52D7817B52C2D0077ACF8 /* BNGPlaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D7717B52C2C0077ACF8 /* BNGPlaceInstruction.m */; };
+		71A52D7917B52C2D0077ACF8 /* BNGPlaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D7717B52C2C0077ACF8 /* BNGPlaceInstruction.m */; };
+		71A52D7C17B52CE90077ACF8 /* BNGLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D7B17B52CE70077ACF8 /* BNGLimitOrder.m */; };
+		71A52D7D17B52CE90077ACF8 /* BNGLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D7B17B52CE70077ACF8 /* BNGLimitOrder.m */; };
+		71A52D8417B52E250077ACF8 /* BNGPlaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D8317B52E230077ACF8 /* BNGPlaceExecutionReport.m */; };
+		71A52D8517B52E250077ACF8 /* BNGPlaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D8317B52E230077ACF8 /* BNGPlaceExecutionReport.m */; };
+		71A52D8817B5306F0077ACF8 /* BNGPlaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D8717B5306C0077ACF8 /* BNGPlaceInstructionReport.m */; };
+		71A52D8917B5306F0077ACF8 /* BNGPlaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D8717B5306C0077ACF8 /* BNGPlaceInstructionReport.m */; };
+		71A52D8D17B53AF50077ACF8 /* BNGEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A52D8B17B53AF50077ACF8 /* BNGEventTest.m */; };
+		71A8BF8617E757A9007CB80D /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A8BF8317E757A9007CB80D /* NSString+URLEncoding.m */; };
+		71A8BF8717E757A9007CB80D /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A8BF8317E757A9007CB80D /* NSString+URLEncoding.m */; };
+		71A8BF8817E757A9007CB80D /* NSURLRequest+HTTPBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A8BF8517E757A9007CB80D /* NSURLRequest+HTTPBody.m */; };
+		71A8BF8917E757A9007CB80D /* NSURLRequest+HTTPBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A8BF8517E757A9007CB80D /* NSURLRequest+HTTPBody.m */; };
+		71A8BF8C17E7580F007CB80D /* BNGLoginURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A8BF8B17E7580F007CB80D /* BNGLoginURLProtocol.m */; };
+		71A8BF8D17E7580F007CB80D /* BNGLoginURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A8BF8B17E7580F007CB80D /* BNGLoginURLProtocol.m */; };
+		71BCC8FC17C5FA270094D2CF /* place_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 71BCC8FB17C5FA270094D2CF /* place_order.json */; };
+		71EC887017BD3F1100AC6E36 /* BNGAPIResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC886F17BD3F1100AC6E36 /* BNGAPIResponseParser.m */; };
+		71EC887117BD3F1100AC6E36 /* BNGAPIResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC886F17BD3F1100AC6E36 /* BNGAPIResponseParser.m */; };
+		71EC887817BE1BC100AC6E36 /* BNGEventTypeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC887617BE1BC100AC6E36 /* BNGEventTypeTest.m */; };
+		71EC887B17BE22D400AC6E36 /* BNGMarketBookTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EC887A17BE22D400AC6E36 /* BNGMarketBookTest.m */; };
+		7626CAEB17BEC52900D25D3B /* BNGAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAEA17BEC52800D25D3B /* BNGAccount.m */; };
+		7626CAEC17BEC52900D25D3B /* BNGAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAEA17BEC52800D25D3B /* BNGAccount.m */; };
+		7626CAEF17BEC7E900D25D3B /* BNGAccountTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAEE17BEC7E900D25D3B /* BNGAccountTest.m */; };
+		7626CAF217BECB7100D25D3B /* BNGAccountFunds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAF117BECB7000D25D3B /* BNGAccountFunds.m */; };
+		7626CAF317BECB7100D25D3B /* BNGAccountFunds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAF117BECB7000D25D3B /* BNGAccountFunds.m */; };
+		7626CAF617BECC2F00D25D3B /* BNGAccountDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAF517BECC2E00D25D3B /* BNGAccountDetails.m */; };
+		7626CAF717BECC2F00D25D3B /* BNGAccountDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAF517BECC2E00D25D3B /* BNGAccountDetails.m */; };
+		7626CAFA17BED39900D25D3B /* BNGMarketCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAF917BED39900D25D3B /* BNGMarketCatalogue.m */; };
+		7626CAFB17BED39900D25D3B /* BNGMarketCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAF917BED39900D25D3B /* BNGMarketCatalogue.m */; };
+		7626CAFE17BED55F00D25D3B /* BNGMarketCataloguesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CAFD17BED55F00D25D3B /* BNGMarketCataloguesTest.m */; };
+		7626CB0117BED61900D25D3B /* BNGMarketCatalogueFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CB0017BED61800D25D3B /* BNGMarketCatalogueFilter.m */; };
+		7626CB0217BED61900D25D3B /* BNGMarketCatalogueFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CB0017BED61800D25D3B /* BNGMarketCatalogueFilter.m */; };
+		7626CB0517BF5D7A00D25D3B /* BNGLimitOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CB0417BF5D7800D25D3B /* BNGLimitOnCloseOrder.m */; };
+		7626CB0617BF5D7A00D25D3B /* BNGLimitOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CB0417BF5D7800D25D3B /* BNGLimitOnCloseOrder.m */; };
+		7626CB0917BF5D8B00D25D3B /* BNGMarketOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CB0817BF5D8A00D25D3B /* BNGMarketOnCloseOrder.m */; };
+		7626CB0A17BF5D8B00D25D3B /* BNGMarketOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7626CB0817BF5D8A00D25D3B /* BNGMarketOnCloseOrder.m */; };
+		766B66AE17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66AD17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m */; };
+		766B66AF17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66AD17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m */; };
+		766B66B517BFB76200FEA9E9 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66B417BFB76200FEA9E9 /* events.json */; };
+		766B66B817BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66B717BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.m */; };
+		766B66BA17BFC2CE00FEA9E9 /* event_types.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66B917BFC2CE00FEA9E9 /* event_types.json */; };
+		766B66BD17BFC60E00FEA9E9 /* BNGEventTypeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66BC17BFC60E00FEA9E9 /* BNGEventTypeResult.m */; };
+		766B66BE17BFC60E00FEA9E9 /* BNGEventTypeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66BC17BFC60E00FEA9E9 /* BNGEventTypeResult.m */; };
+		766B66C017BFCBEC00FEA9E9 /* account_funds.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66BF17BFCBEC00FEA9E9 /* account_funds.json */; };
+		766B66C217BFCE8700FEA9E9 /* account_details.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66C117BFCE8700FEA9E9 /* account_details.json */; };
+		766B66C417BFD0EA00FEA9E9 /* market_book.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66C317BFD0EA00FEA9E9 /* market_book.json */; };
+		766B66C617BFD6AF00FEA9E9 /* market_catalogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66C517BFD6AF00FEA9E9 /* market_catalogue.json */; };
+		766B66C817BFDA6200FEA9E9 /* current_orders.json in Resources */ = {isa = PBXBuildFile; fileRef = 766B66C717BFDA6200FEA9E9 /* current_orders.json */; };
+		766B66CB17BFE59A00FEA9E9 /* BNGOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66CA17BFE59900FEA9E9 /* BNGOrderTest.m */; };
+		766B66CE17BFE92B00FEA9E9 /* BNGCurrentOrderSummaryReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66CD17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.m */; };
+		766B66CF17BFE92B00FEA9E9 /* BNGCurrentOrderSummaryReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 766B66CD17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.m */; };
+		7695AF7A17CE7E2E0090A59F /* BNGReplaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF7917CE7E2E0090A59F /* BNGReplaceExecutionReport.m */; };
+		7695AF7B17CE7E2E0090A59F /* BNGReplaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF7917CE7E2E0090A59F /* BNGReplaceExecutionReport.m */; };
+		7695AF7E17CE7E850090A59F /* BNGReplaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF7D17CE7E850090A59F /* BNGReplaceInstruction.m */; };
+		7695AF7F17CE7E850090A59F /* BNGReplaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF7D17CE7E850090A59F /* BNGReplaceInstruction.m */; };
+		7695AF8217CE7EDD0090A59F /* BNGExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF8117CE7EDD0090A59F /* BNGExecutionReport.m */; };
+		7695AF8317CE7EDD0090A59F /* BNGExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF8117CE7EDD0090A59F /* BNGExecutionReport.m */; };
+		7695AF8617CE82FF0090A59F /* BNGReplaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF8517CE82FF0090A59F /* BNGReplaceInstructionReport.m */; };
+		7695AF8717CE82FF0090A59F /* BNGReplaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF8517CE82FF0090A59F /* BNGReplaceInstructionReport.m */; };
+		7695AF8A17CE84320090A59F /* BNGInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF8917CE84320090A59F /* BNGInstructionReport.m */; };
+		7695AF8B17CE84320090A59F /* BNGInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF8917CE84320090A59F /* BNGInstructionReport.m */; };
+		7695AF9017CE93470090A59F /* replace_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 7695AF8F17CE93470090A59F /* replace_order.json */; };
+		7695AF9217CE93640090A59F /* replace_order_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 7695AF9117CE93640090A59F /* replace_order_failure.json */; };
+		7695AF9517CEA3E90090A59F /* BNGUpdateExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF9417CEA3E80090A59F /* BNGUpdateExecutionReport.m */; };
+		7695AF9617CEA3E90090A59F /* BNGUpdateExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF9417CEA3E80090A59F /* BNGUpdateExecutionReport.m */; };
+		7695AF9917CEA5AE0090A59F /* BNGUpdateInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF9817CEA5AC0090A59F /* BNGUpdateInstruction.m */; };
+		7695AF9A17CEA5AE0090A59F /* BNGUpdateInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF9817CEA5AC0090A59F /* BNGUpdateInstruction.m */; };
+		7695AF9D17CEA8F70090A59F /* BNGUpdateInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF9C17CEA8F60090A59F /* BNGUpdateInstructionReport.m */; };
+		7695AF9E17CEA8F70090A59F /* BNGUpdateInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7695AF9C17CEA8F60090A59F /* BNGUpdateInstructionReport.m */; };
+		7695AFA017CEAA190090A59F /* update_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 7695AF9F17CEAA190090A59F /* update_order.json */; };
+		76A92C1317795F7200B67230 /* BNGEventType.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C1217795F7200B67230 /* BNGEventType.m */; };
+		76A92C1417795F7200B67230 /* BNGEventType.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C1217795F7200B67230 /* BNGEventType.m */; };
+		76A92C171779718100B67230 /* BNGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C161779718100B67230 /* BNGEvent.m */; };
+		76A92C181779718100B67230 /* BNGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C161779718100B67230 /* BNGEvent.m */; };
+		76A92C1D1779738C00B67230 /* BNGAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C1C1779738C00B67230 /* BNGAPIError.m */; };
+		76A92C1E1779738C00B67230 /* BNGAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C1C1779738C00B67230 /* BNGAPIError.m */; };
+		76A92C211779764000B67230 /* BNGMarketFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C201779764000B67230 /* BNGMarketFilter.m */; };
+		76A92C221779764000B67230 /* BNGMarketFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C201779764000B67230 /* BNGMarketFilter.m */; };
+		76A92C251779812600B67230 /* BNGMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C241779812600B67230 /* BNGMutableURLRequest.m */; };
+		76A92C261779812600B67230 /* BNGMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A92C241779812600B67230 /* BNGMutableURLRequest.m */; };
+		76F910FC17C566A0006EC523 /* BNGCancelExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F910FB17C566A0006EC523 /* BNGCancelExecutionReport.m */; };
+		76F910FD17C566A0006EC523 /* BNGCancelExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F910FB17C566A0006EC523 /* BNGCancelExecutionReport.m */; };
+		76F9110017C56958006EC523 /* BNGCancelInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F910FF17C56958006EC523 /* BNGCancelInstructionReport.m */; };
+		76F9110117C56958006EC523 /* BNGCancelInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F910FF17C56958006EC523 /* BNGCancelInstructionReport.m */; };
+		76F9110417C56BA3006EC523 /* BNGCancelInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F9110317C56BA3006EC523 /* BNGCancelInstruction.m */; };
+		76F9110517C56BA3006EC523 /* BNGCancelInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F9110317C56BA3006EC523 /* BNGCancelInstruction.m */; };
+		76F9110B17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F9110A17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m */; };
+		76F9110C17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F9110A17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40B61E5017788A2400CFA44A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40B61E3117788A2300CFA44A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40B61E3817788A2300CFA44A;
+			remoteInfo = "APING iOS SDK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40B61E3717788A2300CFA44A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				712B382117EA0907007B1163 /* BNGDictionaryRepresentation.h in CopyFiles */,
+				712B382317EA0907007B1163 /* NSNumber+DecimalConversion.h in CopyFiles */,
+				712B382417EA0907007B1163 /* NSString+RandomCustomerReferenceId.h in CopyFiles */,
+				712B382517EA0907007B1163 /* NSString+URLEncoding.h in CopyFiles */,
+				712B382617EA0907007B1163 /* NSURL+APING.h in CopyFiles */,
+				712B382717EA0907007B1163 /* NSURLConnection+BNGJSON.h in CopyFiles */,
+				712B382817EA0907007B1163 /* NSURLRequest+HTTPBody.h in CopyFiles */,
+				712B382917EA0907007B1163 /* BNGAccountDetails.h in CopyFiles */,
+				712B382A17EA0907007B1163 /* BNGAccountFunds.h in CopyFiles */,
+				712B382B17EA0907007B1163 /* BNGAPIError.h in CopyFiles */,
+				712B382C17EA0907007B1163 /* BNGAPIError_Private.h in CopyFiles */,
+				712B382D17EA0907007B1163 /* BNGAPIResponseParser.h in CopyFiles */,
+				712B382E17EA0907007B1163 /* BNGCancelExecutionReport.h in CopyFiles */,
+				712B382F17EA0907007B1163 /* BNGCancelInstruction.h in CopyFiles */,
+				712B383017EA0907007B1163 /* BNGCancelInstructionReport.h in CopyFiles */,
+				712B383117EA0907007B1163 /* BNGCompetition.h in CopyFiles */,
+				712B383217EA0907007B1163 /* BNGCompetitionResult.h in CopyFiles */,
+				712B383317EA0907007B1163 /* BNGCurrentOrderSummaryReport.h in CopyFiles */,
+				712B383417EA0907007B1163 /* BNGEvent.h in CopyFiles */,
+				712B383517EA0907007B1163 /* BNGEventResult.h in CopyFiles */,
+				712B383617EA0907007B1163 /* BNGEventType.h in CopyFiles */,
+				712B383717EA0907007B1163 /* BNGEventTypeResult.h in CopyFiles */,
+				712B383817EA0907007B1163 /* BNGExBestOffersOverrides.h in CopyFiles */,
+				712B383917EA0907007B1163 /* BNGExchangePrices.h in CopyFiles */,
+				712B383A17EA0907007B1163 /* BNGExecutionReport.h in CopyFiles */,
+				712B383B17EA0907007B1163 /* BNGInstructionReport.h in CopyFiles */,
+				712B383C17EA0907007B1163 /* BNGLimitOnCloseOrder.h in CopyFiles */,
+				712B383D17EA0907007B1163 /* BNGLimitOrder.h in CopyFiles */,
+				712B383E17EA0907007B1163 /* BNGLoginURLProtocol.h in CopyFiles */,
+				712B383F17EA0907007B1163 /* BNGMarketBook.h in CopyFiles */,
+				712B384017EA0907007B1163 /* BNGMarketCatalogue.h in CopyFiles */,
+				712B384117EA0907007B1163 /* BNGMarketCatalogueDescription.h in CopyFiles */,
+				712B384217EA0907007B1163 /* BNGMarketCatalogueFilter.h in CopyFiles */,
+				712B384317EA0907007B1163 /* BNGMarketFilter.h in CopyFiles */,
+				712B384417EA0907007B1163 /* BNGMarketOnCloseOrder.h in CopyFiles */,
+				712B384517EA0907007B1163 /* BNGMatch.h in CopyFiles */,
+				712B384617EA0907007B1163 /* BNGMutableURLRequest.h in CopyFiles */,
+				712B384717EA0907007B1163 /* BNGOrder.h in CopyFiles */,
+				712B384817EA0907007B1163 /* BNGPlaceExecutionReport.h in CopyFiles */,
+				712B384917EA0907007B1163 /* BNGPlaceInstruction.h in CopyFiles */,
+				712B384A17EA0907007B1163 /* BNGPlaceInstructionReport.h in CopyFiles */,
+				712B384B17EA0907007B1163 /* BNGPriceProjection.h in CopyFiles */,
+				712B384C17EA0907007B1163 /* BNGPriceSize.h in CopyFiles */,
+				712B384D17EA0907007B1163 /* BNGReplaceExecutionReport.h in CopyFiles */,
+				712B384E17EA0907007B1163 /* BNGReplaceInstruction.h in CopyFiles */,
+				712B384F17EA0907007B1163 /* BNGReplaceInstructionReport.h in CopyFiles */,
+				712B385017EA0907007B1163 /* BNGRunner.h in CopyFiles */,
+				712B385117EA0907007B1163 /* BNGStartingPrices.h in CopyFiles */,
+				712B385217EA0907007B1163 /* BNGTimeRange.h in CopyFiles */,
+				712B385317EA0907007B1163 /* BNGUpdateExecutionReport.h in CopyFiles */,
+				712B385417EA0907007B1163 /* BNGUpdateInstruction.h in CopyFiles */,
+				712B385517EA0907007B1163 /* BNGUpdateInstructionReport.h in CopyFiles */,
+				712B382017EA08BF007B1163 /* BNGAccount.h in CopyFiles */,
+				40B61E4217788A2400CFA44A /* APING.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7626CB1817BF62AA00D25D3B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = include;
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4039D22A17795F0300DAF28A /* NSURL+APING.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+APING.h"; sourceTree = "<group>"; };
+		4039D22B17795F0300DAF28A /* NSURL+APING.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+APING.m"; sourceTree = "<group>"; };
+		4039D232177972B900DAF28A /* NSURL+APINGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+APINGTests.h"; sourceTree = "<group>"; };
+		4039D233177972B900DAF28A /* NSURL+APINGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+APINGTests.m"; sourceTree = "<group>"; };
+		408CAAEC177C941600F2E9BF /* BNGTimeRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGTimeRange.h; sourceTree = "<group>"; };
+		408CAAED177C941600F2E9BF /* BNGTimeRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGTimeRange.m; sourceTree = "<group>"; };
+		408CAAF1177CB0A700F2E9BF /* BNGDictionaryRepresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNGDictionaryRepresentation.h; sourceTree = "<group>"; };
+		408CAAF91782B0C600F2E9BF /* NSURLConnection+BNGJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+BNGJSON.h"; sourceTree = "<group>"; };
+		408CAAFA1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+BNGJSON.m"; sourceTree = "<group>"; };
+		408CAB001782B9DA00F2E9BF /* BNGAPIError_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNGAPIError_Private.h; sourceTree = "<group>"; };
+		40B61E3917788A2300CFA44A /* libAPING iOS SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libAPING iOS SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B61E3C17788A2300CFA44A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40B61E4017788A2300CFA44A /* APING iOS SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APING iOS SDK-Prefix.pch"; sourceTree = "<group>"; };
+		40B61E4117788A2400CFA44A /* APING.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APING.h; sourceTree = "<group>"; };
+		40B61E4317788A2400CFA44A /* APING.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APING.m; sourceTree = "<group>"; };
+		40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APING iOS SDKTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B61E4B17788A2400CFA44A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		40B61E4D17788A2400CFA44A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		40B61E5517788A2400CFA44A /* APING iOS SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APING iOS SDKTests-Info.plist"; sourceTree = "<group>"; };
+		40B61E5717788A2400CFA44A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40EA8B61177B276200B82C48 /* BNGMarketFilterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketFilterTests.h; sourceTree = "<group>"; };
+		40EA8B62177B276200B82C48 /* BNGMarketFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketFilterTests.m; sourceTree = "<group>"; };
+		7117B41617BE800E004FABA6 /* NSNumber+DecimalConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DecimalConversion.h"; sourceTree = "<group>"; };
+		7117B41717BE800E004FABA6 /* NSNumber+DecimalConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DecimalConversion.m"; sourceTree = "<group>"; };
+		712632C117F06416006EA29C /* BNGTestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGTestUtilities.h; sourceTree = "<group>"; };
+		712632C217F06416006EA29C /* BNGTestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGTestUtilities.m; sourceTree = "<group>"; };
+		71361FEB17CC965600C7DAFA /* BNGPriceProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPriceProjection.h; sourceTree = "<group>"; };
+		71361FEC17CC965700C7DAFA /* BNGPriceProjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPriceProjection.m; sourceTree = "<group>"; };
+		71361FEF17CC9A4C00C7DAFA /* BNGExBestOffersOverrides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGExBestOffersOverrides.h; sourceTree = "<group>"; };
+		71361FF017CC9A4D00C7DAFA /* BNGExBestOffersOverrides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExBestOffersOverrides.m; sourceTree = "<group>"; };
+		717858C117AC026D00E27DD1 /* BNGEventResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventResult.h; sourceTree = "<group>"; };
+		717858C217AC026D00E27DD1 /* BNGEventResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventResult.m; sourceTree = "<group>"; };
+		717858C517AC056200E27DD1 /* BNGMutableURLRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMutableURLRequestTests.h; sourceTree = "<group>"; };
+		717858C617AC056200E27DD1 /* BNGMutableURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMutableURLRequestTests.m; sourceTree = "<group>"; };
+		71A52D4B17B51A340077ACF8 /* BNGMarketBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketBook.h; sourceTree = "<group>"; };
+		71A52D4C17B51A340077ACF8 /* BNGMarketBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketBook.m; sourceTree = "<group>"; };
+		71A52D5617B51D580077ACF8 /* BNGRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGRunner.h; sourceTree = "<group>"; };
+		71A52D5717B51D580077ACF8 /* BNGRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGRunner.m; sourceTree = "<group>"; };
+		71A52D5A17B520660077ACF8 /* BNGStartingPrices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGStartingPrices.h; sourceTree = "<group>"; };
+		71A52D5B17B520660077ACF8 /* BNGStartingPrices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGStartingPrices.m; sourceTree = "<group>"; };
+		71A52D5E17B523810077ACF8 /* BNGExchangePrices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGExchangePrices.h; sourceTree = "<group>"; };
+		71A52D5F17B523810077ACF8 /* BNGExchangePrices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExchangePrices.m; sourceTree = "<group>"; };
+		71A52D6217B523D20077ACF8 /* BNGPriceSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPriceSize.h; sourceTree = "<group>"; };
+		71A52D6317B523D20077ACF8 /* BNGPriceSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPriceSize.m; sourceTree = "<group>"; };
+		71A52D6617B526E50077ACF8 /* BNGCompetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCompetition.h; sourceTree = "<group>"; };
+		71A52D6717B526E60077ACF8 /* BNGCompetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCompetition.m; sourceTree = "<group>"; };
+		71A52D6A17B5272B0077ACF8 /* BNGCompetitionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCompetitionResult.h; sourceTree = "<group>"; };
+		71A52D6B17B5272C0077ACF8 /* BNGCompetitionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCompetitionResult.m; sourceTree = "<group>"; };
+		71A52D6E17B527C20077ACF8 /* BNGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGOrder.h; sourceTree = "<group>"; };
+		71A52D6F17B527C30077ACF8 /* BNGOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGOrder.m; sourceTree = "<group>"; };
+		71A52D7217B529210077ACF8 /* BNGMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMatch.h; sourceTree = "<group>"; };
+		71A52D7317B529220077ACF8 /* BNGMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMatch.m; sourceTree = "<group>"; };
+		71A52D7617B52C2B0077ACF8 /* BNGPlaceInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPlaceInstruction.h; sourceTree = "<group>"; };
+		71A52D7717B52C2C0077ACF8 /* BNGPlaceInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPlaceInstruction.m; sourceTree = "<group>"; };
+		71A52D7A17B52CE70077ACF8 /* BNGLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGLimitOrder.h; sourceTree = "<group>"; };
+		71A52D7B17B52CE70077ACF8 /* BNGLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLimitOrder.m; sourceTree = "<group>"; };
+		71A52D8217B52E220077ACF8 /* BNGPlaceExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPlaceExecutionReport.h; sourceTree = "<group>"; };
+		71A52D8317B52E230077ACF8 /* BNGPlaceExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPlaceExecutionReport.m; sourceTree = "<group>"; };
+		71A52D8617B5306B0077ACF8 /* BNGPlaceInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPlaceInstructionReport.h; sourceTree = "<group>"; };
+		71A52D8717B5306C0077ACF8 /* BNGPlaceInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPlaceInstructionReport.m; sourceTree = "<group>"; };
+		71A52D8A17B53AF50077ACF8 /* BNGEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTest.h; sourceTree = "<group>"; };
+		71A52D8B17B53AF50077ACF8 /* BNGEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTest.m; sourceTree = "<group>"; };
+		71A8BF8217E757A9007CB80D /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		71A8BF8317E757A9007CB80D /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		71A8BF8417E757A9007CB80D /* NSURLRequest+HTTPBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+HTTPBody.h"; sourceTree = "<group>"; };
+		71A8BF8517E757A9007CB80D /* NSURLRequest+HTTPBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+HTTPBody.m"; sourceTree = "<group>"; };
+		71A8BF8A17E7580F007CB80D /* BNGLoginURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGLoginURLProtocol.h; sourceTree = "<group>"; };
+		71A8BF8B17E7580F007CB80D /* BNGLoginURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLoginURLProtocol.m; sourceTree = "<group>"; };
+		71B4828817E76E56002D2932 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		71BCC8FB17C5FA270094D2CF /* place_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place_order.json; sourceTree = "<group>"; };
+		71D41C5917E8B523000642EA /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		71EC886E17BD3F1100AC6E36 /* BNGAPIResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAPIResponseParser.h; sourceTree = "<group>"; };
+		71EC886F17BD3F1100AC6E36 /* BNGAPIResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAPIResponseParser.m; sourceTree = "<group>"; };
+		71EC887517BE1BC100AC6E36 /* BNGEventTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTypeTest.h; sourceTree = "<group>"; };
+		71EC887617BE1BC100AC6E36 /* BNGEventTypeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTypeTest.m; sourceTree = "<group>"; };
+		71EC887917BE22D400AC6E36 /* BNGMarketBookTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketBookTest.h; sourceTree = "<group>"; };
+		71EC887A17BE22D400AC6E36 /* BNGMarketBookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketBookTest.m; sourceTree = "<group>"; };
+		7626CAE917BEC52800D25D3B /* BNGAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccount.h; sourceTree = "<group>"; };
+		7626CAEA17BEC52800D25D3B /* BNGAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccount.m; sourceTree = "<group>"; };
+		7626CAED17BEC7E900D25D3B /* BNGAccountTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountTest.h; sourceTree = "<group>"; };
+		7626CAEE17BEC7E900D25D3B /* BNGAccountTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountTest.m; sourceTree = "<group>"; };
+		7626CAF017BECB7000D25D3B /* BNGAccountFunds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountFunds.h; sourceTree = "<group>"; };
+		7626CAF117BECB7000D25D3B /* BNGAccountFunds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountFunds.m; sourceTree = "<group>"; };
+		7626CAF417BECC2E00D25D3B /* BNGAccountDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountDetails.h; sourceTree = "<group>"; };
+		7626CAF517BECC2E00D25D3B /* BNGAccountDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountDetails.m; sourceTree = "<group>"; };
+		7626CAF817BED39800D25D3B /* BNGMarketCatalogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCatalogue.h; sourceTree = "<group>"; };
+		7626CAF917BED39900D25D3B /* BNGMarketCatalogue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogue.m; sourceTree = "<group>"; };
+		7626CAFC17BED55F00D25D3B /* BNGMarketCataloguesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCataloguesTest.h; sourceTree = "<group>"; };
+		7626CAFD17BED55F00D25D3B /* BNGMarketCataloguesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCataloguesTest.m; sourceTree = "<group>"; };
+		7626CAFF17BED61800D25D3B /* BNGMarketCatalogueFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCatalogueFilter.h; sourceTree = "<group>"; };
+		7626CB0017BED61800D25D3B /* BNGMarketCatalogueFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueFilter.m; sourceTree = "<group>"; };
+		7626CB0317BF5D7700D25D3B /* BNGLimitOnCloseOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGLimitOnCloseOrder.h; sourceTree = "<group>"; };
+		7626CB0417BF5D7800D25D3B /* BNGLimitOnCloseOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLimitOnCloseOrder.m; sourceTree = "<group>"; };
+		7626CB0717BF5D8900D25D3B /* BNGMarketOnCloseOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketOnCloseOrder.h; sourceTree = "<group>"; };
+		7626CB0817BF5D8A00D25D3B /* BNGMarketOnCloseOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketOnCloseOrder.m; sourceTree = "<group>"; };
+		766B66AC17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCatalogueDescription.h; sourceTree = "<group>"; };
+		766B66AD17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueDescription.m; sourceTree = "<group>"; };
+		766B66B417BFB76200FEA9E9 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		766B66B617BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGURLProtocolResourceLoader.h; sourceTree = "<group>"; };
+		766B66B717BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGURLProtocolResourceLoader.m; sourceTree = "<group>"; };
+		766B66B917BFC2CE00FEA9E9 /* event_types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = event_types.json; sourceTree = "<group>"; };
+		766B66BB17BFC60D00FEA9E9 /* BNGEventTypeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTypeResult.h; sourceTree = "<group>"; };
+		766B66BC17BFC60E00FEA9E9 /* BNGEventTypeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTypeResult.m; sourceTree = "<group>"; };
+		766B66BF17BFCBEC00FEA9E9 /* account_funds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_funds.json; sourceTree = "<group>"; };
+		766B66C117BFCE8700FEA9E9 /* account_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_details.json; sourceTree = "<group>"; };
+		766B66C317BFD0EA00FEA9E9 /* market_book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_book.json; sourceTree = "<group>"; };
+		766B66C517BFD6AF00FEA9E9 /* market_catalogue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_catalogue.json; sourceTree = "<group>"; };
+		766B66C717BFDA6200FEA9E9 /* current_orders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_orders.json; sourceTree = "<group>"; };
+		766B66C917BFE59900FEA9E9 /* BNGOrderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGOrderTest.h; sourceTree = "<group>"; };
+		766B66CA17BFE59900FEA9E9 /* BNGOrderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGOrderTest.m; sourceTree = "<group>"; };
+		766B66CC17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCurrentOrderSummaryReport.h; sourceTree = "<group>"; };
+		766B66CD17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCurrentOrderSummaryReport.m; sourceTree = "<group>"; };
+		7695AF7817CE7E2E0090A59F /* BNGReplaceExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGReplaceExecutionReport.h; sourceTree = "<group>"; };
+		7695AF7917CE7E2E0090A59F /* BNGReplaceExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGReplaceExecutionReport.m; sourceTree = "<group>"; };
+		7695AF7C17CE7E850090A59F /* BNGReplaceInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGReplaceInstruction.h; sourceTree = "<group>"; };
+		7695AF7D17CE7E850090A59F /* BNGReplaceInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGReplaceInstruction.m; sourceTree = "<group>"; };
+		7695AF8017CE7EDD0090A59F /* BNGExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGExecutionReport.h; sourceTree = "<group>"; };
+		7695AF8117CE7EDD0090A59F /* BNGExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExecutionReport.m; sourceTree = "<group>"; };
+		7695AF8417CE82FE0090A59F /* BNGReplaceInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGReplaceInstructionReport.h; sourceTree = "<group>"; };
+		7695AF8517CE82FF0090A59F /* BNGReplaceInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGReplaceInstructionReport.m; sourceTree = "<group>"; };
+		7695AF8817CE84310090A59F /* BNGInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGInstructionReport.h; sourceTree = "<group>"; };
+		7695AF8917CE84320090A59F /* BNGInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGInstructionReport.m; sourceTree = "<group>"; };
+		7695AF8F17CE93470090A59F /* replace_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = replace_order.json; sourceTree = "<group>"; };
+		7695AF9117CE93640090A59F /* replace_order_failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = replace_order_failure.json; sourceTree = "<group>"; };
+		7695AF9317CEA3E70090A59F /* BNGUpdateExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateExecutionReport.h; sourceTree = "<group>"; };
+		7695AF9417CEA3E80090A59F /* BNGUpdateExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateExecutionReport.m; sourceTree = "<group>"; };
+		7695AF9717CEA5AB0090A59F /* BNGUpdateInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateInstruction.h; sourceTree = "<group>"; };
+		7695AF9817CEA5AC0090A59F /* BNGUpdateInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateInstruction.m; sourceTree = "<group>"; };
+		7695AF9B17CEA8F40090A59F /* BNGUpdateInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateInstructionReport.h; sourceTree = "<group>"; };
+		7695AF9C17CEA8F60090A59F /* BNGUpdateInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateInstructionReport.m; sourceTree = "<group>"; };
+		7695AF9F17CEAA190090A59F /* update_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_order.json; sourceTree = "<group>"; };
+		76A92C1117795F7200B67230 /* BNGEventType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventType.h; sourceTree = "<group>"; };
+		76A92C1217795F7200B67230 /* BNGEventType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventType.m; sourceTree = "<group>"; };
+		76A92C151779718100B67230 /* BNGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEvent.h; sourceTree = "<group>"; };
+		76A92C161779718100B67230 /* BNGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEvent.m; sourceTree = "<group>"; };
+		76A92C1B1779738B00B67230 /* BNGAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAPIError.h; sourceTree = "<group>"; };
+		76A92C1C1779738C00B67230 /* BNGAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAPIError.m; sourceTree = "<group>"; };
+		76A92C1F1779763F00B67230 /* BNGMarketFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketFilter.h; sourceTree = "<group>"; };
+		76A92C201779764000B67230 /* BNGMarketFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketFilter.m; sourceTree = "<group>"; };
+		76A92C231779812600B67230 /* BNGMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMutableURLRequest.h; sourceTree = "<group>"; };
+		76A92C241779812600B67230 /* BNGMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMutableURLRequest.m; sourceTree = "<group>"; };
+		76F910FA17C566A0006EC523 /* BNGCancelExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCancelExecutionReport.h; sourceTree = "<group>"; };
+		76F910FB17C566A0006EC523 /* BNGCancelExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCancelExecutionReport.m; sourceTree = "<group>"; };
+		76F910FE17C56958006EC523 /* BNGCancelInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCancelInstructionReport.h; sourceTree = "<group>"; };
+		76F910FF17C56958006EC523 /* BNGCancelInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCancelInstructionReport.m; sourceTree = "<group>"; };
+		76F9110217C56BA3006EC523 /* BNGCancelInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCancelInstruction.h; sourceTree = "<group>"; };
+		76F9110317C56BA3006EC523 /* BNGCancelInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCancelInstruction.m; sourceTree = "<group>"; };
+		76F9110917C57AA4006EC523 /* NSString+RandomCustomerReferenceId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RandomCustomerReferenceId.h"; sourceTree = "<group>"; };
+		76F9110A17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RandomCustomerReferenceId.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40B61E3617788A2300CFA44A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B61E3D17788A2300CFA44A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40B61E4617788A2400CFA44A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B61E4C17788A2400CFA44A /* SenTestingKit.framework in Frameworks */,
+				40B61E4F17788A2400CFA44A /* Foundation.framework in Frameworks */,
+				40B61E5217788A2400CFA44A /* libAPING iOS SDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4039D22E1779722000DAF28A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4039D232177972B900DAF28A /* NSURL+APINGTests.h */,
+				4039D233177972B900DAF28A /* NSURL+APINGTests.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		408CAAF0177CB06C00F2E9BF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				408CAAF1177CB0A700F2E9BF /* BNGDictionaryRepresentation.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		40B61E3017788A2300CFA44A = {
+			isa = PBXGroup;
+			children = (
+				40B61E3E17788A2300CFA44A /* APING iOS SDK */,
+				40B61E5317788A2400CFA44A /* APING iOS SDKTests */,
+				40B61E3B17788A2300CFA44A /* Frameworks */,
+				40B61E3A17788A2300CFA44A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40B61E3A17788A2300CFA44A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40B61E3917788A2300CFA44A /* libAPING iOS SDK.a */,
+				40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40B61E3B17788A2300CFA44A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71D41C5917E8B523000642EA /* libcommonCrypto.dylib */,
+				71B4828817E76E56002D2932 /* UIKit.framework */,
+				40B61E3C17788A2300CFA44A /* Foundation.framework */,
+				40B61E4B17788A2400CFA44A /* SenTestingKit.framework */,
+				40B61E4D17788A2400CFA44A /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40B61E3E17788A2300CFA44A /* APING iOS SDK */ = {
+			isa = PBXGroup;
+			children = (
+				40B61E4117788A2400CFA44A /* APING.h */,
+				40B61E4317788A2400CFA44A /* APING.m */,
+				408CAAF0177CB06C00F2E9BF /* Protocols */,
+				40B61E64177894C000CFA44A /* Categories */,
+				76A92C1017795F3D00B67230 /* Classes */,
+				40B61E3F17788A2300CFA44A /* Supporting Files */,
+			);
+			path = "APING iOS SDK";
+			sourceTree = "<group>";
+		};
+		40B61E3F17788A2300CFA44A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40B61E4017788A2300CFA44A /* APING iOS SDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40B61E5317788A2400CFA44A /* APING iOS SDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				4039D22E1779722000DAF28A /* Categories */,
+				40EA8B60177B273E00B82C48 /* Classes */,
+				40B61E5417788A2400CFA44A /* Supporting Files */,
+			);
+			path = "APING iOS SDKTests";
+			sourceTree = "<group>";
+		};
+		40B61E5417788A2400CFA44A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				766B66B317BFB73900FEA9E9 /* TestResources */,
+				40B61E5517788A2400CFA44A /* APING iOS SDKTests-Info.plist */,
+				40B61E5617788A2400CFA44A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40B61E64177894C000CFA44A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7117B41617BE800E004FABA6 /* NSNumber+DecimalConversion.h */,
+				7117B41717BE800E004FABA6 /* NSNumber+DecimalConversion.m */,
+				76F9110917C57AA4006EC523 /* NSString+RandomCustomerReferenceId.h */,
+				76F9110A17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m */,
+				71A8BF8217E757A9007CB80D /* NSString+URLEncoding.h */,
+				71A8BF8317E757A9007CB80D /* NSString+URLEncoding.m */,
+				4039D22A17795F0300DAF28A /* NSURL+APING.h */,
+				4039D22B17795F0300DAF28A /* NSURL+APING.m */,
+				408CAAF91782B0C600F2E9BF /* NSURLConnection+BNGJSON.h */,
+				408CAAFA1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m */,
+				71A8BF8417E757A9007CB80D /* NSURLRequest+HTTPBody.h */,
+				71A8BF8517E757A9007CB80D /* NSURLRequest+HTTPBody.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		40EA8B60177B273E00B82C48 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7626CAED17BEC7E900D25D3B /* BNGAccountTest.h */,
+				7626CAEE17BEC7E900D25D3B /* BNGAccountTest.m */,
+				71A52D8A17B53AF50077ACF8 /* BNGEventTest.h */,
+				71A52D8B17B53AF50077ACF8 /* BNGEventTest.m */,
+				71EC887517BE1BC100AC6E36 /* BNGEventTypeTest.h */,
+				71EC887617BE1BC100AC6E36 /* BNGEventTypeTest.m */,
+				71EC887917BE22D400AC6E36 /* BNGMarketBookTest.h */,
+				71EC887A17BE22D400AC6E36 /* BNGMarketBookTest.m */,
+				7626CAFC17BED55F00D25D3B /* BNGMarketCataloguesTest.h */,
+				7626CAFD17BED55F00D25D3B /* BNGMarketCataloguesTest.m */,
+				40EA8B61177B276200B82C48 /* BNGMarketFilterTests.h */,
+				40EA8B62177B276200B82C48 /* BNGMarketFilterTests.m */,
+				717858C517AC056200E27DD1 /* BNGMutableURLRequestTests.h */,
+				717858C617AC056200E27DD1 /* BNGMutableURLRequestTests.m */,
+				766B66C917BFE59900FEA9E9 /* BNGOrderTest.h */,
+				766B66CA17BFE59900FEA9E9 /* BNGOrderTest.m */,
+				712632C117F06416006EA29C /* BNGTestUtilities.h */,
+				712632C217F06416006EA29C /* BNGTestUtilities.m */,
+				766B66B617BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.h */,
+				766B66B717BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		766B66B317BFB73900FEA9E9 /* TestResources */ = {
+			isa = PBXGroup;
+			children = (
+				766B66C117BFCE8700FEA9E9 /* account_details.json */,
+				766B66BF17BFCBEC00FEA9E9 /* account_funds.json */,
+				766B66C717BFDA6200FEA9E9 /* current_orders.json */,
+				766B66B917BFC2CE00FEA9E9 /* event_types.json */,
+				766B66B417BFB76200FEA9E9 /* events.json */,
+				766B66C317BFD0EA00FEA9E9 /* market_book.json */,
+				766B66C517BFD6AF00FEA9E9 /* market_catalogue.json */,
+				71BCC8FB17C5FA270094D2CF /* place_order.json */,
+				7695AF8F17CE93470090A59F /* replace_order.json */,
+				7695AF9117CE93640090A59F /* replace_order_failure.json */,
+				7695AF9F17CEAA190090A59F /* update_order.json */,
+			);
+			path = TestResources;
+			sourceTree = "<group>";
+		};
+		76A92C1017795F3D00B67230 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7626CAE917BEC52800D25D3B /* BNGAccount.h */,
+				7626CAEA17BEC52800D25D3B /* BNGAccount.m */,
+				7626CAF417BECC2E00D25D3B /* BNGAccountDetails.h */,
+				7626CAF517BECC2E00D25D3B /* BNGAccountDetails.m */,
+				7626CAF017BECB7000D25D3B /* BNGAccountFunds.h */,
+				7626CAF117BECB7000D25D3B /* BNGAccountFunds.m */,
+				76A92C1B1779738B00B67230 /* BNGAPIError.h */,
+				408CAB001782B9DA00F2E9BF /* BNGAPIError_Private.h */,
+				76A92C1C1779738C00B67230 /* BNGAPIError.m */,
+				71EC886E17BD3F1100AC6E36 /* BNGAPIResponseParser.h */,
+				71EC886F17BD3F1100AC6E36 /* BNGAPIResponseParser.m */,
+				76F910FA17C566A0006EC523 /* BNGCancelExecutionReport.h */,
+				76F910FB17C566A0006EC523 /* BNGCancelExecutionReport.m */,
+				76F9110217C56BA3006EC523 /* BNGCancelInstruction.h */,
+				76F9110317C56BA3006EC523 /* BNGCancelInstruction.m */,
+				76F910FE17C56958006EC523 /* BNGCancelInstructionReport.h */,
+				76F910FF17C56958006EC523 /* BNGCancelInstructionReport.m */,
+				71A52D6617B526E50077ACF8 /* BNGCompetition.h */,
+				71A52D6717B526E60077ACF8 /* BNGCompetition.m */,
+				71A52D6A17B5272B0077ACF8 /* BNGCompetitionResult.h */,
+				71A52D6B17B5272C0077ACF8 /* BNGCompetitionResult.m */,
+				766B66CC17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.h */,
+				766B66CD17BFE92900FEA9E9 /* BNGCurrentOrderSummaryReport.m */,
+				76A92C151779718100B67230 /* BNGEvent.h */,
+				76A92C161779718100B67230 /* BNGEvent.m */,
+				717858C117AC026D00E27DD1 /* BNGEventResult.h */,
+				717858C217AC026D00E27DD1 /* BNGEventResult.m */,
+				76A92C1117795F7200B67230 /* BNGEventType.h */,
+				76A92C1217795F7200B67230 /* BNGEventType.m */,
+				766B66BB17BFC60D00FEA9E9 /* BNGEventTypeResult.h */,
+				766B66BC17BFC60E00FEA9E9 /* BNGEventTypeResult.m */,
+				71361FEF17CC9A4C00C7DAFA /* BNGExBestOffersOverrides.h */,
+				71361FF017CC9A4D00C7DAFA /* BNGExBestOffersOverrides.m */,
+				71A52D5E17B523810077ACF8 /* BNGExchangePrices.h */,
+				71A52D5F17B523810077ACF8 /* BNGExchangePrices.m */,
+				7695AF8017CE7EDD0090A59F /* BNGExecutionReport.h */,
+				7695AF8117CE7EDD0090A59F /* BNGExecutionReport.m */,
+				7695AF8817CE84310090A59F /* BNGInstructionReport.h */,
+				7695AF8917CE84320090A59F /* BNGInstructionReport.m */,
+				7626CB0317BF5D7700D25D3B /* BNGLimitOnCloseOrder.h */,
+				7626CB0417BF5D7800D25D3B /* BNGLimitOnCloseOrder.m */,
+				71A52D7A17B52CE70077ACF8 /* BNGLimitOrder.h */,
+				71A52D7B17B52CE70077ACF8 /* BNGLimitOrder.m */,
+				71A8BF8A17E7580F007CB80D /* BNGLoginURLProtocol.h */,
+				71A8BF8B17E7580F007CB80D /* BNGLoginURLProtocol.m */,
+				71A52D4B17B51A340077ACF8 /* BNGMarketBook.h */,
+				71A52D4C17B51A340077ACF8 /* BNGMarketBook.m */,
+				7626CAF817BED39800D25D3B /* BNGMarketCatalogue.h */,
+				7626CAF917BED39900D25D3B /* BNGMarketCatalogue.m */,
+				766B66AC17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.h */,
+				766B66AD17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m */,
+				7626CAFF17BED61800D25D3B /* BNGMarketCatalogueFilter.h */,
+				7626CB0017BED61800D25D3B /* BNGMarketCatalogueFilter.m */,
+				76A92C1F1779763F00B67230 /* BNGMarketFilter.h */,
+				76A92C201779764000B67230 /* BNGMarketFilter.m */,
+				7626CB0717BF5D8900D25D3B /* BNGMarketOnCloseOrder.h */,
+				7626CB0817BF5D8A00D25D3B /* BNGMarketOnCloseOrder.m */,
+				71A52D7217B529210077ACF8 /* BNGMatch.h */,
+				71A52D7317B529220077ACF8 /* BNGMatch.m */,
+				76A92C231779812600B67230 /* BNGMutableURLRequest.h */,
+				76A92C241779812600B67230 /* BNGMutableURLRequest.m */,
+				71A52D6E17B527C20077ACF8 /* BNGOrder.h */,
+				71A52D6F17B527C30077ACF8 /* BNGOrder.m */,
+				71A52D8217B52E220077ACF8 /* BNGPlaceExecutionReport.h */,
+				71A52D8317B52E230077ACF8 /* BNGPlaceExecutionReport.m */,
+				71A52D7617B52C2B0077ACF8 /* BNGPlaceInstruction.h */,
+				71A52D7717B52C2C0077ACF8 /* BNGPlaceInstruction.m */,
+				71A52D8617B5306B0077ACF8 /* BNGPlaceInstructionReport.h */,
+				71A52D8717B5306C0077ACF8 /* BNGPlaceInstructionReport.m */,
+				71361FEB17CC965600C7DAFA /* BNGPriceProjection.h */,
+				71361FEC17CC965700C7DAFA /* BNGPriceProjection.m */,
+				71A52D6217B523D20077ACF8 /* BNGPriceSize.h */,
+				71A52D6317B523D20077ACF8 /* BNGPriceSize.m */,
+				7695AF7817CE7E2E0090A59F /* BNGReplaceExecutionReport.h */,
+				7695AF7917CE7E2E0090A59F /* BNGReplaceExecutionReport.m */,
+				7695AF7C17CE7E850090A59F /* BNGReplaceInstruction.h */,
+				7695AF7D17CE7E850090A59F /* BNGReplaceInstruction.m */,
+				7695AF8417CE82FE0090A59F /* BNGReplaceInstructionReport.h */,
+				7695AF8517CE82FF0090A59F /* BNGReplaceInstructionReport.m */,
+				71A52D5617B51D580077ACF8 /* BNGRunner.h */,
+				71A52D5717B51D580077ACF8 /* BNGRunner.m */,
+				71A52D5A17B520660077ACF8 /* BNGStartingPrices.h */,
+				71A52D5B17B520660077ACF8 /* BNGStartingPrices.m */,
+				408CAAEC177C941600F2E9BF /* BNGTimeRange.h */,
+				408CAAED177C941600F2E9BF /* BNGTimeRange.m */,
+				7695AF9317CEA3E70090A59F /* BNGUpdateExecutionReport.h */,
+				7695AF9417CEA3E80090A59F /* BNGUpdateExecutionReport.m */,
+				7695AF9717CEA5AB0090A59F /* BNGUpdateInstruction.h */,
+				7695AF9817CEA5AC0090A59F /* BNGUpdateInstruction.m */,
+				7695AF9B17CEA8F40090A59F /* BNGUpdateInstructionReport.h */,
+				7695AF9C17CEA8F60090A59F /* BNGUpdateInstructionReport.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40B61E3817788A2300CFA44A /* APING iOS SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40B61E5E17788A2400CFA44A /* Build configuration list for PBXNativeTarget "APING iOS SDK" */;
+			buildPhases = (
+				40B61E3517788A2300CFA44A /* Sources */,
+				40B61E3617788A2300CFA44A /* Frameworks */,
+				40B61E3717788A2300CFA44A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "APING iOS SDK";
+			productName = "APING iOS SDK";
+			productReference = 40B61E3917788A2300CFA44A /* libAPING iOS SDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		40B61E4917788A2400CFA44A /* APING iOS SDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40B61E6117788A2400CFA44A /* Build configuration list for PBXNativeTarget "APING iOS SDKTests" */;
+			buildPhases = (
+				40B61E4517788A2400CFA44A /* Sources */,
+				40B61E4617788A2400CFA44A /* Frameworks */,
+				40B61E4717788A2400CFA44A /* Resources */,
+				40B61E4817788A2400CFA44A /* ShellScript */,
+				7626CB1817BF62AA00D25D3B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40B61E5117788A2400CFA44A /* PBXTargetDependency */,
+			);
+			name = "APING iOS SDKTests";
+			productName = "APING iOS SDKTests";
+			productReference = 40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40B61E3117788A2300CFA44A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BNG;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Betfair Ltd.";
+			};
+			buildConfigurationList = 40B61E3417788A2300CFA44A /* Build configuration list for PBXProject "APING iOS SDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40B61E3017788A2300CFA44A;
+			productRefGroup = 40B61E3A17788A2300CFA44A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40B61E3817788A2300CFA44A /* APING iOS SDK */,
+				40B61E4917788A2400CFA44A /* APING iOS SDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40B61E4717788A2400CFA44A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B61E5817788A2400CFA44A /* InfoPlist.strings in Resources */,
+				766B66B517BFB76200FEA9E9 /* events.json in Resources */,
+				766B66BA17BFC2CE00FEA9E9 /* event_types.json in Resources */,
+				766B66C017BFCBEC00FEA9E9 /* account_funds.json in Resources */,
+				766B66C217BFCE8700FEA9E9 /* account_details.json in Resources */,
+				766B66C417BFD0EA00FEA9E9 /* market_book.json in Resources */,
+				766B66C617BFD6AF00FEA9E9 /* market_catalogue.json in Resources */,
+				766B66C817BFDA6200FEA9E9 /* current_orders.json in Resources */,
+				71BCC8FC17C5FA270094D2CF /* place_order.json in Resources */,
+				7695AF9017CE93470090A59F /* replace_order.json in Resources */,
+				7695AF9217CE93640090A59F /* replace_order_failure.json in Resources */,
+				7695AFA017CEAA190090A59F /* update_order.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40B61E4817788A2400CFA44A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40B61E3517788A2300CFA44A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40B61E4417788A2400CFA44A /* APING.m in Sources */,
+				76A92C1317795F7200B67230 /* BNGEventType.m in Sources */,
+				76A92C171779718100B67230 /* BNGEvent.m in Sources */,
+				76A92C1D1779738C00B67230 /* BNGAPIError.m in Sources */,
+				76A92C211779764000B67230 /* BNGMarketFilter.m in Sources */,
+				71A8BF8817E757A9007CB80D /* NSURLRequest+HTTPBody.m in Sources */,
+				4039D22C17795F0300DAF28A /* NSURL+APING.m in Sources */,
+				76A92C251779812600B67230 /* BNGMutableURLRequest.m in Sources */,
+				408CAAEE177C941600F2E9BF /* BNGTimeRange.m in Sources */,
+				717858C317AC026D00E27DD1 /* BNGEventResult.m in Sources */,
+				408CAAFB1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m in Sources */,
+				71A8BF8617E757A9007CB80D /* NSString+URLEncoding.m in Sources */,
+				71A52D4D17B51A340077ACF8 /* BNGMarketBook.m in Sources */,
+				71A52D5817B51D590077ACF8 /* BNGRunner.m in Sources */,
+				71A52D5C17B520660077ACF8 /* BNGStartingPrices.m in Sources */,
+				71A52D6017B523820077ACF8 /* BNGExchangePrices.m in Sources */,
+				71A52D6417B523D30077ACF8 /* BNGPriceSize.m in Sources */,
+				71A52D6817B526E70077ACF8 /* BNGCompetition.m in Sources */,
+				71A52D6C17B5272C0077ACF8 /* BNGCompetitionResult.m in Sources */,
+				71A52D7017B527C30077ACF8 /* BNGOrder.m in Sources */,
+				71A52D7417B529230077ACF8 /* BNGMatch.m in Sources */,
+				71A52D7817B52C2D0077ACF8 /* BNGPlaceInstruction.m in Sources */,
+				71A52D7C17B52CE90077ACF8 /* BNGLimitOrder.m in Sources */,
+				71A52D8417B52E250077ACF8 /* BNGPlaceExecutionReport.m in Sources */,
+				71A52D8817B5306F0077ACF8 /* BNGPlaceInstructionReport.m in Sources */,
+				71EC887017BD3F1100AC6E36 /* BNGAPIResponseParser.m in Sources */,
+				7117B41817BE800E004FABA6 /* NSNumber+DecimalConversion.m in Sources */,
+				7626CAEB17BEC52900D25D3B /* BNGAccount.m in Sources */,
+				7626CAF217BECB7100D25D3B /* BNGAccountFunds.m in Sources */,
+				7626CAF617BECC2F00D25D3B /* BNGAccountDetails.m in Sources */,
+				7626CAFA17BED39900D25D3B /* BNGMarketCatalogue.m in Sources */,
+				7626CB0117BED61900D25D3B /* BNGMarketCatalogueFilter.m in Sources */,
+				7626CB0517BF5D7A00D25D3B /* BNGLimitOnCloseOrder.m in Sources */,
+				7626CB0917BF5D8B00D25D3B /* BNGMarketOnCloseOrder.m in Sources */,
+				766B66AE17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m in Sources */,
+				766B66BD17BFC60E00FEA9E9 /* BNGEventTypeResult.m in Sources */,
+				766B66CE17BFE92B00FEA9E9 /* BNGCurrentOrderSummaryReport.m in Sources */,
+				76F910FC17C566A0006EC523 /* BNGCancelExecutionReport.m in Sources */,
+				76F9110017C56958006EC523 /* BNGCancelInstructionReport.m in Sources */,
+				76F9110417C56BA3006EC523 /* BNGCancelInstruction.m in Sources */,
+				76F9110B17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m in Sources */,
+				71361FED17CC965800C7DAFA /* BNGPriceProjection.m in Sources */,
+				71361FF117CC9A4F00C7DAFA /* BNGExBestOffersOverrides.m in Sources */,
+				7695AF7A17CE7E2E0090A59F /* BNGReplaceExecutionReport.m in Sources */,
+				7695AF7E17CE7E850090A59F /* BNGReplaceInstruction.m in Sources */,
+				71A8BF8C17E7580F007CB80D /* BNGLoginURLProtocol.m in Sources */,
+				7695AF8217CE7EDD0090A59F /* BNGExecutionReport.m in Sources */,
+				7695AF8617CE82FF0090A59F /* BNGReplaceInstructionReport.m in Sources */,
+				7695AF8A17CE84320090A59F /* BNGInstructionReport.m in Sources */,
+				7695AF9517CEA3E90090A59F /* BNGUpdateExecutionReport.m in Sources */,
+				7695AF9917CEA5AE0090A59F /* BNGUpdateInstruction.m in Sources */,
+				7695AF9D17CEA8F70090A59F /* BNGUpdateInstructionReport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40B61E4517788A2400CFA44A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76A92C1417795F7200B67230 /* BNGEventType.m in Sources */,
+				76A92C181779718100B67230 /* BNGEvent.m in Sources */,
+				76A92C1E1779738C00B67230 /* BNGAPIError.m in Sources */,
+				76A92C221779764000B67230 /* BNGMarketFilter.m in Sources */,
+				4039D22D17795F0300DAF28A /* NSURL+APING.m in Sources */,
+				4039D234177972B900DAF28A /* NSURL+APINGTests.m in Sources */,
+				76A92C261779812600B67230 /* BNGMutableURLRequest.m in Sources */,
+				40EA8B63177B276200B82C48 /* BNGMarketFilterTests.m in Sources */,
+				408CAAEF177C941600F2E9BF /* BNGTimeRange.m in Sources */,
+				717858C417AC026D00E27DD1 /* BNGEventResult.m in Sources */,
+				717858C717AC056300E27DD1 /* BNGMutableURLRequestTests.m in Sources */,
+				408CAAFC1782B0C600F2E9BF /* NSURLConnection+BNGJSON.m in Sources */,
+				71A52D4E17B51A340077ACF8 /* BNGMarketBook.m in Sources */,
+				71A52D5917B51D590077ACF8 /* BNGRunner.m in Sources */,
+				71A52D5D17B520660077ACF8 /* BNGStartingPrices.m in Sources */,
+				71A52D6117B523820077ACF8 /* BNGExchangePrices.m in Sources */,
+				71A52D6517B523D30077ACF8 /* BNGPriceSize.m in Sources */,
+				71A52D6917B526E70077ACF8 /* BNGCompetition.m in Sources */,
+				71A52D6D17B5272C0077ACF8 /* BNGCompetitionResult.m in Sources */,
+				71A52D7117B527C30077ACF8 /* BNGOrder.m in Sources */,
+				71A8BF8917E757A9007CB80D /* NSURLRequest+HTTPBody.m in Sources */,
+				71A52D7517B529230077ACF8 /* BNGMatch.m in Sources */,
+				71A52D7917B52C2D0077ACF8 /* BNGPlaceInstruction.m in Sources */,
+				71A52D7D17B52CE90077ACF8 /* BNGLimitOrder.m in Sources */,
+				71A8BF8717E757A9007CB80D /* NSString+URLEncoding.m in Sources */,
+				71A52D8517B52E250077ACF8 /* BNGPlaceExecutionReport.m in Sources */,
+				71A52D8917B5306F0077ACF8 /* BNGPlaceInstructionReport.m in Sources */,
+				71A52D8D17B53AF50077ACF8 /* BNGEventTest.m in Sources */,
+				71EC887117BD3F1100AC6E36 /* BNGAPIResponseParser.m in Sources */,
+				71EC887817BE1BC100AC6E36 /* BNGEventTypeTest.m in Sources */,
+				71EC887B17BE22D400AC6E36 /* BNGMarketBookTest.m in Sources */,
+				7117B41917BE800E004FABA6 /* NSNumber+DecimalConversion.m in Sources */,
+				7626CAEC17BEC52900D25D3B /* BNGAccount.m in Sources */,
+				7626CAEF17BEC7E900D25D3B /* BNGAccountTest.m in Sources */,
+				7626CAF317BECB7100D25D3B /* BNGAccountFunds.m in Sources */,
+				7626CAF717BECC2F00D25D3B /* BNGAccountDetails.m in Sources */,
+				712632C317F06416006EA29C /* BNGTestUtilities.m in Sources */,
+				7626CAFB17BED39900D25D3B /* BNGMarketCatalogue.m in Sources */,
+				7626CAFE17BED55F00D25D3B /* BNGMarketCataloguesTest.m in Sources */,
+				7626CB0217BED61900D25D3B /* BNGMarketCatalogueFilter.m in Sources */,
+				7626CB0617BF5D7A00D25D3B /* BNGLimitOnCloseOrder.m in Sources */,
+				7626CB0A17BF5D8B00D25D3B /* BNGMarketOnCloseOrder.m in Sources */,
+				766B66AF17BFA91E00FEA9E9 /* BNGMarketCatalogueDescription.m in Sources */,
+				766B66B817BFB9CA00FEA9E9 /* BNGURLProtocolResourceLoader.m in Sources */,
+				766B66BE17BFC60E00FEA9E9 /* BNGEventTypeResult.m in Sources */,
+				766B66CB17BFE59A00FEA9E9 /* BNGOrderTest.m in Sources */,
+				766B66CF17BFE92B00FEA9E9 /* BNGCurrentOrderSummaryReport.m in Sources */,
+				76F910FD17C566A0006EC523 /* BNGCancelExecutionReport.m in Sources */,
+				76F9110117C56958006EC523 /* BNGCancelInstructionReport.m in Sources */,
+				76F9110517C56BA3006EC523 /* BNGCancelInstruction.m in Sources */,
+				76F9110C17C57AA4006EC523 /* NSString+RandomCustomerReferenceId.m in Sources */,
+				71361FEE17CC965800C7DAFA /* BNGPriceProjection.m in Sources */,
+				71A8BF8D17E7580F007CB80D /* BNGLoginURLProtocol.m in Sources */,
+				71361FF217CC9A4F00C7DAFA /* BNGExBestOffersOverrides.m in Sources */,
+				7695AF7B17CE7E2E0090A59F /* BNGReplaceExecutionReport.m in Sources */,
+				7695AF7F17CE7E850090A59F /* BNGReplaceInstruction.m in Sources */,
+				7695AF8317CE7EDD0090A59F /* BNGExecutionReport.m in Sources */,
+				7695AF8717CE82FF0090A59F /* BNGReplaceInstructionReport.m in Sources */,
+				7695AF8B17CE84320090A59F /* BNGInstructionReport.m in Sources */,
+				7695AF9617CEA3E90090A59F /* BNGUpdateExecutionReport.m in Sources */,
+				7695AF9A17CEA5AE0090A59F /* BNGUpdateInstruction.m in Sources */,
+				7695AF9E17CEA8F70090A59F /* BNGUpdateInstructionReport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40B61E5117788A2400CFA44A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40B61E3817788A2300CFA44A /* APING iOS SDK */;
+			targetProxy = 40B61E5017788A2400CFA44A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40B61E5617788A2400CFA44A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40B61E5717788A2400CFA44A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40B61E5C17788A2400CFA44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40B61E5D17788A2400CFA44A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40B61E5F17788A2400CFA44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/APING_iOS_SDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APING iOS SDK/APING iOS SDK-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		40B61E6017788A2400CFA44A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/APING_iOS_SDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APING iOS SDK/APING iOS SDK-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		40B61E6217788A2400CFA44A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APING iOS SDK/APING iOS SDK-Prefix.pch";
+				INFOPLIST_FILE = "APING iOS SDKTests/APING iOS SDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		40B61E6317788A2400CFA44A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "APING iOS SDK/APING iOS SDK-Prefix.pch";
+				INFOPLIST_FILE = "APING iOS SDKTests/APING iOS SDKTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40B61E3417788A2300CFA44A /* Build configuration list for PBXProject "APING iOS SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B61E5C17788A2400CFA44A /* Debug */,
+				40B61E5D17788A2400CFA44A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40B61E5E17788A2400CFA44A /* Build configuration list for PBXNativeTarget "APING iOS SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B61E5F17788A2400CFA44A /* Debug */,
+				40B61E6017788A2400CFA44A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40B61E6117788A2400CFA44A /* Build configuration list for PBXNativeTarget "APING iOS SDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B61E6217788A2400CFA44A /* Debug */,
+				40B61E6317788A2400CFA44A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40B61E3117788A2300CFA44A /* Project object */;
+}
