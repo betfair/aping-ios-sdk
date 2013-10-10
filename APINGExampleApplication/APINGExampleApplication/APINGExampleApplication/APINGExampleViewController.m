@@ -62,13 +62,14 @@
     // for your own application, you'd need to request an application key from https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG
     NSString *appKey = @"YOUR_APP_KEY_GOES_HERE";
     NSString *scheme = @"iosapingsample";
+    NSString *product = @"SampleApplicationForAPING";
     [[APING sharedInstance] registerApplicationKey:appKey ssoKey:nil];
 
     // need to register the login URL protocol which the redirect url will hit once the login API call succeeds.
     [BNGLoginURLProtocol registerWithScheme:scheme];
 
     // try to log in ...
-    NSURLRequest *request = [BNGAccount loginWithUserName:@"USERNAME_GOES_HERE" password:@"PASSWORD_GOES_HERE" product:appKey redirectUrl:[scheme stringByAppendingString:@"://ios.betfair.com/login"] completionBlock:^(NSString *ssoKey, NSError *connectionError, BNGAPIError *apiError) {
+    NSURLRequest *request = [BNGAccount loginWithUserName:@"USERNAME_GOES_HERE" password:@"PASSWORD_GOES_HERE" product:product redirectUrl:[scheme stringByAppendingString:@"://ios.betfair.com/login"] completionBlock:^(NSString *ssoKey, NSError *connectionError, BNGAPIError *apiError) {
         
         if (ssoKey.length) {
             // once we have the ssoKey back from the login API call, we should set it in the shared instance so other API calls can make use of it.
