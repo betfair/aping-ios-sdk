@@ -55,7 +55,7 @@ const struct BNGAccountOperation BNGAccountOperation = {
 };
 
 NSString *const BNGBaseURLString    = @"https://api.betfair.com/exchange";
-NSString *const BNGBaseLoginString  = @"https://identitysso.betfair.com/api";
+NSString *const BNGBaseLoginString  = @"https://identitysso.betfair.com";
 NSString *const BNGAPIVersion       = @"1.0";
 
 @implementation NSURL (APING)
@@ -65,7 +65,7 @@ NSString *const BNGAPIVersion       = @"1.0";
     NSParameterAssert(operation.length);
     
     if (operation.length) {
-        return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",
+        return [NSURL URLWithString:[NSString stringWithFormat:@"%@/api/%@",
                                      BNGBaseLoginString,
                                      operation]];
     } else {

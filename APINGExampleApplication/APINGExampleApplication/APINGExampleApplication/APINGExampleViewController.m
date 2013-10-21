@@ -60,7 +60,10 @@
     
     // first we need to register the application key with the shared singleton instance ...
     // for your own application, you'd need to request an application key from https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG
-    NSString *appKey = @"YOUR_APP_KEY_GOES_HERE";
+    // For the sake of the hack day, the following three variables should work fine.
+    // Should you want to distribute your application after the hack day, check out the link above
+    // to request your own application key.
+    NSString *appKey = @"PRBQYVVI6GIgqQjv";
     NSString *scheme = @"iosapingsample";
     NSString *product = @"SampleApplicationForAPING";
     [[APING sharedInstance] registerApplicationKey:appKey ssoKey:nil];
@@ -193,6 +196,8 @@
             }];
         } else {
             NSLog(@"There was an error while logging in %@ %@", connectionError.localizedDescription, apiError);
+            NSLog(@"This error can happen if your product key is out of date or if your redirect url has been suspended");
+            // see https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG for details on how to request an an application key
         }
     }];
 

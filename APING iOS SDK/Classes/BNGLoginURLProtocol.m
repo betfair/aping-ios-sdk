@@ -65,13 +65,15 @@ static NSString *BFLoginURLScheme;
         
         return YES;
         
-    } else if ([request.URL.absoluteString hasPrefix:[NSString stringWithFormat:@"%@/view/login", BNGBaseURLString]]) {
+    } else if ([request.URL.absoluteString hasPrefix:[NSString stringWithFormat:@"%@/view/login", BNGBaseLoginString]]) {
         
         return (
                 [request.httpBodyDictionary[@"errorCode"] isEqualToString:@"INVALID_USERNAME_OR_PASSWORD"] ||
                 [request.httpQueryParams[@"errorCode"]    isEqualToString:@"INVALID_USERNAME_OR_PASSWORD"] ||
                 [request.httpBodyDictionary[@"errorCode"] isEqualToString:@"PIN_DELETED"]                  ||
-                [request.httpQueryParams[@"errorCode"]    isEqualToString:@"PIN_DELETED"]
+                [request.httpQueryParams[@"errorCode"]    isEqualToString:@"PIN_DELETED"]                  ||
+                [request.httpBodyDictionary[@"errorCode"] isEqualToString:@"FORBIDDEN"]                    ||
+                [request.httpQueryParams[@"errorCode"]    isEqualToString:@"FORBIDDEN"]
                 );
     } else {
         return NO;
