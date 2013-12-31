@@ -21,6 +21,10 @@
 		71FD84AF17E9FF4700D56599 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FD848B17E9FF4700D56599 /* Foundation.framework */; };
 		71FD84B017E9FF4700D56599 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FD848F17E9FF4700D56599 /* UIKit.framework */; };
 		71FD84CD17EA005500D56599 /* libAPING iOS SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FD84CC17EA005500D56599 /* libAPING iOS SDK.a */; };
+		76909883183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76909882183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m */; };
+		76909884183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76909882183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m */; };
+		76909886183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76909885183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib */; };
+		76909887183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76909885183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,9 @@
 		71FD84AC17E9FF4700D56599 /* APINGExampleApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APINGExampleApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71FD84AD17E9FF4700D56599 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		71FD84CC17EA005500D56599 /* libAPING iOS SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libAPING iOS SDK.a"; path = "../../build/Debug-iphoneos/libAPING iOS SDK.a"; sourceTree = "<group>"; };
+		76909881183D6C4E0056C074 /* APINGExampleAccountDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APINGExampleAccountDetailViewController.h; sourceTree = "<group>"; };
+		76909882183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APINGExampleAccountDetailViewController.m; sourceTree = "<group>"; };
+		76909885183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APINGExampleAccountDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +119,16 @@
 		71FD849117E9FF4700D56599 /* APINGExampleApplication */ = {
 			isa = PBXGroup;
 			children = (
+				76909881183D6C4E0056C074 /* APINGExampleAccountDetailViewController.h */,
+				76909882183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m */,
+				76909885183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib */,
 				71FD849A17E9FF4700D56599 /* APINGExampleAppDelegate.h */,
 				71FD849B17E9FF4700D56599 /* APINGExampleAppDelegate.m */,
-				71FD849D17E9FF4700D56599 /* Main_iPhone.storyboard */,
-				71FD84A017E9FF4700D56599 /* Main_iPad.storyboard */,
 				71FD84A317E9FF4700D56599 /* APINGExampleViewController.h */,
 				71FD84A417E9FF4700D56599 /* APINGExampleViewController.m */,
 				71FD84A617E9FF4700D56599 /* Images.xcassets */,
+				71FD84A017E9FF4700D56599 /* Main_iPad.storyboard */,
+				71FD849D17E9FF4700D56599 /* Main_iPhone.storyboard */,
 				71FD849217E9FF4700D56599 /* Supporting Files */,
 			);
 			path = APINGExampleApplication;
@@ -212,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76909886183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib in Resources */,
 				71FD84A217E9FF4700D56599 /* Main_iPad.storyboard in Resources */,
 				71FD84A717E9FF4700D56599 /* Images.xcassets in Resources */,
 				71FD849F17E9FF4700D56599 /* Main_iPhone.storyboard in Resources */,
@@ -223,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76909887183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +247,7 @@
 			files = (
 				71FD849817E9FF4700D56599 /* main.m in Sources */,
 				71FD849C17E9FF4700D56599 /* APINGExampleAppDelegate.m in Sources */,
+				76909883183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m in Sources */,
 				71FD84A517E9FF4700D56599 /* APINGExampleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76909884183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
