@@ -58,7 +58,8 @@ typedef NS_ENUM(NSInteger, APINGErrorCode) {
  * Sets the parameters parameter as the body of the POST request.
  * @param parameters key/value pairs which should be sent as part of the POST request.
  * @param error JSON Encoding error if any.
+ * @return success
  */
-- (void)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error;
+- (BOOL)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error;
 
 @end

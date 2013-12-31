@@ -86,7 +86,7 @@ static const struct BNGDefaultParameterField BNGDefaultParameterField = {
     [self setPostParameters:parameters error:nil];
 }
 
-- (void)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error
+- (BOOL)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error
 {
     // make sure to always add the two parameters which should be included in each and every request
     NSMutableDictionary *allParameters = [parameters mutableCopy];
@@ -95,13 +95,17 @@ static const struct BNGDefaultParameterField BNGDefaultParameterField = {
      BNGDefaultParameterField.currencyCode: [APING sharedInstance].currencyCode,
      }];
     
-    if ([NSJSONSerialization isValidJSONObject:allParameters]) {
-        NSData *data = [NSJSONSerialization dataWithJSONObject:allParameters
-                                                       options:kNilOptions
-                                                         error:error];
-        
+    NSData *data = [NSJSONSerialization dataWithJSONObject:allParameters
+                                                   options:kNilOptions
+                                                     error:error];
+    
+    if (data) {
         [self setHTTPMethod:@"POST"];
         [self setHTTPBody:data];
+        
+        return YES;
+    } else {
+        return NO;
     }
 }
 
