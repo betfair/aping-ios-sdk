@@ -92,7 +92,7 @@ NSString *const BNGAPIVersion       = @"1.0";
     NSParameterAssert(operation.length);
     
     if (operation.length) {
-        return [NSURL URLWithString:[NSString stringWithFormat:@"%@/account/rest/v%@/%@",
+        return [NSURL URLWithString:[NSString stringWithFormat:@"%@/account/rest/v%@/%@/",
                                      BNGBaseURLString,
                                      BNGAPIVersion,
                                      operation]];
