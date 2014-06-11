@@ -38,8 +38,8 @@ static NSDictionary *responses;
         responses = @{
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listEvents/": @"events.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listEventTypes/": @"event_types.json",
-            @"https://api.betfair.com/exchange/account/rest/v1.0/getAccountFunds": @"account_funds.json",
-            @"https://api.betfair.com/exchange/account/rest/v1.0/getAccountDetails": @"account_details.json",
+            @"https://api.betfair.com/exchange/account/rest/v1.0/getAccountFunds/": @"account_funds.json",
+            @"https://api.betfair.com/exchange/account/rest/v1.0/getAccountDetails/": @"account_details.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listMarketBook/": @"market_book.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listMarketCatalogue/": @"market_catalogue.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listCurrentOrders/": @"current_orders.json",
