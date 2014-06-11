@@ -59,24 +59,24 @@
                                completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
         
         BNGMarketBook *marketBook = results[0];
-        STAssertTrue(results.count == 1, @"There should be only one BNGMarketBook");
-        STAssertTrue([marketBook.marketId isEqualToString:@"1.109449486"], @"The market id should be '1.109814036'");
-        STAssertFalse(marketBook.isMarketDataDelayed, @"The isMarketDataDelayed flag should be false");
-        STAssertTrue(marketBook.status == BNGMarketStatusOpen, @"The market should be marked as open");
-        STAssertTrue(marketBook.betDelay == 0, @"The bet delay should be 0 seconds");
-        STAssertFalse(marketBook.inplay, @"The market should be marked as being in play");
-        STAssertTrue(marketBook.numberOfWinners == 1, @"There should be only one runner for this market");
-        STAssertTrue(marketBook.numberOfRunners == 20, @"There should 20 runners altogether for this market");
-        STAssertTrue(marketBook.numberOfActiveRunners == 20, @"There should 20 active runners for this market");
-        STAssertTrue([marketBook.totalMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"78962.61"]], @"The total amount matched on this market should be 78962.61");
-        STAssertTrue([marketBook.totalAvailable isEqual:[NSDecimalNumber decimalNumberWithString:@"4879.74"]], @"The total amount availiable on this market should be 4879.74");
-        STAssertTrue(marketBook.runners.count == 20, @"There should be 20 runners in the market");
+        XCTAssertTrue(results.count == 1, @"There should be only one BNGMarketBook");
+        XCTAssertTrue([marketBook.marketId isEqualToString:@"1.109449486"], @"The market id should be '1.109814036'");
+        XCTAssertFalse(marketBook.isMarketDataDelayed, @"The isMarketDataDelayed flag should be false");
+        XCTAssertTrue(marketBook.status == BNGMarketStatusOpen, @"The market should be marked as open");
+        XCTAssertTrue(marketBook.betDelay == 0, @"The bet delay should be 0 seconds");
+        XCTAssertFalse(marketBook.inplay, @"The market should be marked as being in play");
+        XCTAssertTrue(marketBook.numberOfWinners == 1, @"There should be only one runner for this market");
+        XCTAssertTrue(marketBook.numberOfRunners == 20, @"There should 20 runners altogether for this market");
+        XCTAssertTrue(marketBook.numberOfActiveRunners == 20, @"There should 20 active runners for this market");
+        XCTAssertTrue([marketBook.totalMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"78962.61"]], @"The total amount matched on this market should be 78962.61");
+        XCTAssertTrue([marketBook.totalAvailable isEqual:[NSDecimalNumber decimalNumberWithString:@"4879.74"]], @"The total amount availiable on this market should be 4879.74");
+        XCTAssertTrue(marketBook.runners.count == 20, @"There should be 20 runners in the market");
         
         for (BNGRunner *runner in marketBook.runners) {
             if (runner.selectionId == 7448571) {
-                STAssertTrue(runner.status == BNGRunnerStatusActive, @"The runner with selectionId 7448571 should be marked as active in the market");
-                STAssertTrue([runner.lastPriceTraded isEqual:[NSDecimalNumber decimalNumberWithString:@"18.5"]], @"The runner with selectionId 7448571 should have a last price traded value of 18.5");
-                STAssertTrue([runner.totalMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"7252.43"]], @"The runner with selectionId 7448571 should have a last price traded value of 7252.43");
+                XCTAssertTrue(runner.status == BNGRunnerStatusActive, @"The runner with selectionId 7448571 should be marked as active in the market");
+                XCTAssertTrue([runner.lastPriceTraded isEqual:[NSDecimalNumber decimalNumberWithString:@"18.5"]], @"The runner with selectionId 7448571 should have a last price traded value of 18.5");
+                XCTAssertTrue([runner.totalMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"7252.43"]], @"The runner with selectionId 7448571 should have a last price traded value of 7252.43");
             }
         }
         
@@ -92,8 +92,8 @@
 
 - (void)testBNGMarketBookTransformers
 {
-    STAssertTrue([BNGMarketBook marketStatusFromString:@"INVALID_STRING"] == BNGMarketStatusUnknown, @"A string of 'INVALID_STRING' should return an unknown market status from marketStatusFromString");
-    STAssertTrue([BNGMarketBook marketStatusFromString:@"INACTIVE"] == BNGMarketStatusInactive, @"A string of 'INACTIVE' should return an inactive market status from marketStatusFromString");
+    XCTAssertTrue([BNGMarketBook marketStatusFromString:@"INVALID_STRING"] == BNGMarketStatusUnknown, @"A string of 'INVALID_STRING' should return an unknown market status from marketStatusFromString");
+    XCTAssertTrue([BNGMarketBook marketStatusFromString:@"INACTIVE"] == BNGMarketStatusInactive, @"A string of 'INACTIVE' should return an inactive market status from marketStatusFromString");
 }
 
 @end

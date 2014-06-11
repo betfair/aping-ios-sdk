@@ -48,12 +48,12 @@
     BNGMarketFilter *marketFilter = [[BNGMarketFilter alloc] init];
     [BNGEventType listEventTypesWithMarketFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
 
-        STAssertTrue(results.count == 26, @"There should be 26 event types in the array of results");
+        XCTAssertTrue(results.count == 26, @"There should be 26 event types in the array of results");
         
         for (BNGEventTypeResult *eventTypeResult in results) {
             if ([eventTypeResult.eventType.name isEqualToString:@"Soccer"]) {
-                STAssertTrue([eventTypeResult.eventType.identifier isEqualToString:@"1"], @"The soccer id should be one");
-                STAssertTrue(eventTypeResult.marketCount == 36106, @"There should be 36106 markets associated with the soccer event type");
+                XCTAssertTrue([eventTypeResult.eventType.identifier isEqualToString:@"1"], @"The soccer id should be one");
+                XCTAssertTrue(eventTypeResult.marketCount == 36106, @"There should be 36106 markets associated with the soccer event type");
             }
         }
         

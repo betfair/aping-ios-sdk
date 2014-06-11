@@ -100,11 +100,11 @@ static NSString * const SilkBaseUrl = @"http://content-cache.betfair.com/feeds_i
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [selectionId: %lld] [runnerId: %lld] [status: %d] [lastPriceTraded: %@] [totalMatched: %@] [orders: %@] [matches: %@] [exchangePrices: %@] [startingPrices: %@]",
+    return [NSString stringWithFormat:@"%@ [selectionId: %lld] [runnerId: %lld] [status: %ld] [lastPriceTraded: %@] [totalMatched: %@] [orders: %@] [matches: %@] [exchangePrices: %@] [startingPrices: %@]",
             [super description],
             self.selectionId,
             self.runnerId,
-            self.status,
+            (long)self.status,
             self.lastPriceTraded,
             self.totalMatched,
             self.orders,

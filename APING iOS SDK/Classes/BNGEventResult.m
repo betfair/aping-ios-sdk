@@ -47,10 +47,10 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [event: %@] [marketCount: %d]",
+    return [NSString stringWithFormat:@"%@ [event: %@] [marketCount: %ld]",
             [super description],
             self.event,
-            self.marketCount];
+            (long)self.marketCount];
 }
 
 @end

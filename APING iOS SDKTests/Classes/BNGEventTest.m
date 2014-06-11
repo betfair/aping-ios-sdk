@@ -51,10 +51,10 @@
         
         BNGEventResult *eventResult = results[0];
         
-        STAssertTrue(results.count > 0, @"There should be one event result in the array of results");
-        STAssertTrue(eventResult.marketCount == 1, @"There should be one market associated with the event");
-        STAssertTrue([eventResult.event.name isEqualToString:@"A Murray Specials"], @"'A Murray Specials' should be the name of the event");
-        STAssertTrue([eventResult.event.eventId isEqualToString:@"26923703"], @"'26923703' should be the event's identifier");
+        XCTAssertTrue(results.count > 0, @"There should be one event result in the array of results");
+        XCTAssertTrue(eventResult.marketCount == 1, @"There should be one market associated with the event");
+        XCTAssertTrue([eventResult.event.name isEqualToString:@"A Murray Specials"], @"'A Murray Specials' should be the name of the event");
+        XCTAssertTrue([eventResult.event.eventId isEqualToString:@"26923703"], @"'26923703' should be the event's identifier");
         
         dispatch_semaphore_signal(semaphore);
     }];

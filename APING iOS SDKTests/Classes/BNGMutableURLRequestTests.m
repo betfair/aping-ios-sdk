@@ -36,22 +36,22 @@
 - (void)testDefaultHeadersAutomaticallyAddedToRequest
 {    
     BNGMutableURLRequest *request = [[BNGMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.betfair.com"]
-                                                                  cachePolicy:NSURLCacheStorageNotAllowed
+                                                                  cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                               timeoutInterval:30.0f];
-    STAssertTrue([[request valueForHTTPHeaderField:BNGHTTPHeaderContentType] isEqualToString:BNGHTTPHeaderValueContentTypeDefault], @"Content-Type is not set as a default HTTP header");
-    STAssertTrue([[request valueForHTTPHeaderField:BNGHTTPHeaderAccept] isEqualToString:BNGHTTPHeaderValueContentTypeDefault], @"Accept is not set as a default HTTP header");
-    STAssertTrue([[request valueForHTTPHeaderField:BNGHTTPHeaderAcceptCharset] isEqualToString:BNGHTTPHeaderValueAcceptCharsetDefault], @"Accept-Charset is not set as a default HTTP header");
+    XCTAssertTrue([[request valueForHTTPHeaderField:BNGHTTPHeaderContentType] isEqualToString:BNGHTTPHeaderValueContentTypeDefault], @"Content-Type is not set as a default HTTP header");
+    XCTAssertTrue([[request valueForHTTPHeaderField:BNGHTTPHeaderAccept] isEqualToString:BNGHTTPHeaderValueContentTypeDefault], @"Accept is not set as a default HTTP header");
+    XCTAssertTrue([[request valueForHTTPHeaderField:BNGHTTPHeaderAcceptCharset] isEqualToString:BNGHTTPHeaderValueAcceptCharsetDefault], @"Accept-Charset is not set as a default HTTP header");
 }
 
 - (void)testDefaultParametersAutomaticallyAddedToRequest
 {
     BNGMutableURLRequest *request = [[BNGMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.betfair.com"]
-                                                                  cachePolicy:NSURLCacheStorageNotAllowed
+                                                                  cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                               timeoutInterval:30.0f];
     [request setPostParameters:@{@"one": @"two"}];
     NSString *body = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
-    STAssertTrue([body rangeOfString:[APING sharedInstance].locale].location != NSNotFound, @"Default locale should be added to the post body parameters");
-    STAssertTrue([body rangeOfString:[APING sharedInstance].currencyCode].location != NSNotFound, @"Default currencyCode should be added to the post body parameters");
+    XCTAssertTrue([body rangeOfString:[APING sharedInstance].locale].location != NSNotFound, @"Default locale should be added to the post body parameters");
+    XCTAssertTrue([body rangeOfString:[APING sharedInstance].currencyCode].location != NSNotFound, @"Default currencyCode should be added to the post body parameters");
 }
 
 @end

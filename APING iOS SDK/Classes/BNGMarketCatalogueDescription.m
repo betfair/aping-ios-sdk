@@ -200,7 +200,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGMarketCatalogueDescription[bettingType, bspMarket, clarifications, discountAllowed, marketBaseRate, marketTime, marketType, persistenceEnabled, regulator, settleTime, suspendTime, turnInPlayEnabled, wallet]: %@ %d %@ %d %d %@ %@ %d %@ %@ %@ %d %@", [BNGMarketCatalogueDescription stringFromMarketBettingType:self.bettingType], self.bspMarket, self.clarifications, self.discountAllowed, self.marketBaseRate, self.marketTime, [BNGMarketCatalogueDescription stringFromMarketType:self.marketType], self.persistenceEnabled, self.regulator, self.settleTime, self.suspendTime, self.turnInPlayEnabled, self.wallet];
+    return [NSString stringWithFormat:@"BNGMarketCatalogueDescription[bettingType, bspMarket, clarifications, discountAllowed, marketBaseRate, marketTime, marketType, persistenceEnabled, regulator, settleTime, suspendTime, turnInPlayEnabled, wallet]: %@ %d %@ %d %ld %@ %@ %d %@ %@ %@ %d %@", [BNGMarketCatalogueDescription stringFromMarketBettingType:self.bettingType], self.bspMarket, self.clarifications, self.discountAllowed, (long)self.marketBaseRate, self.marketTime, [BNGMarketCatalogueDescription stringFromMarketType:self.marketType], self.persistenceEnabled, self.regulator, self.settleTime, self.suspendTime, self.turnInPlayEnabled, self.wallet];
 }
 
 @end

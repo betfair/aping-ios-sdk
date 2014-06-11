@@ -51,8 +51,8 @@
     [BNGMarketCatalogue listMarketCataloguesWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
        
         BNGMarketCatalogue *marketCatalogue = results[0];
-        STAssertTrue(results.count == 1, @"There should be only one BNGMarketCatalogue");
-        STAssertTrue(marketCatalogue.runners.count == 20, @"There should be 20 runners associated with the market catalogue");
+        XCTAssertTrue(results.count == 1, @"There should be only one BNGMarketCatalogue");
+        XCTAssertTrue(marketCatalogue.runners.count == 20, @"There should be 20 runners associated with the market catalogue");
         
         dispatch_semaphore_signal(semaphore);
         

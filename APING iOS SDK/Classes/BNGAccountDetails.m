@@ -67,7 +67,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [currencyCode: %@] [firstName: %@] [lastName: %@] [localeCode: %@] [region: %@] [discountRate: %@] [pointsBalance: %d]",
+    return [NSString stringWithFormat:@"%@ [currencyCode: %@] [firstName: %@] [lastName: %@] [localeCode: %@] [region: %@] [discountRate: %@] [pointsBalance: %ld]",
             [super description],
             self.currencyCode,
             self.firstName,
@@ -75,7 +75,7 @@
             self.localeCode,
             self.region,
             self.discountRate,
-            self.pointsBalance];
+            (long)self.pointsBalance];
 }
 
 @end

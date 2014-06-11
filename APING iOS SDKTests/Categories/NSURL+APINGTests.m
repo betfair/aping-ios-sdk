@@ -34,30 +34,30 @@
 
 - (void)testConstantsAreCorrect
 {
-    STAssertEqualObjects(BNGBettingOperation.cancelOrders,        @"cancelOrders",        @"BNGBettingOperation.cancelOrders == %@ (should be %@), BNGBettingOperationCancelOrders", @"cancelOrders");
-    STAssertEqualObjects(BNGBettingOperation.listCompetitions,    @"listCompetitions",    @"BNGBettingOperation.listCompetitions == %@ (should be %@), BNGBettingOperationListCompetitions", @"listCompetitions");
-    STAssertEqualObjects(BNGBettingOperation.listCountries,       @"listCountries",       @"BNGBettingOperation.listCountries == %@ (should be %@), BNGBettingOperationListCountries", @"listCountries");
-    STAssertEqualObjects(BNGBettingOperation.listCurrentOrders,   @"listCurrentOrders",   @"BNGBettingOperation.listCurrentOrders == %@ (should be %@), BNGBettingOperationListCurrentOrders", @"listCurrentOrders");
-    STAssertEqualObjects(BNGBettingOperation.listEvents,          @"listEvents",          @"BNGBettingOperation.listEvents == %@ (should be %@), BNGBettingOperationListEvents", @"listEvents");
-    STAssertEqualObjects(BNGBettingOperation.listEventTypes,      @"listEventTypes",      @"BNGBettingOperation.listEventTypes == %@ (should be %@), BNGBettingOperationListEventTypes", @"listEventTypes");
-    STAssertEqualObjects(BNGBettingOperation.listMarketBook,      @"listMarketBook",      @"BNGBettingOperation.listMarketBook == %@ (should be %@), BNGBettingOperationListMarketBook", @"listMarketBook");
-    STAssertEqualObjects(BNGBettingOperation.listMarketCatalogue, @"listMarketCatalogue", @"BNGBettingOperation.listMarketCatalogue == %@ (should be %@), BNGBettingOperationListMarketCatalogue", @"listMarketCatalogue");
-    STAssertEqualObjects(BNGBettingOperation.listMarketTypes,     @"listMarketTypes",     @"BNGBettingOperation.listMarketTypes == %@ (should be %@), BNGBettingOperationListMarketTypes", @"listMarketTypes");
-    STAssertEqualObjects(BNGBettingOperation.listTimeRanges,      @"listTimeRanges",      @"BNGBettingOperation.listTimeRanges == %@ (should be %@), BNGBettingOperationListTimeRanges", @"listTimeRanges");
-    STAssertEqualObjects(BNGBettingOperation.listVenues,          @"listVenues",          @"BNGBettingOperation.listVenues == %@ (should be %@), BNGBettingOperationListVenues", @"listVenues");
-    STAssertEqualObjects(BNGBettingOperation.placeOrders,         @"placeOrders",         @"BNGBettingOperation.placeOrders == %@ (should be %@), BNGBettingOperationPlaceOrders", @"placeOrders");
-    STAssertEqualObjects(BNGBettingOperation.replaceOrders,       @"replaceOrders",       @"BNGBettingOperation.replaceOrders == %@ (should be %@), BNGBettingOperationReplaceOrders", @"replaceOrders");
-    STAssertEqualObjects(BNGBettingOperation.updateOrders,        @"updateOrders",        @"BNGBettingOperation.updateOrders == %@ (should be %@), BNGBettingOperationUpdateOrders", @"updateOrders");
+    XCTAssertEqualObjects(BNGBettingOperation.cancelOrders, @"BNGBettingOperation.cancelOrders == %@ (should be %@), BNGBettingOperationCancelOrders", @"cancelOrders");
+    XCTAssertEqualObjects(BNGBettingOperation.listCompetitions, @"BNGBettingOperation.listCompetitions == %@ (should be %@), BNGBettingOperationListCompetitions", @"listCompetitions");
+    XCTAssertEqualObjects(BNGBettingOperation.listCountries, @"BNGBettingOperation.listCountries == %@ (should be %@), BNGBettingOperationListCountries", @"listCountries");
+    XCTAssertEqualObjects(BNGBettingOperation.listCurrentOrders, @"BNGBettingOperation.listCurrentOrders == %@ (should be %@), BNGBettingOperationListCurrentOrders", @"listCurrentOrders");
+    XCTAssertEqualObjects(BNGBettingOperation.listEvents, @"BNGBettingOperation.listEvents == %@ (should be %@), BNGBettingOperationListEvents", @"listEvents");
+    XCTAssertEqualObjects(BNGBettingOperation.listEventTypes, @"BNGBettingOperation.listEventTypes == %@ (should be %@), BNGBettingOperationListEventTypes", @"listEventTypes");
+    XCTAssertEqualObjects(BNGBettingOperation.listMarketBook, @"BNGBettingOperation.listMarketBook == %@ (should be %@), BNGBettingOperationListMarketBook", @"listMarketBook");
+    XCTAssertEqualObjects(BNGBettingOperation.listMarketCatalogue, @"BNGBettingOperation.listMarketCatalogue == %@ (should be %@), BNGBettingOperationListMarketCatalogue", @"listMarketCatalogue");
+    XCTAssertEqualObjects(BNGBettingOperation.listMarketTypes, @"BNGBettingOperation.listMarketTypes == %@ (should be %@), BNGBettingOperationListMarketTypes", @"listMarketTypes");
+    XCTAssertEqualObjects(BNGBettingOperation.listTimeRanges, @"BNGBettingOperation.listTimeRanges == %@ (should be %@), BNGBettingOperationListTimeRanges", @"listTimeRanges");
+    XCTAssertEqualObjects(BNGBettingOperation.listVenues, @"BNGBettingOperation.listVenues == %@ (should be %@), BNGBettingOperationListVenues", @"listVenues");
+    XCTAssertEqualObjects(BNGBettingOperation.placeOrders, @"BNGBettingOperation.placeOrders == %@ (should be %@), BNGBettingOperationPlaceOrders", @"placeOrders");
+    XCTAssertEqualObjects(BNGBettingOperation.replaceOrders, @"BNGBettingOperation.replaceOrders == %@ (should be %@), BNGBettingOperationReplaceOrders", @"replaceOrders");
+    XCTAssertEqualObjects(BNGBettingOperation.updateOrders, @"BNGBettingOperation.updateOrders == %@ (should be %@), BNGBettingOperationUpdateOrders", @"updateOrders");
 }
 
 - (void)testURLMatchesSuffix
 {
     NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
     
-    STAssertTrue((BNGBettingOperation.listEvents.length > 0),
+    XCTAssertTrue((BNGBettingOperation.listEvents.length > 0),
                  @"`BNGBettingOperation.listEvents` is %@.", (BNGBettingOperation.listEvents == nil) ? @"nil" : @"empty");
     
-    STAssertTrue(([url.absoluteString rangeOfString:BNGBettingOperation.listEvents].location != NSNotFound),
+    XCTAssertTrue(([url.absoluteString rangeOfString:BNGBettingOperation.listEvents].location != NSNotFound),
                  @"The URL (%@) should have a suffix of %@.", url, BNGBettingOperation.listEvents);
 }
 
@@ -65,10 +65,10 @@
 {
     NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
     
-    STAssertTrue((BNGBaseURLString.length > 0),
+    XCTAssertTrue((BNGBaseURLString.length > 0),
                  @"BNGBaseURLString is %@.", (BNGBaseURLString == nil) ? @"nil" : @"empty");
     
-    STAssertTrue(([url.absoluteString hasPrefix:BNGBaseURLString]),
+    XCTAssertTrue(([url.absoluteString hasPrefix:BNGBaseURLString]),
                  @"The URL (%@) should have a prefix of %@.", url, BNGBaseURLString);
 }
 
@@ -76,10 +76,10 @@
 {
     NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
     
-    STAssertTrue((BNGAPIVersion.length > 0),
+    XCTAssertTrue((BNGAPIVersion.length > 0),
                  @"BNGAPIVersion is %@.", (BNGAPIVersion == nil) ? @"nil" : @"empty");
     
-    STAssertTrue(([url.absoluteString rangeOfString:[NSString stringWithFormat:@"/v%@/", BNGAPIVersion]].location != NSNotFound),
+    XCTAssertTrue(([url.absoluteString rangeOfString:[NSString stringWithFormat:@"/v%@/", BNGAPIVersion]].location != NSNotFound),
                  @"The URL (%@) should contain the version (v%@).", url, BNGAPIVersion);
 }
 

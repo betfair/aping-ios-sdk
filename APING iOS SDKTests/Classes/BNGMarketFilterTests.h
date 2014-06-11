@@ -26,11 +26,11 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 @class BNGMarketFilter;
 
-@interface BNGMarketFilterTests : SenTestCase
+@interface BNGMarketFilterTests : XCTestCase
 
 @property (nonatomic, strong) BNGMarketFilter *marketFilter;
 

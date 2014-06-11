@@ -59,16 +59,16 @@
     
     [BNGOrder listCurrentOrdersWithCompletionBlock:^(BNGCurrentOrderSummaryReport *report, NSError *connectionError, BNGAPIError *apiError) {
 
-        STAssertFalse(report.moreAvailable, @"There should not be any more orders available for this request");
-        STAssertTrue(report.currentOrders.count, @"There should be 5 current orders available for this request");
+        XCTAssertFalse(report.moreAvailable, @"There should not be any more orders available for this request");
+        XCTAssertTrue(report.currentOrders.count, @"There should be 5 current orders available for this request");
         for (BNGOrder *order in report.currentOrders) {
             if ([order.betId isEqualToString:@"28764485239"]) {
-                STAssertTrue([order.marketId isEqualToString:@"1.109165222"], @"The market id should be equal to 1.109165222 for the order with bet id 28764485239");
-                STAssertTrue(order.selectionId == 55190, @"The selection id should be equal to 55190 for the order with bet id 28764485239");
-                STAssertTrue(order.side == BNGSideBack, @"The BNGOrder should be marked as a back bet for the order with bet id 28764485239");
-                STAssertTrue(order.status == BNGOrderStatusExecutionComplete, @"The status should be marked as complete for the order with bet id 28764485239");
-                STAssertTrue(order.persistenceType == BNGPersistanceTypeLapse, @"The persistenceType should be marked as 'LAPSE' for the order with bet id 28764485239");
-                STAssertTrue([order.avgPriceMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"3.35"]], @"The average price matched for the order with bet id 28764485239 should be 3.35");
+                XCTAssertTrue([order.marketId isEqualToString:@"1.109165222"], @"The market id should be equal to 1.109165222 for the order with bet id 28764485239");
+                XCTAssertTrue(order.selectionId == 55190, @"The selection id should be equal to 55190 for the order with bet id 28764485239");
+                XCTAssertTrue(order.side == BNGSideBack, @"The BNGOrder should be marked as a back bet for the order with bet id 28764485239");
+                XCTAssertTrue(order.status == BNGOrderStatusExecutionComplete, @"The status should be marked as complete for the order with bet id 28764485239");
+                XCTAssertTrue(order.persistenceType == BNGPersistanceTypeLapse, @"The persistenceType should be marked as 'LAPSE' for the order with bet id 28764485239");
+                XCTAssertTrue([order.avgPriceMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"3.35"]], @"The average price matched for the order with bet id 28764485239 should be 3.35");
             }
         }
         
@@ -103,11 +103,11 @@
     
     [BNGOrder placeOrdersForMarketId:@"1.110515784" instructions:@[placeOrder] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGPlaceExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
 
-        STAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this place bet request.");
-        STAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this place bet request");
+        XCTAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this place bet request.");
+        XCTAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this place bet request");
         BNGPlaceInstructionReport *instructionReport = report.instructionReports[0];
         BNGPlaceInstruction *placeInstruction = instructionReport.instruction;
-        STAssertTrue(placeInstruction.selectionId == 55190, @"The runner id in the bet placement request should be echoed back in the bet place response");
+        XCTAssertTrue(placeInstruction.selectionId == 55190, @"The runner id in the bet placement request should be echoed back in the bet place response");
         dispatch_semaphore_signal(semaphore);
     }];
     
@@ -129,8 +129,8 @@
     
     [BNGOrder replaceOrdersForMarketId:@"1.109165222" instructions:@[replaceInstruction] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGReplaceExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
         
-        STAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this replace bet request.");
-        STAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this replace bet request");
+        XCTAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this replace bet request.");
+        XCTAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this replace bet request");
         dispatch_semaphore_signal(semaphore);
         
     }];

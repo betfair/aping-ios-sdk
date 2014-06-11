@@ -48,8 +48,8 @@
 {
     NSDictionary *dictionaryRepresentation = self.marketFilter.dictionaryRepresentation;
  
-    STAssertNotNil(dictionaryRepresentation, @"dictionaryRepresentation is nil");
-    STAssertTrue(dictionaryRepresentation.count == 1, @"dictionaryRepresentation is not empty: (%@)", dictionaryRepresentation);
+    XCTAssertNotNil(dictionaryRepresentation, @"dictionaryRepresentation is nil");
+    XCTAssertTrue(dictionaryRepresentation.count == 1, @"dictionaryRepresentation is not empty: (%@)", dictionaryRepresentation);
 }
 
 - (void)testDictionaryRepresentationWithProperties
@@ -73,26 +73,26 @@
     
     NSDictionary *dictionaryRepresentation = self.marketFilter.dictionaryRepresentation;
     
-    STAssertEqualObjects(textQuery,          dictionaryRepresentation[@"filter"][@"textQuery"],          @"Error in `textQuery`: %@ != %@",          textQuery,          dictionaryRepresentation[@"filter"][@"textQuery"]);
-    STAssertEqualObjects(exchangeIds,        dictionaryRepresentation[@"filter"][@"exchangeIds"],        @"Error in `exchangeIds`: %@ != %@",        exchangeIds,        dictionaryRepresentation[@"filter"][@"exchangeIds"]);
-    STAssertEqualObjects(eventTypeIds,       dictionaryRepresentation[@"filter"][@"eventTypeIds"],       @"Error in `eventTypeIds`: %@ != %@",       eventTypeIds,       dictionaryRepresentation[@"filter"][@"eventTypeIds"]);
-    STAssertEqualObjects(eventIds,           dictionaryRepresentation[@"filter"][@"eventIds"],           @"Error in `eventIds`: %@ != %@",           eventIds,           dictionaryRepresentation[@"filter"][@"eventIds"]);
-    STAssertEqualObjects(competitionIds,     dictionaryRepresentation[@"filter"][@"competitionIds"],     @"Error in `competitionIds`: %@ != %@",     competitionIds,     dictionaryRepresentation[@"filter"][@"competitionIds"]);
-    STAssertEqualObjects(marketIds,          dictionaryRepresentation[@"filter"][@"marketIds"],          @"Error in `marketIds`: %@ != %@",          marketIds,          dictionaryRepresentation[@"filter"][@"marketIds"]);
-    STAssertEqualObjects(venues,             dictionaryRepresentation[@"filter"][@"venues"],             @"Error in `venues`: %@ != %@",             venues,             dictionaryRepresentation[@"filter"][@"venues"]);
-    STAssertEqualObjects(bspOnly,            dictionaryRepresentation[@"filter"][@"bspOnly"],            @"Error in `bspOnly`: %@ != %@",            bspOnly,            dictionaryRepresentation[@"filter"][@"bspOnly"]);
-    STAssertEqualObjects(turnInPlayEnabled,  dictionaryRepresentation[@"filter"][@"turnInPlayEnabled"],  @"Error in `turnInPlayEnabled`: %@ != %@",  turnInPlayEnabled,  dictionaryRepresentation[@"filter"][@"turnInPlayEnabled"]);
-    STAssertEqualObjects(inPlayOnly,         dictionaryRepresentation[@"filter"][@"inPlayOnly"],         @"Error in `inPlayOnly`: %@ != %@",         inPlayOnly,         dictionaryRepresentation[@"filter"][@"inPlayOnly"]);
-    STAssertEqualObjects(marketBettingTypes, dictionaryRepresentation[@"filter"][@"marketBettingTypes"], @"Error in `marketBettingTypes`: %@ != %@", marketBettingTypes, dictionaryRepresentation[@"filter"][@"marketBettingTypes"]);
-    STAssertEqualObjects(marketCountries,    dictionaryRepresentation[@"filter"][@"marketCountries"],    @"Error in `marketCountries`: %@ != %@",    marketCountries,    dictionaryRepresentation[@"filter"][@"marketCountries"]);
-    STAssertEqualObjects(marketTypeCodes,    dictionaryRepresentation[@"filter"][@"marketTypeCodes"],    @"Error in `marketTypeCodes`: %@ != %@",    marketTypeCodes,    dictionaryRepresentation[@"filter"][@"marketTypeCodes"]);
-    STAssertEqualObjects(withOrders,         dictionaryRepresentation[@"filter"][@"withOrders"],         @"Error in `withOrders`: %@ != %@",         withOrders,         dictionaryRepresentation[@"filter"][@"withOrders"]);
+    XCTAssertEqualObjects(textQuery,          dictionaryRepresentation[@"filter"][@"textQuery"],          @"Error in `textQuery`: %@ != %@",          textQuery,          dictionaryRepresentation[@"filter"][@"textQuery"]);
+    XCTAssertEqualObjects(exchangeIds,        dictionaryRepresentation[@"filter"][@"exchangeIds"],        @"Error in `exchangeIds`: %@ != %@",        exchangeIds,        dictionaryRepresentation[@"filter"][@"exchangeIds"]);
+    XCTAssertEqualObjects(eventTypeIds,       dictionaryRepresentation[@"filter"][@"eventTypeIds"],       @"Error in `eventTypeIds`: %@ != %@",       eventTypeIds,       dictionaryRepresentation[@"filter"][@"eventTypeIds"]);
+    XCTAssertEqualObjects(eventIds,           dictionaryRepresentation[@"filter"][@"eventIds"],           @"Error in `eventIds`: %@ != %@",           eventIds,           dictionaryRepresentation[@"filter"][@"eventIds"]);
+    XCTAssertEqualObjects(competitionIds,     dictionaryRepresentation[@"filter"][@"competitionIds"],     @"Error in `competitionIds`: %@ != %@",     competitionIds,     dictionaryRepresentation[@"filter"][@"competitionIds"]);
+    XCTAssertEqualObjects(marketIds,          dictionaryRepresentation[@"filter"][@"marketIds"],          @"Error in `marketIds`: %@ != %@",          marketIds,          dictionaryRepresentation[@"filter"][@"marketIds"]);
+    XCTAssertEqualObjects(venues,             dictionaryRepresentation[@"filter"][@"venues"],             @"Error in `venues`: %@ != %@",             venues,             dictionaryRepresentation[@"filter"][@"venues"]);
+    XCTAssertEqualObjects(bspOnly,            dictionaryRepresentation[@"filter"][@"bspOnly"],            @"Error in `bspOnly`: %@ != %@",            bspOnly,            dictionaryRepresentation[@"filter"][@"bspOnly"]);
+    XCTAssertEqualObjects(turnInPlayEnabled,  dictionaryRepresentation[@"filter"][@"turnInPlayEnabled"],  @"Error in `turnInPlayEnabled`: %@ != %@",  turnInPlayEnabled,  dictionaryRepresentation[@"filter"][@"turnInPlayEnabled"]);
+    XCTAssertEqualObjects(inPlayOnly,         dictionaryRepresentation[@"filter"][@"inPlayOnly"],         @"Error in `inPlayOnly`: %@ != %@",         inPlayOnly,         dictionaryRepresentation[@"filter"][@"inPlayOnly"]);
+    XCTAssertEqualObjects(marketBettingTypes, dictionaryRepresentation[@"filter"][@"marketBettingTypes"], @"Error in `marketBettingTypes`: %@ != %@", marketBettingTypes, dictionaryRepresentation[@"filter"][@"marketBettingTypes"]);
+    XCTAssertEqualObjects(marketCountries,    dictionaryRepresentation[@"filter"][@"marketCountries"],    @"Error in `marketCountries`: %@ != %@",    marketCountries,    dictionaryRepresentation[@"filter"][@"marketCountries"]);
+    XCTAssertEqualObjects(marketTypeCodes,    dictionaryRepresentation[@"filter"][@"marketTypeCodes"],    @"Error in `marketTypeCodes`: %@ != %@",    marketTypeCodes,    dictionaryRepresentation[@"filter"][@"marketTypeCodes"]);
+    XCTAssertEqualObjects(withOrders,         dictionaryRepresentation[@"filter"][@"withOrders"],         @"Error in `withOrders`: %@ != %@",         withOrders,         dictionaryRepresentation[@"filter"][@"withOrders"]);
     
     __block NSUInteger count = 0;
     [self.marketFilter enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj) {
         count++;
         
-        STAssertEqualObjects(obj, dictionaryRepresentation[@"filter"][key], @"-enumerateKeysAndObjectsUsingBlock is returning wrong data");
+        XCTAssertEqualObjects(obj, dictionaryRepresentation[@"filter"][key], @"-enumerateKeysAndObjectsUsingBlock is returning wrong data");
     }];
 }
 

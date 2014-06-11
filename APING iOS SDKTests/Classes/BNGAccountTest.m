@@ -47,10 +47,10 @@
 
     [BNGAccountFunds getAccountFundsWithCompletionBlock:^(BNGAccountFunds *accountFunds, NSError *connectionError, BNGAPIError *apiError) {
 
-        STAssertTrue([accountFunds.availableToBetBalance isEqual:[NSDecimalNumber decimalNumberWithString:@"3.99"]], @"The available to bet balance should be equal to 3.99");
-        STAssertTrue([accountFunds.exposure isEqual:[NSDecimalNumber decimalNumberWithString:@"-0.05"]], @"The exposure should be equal to -0.05");
-        STAssertTrue([accountFunds.retainedCommission isEqual:[NSDecimalNumber zero]], @"The retained commission should be equal to 0.0");
-        STAssertTrue([accountFunds.exposureLimit isEqual:[NSDecimalNumber decimalNumberWithString:@"-100"]], @"The exposure limit should be equal to -100.0");
+        XCTAssertTrue([accountFunds.availableToBetBalance isEqual:[NSDecimalNumber decimalNumberWithString:@"3.99"]], @"The available to bet balance should be equal to 3.99");
+        XCTAssertTrue([accountFunds.exposure isEqual:[NSDecimalNumber decimalNumberWithString:@"-0.05"]], @"The exposure should be equal to -0.05");
+        XCTAssertTrue([accountFunds.retainedCommission isEqual:[NSDecimalNumber zero]], @"The retained commission should be equal to 0.0");
+        XCTAssertTrue([accountFunds.exposureLimit isEqual:[NSDecimalNumber decimalNumberWithString:@"-100"]], @"The exposure limit should be equal to -100.0");
 
         dispatch_semaphore_signal(semaphore);
         
@@ -72,13 +72,13 @@
     
     [BNGAccountDetails getAccountDetailsWithCompletionBlock:^(BNGAccountDetails *accountDetails, NSError *connectionError, BNGAPIError *apiError) {
 
-        STAssertTrue([accountDetails.currencyCode isEqualToString:@"GBP"], @"The currency code should be 'GBP'");
-        STAssertTrue([accountDetails.firstName isEqualToString:@"Test "], @"The first name should be 'Test '");
-        STAssertTrue([accountDetails.lastName isEqualToString:@"Account"], @"The last name should be 'Account'");
-        STAssertTrue([accountDetails.localeCode isEqualToString:@"en"], @"The locale code should be 'en'");
-        STAssertTrue([accountDetails.region isEqualToString:@"GBR"], @"The region should be 'GBR'");
-        STAssertTrue([accountDetails.discountRate isEqual:[NSDecimalNumber zero]], @"The discount rate should be equal to 0.0");
-        STAssertTrue(accountDetails.pointsBalance == 0, @"The points balance should be equal to 0");
+        XCTAssertTrue([accountDetails.currencyCode isEqualToString:@"GBP"], @"The currency code should be 'GBP'");
+        XCTAssertTrue([accountDetails.firstName isEqualToString:@"Test "], @"The first name should be 'Test '");
+        XCTAssertTrue([accountDetails.lastName isEqualToString:@"Account"], @"The last name should be 'Account'");
+        XCTAssertTrue([accountDetails.localeCode isEqualToString:@"en"], @"The locale code should be 'en'");
+        XCTAssertTrue([accountDetails.region isEqualToString:@"GBR"], @"The region should be 'GBR'");
+        XCTAssertTrue([accountDetails.discountRate isEqual:[NSDecimalNumber zero]], @"The discount rate should be equal to 0.0");
+        XCTAssertTrue(accountDetails.pointsBalance == 0, @"The points balance should be equal to 0");
         
         dispatch_semaphore_signal(semaphore);
 

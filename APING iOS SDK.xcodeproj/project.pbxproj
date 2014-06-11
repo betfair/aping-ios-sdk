@@ -17,7 +17,6 @@
 		40B61E3D17788A2300CFA44A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E3C17788A2300CFA44A /* Foundation.framework */; };
 		40B61E4217788A2400CFA44A /* APING.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40B61E4117788A2400CFA44A /* APING.h */; };
 		40B61E4417788A2400CFA44A /* APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B61E4317788A2400CFA44A /* APING.m */; };
-		40B61E4C17788A2400CFA44A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E4B17788A2400CFA44A /* SenTestingKit.framework */; };
 		40B61E4F17788A2400CFA44A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E3C17788A2300CFA44A /* Foundation.framework */; };
 		40B61E5217788A2400CFA44A /* libAPING iOS SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B61E3917788A2300CFA44A /* libAPING iOS SDK.a */; };
 		40B61E5817788A2400CFA44A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40B61E5617788A2400CFA44A /* InfoPlist.strings */; };
@@ -295,7 +294,6 @@
 		40B61E4117788A2400CFA44A /* APING.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APING.h; sourceTree = "<group>"; };
 		40B61E4317788A2400CFA44A /* APING.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APING.m; sourceTree = "<group>"; };
 		40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APING iOS SDKTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		40B61E4B17788A2400CFA44A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		40B61E4D17788A2400CFA44A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		40B61E5517788A2400CFA44A /* APING iOS SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APING iOS SDKTests-Info.plist"; sourceTree = "<group>"; };
 		40B61E5717788A2400CFA44A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -443,7 +441,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B61E4C17788A2400CFA44A /* SenTestingKit.framework in Frameworks */,
 				40B61E4F17788A2400CFA44A /* Foundation.framework in Frameworks */,
 				40B61E5217788A2400CFA44A /* libAPING iOS SDK.a in Frameworks */,
 			);
@@ -494,7 +491,6 @@
 				71D41C5917E8B523000642EA /* libcommonCrypto.dylib */,
 				71B4828817E76E56002D2932 /* UIKit.framework */,
 				40B61E3C17788A2300CFA44A /* Foundation.framework */,
-				40B61E4B17788A2400CFA44A /* SenTestingKit.framework */,
 				40B61E4D17788A2400CFA44A /* UIKit.framework */,
 			);
 			name = Frameworks;
@@ -741,7 +737,7 @@
 			name = "APING iOS SDKTests";
 			productName = "APING iOS SDKTests";
 			productReference = 40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -750,6 +746,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BNG;
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Betfair Ltd.";
 			};
@@ -1051,12 +1048,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APING iOS SDK/APING iOS SDK-Prefix.pch";
 				INFOPLIST_FILE = "APING iOS SDKTests/APING iOS SDKTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -1066,12 +1063,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APING iOS SDK/APING iOS SDK-Prefix.pch";
 				INFOPLIST_FILE = "APING iOS SDKTests/APING iOS SDKTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
