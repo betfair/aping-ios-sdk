@@ -162,11 +162,11 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [marketId: %@] [marketCount: %ld] [numberOfWinners: %ld] [numberOfRunners: %ld] [numberOfActiveRunners: %ld] [runners: %@]",
+    return [NSString stringWithFormat:@"%@ [marketId: %@] [status: %ld] [numberOfWinners: %ld] [numberOfRunners: %ld] [numberOfActiveRunners: %ld] [runners: %@]",
             [super description],
             self.marketId,
-            self.status,
-            self.numberOfWinners,
+            (long)self.status,
+            (long)self.numberOfWinners,
             (long)self.numberOfRunners,
             (long)self.numberOfActiveRunners,
             self.runners];

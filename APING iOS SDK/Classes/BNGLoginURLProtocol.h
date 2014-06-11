@@ -30,6 +30,39 @@ extern NSString * const BNGLoginURLProtocolDidLoginNotification;
 extern NSString * const BNGLoginURLProtocolErrorKey;
 extern NSString * const BNGLoginURLProtocolHTTPBodyKey;
 
+// See https://api.developer.betfair.com/services/webapps/docs/plugins/viewsource/viewpagesrc.action?pageId=3834915 for details
+struct APINGLoginErrors {
+    __unsafe_unretained NSString *ACCOUNT_ALREADY_LOCKED;
+    __unsafe_unretained NSString *ACCOUNT_NOW_LOCKED;
+    __unsafe_unretained NSString *AGENT_CLIENT_MASTER;
+    __unsafe_unretained NSString *AGENT_CLIENT_MASTER_SUSPENDED;
+    __unsafe_unretained NSString *BETTING_RESTRICTED_LOCATION;
+    __unsafe_unretained NSString *CERT_AUTH_REQUIRED;
+    __unsafe_unretained NSString *CHANGE_PASSWORD_REQUIRED;
+    __unsafe_unretained NSString *CLOSED;
+    __unsafe_unretained NSString *DANISH_AUTHORIZATION_REQUIRED;
+    __unsafe_unretained NSString *DENMARK_MIGRATION_REQUIRED;
+    __unsafe_unretained NSString *DUPLICATE_CARDS;
+    __unsafe_unretained NSString *INVALID_CONNECTIVITY_TO_REGULATOR_DK;
+    __unsafe_unretained NSString *INVALID_CONNECTIVITY_TO_REGULATOR_IT;
+    __unsafe_unretained NSString *INVALID_USERNAME_OR_PASSWORD;
+    __unsafe_unretained NSString *ITALIAN_CONTRACT_ACCEPTANCE_REQUIRED;
+    __unsafe_unretained NSString *KYC_SUSPEND;
+    __unsafe_unretained NSString *NOT_AUTHORIZED_BY_REGULATOR_DK;
+    __unsafe_unretained NSString *NOT_AUTHORIZED_BY_REGULATOR_IT;
+    __unsafe_unretained NSString *PENDING_AUTH;
+    __unsafe_unretained NSString *PERSONAL_MESSAGE_REQUIRED;
+    __unsafe_unretained NSString *SECURITY_QUESTION_WRONG_3X;
+    __unsafe_unretained NSString *SECURITY_RESTRICTED_LOCATION;
+    __unsafe_unretained NSString *SELF_EXCLUDED;
+    __unsafe_unretained NSString *SPAIN_MIGRATION_REQUIRED;
+    __unsafe_unretained NSString *SPANISH_TERMS_ACCEPTANCE_REQUIRED;
+    __unsafe_unretained NSString *SUSPENDED;
+    __unsafe_unretained NSString *TELBET_TERMS_CONDITIONS_NA;
+    __unsafe_unretained NSString *TRADING_MASTER;
+    __unsafe_unretained NSString *TRADING_MASTER_SUSPENDED;
+};
+
 typedef enum BNGLoginErrorCode : NSInteger {
     BNGLoginUnknownErrorCode = NSIntegerMin,
 } BNGLoginErrorCode;

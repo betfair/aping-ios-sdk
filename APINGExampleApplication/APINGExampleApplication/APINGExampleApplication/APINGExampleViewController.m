@@ -37,7 +37,7 @@
 #import "APINGExampleAppDelegate.h"
 #import "NSString+RandomCustomerReferenceId.h"
 
-@interface APINGExampleViewController()<UITableViewDataSource, UITableViewDelegate>
+@interface APINGExampleViewController() <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) BNGAccountDetails *accountDetails;
 
@@ -86,42 +86,13 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        
-        NSLog(@"initWithCoder");
-    }
-    return self;
-}
+#pragma mark Lifecycle Methods
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
     self.title = NSLocalizedString(@"Accounts View Controller", @"");
-    NSLog(@"viewWillAppear");
 }
-
-- (void)viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    NSLog(@"viewDidAppear");
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    
-    [super viewWillDisappear:animated];
-    NSLog(@"viewWillDisappear");
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    
-    [super viewDidDisappear:animated];
-    NSLog(@"viewDidDisappear");
-}
-
-#pragma mark Lifecycle Methods
 
 - (void)viewDidLoad
 {

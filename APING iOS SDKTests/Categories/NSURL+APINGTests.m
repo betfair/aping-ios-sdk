@@ -32,24 +32,6 @@
 
 @implementation NSURL_APINGTests
 
-- (void)testConstantsAreCorrect
-{
-    XCTAssertEqualObjects(BNGBettingOperation.cancelOrders, @"BNGBettingOperation.cancelOrders == %@ (should be %@), BNGBettingOperationCancelOrders", @"cancelOrders");
-    XCTAssertEqualObjects(BNGBettingOperation.listCompetitions, @"BNGBettingOperation.listCompetitions == %@ (should be %@), BNGBettingOperationListCompetitions", @"listCompetitions");
-    XCTAssertEqualObjects(BNGBettingOperation.listCountries, @"BNGBettingOperation.listCountries == %@ (should be %@), BNGBettingOperationListCountries", @"listCountries");
-    XCTAssertEqualObjects(BNGBettingOperation.listCurrentOrders, @"BNGBettingOperation.listCurrentOrders == %@ (should be %@), BNGBettingOperationListCurrentOrders", @"listCurrentOrders");
-    XCTAssertEqualObjects(BNGBettingOperation.listEvents, @"BNGBettingOperation.listEvents == %@ (should be %@), BNGBettingOperationListEvents", @"listEvents");
-    XCTAssertEqualObjects(BNGBettingOperation.listEventTypes, @"BNGBettingOperation.listEventTypes == %@ (should be %@), BNGBettingOperationListEventTypes", @"listEventTypes");
-    XCTAssertEqualObjects(BNGBettingOperation.listMarketBook, @"BNGBettingOperation.listMarketBook == %@ (should be %@), BNGBettingOperationListMarketBook", @"listMarketBook");
-    XCTAssertEqualObjects(BNGBettingOperation.listMarketCatalogue, @"BNGBettingOperation.listMarketCatalogue == %@ (should be %@), BNGBettingOperationListMarketCatalogue", @"listMarketCatalogue");
-    XCTAssertEqualObjects(BNGBettingOperation.listMarketTypes, @"BNGBettingOperation.listMarketTypes == %@ (should be %@), BNGBettingOperationListMarketTypes", @"listMarketTypes");
-    XCTAssertEqualObjects(BNGBettingOperation.listTimeRanges, @"BNGBettingOperation.listTimeRanges == %@ (should be %@), BNGBettingOperationListTimeRanges", @"listTimeRanges");
-    XCTAssertEqualObjects(BNGBettingOperation.listVenues, @"BNGBettingOperation.listVenues == %@ (should be %@), BNGBettingOperationListVenues", @"listVenues");
-    XCTAssertEqualObjects(BNGBettingOperation.placeOrders, @"BNGBettingOperation.placeOrders == %@ (should be %@), BNGBettingOperationPlaceOrders", @"placeOrders");
-    XCTAssertEqualObjects(BNGBettingOperation.replaceOrders, @"BNGBettingOperation.replaceOrders == %@ (should be %@), BNGBettingOperationReplaceOrders", @"replaceOrders");
-    XCTAssertEqualObjects(BNGBettingOperation.updateOrders, @"BNGBettingOperation.updateOrders == %@ (should be %@), BNGBettingOperationUpdateOrders", @"updateOrders");
-}
-
 - (void)testURLMatchesSuffix
 {
     NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];

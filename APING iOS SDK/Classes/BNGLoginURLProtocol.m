@@ -35,6 +35,38 @@ NSString * const BNGLoginURLProtocolDidLoginNotification    = @"BNGLoginURLProto
 NSString * const BNGLoginURLProtocolErrorKey                = @"BNGLoginURLProtocolErrorKey";
 NSString * const BNGLoginURLProtocolHTTPBodyKey             = @"BNGLoginURLProtocolHTTPBodyKey";
 
+static const struct APINGLoginErrors APINGLoginErrors = {
+    .ACCOUNT_ALREADY_LOCKED = @"ACCOUNT_ALREADY_LOCKED",
+    .ACCOUNT_NOW_LOCKED = @"ACCOUNT_NOW_LOCKED",
+    .AGENT_CLIENT_MASTER = @"AGENT_CLIENT_MASTER",
+    .AGENT_CLIENT_MASTER_SUSPENDED = @"AGENT_CLIENT_MASTER_SUSPENDED",
+    .BETTING_RESTRICTED_LOCATION = @"BETTING_RESTRICTED_LOCATION",
+    .CERT_AUTH_REQUIRED = @"CERT_AUTH_REQUIRED",
+    .CHANGE_PASSWORD_REQUIRED = @"CHANGE_PASSWORD_REQUIRED",
+    .CLOSED = @"CLOSED",
+    .DANISH_AUTHORIZATION_REQUIRED = @"DANISH_AUTHORIZATION_REQUIRED",
+    .DENMARK_MIGRATION_REQUIRED = @"DENMARK_MIGRATION_REQUIRED",
+    .DUPLICATE_CARDS = @"DUPLICATE_CARDS",
+    .INVALID_CONNECTIVITY_TO_REGULATOR_DK = @"INVALID_CONNECTIVITY_TO_REGULATOR_DK",
+    .INVALID_CONNECTIVITY_TO_REGULATOR_IT = @"INVALID_CONNECTIVITY_TO_REGULATOR_IT",
+    .INVALID_USERNAME_OR_PASSWORD = @"INVALID_USERNAME_OR_PASSWORD",
+    .ITALIAN_CONTRACT_ACCEPTANCE_REQUIRED = @"ITALIAN_CONTRACT_ACCEPTANCE_REQUIRED",
+    .KYC_SUSPEND = @"KYC_SUSPEND",
+    .NOT_AUTHORIZED_BY_REGULATOR_DK = @"NOT_AUTHORIZED_BY_REGULATOR_DK",
+    .NOT_AUTHORIZED_BY_REGULATOR_IT = @"NOT_AUTHORIZED_BY_REGULATOR_IT",
+    .PENDING_AUTH = @"PENDING_AUTH",
+    .PERSONAL_MESSAGE_REQUIRED = @"PERSONAL_MESSAGE_REQUIRED",
+    .SECURITY_QUESTION_WRONG_3X = @"SECURITY_QUESTION_WRONG_3X",
+    .SECURITY_RESTRICTED_LOCATION = @"SECURITY_RESTRICTED_LOCATION",
+    .SELF_EXCLUDED = @"SELF_EXCLUDED",
+    .SPAIN_MIGRATION_REQUIRED = @"SPAIN_MIGRATION_REQUIRED",
+    .SPANISH_TERMS_ACCEPTANCE_REQUIRED = @"SPANISH_TERMS_ACCEPTANCE_REQUIRED",
+    .SUSPENDED = @"SUSPENDED",
+    .TELBET_TERMS_CONDITIONS_NA = @"TELBET_TERMS_CONDITIONS_NA",
+    .TRADING_MASTER = @"TRADING_MASTER",
+    .TRADING_MASTER_SUSPENDED = @"TRADING_MASTER_SUSPENDED",
+};
+
 static NSString *BFLoginURLScheme;
 
 @implementation BNGLoginURLProtocol
@@ -67,14 +99,45 @@ static NSString *BFLoginURLScheme;
         
     } else if ([request.URL.absoluteString hasPrefix:[NSString stringWithFormat:@"%@/view/login", BNGBaseLoginString]]) {
         
-        return (
-                [request.httpBodyDictionary[@"errorCode"] isEqualToString:@"INVALID_USERNAME_OR_PASSWORD"] ||
-                [request.httpQueryParams[@"errorCode"]    isEqualToString:@"INVALID_USERNAME_OR_PASSWORD"] ||
-                [request.httpBodyDictionary[@"errorCode"] isEqualToString:@"PIN_DELETED"]                  ||
-                [request.httpQueryParams[@"errorCode"]    isEqualToString:@"PIN_DELETED"]                  ||
-                [request.httpBodyDictionary[@"errorCode"] isEqualToString:@"FORBIDDEN"]                    ||
-                [request.httpQueryParams[@"errorCode"]    isEqualToString:@"FORBIDDEN"]
-                );
+        static NSDictionary *errorCodes;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+
+            errorCodes = @{APINGLoginErrors.ACCOUNT_ALREADY_LOCKED: @YES,
+                           APINGLoginErrors.ACCOUNT_NOW_LOCKED: @YES,
+                           APINGLoginErrors.AGENT_CLIENT_MASTER: @YES,
+                           APINGLoginErrors.AGENT_CLIENT_MASTER_SUSPENDED: @YES,
+                           APINGLoginErrors.BETTING_RESTRICTED_LOCATION: @YES,
+                           APINGLoginErrors.CERT_AUTH_REQUIRED: @YES,
+                           APINGLoginErrors.CHANGE_PASSWORD_REQUIRED: @YES,
+                           APINGLoginErrors.CLOSED: @YES,
+                           APINGLoginErrors.DANISH_AUTHORIZATION_REQUIRED: @YES,
+                           APINGLoginErrors.DENMARK_MIGRATION_REQUIRED: @YES,
+                           APINGLoginErrors.DUPLICATE_CARDS: @YES,
+                           APINGLoginErrors.INVALID_CONNECTIVITY_TO_REGULATOR_DK: @YES,
+                           APINGLoginErrors.INVALID_CONNECTIVITY_TO_REGULATOR_IT: @YES,
+                           APINGLoginErrors.INVALID_USERNAME_OR_PASSWORD: @YES,
+                           APINGLoginErrors.ITALIAN_CONTRACT_ACCEPTANCE_REQUIRED: @YES,
+                           APINGLoginErrors.KYC_SUSPEND: @YES,
+                           APINGLoginErrors.NOT_AUTHORIZED_BY_REGULATOR_DK: @YES,
+                           APINGLoginErrors.NOT_AUTHORIZED_BY_REGULATOR_IT: @YES,
+                           APINGLoginErrors.PENDING_AUTH: @YES,
+                           APINGLoginErrors.PERSONAL_MESSAGE_REQUIRED: @YES,
+                           APINGLoginErrors.SECURITY_QUESTION_WRONG_3X: @YES,
+                           APINGLoginErrors.SECURITY_RESTRICTED_LOCATION: @YES,
+                           APINGLoginErrors.SELF_EXCLUDED: @YES,
+                           APINGLoginErrors.SPAIN_MIGRATION_REQUIRED: @YES,
+                           APINGLoginErrors.SPANISH_TERMS_ACCEPTANCE_REQUIRED: @YES,
+                           APINGLoginErrors.SUSPENDED: @YES,
+                           APINGLoginErrors.TELBET_TERMS_CONDITIONS_NA: @YES,
+                           APINGLoginErrors.TRADING_MASTER: @YES,
+                           APINGLoginErrors.TRADING_MASTER_SUSPENDED: @YES,};
+        });
+        
+        NSString *httpBodyParameter = request.httpBodyDictionary[@"errorCode"] ? request.httpBodyDictionary[@"errorCode"] : @"";
+        NSString *httpQueryParameter = request.httpQueryParams[@"errorCode"] ? request.httpQueryParams[@"errorCode"] : @"";
+        
+        return (errorCodes[httpBodyParameter] || errorCodes[httpQueryParameter]);
     } else {
         return NO;
     }

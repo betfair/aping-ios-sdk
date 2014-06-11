@@ -293,7 +293,7 @@
 		40B61E4017788A2300CFA44A /* APING iOS SDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "APING iOS SDK-Prefix.pch"; sourceTree = "<group>"; };
 		40B61E4117788A2400CFA44A /* APING.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APING.h; sourceTree = "<group>"; };
 		40B61E4317788A2400CFA44A /* APING.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APING.m; sourceTree = "<group>"; };
-		40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APING iOS SDKTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40B61E4A17788A2400CFA44A /* APING iOS SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "APING iOS SDKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B61E4D17788A2400CFA44A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		40B61E5517788A2400CFA44A /* APING iOS SDKTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "APING iOS SDKTests-Info.plist"; sourceTree = "<group>"; };
 		40B61E5717788A2400CFA44A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -480,7 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				40B61E3917788A2300CFA44A /* libAPING iOS SDK.a */,
-				40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */,
+				40B61E4A17788A2400CFA44A /* APING iOS SDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -736,7 +736,7 @@
 			);
 			name = "APING iOS SDKTests";
 			productName = "APING iOS SDKTests";
-			productReference = 40B61E4A17788A2400CFA44A /* APING iOS SDKTests.octest */;
+			productReference = 40B61E4A17788A2400CFA44A /* APING iOS SDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
