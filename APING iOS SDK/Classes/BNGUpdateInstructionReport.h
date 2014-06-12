@@ -35,6 +35,6 @@
  */
 @interface BNGUpdateInstructionReport : BNGInstructionReport
 
-@property (nonatomic, strong) BNGUpdateInstruction *updateInstruction;
+@property (nonatomic) BNGUpdateInstruction *updateInstruction;
 
 @end

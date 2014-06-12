@@ -32,8 +32,8 @@
 
 @interface APINGExampleAccountDetailViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) BNGAccountDetails *accountDetails;
+@property (nonatomic) BNGAccountDetails *accountDetails;
 
 @end

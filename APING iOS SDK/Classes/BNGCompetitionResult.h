@@ -30,7 +30,7 @@
 
 @interface BNGCompetitionResult : NSObject
 
-@property (nonatomic, strong) BNGCompetition *competition;
+@property (nonatomic) BNGCompetition *competition;
 @property (nonatomic) NSInteger marketCount;
 @property (nonatomic, copy) NSString *competitionRegion;
 

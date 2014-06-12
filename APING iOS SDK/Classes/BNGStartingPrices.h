@@ -35,20 +35,20 @@
  * What the starting price would be if the market was reconciled now taking into account
  * the SP bets as well as unmatched exchange bets on the same selection in the exchange.
  */
-@property (nonatomic, strong) NSDecimalNumber *nearPrice;
+@property (nonatomic) NSDecimalNumber *nearPrice;
 
 /**
  * What the starting price would be if the market was reconciled now taking into account
  * only the currently place SP bets. The Far Price is not as complicated but not as
  * accurate and only accounts for money on the exchange at SP.
  */
-@property (nonatomic, strong) NSDecimalNumber *farPrice;
+@property (nonatomic) NSDecimalNumber *farPrice;
 @property (nonatomic, copy) NSArray *backStakeTaken;
 @property (nonatomic, copy) NSArray *layLiabilityTaken;
 
 /**
  * The final BSP price for this runner. Only available for a BSP market that has been reconciled.
  */
-@property (nonatomic, strong) NSDecimalNumber *actualSP;
+@property (nonatomic) NSDecimalNumber *actualSP;
 
 @end

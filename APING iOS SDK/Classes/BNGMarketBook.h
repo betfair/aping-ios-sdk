@@ -103,17 +103,17 @@ typedef NS_ENUM(NSInteger, BNGMatchProjection) {
  * many of the initial `BNGRunner`s are still marked as active in the market.
  */
 @property (nonatomic) NSInteger numberOfActiveRunners;
-@property (nonatomic, strong) NSDate *lastMatchTime;
+@property (nonatomic) NSDate *lastMatchTime;
 
 /**
  * How much money has been matched on this `BNGMarketBook`.
  */
-@property (nonatomic, strong) NSDecimalNumber *totalMatched;
+@property (nonatomic) NSDecimalNumber *totalMatched;
 
 /**
  * How much money is available on this `BNGMarketBook`.
  */
-@property (nonatomic, strong) NSDecimalNumber *totalAvailable;
+@property (nonatomic) NSDecimalNumber *totalAvailable;
 @property (nonatomic, getter=isComplete) BOOL complete;
 
 /**

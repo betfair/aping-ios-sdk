@@ -33,7 +33,7 @@
  */
 @interface BNGMarketCatalogueFilter : BNGMarketFilter <BNGDictionaryRepresentation>
 
-@property (nonatomic, strong) NSNumber *maxResults;
+@property (nonatomic) NSNumber *maxResults;
 @property (nonatomic, copy) NSArray *marketProjection;
 
 @end

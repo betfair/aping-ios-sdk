@@ -36,12 +36,12 @@
 /**
  * Defines the start of the time period.
  */
-@property (nonatomic, strong) NSDate *from;
+@property (nonatomic) NSDate *from;
 
 /**
  * Defines the end of the time period.
  */
-@property (nonatomic, strong) NSDate *to;
+@property (nonatomic) NSDate *to;
 
 /**
  * Initaliser for the class taking 'to' and 'from' parameters.

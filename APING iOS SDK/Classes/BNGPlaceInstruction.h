@@ -48,7 +48,7 @@
 /**
  * The handicap applied to the selection, if on an asian-style market.
  */
-@property (nonatomic, strong) NSDecimalNumber *handicap;
+@property (nonatomic) NSDecimalNumber *handicap;
 
 /**
  * Dictates whether this `BNGPlaceInstruction` will be a back or lay bet.

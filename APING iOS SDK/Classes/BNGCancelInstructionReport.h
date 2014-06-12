@@ -32,8 +32,8 @@
 
 @interface BNGCancelInstructionReport : BNGInstructionReport
 
-@property (nonatomic, strong) NSDecimalNumber *sizeCancelled;
-@property (nonatomic, strong) NSDate *cancelledDate;
-@property (nonatomic, strong) BNGCancelInstruction *cancelInstruction;
+@property (nonatomic) NSDecimalNumber *sizeCancelled;
+@property (nonatomic) NSDate *cancelledDate;
+@property (nonatomic) BNGCancelInstruction *cancelInstruction;
 
 @end

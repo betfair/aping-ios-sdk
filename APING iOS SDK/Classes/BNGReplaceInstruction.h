@@ -41,7 +41,7 @@
 /**
  * The new price at which the client wishes to update the bet.
  */
-@property (nonatomic, strong) NSDecimalNumber *price;
+@property (nonatomic) NSDecimalNumber *price;
 
 /**
  * Simple initialiser.

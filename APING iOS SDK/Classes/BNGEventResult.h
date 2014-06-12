@@ -36,7 +36,7 @@
 /**
  * The `BNGEvent` associated with this result.
  */
-@property (nonatomic, strong) BNGEvent *event;
+@property (nonatomic) BNGEvent *event;
 
 /**
  * The number of markets associated with this event.

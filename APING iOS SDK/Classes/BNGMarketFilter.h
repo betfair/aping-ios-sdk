@@ -46,18 +46,18 @@ static const NSUInteger BNGMarketFilterNumberOfProperties = 15;
 @property (nonatomic, copy) NSArray *venues;
 
 /** BOOL */
-@property (nonatomic, strong) NSNumber *bspOnly;
+@property (nonatomic) NSNumber *bspOnly;
 
 /** BOOL */
-@property (nonatomic, strong) NSNumber *turnInPlayEnabled;
+@property (nonatomic) NSNumber *turnInPlayEnabled;
 
 /** BOOL */
-@property (nonatomic, strong) NSNumber *inPlayOnly;
+@property (nonatomic) NSNumber *inPlayOnly;
 
 @property (nonatomic, copy) NSArray *marketBettingTypes;
 @property (nonatomic, copy) NSArray *marketCountries;
 @property (nonatomic, copy) NSArray *marketTypeCodes;
-@property (nonatomic, strong) BNGTimeRange *marketStartTime;
+@property (nonatomic) BNGTimeRange *marketStartTime;
 @property (nonatomic, copy) NSArray *withOrders;
 
 - (void)enumerateKeysAndObjectsUsingBlock:(void (^)(NSString *key, id obj))block;

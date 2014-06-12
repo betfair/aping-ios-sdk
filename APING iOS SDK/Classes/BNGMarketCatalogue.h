@@ -57,22 +57,22 @@ typedef NS_ENUM(NSInteger, BNGMarketProjection) {
  * `BNGCompetition` associated with this `BNGMarketCatalogue`. Not every `BNGMarketCatalogue`
  * will have this property set.
  */
-@property (nonatomic, strong) BNGCompetition *competition;
+@property (nonatomic) BNGCompetition *competition;
 
 /**
  * Ancillary information for this `BNGMarketCatalogue`.
  */
-@property (nonatomic, strong) BNGMarketCatalogueDescription *description;
+@property (nonatomic) BNGMarketCatalogueDescription *description;
 
 /**
  * `BNGEvent` associated with this `BNGMarketCatalogue`.
  */
-@property (nonatomic, strong) BNGEvent *event;
+@property (nonatomic) BNGEvent *event;
 
 /**
  * Type of event that this `BNGMarketCatalogue` is associated with.
  */
-@property (nonatomic, strong) BNGEventType *eventType;
+@property (nonatomic) BNGEventType *eventType;
 
 /**
  * Unique identifier for this market.
@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger, BNGMarketProjection) {
 /**
  * When does this `BNGMarketCatalogue` start officially.
  */
-@property (nonatomic, strong) NSDate *marketStartTime;
+@property (nonatomic) NSDate *marketStartTime;
 
 /**
  * Collection of `BNGRunner`s associated with this market.

@@ -40,7 +40,7 @@
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSTimeZone *timezone;
 @property (nonatomic, copy) NSString *venue;
-@property (nonatomic, strong) NSDate *openDate;
+@property (nonatomic) NSDate *openDate;
 
 /**
  * Given a BNGMarketFilter, this method finds a list of BNGEvents.

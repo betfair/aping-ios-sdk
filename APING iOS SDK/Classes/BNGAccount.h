@@ -39,12 +39,12 @@
 /**
  * Contains details on a user's wallet details.
  */
-@property (nonatomic, strong) BNGAccountFunds *accountFunds;
+@property (nonatomic) BNGAccountFunds *accountFunds;
 
 /**
  * Contains user specific information such as firstName, lastName, currencyCode etc.
  */
-@property (nonatomic, strong) BNGAccountDetails *accountDetails;
+@property (nonatomic) BNGAccountDetails *accountDetails;
 
 /**
  * Authenticates a user. ALL parameters are required.

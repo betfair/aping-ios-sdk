@@ -32,6 +32,6 @@
 
 @interface BNGMarketFilterTests : XCTestCase
 
-@property (nonatomic, strong) BNGMarketFilter *marketFilter;
+@property (nonatomic) BNGMarketFilter *marketFilter;
 
 @end

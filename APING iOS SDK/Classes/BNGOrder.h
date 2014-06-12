@@ -125,27 +125,27 @@ typedef NS_ENUM(NSInteger, BNGOrderSortDir) {
  * Optional property which identifies the regulartor associated with this `BNGOrder`.
  */
 @property (nonatomic, copy) NSString *regulatorCode;
-@property (nonatomic, strong) NSDecimalNumber *bspLiability;
-@property (nonatomic, strong) NSDecimalNumber *handicap;
+@property (nonatomic) NSDecimalNumber *bspLiability;
+@property (nonatomic) NSDecimalNumber *handicap;
 
 /**
  * Indicates when this `BNGOrder` was placed.
  */
-@property (nonatomic, strong) NSDate *placedDate;
-@property (nonatomic, strong) NSDecimalNumber *avgPriceMatched;
+@property (nonatomic) NSDate *placedDate;
+@property (nonatomic) NSDecimalNumber *avgPriceMatched;
 
 /**
  * How much of this `BNGOrder` was matched.
  */
-@property (nonatomic, strong) NSDecimalNumber *sizeMatched;
+@property (nonatomic) NSDecimalNumber *sizeMatched;
 
 /**
  * How much of this `BNGOrder` has been left unmatched.
  */
-@property (nonatomic, strong) NSDecimalNumber *sizeRemaining;
-@property (nonatomic, strong) NSDecimalNumber *sizeLapsed;
-@property (nonatomic, strong) NSDecimalNumber *sizeCancelled;
-@property (nonatomic, strong) NSDecimalNumber *sizeVoided;
+@property (nonatomic) NSDecimalNumber *sizeRemaining;
+@property (nonatomic) NSDecimalNumber *sizeLapsed;
+@property (nonatomic) NSDecimalNumber *sizeCancelled;
+@property (nonatomic) NSDecimalNumber *sizeVoided;
 
 #pragma mark API Calls
 

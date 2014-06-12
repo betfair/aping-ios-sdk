@@ -63,7 +63,7 @@ typedef NS_ENUM(NSInteger, BNGRollupModel) {
 /**
  * Not supported as yet.
  */
-@property (nonatomic, strong) NSDecimalNumber *rollupLiabilityThreshold;
+@property (nonatomic) NSDecimalNumber *rollupLiabilityThreshold;
 
 /**
  * Not supported as yet.

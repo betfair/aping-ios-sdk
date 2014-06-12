@@ -33,8 +33,8 @@
 @property (nonatomic, copy) NSString *betId;
 @property (nonatomic, copy) NSString *matchId;
 @property (nonatomic) BNGSide side;
-@property (nonatomic, strong) NSDecimalNumber *price;
-@property (nonatomic, strong) NSDecimalNumber *size;
-@property (nonatomic, strong) NSDate *matchDate;
+@property (nonatomic) NSDecimalNumber *price;
+@property (nonatomic) NSDecimalNumber *size;
+@property (nonatomic) NSDate *matchDate;
 
 @end

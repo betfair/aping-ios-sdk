@@ -38,7 +38,7 @@
 /**
  * The amount of money the client wishes to place on the market.
  */
-@property (nonatomic, strong) NSDecimalNumber *liability;
+@property (nonatomic) NSDecimalNumber *liability;
 
 - (instancetype)initWithLiability:(NSDecimalNumber *)liability;
 

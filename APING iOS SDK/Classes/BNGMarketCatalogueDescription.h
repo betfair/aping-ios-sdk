@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, BNGMarketType) {
 @property (nonatomic, copy) NSString *clarifications;
 @property (nonatomic) BOOL discountAllowed;
 @property (nonatomic) NSInteger marketBaseRate;
-@property (nonatomic, strong) NSDate *marketTime;
+@property (nonatomic) NSDate *marketTime;
 @property (nonatomic) BNGMarketType marketType;
 @property (nonatomic) BOOL persistenceEnabled;
 
@@ -118,8 +118,8 @@ typedef NS_ENUM(NSInteger, BNGMarketType) {
 @property (nonatomic) BOOL rulesHasDate;
 
 @property (nonatomic, copy) NSString *regulator;
-@property (nonatomic, strong) NSDate *settleTime;
-@property (nonatomic, strong) NSDate *suspendTime;
+@property (nonatomic) NSDate *settleTime;
+@property (nonatomic) NSDate *suspendTime;
 @property (nonatomic) BOOL turnInPlayEnabled;
 @property (nonatomic, copy) NSString *wallet;
 

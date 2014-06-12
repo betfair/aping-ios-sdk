@@ -36,7 +36,7 @@
  */
 @interface BNGReplaceInstructionReport : BNGInstructionReport
 
-@property (nonatomic, strong) BNGCancelInstructionReport *cancelInstructionReport;
-@property (nonatomic, strong) BNGPlaceInstructionReport *placeInstructionReport;
+@property (nonatomic) BNGCancelInstructionReport *cancelInstructionReport;
+@property (nonatomic) BNGPlaceInstructionReport *placeInstructionReport;
 
 @end

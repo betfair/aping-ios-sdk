@@ -33,7 +33,7 @@
  */
 @interface BNGEventTypeResult : NSObject
 
-@property (nonatomic, strong) BNGEventType *eventType;
+@property (nonatomic) BNGEventType *eventType;
 
 /**
  * The number of markets associated with this `BNGEventType`.

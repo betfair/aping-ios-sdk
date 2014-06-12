@@ -38,8 +38,8 @@
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *localeCode;
 @property (nonatomic, copy) NSString *region;
-@property (nonatomic, strong) NSTimeZone *timezone;
-@property (nonatomic, strong) NSDecimalNumber *discountRate;
+@property (nonatomic) NSTimeZone *timezone;
+@property (nonatomic) NSDecimalNumber *discountRate;
 @property (nonatomic) NSInteger pointsBalance;
 
 /**

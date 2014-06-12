@@ -45,7 +45,6 @@ typedef NS_ENUM(NSInteger, BNGAPIErrorCode) {
     BNGAPIErrorCodeTooManyRequests           =  8,
     BNGAPIErrorCodeServiceBusy               =  9,
     BNGAPIErrorCodeTimeoutError              = 10,
-    
 };
 
 /**

@@ -32,8 +32,8 @@
  */
 @interface BNGPriceSize : NSObject
 
-@property (nonatomic, strong) NSDecimalNumber *price;
-@property (nonatomic, strong) NSDecimalNumber *size;
+@property (nonatomic) NSDecimalNumber *price;
+@property (nonatomic) NSDecimalNumber *size;
 
 /**
  * Initaliser for the class taking 'price' and 'size' parameters.

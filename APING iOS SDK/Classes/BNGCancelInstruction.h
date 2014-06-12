@@ -44,7 +44,7 @@
  * Dictates how much of the bet to cancel. If this parameter is excluded from the
  * `BNGCancelInstruction`, it is assumed that the client wants to cancel ALL of the bet.
  */
-@property (nonatomic, strong) NSDecimalNumber *sizeReduction;
+@property (nonatomic) NSDecimalNumber *sizeReduction;
 
 /**
  * Simple initialiser.

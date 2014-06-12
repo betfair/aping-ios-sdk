@@ -93,28 +93,28 @@ struct BNGRunnerMetadata {
  * order in which a specific runner should appear in a market.
  */
 @property (nonatomic) NSInteger sortPriority;
-@property (nonatomic, strong) NSDecimalNumber *handicap;
+@property (nonatomic) NSDecimalNumber *handicap;
 
 /**
  * See the `BNGRunnerStatus` enum for details on this property.
  */
 @property (nonatomic) BNGRunnerStatus status;
-@property (nonatomic, strong) NSDecimalNumber *adjustmentFactor;
+@property (nonatomic) NSDecimalNumber *adjustmentFactor;
 
 /**
  * Defines the last price at which this `BNGRunner` was matched.
  */
-@property (nonatomic, strong) NSDecimalNumber *lastPriceTraded;
+@property (nonatomic) NSDecimalNumber *lastPriceTraded;
 
 /**
  * Defines the amount matched on this particular `BNGRunner`.
  */
-@property (nonatomic, strong) NSDecimalNumber *totalMatched;
+@property (nonatomic) NSDecimalNumber *totalMatched;
 
 /**
  * Only set should the `BNGRunner` be removed from the market.
  */
-@property (nonatomic, strong) NSDate *removalDate;
+@property (nonatomic) NSDate *removalDate;
 
 /**
  * Auxiliary information for this `BNGRunner`. Some examples of metadata include the `BNGRunner`'s
@@ -132,7 +132,7 @@ struct BNGRunnerMetadata {
 /**
  * The exchange prices for this `BNGRunner`
  */
-@property (nonatomic, strong) BNGExchangePrices *exchangePrices;
+@property (nonatomic) BNGExchangePrices *exchangePrices;
 
 /**
  * The starting price prices for this `BNGRunner`

@@ -33,10 +33,10 @@
  */
 @interface BNGAccountFunds : NSObject
 
-@property (nonatomic, strong) NSDecimalNumber *availableToBetBalance;
-@property (nonatomic, strong) NSDecimalNumber *exposure;
-@property (nonatomic, strong) NSDecimalNumber *retainedCommission;
-@property (nonatomic, strong) NSDecimalNumber *exposureLimit;
+@property (nonatomic) NSDecimalNumber *availableToBetBalance;
+@property (nonatomic) NSDecimalNumber *exposure;
+@property (nonatomic) NSDecimalNumber *retainedCommission;
+@property (nonatomic) NSDecimalNumber *exposureLimit;
 
 /**
  * Retrieves the account funds for the currently authenticated user.

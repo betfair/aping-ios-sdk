@@ -46,16 +46,16 @@
 /**
  * When the bet was placed.
  */
-@property (nonatomic, strong) NSDate *placedDate;
+@property (nonatomic) NSDate *placedDate;
 
 /**
  * Average price at which the bet was placed.
  */
-@property (nonatomic, strong) NSDecimalNumber *averagePriceMatched;
+@property (nonatomic) NSDecimalNumber *averagePriceMatched;
 
 /**
  * How much of the bet was matched.
  */
-@property (nonatomic, strong) NSDecimalNumber *sizeMatched;
+@property (nonatomic) NSDecimalNumber *sizeMatched;
 
 @end

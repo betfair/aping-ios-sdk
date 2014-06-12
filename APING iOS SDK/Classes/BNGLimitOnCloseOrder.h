@@ -39,12 +39,12 @@
 /**
  * The minimum price at which the order should be matched.
  */
-@property (nonatomic, strong) NSDecimalNumber *price;
+@property (nonatomic) NSDecimalNumber *price;
 
 /**
  * The liability which the client wishes to place on the market.
  */
-@property (nonatomic, strong) NSDecimalNumber *liability;
+@property (nonatomic) NSDecimalNumber *liability;
 
 /**
  * Initaliser for the class taking 'price' and 'liability' parameters.

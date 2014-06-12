@@ -39,7 +39,7 @@
 
 @interface APINGExampleViewController() <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) BNGAccountDetails *accountDetails;
+@property (nonatomic) BNGAccountDetails *accountDetails;
 
 @end
 
