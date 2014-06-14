@@ -488,9 +488,9 @@
 		40B61E3B17788A2300CFA44A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				40B61E3C17788A2300CFA44A /* Foundation.framework */,
 				71D41C5917E8B523000642EA /* libcommonCrypto.dylib */,
 				71B4828817E76E56002D2932 /* UIKit.framework */,
-				40B61E3C17788A2300CFA44A /* Foundation.framework */,
 				40B61E4D17788A2400CFA44A /* UIKit.framework */,
 			);
 			name = Frameworks;
