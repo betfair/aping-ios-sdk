@@ -56,26 +56,26 @@
 
 + (NSString *)stringFromPriceData:(BNGPriceData)priceData
 {
-    NSString *data;
+    NSString *data = @"UNKNOWN";
     switch (priceData) {
-        case BNGPriceDataSPAvailable:
+        case BNGPriceDataSPAvailable: {
             data = @"SP_AVAILABLE";
-            break;
-        case BNGPriceDataSPTraded:
+        } break;
+        case BNGPriceDataSPTraded: {
             data = @"SP_TRADED";
-            break;
-        case BNGPriceDataExBestOffers:
+        } break;
+        case BNGPriceDataExBestOffers: {
             data = @"EX_BEST_OFFERS";
-            break;
-        case BNGPriceDataExAllOffers:
+        } break;
+        case BNGPriceDataExAllOffers: {
             data = @"EX_ALL_OFFERS";
-            break;
-        case BNGPriceDataExTraded:
+        } break;
+        case BNGPriceDataExTraded: {
             data = @"EX_TRADED";
-            break;
-        case BNGPriceDataUnknown:
+        } break;
+        case BNGPriceDataUnknown: {
             data = @"UNKNOWN";
-            break;
+        } break;
     }
     return data;
 }

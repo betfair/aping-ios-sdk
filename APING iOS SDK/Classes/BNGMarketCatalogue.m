@@ -74,29 +74,29 @@
 
 + (NSString *)marketProjection:(BNGMarketProjection)projection
 {
-    NSString *marketProjection = @"";
+    NSString *marketProjection = @"UNKNOWN";
     switch (projection) {
-        case BNGMarketProjectionCompetition:
+        case BNGMarketProjectionCompetition: {
             marketProjection = @"COMPETITION";
-            break;
-        case BNGMarketProjectionEvent:
+        } break;
+        case BNGMarketProjectionEvent: {
             marketProjection = @"EVENT";
-            break;
-        case BNGMarketProjectionEventType:
+        } break;
+        case BNGMarketProjectionEventType: {
             marketProjection = @"EVENT_TYPE";
-            break;
-        case BNGMarketProjectionMarketDescription:
+        } break;
+        case BNGMarketProjectionMarketDescription: {
             marketProjection = @"MARKET_DESCRIPTION";
-            break;
-        case BNGMarketProjectionRunnerDescription:
+        } break;
+        case BNGMarketProjectionRunnerDescription: {
             marketProjection = @"RUNNER_DESCRIPTION";
-            break;
-        case BNGMarketProjectionRunnerMetaData:
+        } break;
+        case BNGMarketProjectionRunnerMetaData: {
             marketProjection = @"RUNNER_METADATA";
-            break;
-        case BNGMarketProjectionRunnerMarketStartTime:
+        } break;
+        case BNGMarketProjectionRunnerMarketStartTime: {
             marketProjection = @"MARKET_START_TIME";
-            break;
+        } break;
         default:
             break;
     }

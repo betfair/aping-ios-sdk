@@ -143,15 +143,15 @@
 {
     NSString *projection = @"UNKNOWN";
     switch (matchProjection) {
-        case BNGMatchProjectionNoRollup:
+        case BNGMatchProjectionNoRollup: {
             projection = @"NO_ROLLUP";
-            break;
-        case BNGMatchProjectionRolledUpByAvgPrice:
+        } break;
+        case BNGMatchProjectionRolledUpByAvgPrice: {
             projection = @"ROLLED_UP_BY_AVG_PRICE";
-            break;
-        case BNGMatchProjectionRolledUpByPrice:
+        } break;
+        case BNGMatchProjectionRolledUpByPrice: {
             projection = @"ROLLED_UP_BY_PRICE";
-            break;
+        } break;
         default:
             break;
     }

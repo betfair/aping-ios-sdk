@@ -56,24 +56,24 @@
 {
     NSString *type = @"UNKNOWN";
     switch (bettingType) {
-        case BNGMarketBettingTypeOdds:
+        case BNGMarketBettingTypeOdds: {
             type = @"ODDS";
-            break;
-        case BNGMarketBettingTypeLine:
+        } break;
+        case BNGMarketBettingTypeLine: {
             type = @"LINE";
-            break;
-        case BNGMarketBettingTypeRange:
+        } break;
+        case BNGMarketBettingTypeRange: {
             type = @"RANGE";
-            break;
-        case BNGMarketBettingTypeAsianHandicapDoubleLine:
+        } break;
+        case BNGMarketBettingTypeAsianHandicapDoubleLine: {
             type = @"ASIAN_HANDICAP_DOUBLE_LINE";
-            break;
-        case BNGMarketBettingTypeAsianHandicapSingleLine:
+        } break;
+        case BNGMarketBettingTypeAsianHandicapSingleLine: {
             type = @"ASIAN_HANDICAP_SINGLE_LINE";
-            break;
-        case BNGMarketBettingTypeFixedOdds:
+        } break;
+        case BNGMarketBettingTypeFixedOdds: {
             type = @"FIXED_ODDS";
-            break;
+        } break;
         default:
             break;
     }

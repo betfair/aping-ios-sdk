@@ -52,18 +52,18 @@
 {
     NSString *reportStatus = @"UNKNOWN";
     switch (status) {
-        case BNGExecutionReportStatusSuccess:
+        case BNGExecutionReportStatusSuccess: {
             reportStatus = @"SUCCESS";
-            break;
-        case BNGExecutionReportStatusFailure:
+        } break;
+        case BNGExecutionReportStatusFailure: {
             reportStatus = @"FAILURE";
-            break;
-        case BNGExecutionReportStatusProcessedWithErrors:
+        } break;
+        case BNGExecutionReportStatusProcessedWithErrors: {
             reportStatus = @"PROCESSED_WITH_ERRORS";
-            break;
-        case BNGExecutionReportStatusTimeout:
+        } break;
+        case BNGExecutionReportStatusTimeout: {
             reportStatus = @"TIMEOUT";
-            break;
+        } break;
         default:
             break;
     }
@@ -116,57 +116,57 @@
 {
     NSString *error = @"UNKNOWN";
     switch (errorCode) {
-        case BNGExecutionReportErrorCodeBetActionError:
+        case BNGExecutionReportErrorCodeBetActionError: {
             error = @"BET_ACTION_ERROR";
-            break;
-        case BNGExecutionReportErrorCodeDuplicateBetIds:
+        } break;
+        case BNGExecutionReportErrorCodeDuplicateBetIds: {
             error = @"DUPLICATE_BET_IDS";
-            break;
-        case BNGExecutionReportErrorCodeDuplicateTransaction:
+        } break;
+        case BNGExecutionReportErrorCodeDuplicateTransaction: {
             error = @"DUPLICATE_TRANSACTION";
-            break;
-        case BNGExecutionReportErrorCodeErrorInMatcher:
+        } break;
+        case BNGExecutionReportErrorCodeErrorInMatcher: {
             error = @"ERROR_IN_MATCHER";
-            break;
-        case BNGExecutionReportErrorCodeInsufficientFunds:
+        } break;
+        case BNGExecutionReportErrorCodeInsufficientFunds: {
             error = @"INSUFFICIENT_FUNDS";
-            break;
-        case BNGExecutionReportErrorCodeInvalidAccountState:
+        } break;
+        case BNGExecutionReportErrorCodeInvalidAccountState: {
             error = @"INVALID_ACCOUNT_STATE";
-            break;
-        case BNGExecutionReportErrorCodeInvalidMarketId:
+        } break;
+        case BNGExecutionReportErrorCodeInvalidMarketId: {
             error = @"INVALID_MARKET_ID";
-            break;
-        case BNGExecutionReportErrorCodeInvalidOrder:
+        } break;
+        case BNGExecutionReportErrorCodeInvalidOrder: {
             error = @"INVALID_ORDER";
-            break;
-        case BNGExecutionReportErrorCodeInvalidWalletStatus:
+        } break;
+        case BNGExecutionReportErrorCodeInvalidWalletStatus: {
             error = @"INVALID_WALLET_STATUS";
-            break;
-        case BNGExecutionReportErrorCodeLossLimitExceeded:
+        } break;
+        case BNGExecutionReportErrorCodeLossLimitExceeded: {
             error = @"LOSS_LIMIT_EXCEEDED";
-            break;
-        case BNGExecutionReportErrorCodeMarketNotOpenForBetting:
+        } break;
+        case BNGExecutionReportErrorCodeMarketNotOpenForBetting: {
             error = @"MARKET_NOT_OPEN_FOR_BETTING";
-            break;
-        case BNGExecutionReportErrorCodeMarketSuspended:
+        } break;
+        case BNGExecutionReportErrorCodeMarketSuspended: {
             error = @"MARKET_SUSPENDED";
-            break;
-        case BNGExecutionReportErrorCodeNoActionRequired:
+        } break;
+        case BNGExecutionReportErrorCodeNoActionRequired: {
             error = @"NO_ACTION_REQUIRED";
-            break;
-        case BNGExecutionReportErrorCodePermissionDenied:
+        } break;
+        case BNGExecutionReportErrorCodePermissionDenied: {
             error = @"PERMISSION_DENIED";
-            break;
-        case BNGExecutionReportErrorCodeProcessedWithErrors:
+        } break;
+        case BNGExecutionReportErrorCodeProcessedWithErrors: {
             error = @"PROCESSED_WITH_ERRORS";
-            break;
-        case BNGExecutionReportErrorCodeRejectedByRegulartor:
+        } break;
+        case BNGExecutionReportErrorCodeRejectedByRegulartor: {
             error = @"REJECTED_BY_REGULATOR";
-            break;
-        case BNGExecutionReportErrorCodeServiceUnavailable:
+        } break;
+        case BNGExecutionReportErrorCodeServiceUnavailable: {
             error = @"SERVICE_UNAVAILABLE";
-            break;
+        } break;
         default:
             break;
     }

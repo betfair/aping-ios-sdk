@@ -62,15 +62,12 @@
     for (NSString *part in parts) {
         NSArray *keyValueArray = [part componentsSeparatedByString:@"="];
         switch (keyValueArray.count) {
-                
             case 1: {
                 bodyDictionary[keyValueArray[0]] = @"";
             } break;
-                
             case 2: {
                 bodyDictionary[keyValueArray[0]] = keyValueArray[1];
             } break;
-                
             default: break;
         }
     }

@@ -319,15 +319,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *orderTypeString = @"UNKNOWN";
     switch (orderType) {
-        case BNGOrderTypeLimit:
+        case BNGOrderTypeLimit: {
             orderTypeString = @"LIMIT";
-            break;
-        case BNGOrderTypeLimitOnClose:
+        } break;
+        case BNGOrderTypeLimitOnClose: {
             orderTypeString = @"LIMIT_ON_CLOSE";
-            break;
-        case BNGOrderTypeMarketOnClose:
+        } break;
+        case BNGOrderTypeMarketOnClose: {
             orderTypeString = @"MARKET_ON_CLOSE";
-            break;
+        } break;
         default:
             break;
     }
@@ -352,15 +352,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *type = @"UNKNOWN";
     switch (persistenceType) {
-        case BNGPersistanceTypeLapse:
+        case BNGPersistanceTypeLapse: {
             type = @"LAPSE";
-            break;
-        case BNGPersistanceTypeMarketOnClose:
+        } break;
+        case BNGPersistanceTypeMarketOnClose: {
             type = @"MARKET_ON_CLOSE";
-            break;
-        case BNGPersistanceTypePersist:
+        } break;
+        case BNGPersistanceTypePersist: {
             type = @"PERSIST";
-            break;
+        } break;
         default:
             break;
     }
@@ -383,12 +383,12 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *sideString = @"UNKNOWN";
     switch (side) {
-        case BNGSideBack:
+        case BNGSideBack: {
             sideString = @"BACK";
-            break;
-        case BNGSideLay:
+        } break;
+        case BNGSideLay: {
             sideString = @"LAY";
-            break;
+        } break;
         default:
             break;
     }
@@ -411,12 +411,12 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *statusString = @"UNKNOWN";
     switch (status) {
-        case BNGOrderStatusExecutable:
+        case BNGOrderStatusExecutable: {
             statusString = @"EXECUTABLE";
-            break;
-        case BNGOrderStatusExecutionComplete:
+        } break;
+        case BNGOrderStatusExecutionComplete: {
             statusString = @"EXECUTION_COMPLETE";
-            break;
+        } break;
         default:
             break;
     }
@@ -427,15 +427,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *orderProjection = @"UNKNOWN";
     switch (projection) {
-        case BNGOrderProjectionAll:
+        case BNGOrderProjectionAll: {
             orderProjection = @"ALL";
-            break;
-        case BNGOrderProjectionExecutable:
+        } break;
+        case BNGOrderProjectionExecutable: {
             orderProjection = @"EXECUTABLE";
-            break;
-        case BNGOrderProjectionExecutionComplete:
+        } break;
+        case BNGOrderProjectionExecutionComplete: {
             orderProjection = @"EXECUTION_COMPLETE";
-            break;
+        } break;
         default:
             break;
     }
@@ -446,12 +446,12 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *orderByString = @"UNKNOWN";
     switch (orderBy) {
-        case BNGOrderByBet:
+        case BNGOrderByBet: {
             orderByString = @"BY_BET";
-            break;
-        case BNGOrderByMarket:
+        } break;
+        case BNGOrderByMarket: {
             orderByString = @"BY_MARKET";
-            break;
+        } break;
         default:
             break;
     }
@@ -462,12 +462,12 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 {
     NSString *sortDirString = @"UNKNOWN";
     switch (sortDir) {
-        case BNGOrderSortDirEarliestToLatest:
+        case BNGOrderSortDirEarliestToLatest: {
             sortDirString = @"EARLIEST_TO_LATEST";
-            break;
-        case BNGOrderSortDirLatestToEarliest:
+        } break;
+        case BNGOrderSortDirLatestToEarliest: {
             sortDirString = @"LATEST_TO_EARLIEST";
-            break;
+        } break;
         default:
             break;
     }

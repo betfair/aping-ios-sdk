@@ -61,18 +61,18 @@
 {
     NSString *model = @"UNKNOWN";
     switch (rollupModel) {
-        case BNGRollupModelStake:
+        case BNGRollupModelStake: {
             model = @"STAKE";
-            break;
-        case BNGRollupModelManagedLiability:
+        } break;
+        case BNGRollupModelManagedLiability: {
             model = @"MANAGED_LIABILITY";
-            break;
-        case BNGRollupModelNone:
+        } break;
+        case BNGRollupModelNone: {
             model = @"NONE";
-            break;
-        case BNGRollupModelPayout:
+        } break;
+        case BNGRollupModelPayout: {
             model = @"PAYOUT";
-            break;
+        } break;
         default:
             break;
     }

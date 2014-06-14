@@ -50,15 +50,15 @@
 {
     NSString *reportStatus = @"UNKNOWN";
     switch (status) {
-        case BNGInstructionReportStatusSuccess:
+        case BNGInstructionReportStatusSuccess: {
             reportStatus = @"SUCCESS";
-            break;
-        case BNGInstructionReportStatusFailure:
+        } break;
+        case BNGInstructionReportStatusFailure: {
             reportStatus = @"FAILURE";
-            break;
-        case BNGInstructionReportStatusTimeout:
+        } break;
+        case BNGInstructionReportStatusTimeout: {
             reportStatus = @"TIMEOUT";
-            break;
+        } break;
         default:
             break;
     }
@@ -117,66 +117,66 @@
 {
     NSString *errorCode = @"UNKNOWN";
     switch (code) {
-        case BNGInstructionReportErrorCodeBetInProgress:
+        case BNGInstructionReportErrorCodeBetInProgress: {
             errorCode = @"BET_IN_PROGRESS";
-            break;
-        case BNGInstructionReportErrorCodeBetTakenOrLapsed:
+        } break;
+        case BNGInstructionReportErrorCodeBetTakenOrLapsed: {
             errorCode = @"BET_TAKEN_OR_LAPSED";
-            break;
-        case BNGInstructionReportErrorCodeCancelledNotPlaced:
+        } break;
+        case BNGInstructionReportErrorCodeCancelledNotPlaced: {
             errorCode = @"CANCELLED_NOT_PLACED";
-            break;
-        case BNGInstructionReportErrorCodeErrorInMatcher:
+        } break;
+        case BNGInstructionReportErrorCodeErrorInMatcher: {
             errorCode = @"ERROR_IN_MATCHER";
-            break;
-        case BNGInstructionReportErrorCodeErrorInOrder:
+        } break;
+        case BNGInstructionReportErrorCodeErrorInOrder: {
             errorCode = @"ERROR_IN_ORDER";
-            break;
-        case BNGInstructionReportErrorCodeInsufficientFunds:
+        } break;
+        case BNGInstructionReportErrorCodeInsufficientFunds: {
             errorCode = @"INSUFFICIENT_FUNDS";
-            break;
-        case BNGInstructionReportErrorCodeInvalidBackLayCombination:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidBackLayCombination: {
             errorCode = @"INVALID_BACK_LAY_COMBINATION";
-            break;
-        case BNGInstructionReportErrorCodeInvalidBetId:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidBetId: {
             errorCode = @"INVALID_BET_ID";
-            break;
-        case BNGInstructionReportErrorCodeInvalidBetSize:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidBetSize: {
             errorCode = @"INVALID_BET_SIZE";
-            break;
-        case BNGInstructionReportErrorCodeInvalidBidType:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidBidType: {
             errorCode = @"INVALID_BID_TYPE";
-            break;
-        case BNGInstructionReportErrorCodeInvalidOdds:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidOdds: {
             errorCode = @"INVALID_ODDS";
-            break;
-        case BNGInstructionReportErrorCodeInvalidPersistenceType:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidPersistenceType: {
             errorCode = @"INVALID_PERSISTENCE_TYPE";
-            break;
-        case BNGInstructionReportErrorCodeInvalidPriceEdit:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidPriceEdit: {
             errorCode = @"INVALID_PRICE_EDIT";
-            break;
-        case BNGInstructionReportErrorCodeInvalidRunner:
+        } break;
+        case BNGInstructionReportErrorCodeInvalidRunner: {
             errorCode = @"INVALID_RUNNER";
-            break;
-        case BNGInstructionReportErrorCodeLossLimitExceeded:
+        } break;
+        case BNGInstructionReportErrorCodeLossLimitExceeded: {
             errorCode = @"LOSS_LIMIT_EXCEEDED";
-            break;
-        case BNGInstructionReportErrorCodeMarketNotOpenForBetting:
+        } break;
+        case BNGInstructionReportErrorCodeMarketNotOpenForBetting: {
             errorCode = @"MARKET_NOT_OPEN_FOR_BETTING";
-            break;
-        case BNGInstructionReportErrorCodeMarketNotOpenForBSPBetting:
+        } break;
+        case BNGInstructionReportErrorCodeMarketNotOpenForBSPBetting: {
             errorCode = @"MARKET_NOT_OPEN_FOR_BSP_BETTING";
-            break;
-        case BNGInstructionReportErrorCodeNoActionRequired:
+        } break;
+        case BNGInstructionReportErrorCodeNoActionRequired: {
             errorCode = @"NO_ACTION_REQUIRED";
-            break;
-        case BNGInstructionReportErrorCodeRelatedActionFailed:
+        } break;
+        case BNGInstructionReportErrorCodeRelatedActionFailed: {
             errorCode = @"CODE_RELATED_ACTION_FAILED";
-            break;
-        case BNGInstructionReportErrorCodeRunnerRemoved:
+        } break;
+        case BNGInstructionReportErrorCodeRunnerRemoved: {
             errorCode = @"RUNNER_REMOVED";
-            break;
+        } break;
         default:
             break;
     }
