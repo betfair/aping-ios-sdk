@@ -3,3 +3,4 @@
 env
 
 brew update
+brew upgrade xctool
