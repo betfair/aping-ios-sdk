@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
 
-xctool -project "APING iOS SDK.xcodeproj" -scheme "APING iOS SDK" -sdk iphonesimulator test
+xctool -project "BNGAPI/BNGAPI.xcodeproj" -scheme "BNGAPI" -sdk iphonesimulator test

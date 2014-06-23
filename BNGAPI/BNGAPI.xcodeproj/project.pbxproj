@@ -1,0 +1,1183 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		7118B90619582636007057CE /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7118B90719582636007057CE /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				7118B90C19582657007057CE /* Build Framework */,
+			);
+			dependencies = (
+				7118B90B1958263F007057CE /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		7118B90419582542007057CE /* BNGAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D9BBD0195823C10006B520 /* BNGAPI.h */; };
+		7118B97B195826BE007057CE /* BNGAPI-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 7118B90D195826BE007057CE /* BNGAPI-Prefix.pch */; };
+		7118B97C195826BE007057CE /* APING.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B90E195826BE007057CE /* APING.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B97D195826BE007057CE /* APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B90F195826BE007057CE /* APING.m */; };
+		7118B97E195826BE007057CE /* APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B90F195826BE007057CE /* APING.m */; };
+		7118B97F195826BE007057CE /* NSNumber+DecimalConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B911195826BE007057CE /* NSNumber+DecimalConversion.h */; };
+		7118B980195826BE007057CE /* NSNumber+DecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B912195826BE007057CE /* NSNumber+DecimalConversion.m */; };
+		7118B981195826BE007057CE /* NSNumber+DecimalConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B912195826BE007057CE /* NSNumber+DecimalConversion.m */; };
+		7118B982195826BE007057CE /* NSString+RandomCustomerReferenceId.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B913195826BE007057CE /* NSString+RandomCustomerReferenceId.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B983195826BE007057CE /* NSString+RandomCustomerReferenceId.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B914195826BE007057CE /* NSString+RandomCustomerReferenceId.m */; };
+		7118B984195826BE007057CE /* NSString+RandomCustomerReferenceId.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B914195826BE007057CE /* NSString+RandomCustomerReferenceId.m */; };
+		7118B985195826BE007057CE /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B915195826BE007057CE /* NSString+URLEncoding.h */; };
+		7118B986195826BE007057CE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B916195826BE007057CE /* NSString+URLEncoding.m */; };
+		7118B987195826BE007057CE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B916195826BE007057CE /* NSString+URLEncoding.m */; };
+		7118B988195826BE007057CE /* NSURL+APING.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B917195826BE007057CE /* NSURL+APING.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B989195826BE007057CE /* NSURL+APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B918195826BE007057CE /* NSURL+APING.m */; };
+		7118B98A195826BE007057CE /* NSURL+APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B918195826BE007057CE /* NSURL+APING.m */; };
+		7118B98B195826BE007057CE /* NSURLConnection+BNGJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B919195826BE007057CE /* NSURLConnection+BNGJSON.h */; };
+		7118B98C195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */; };
+		7118B98D195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */; };
+		7118B98E195826BE007057CE /* NSURLRequest+HTTPBody.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B91B195826BE007057CE /* NSURLRequest+HTTPBody.h */; };
+		7118B98F195826BE007057CE /* NSURLRequest+HTTPBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91C195826BE007057CE /* NSURLRequest+HTTPBody.m */; };
+		7118B990195826BE007057CE /* NSURLRequest+HTTPBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91C195826BE007057CE /* NSURLRequest+HTTPBody.m */; };
+		7118B991195826BE007057CE /* BNGAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B91E195826BE007057CE /* BNGAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B992195826BE007057CE /* BNGAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91F195826BE007057CE /* BNGAccount.m */; };
+		7118B993195826BE007057CE /* BNGAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91F195826BE007057CE /* BNGAccount.m */; };
+		7118B994195826BE007057CE /* BNGAccountDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B920195826BE007057CE /* BNGAccountDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B995195826BE007057CE /* BNGAccountDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B921195826BE007057CE /* BNGAccountDetails.m */; };
+		7118B996195826BE007057CE /* BNGAccountDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B921195826BE007057CE /* BNGAccountDetails.m */; };
+		7118B997195826BE007057CE /* BNGAccountFunds.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B922195826BE007057CE /* BNGAccountFunds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B998195826BE007057CE /* BNGAccountFunds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B923195826BE007057CE /* BNGAccountFunds.m */; };
+		7118B999195826BE007057CE /* BNGAccountFunds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B923195826BE007057CE /* BNGAccountFunds.m */; };
+		7118B99A195826BE007057CE /* BNGAPIError.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B924195826BE007057CE /* BNGAPIError.h */; };
+		7118B99B195826BE007057CE /* BNGAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B925195826BE007057CE /* BNGAPIError.m */; };
+		7118B99C195826BE007057CE /* BNGAPIError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B925195826BE007057CE /* BNGAPIError.m */; };
+		7118B99D195826BE007057CE /* BNGAPIError_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B926195826BE007057CE /* BNGAPIError_Private.h */; };
+		7118B99E195826BE007057CE /* BNGAPIResponseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B927195826BE007057CE /* BNGAPIResponseParser.h */; };
+		7118B99F195826BE007057CE /* BNGAPIResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B928195826BE007057CE /* BNGAPIResponseParser.m */; };
+		7118B9A0195826BE007057CE /* BNGAPIResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B928195826BE007057CE /* BNGAPIResponseParser.m */; };
+		7118B9A1195826BE007057CE /* BNGCancelExecutionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B929195826BE007057CE /* BNGCancelExecutionReport.h */; };
+		7118B9A2195826BE007057CE /* BNGCancelExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B92A195826BE007057CE /* BNGCancelExecutionReport.m */; };
+		7118B9A3195826BE007057CE /* BNGCancelExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B92A195826BE007057CE /* BNGCancelExecutionReport.m */; };
+		7118B9A4195826BE007057CE /* BNGCancelInstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B92B195826BE007057CE /* BNGCancelInstruction.h */; };
+		7118B9A5195826BE007057CE /* BNGCancelInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B92C195826BE007057CE /* BNGCancelInstruction.m */; };
+		7118B9A6195826BE007057CE /* BNGCancelInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B92C195826BE007057CE /* BNGCancelInstruction.m */; };
+		7118B9A7195826BE007057CE /* BNGCancelInstructionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B92D195826BE007057CE /* BNGCancelInstructionReport.h */; };
+		7118B9A8195826BE007057CE /* BNGCancelInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B92E195826BE007057CE /* BNGCancelInstructionReport.m */; };
+		7118B9A9195826BE007057CE /* BNGCancelInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B92E195826BE007057CE /* BNGCancelInstructionReport.m */; };
+		7118B9AA195826BE007057CE /* BNGCompetition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B92F195826BE007057CE /* BNGCompetition.h */; };
+		7118B9AB195826BE007057CE /* BNGCompetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B930195826BE007057CE /* BNGCompetition.m */; };
+		7118B9AC195826BE007057CE /* BNGCompetition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B930195826BE007057CE /* BNGCompetition.m */; };
+		7118B9AD195826BE007057CE /* BNGCompetitionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B931195826BE007057CE /* BNGCompetitionResult.h */; };
+		7118B9AE195826BE007057CE /* BNGCompetitionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B932195826BE007057CE /* BNGCompetitionResult.m */; };
+		7118B9AF195826BE007057CE /* BNGCompetitionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B932195826BE007057CE /* BNGCompetitionResult.m */; };
+		7118B9B0195826BE007057CE /* BNGCurrentOrderSummaryReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B933195826BE007057CE /* BNGCurrentOrderSummaryReport.h */; };
+		7118B9B1195826BE007057CE /* BNGCurrentOrderSummaryReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B934195826BE007057CE /* BNGCurrentOrderSummaryReport.m */; };
+		7118B9B2195826BE007057CE /* BNGCurrentOrderSummaryReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B934195826BE007057CE /* BNGCurrentOrderSummaryReport.m */; };
+		7118B9B3195826BE007057CE /* BNGEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B935195826BE007057CE /* BNGEvent.h */; };
+		7118B9B4195826BE007057CE /* BNGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B936195826BE007057CE /* BNGEvent.m */; };
+		7118B9B5195826BE007057CE /* BNGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B936195826BE007057CE /* BNGEvent.m */; };
+		7118B9B6195826BE007057CE /* BNGEventResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B937195826BE007057CE /* BNGEventResult.h */; };
+		7118B9B7195826BE007057CE /* BNGEventResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B938195826BE007057CE /* BNGEventResult.m */; };
+		7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B938195826BE007057CE /* BNGEventResult.m */; };
+		7118B9B9195826BE007057CE /* BNGEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B939195826BE007057CE /* BNGEventType.h */; };
+		7118B9BA195826BE007057CE /* BNGEventType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B93A195826BE007057CE /* BNGEventType.m */; };
+		7118B9BB195826BE007057CE /* BNGEventType.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B93A195826BE007057CE /* BNGEventType.m */; };
+		7118B9BC195826BE007057CE /* BNGEventTypeResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B93B195826BE007057CE /* BNGEventTypeResult.h */; };
+		7118B9BD195826BE007057CE /* BNGEventTypeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B93C195826BE007057CE /* BNGEventTypeResult.m */; };
+		7118B9BE195826BE007057CE /* BNGEventTypeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B93C195826BE007057CE /* BNGEventTypeResult.m */; };
+		7118B9BF195826BE007057CE /* BNGExBestOffersOverrides.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B93D195826BE007057CE /* BNGExBestOffersOverrides.h */; };
+		7118B9C0195826BE007057CE /* BNGExBestOffersOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B93E195826BE007057CE /* BNGExBestOffersOverrides.m */; };
+		7118B9C1195826BE007057CE /* BNGExBestOffersOverrides.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B93E195826BE007057CE /* BNGExBestOffersOverrides.m */; };
+		7118B9C2195826BE007057CE /* BNGExchangePrices.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B93F195826BE007057CE /* BNGExchangePrices.h */; };
+		7118B9C3195826BE007057CE /* BNGExchangePrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B940195826BE007057CE /* BNGExchangePrices.m */; };
+		7118B9C4195826BE007057CE /* BNGExchangePrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B940195826BE007057CE /* BNGExchangePrices.m */; };
+		7118B9C5195826BE007057CE /* BNGExecutionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B941195826BE007057CE /* BNGExecutionReport.h */; };
+		7118B9C6195826BE007057CE /* BNGExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B942195826BE007057CE /* BNGExecutionReport.m */; };
+		7118B9C7195826BE007057CE /* BNGExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B942195826BE007057CE /* BNGExecutionReport.m */; };
+		7118B9C8195826BE007057CE /* BNGInstructionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B943195826BE007057CE /* BNGInstructionReport.h */; };
+		7118B9C9195826BE007057CE /* BNGInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B944195826BE007057CE /* BNGInstructionReport.m */; };
+		7118B9CA195826BE007057CE /* BNGInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B944195826BE007057CE /* BNGInstructionReport.m */; };
+		7118B9CB195826BE007057CE /* BNGLimitOnCloseOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B945195826BE007057CE /* BNGLimitOnCloseOrder.h */; };
+		7118B9CC195826BE007057CE /* BNGLimitOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B946195826BE007057CE /* BNGLimitOnCloseOrder.m */; };
+		7118B9CD195826BE007057CE /* BNGLimitOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B946195826BE007057CE /* BNGLimitOnCloseOrder.m */; };
+		7118B9CE195826BE007057CE /* BNGLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B947195826BE007057CE /* BNGLimitOrder.h */; };
+		7118B9CF195826BE007057CE /* BNGLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B948195826BE007057CE /* BNGLimitOrder.m */; };
+		7118B9D0195826BE007057CE /* BNGLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B948195826BE007057CE /* BNGLimitOrder.m */; };
+		7118B9D1195826BE007057CE /* BNGLoginURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B949195826BE007057CE /* BNGLoginURLProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B9D2195826BE007057CE /* BNGLoginURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B94A195826BE007057CE /* BNGLoginURLProtocol.m */; };
+		7118B9D3195826BE007057CE /* BNGLoginURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B94A195826BE007057CE /* BNGLoginURLProtocol.m */; };
+		7118B9D4195826BE007057CE /* BNGMarketBook.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B94B195826BE007057CE /* BNGMarketBook.h */; };
+		7118B9D5195826BE007057CE /* BNGMarketBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B94C195826BE007057CE /* BNGMarketBook.m */; };
+		7118B9D6195826BE007057CE /* BNGMarketBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B94C195826BE007057CE /* BNGMarketBook.m */; };
+		7118B9D7195826BE007057CE /* BNGMarketCatalogue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B94D195826BE007057CE /* BNGMarketCatalogue.h */; };
+		7118B9D8195826BE007057CE /* BNGMarketCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B94E195826BE007057CE /* BNGMarketCatalogue.m */; };
+		7118B9D9195826BE007057CE /* BNGMarketCatalogue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B94E195826BE007057CE /* BNGMarketCatalogue.m */; };
+		7118B9DA195826BE007057CE /* BNGMarketCatalogueDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B94F195826BE007057CE /* BNGMarketCatalogueDescription.h */; };
+		7118B9DB195826BE007057CE /* BNGMarketCatalogueDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B950195826BE007057CE /* BNGMarketCatalogueDescription.m */; };
+		7118B9DC195826BE007057CE /* BNGMarketCatalogueDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B950195826BE007057CE /* BNGMarketCatalogueDescription.m */; };
+		7118B9DD195826BE007057CE /* BNGMarketCatalogueFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B951195826BE007057CE /* BNGMarketCatalogueFilter.h */; };
+		7118B9DE195826BE007057CE /* BNGMarketCatalogueFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B952195826BE007057CE /* BNGMarketCatalogueFilter.m */; };
+		7118B9DF195826BE007057CE /* BNGMarketCatalogueFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B952195826BE007057CE /* BNGMarketCatalogueFilter.m */; };
+		7118B9E0195826BE007057CE /* BNGMarketFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B953195826BE007057CE /* BNGMarketFilter.h */; };
+		7118B9E1195826BE007057CE /* BNGMarketFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B954195826BE007057CE /* BNGMarketFilter.m */; };
+		7118B9E2195826BE007057CE /* BNGMarketFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B954195826BE007057CE /* BNGMarketFilter.m */; };
+		7118B9E3195826BE007057CE /* BNGMarketOnCloseOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B955195826BE007057CE /* BNGMarketOnCloseOrder.h */; };
+		7118B9E4195826BE007057CE /* BNGMarketOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B956195826BE007057CE /* BNGMarketOnCloseOrder.m */; };
+		7118B9E5195826BE007057CE /* BNGMarketOnCloseOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B956195826BE007057CE /* BNGMarketOnCloseOrder.m */; };
+		7118B9E6195826BE007057CE /* BNGMatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B957195826BE007057CE /* BNGMatch.h */; };
+		7118B9E7195826BE007057CE /* BNGMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B958195826BE007057CE /* BNGMatch.m */; };
+		7118B9E8195826BE007057CE /* BNGMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B958195826BE007057CE /* BNGMatch.m */; };
+		7118B9E9195826BE007057CE /* BNGMutableURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B959195826BE007057CE /* BNGMutableURLRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B9EA195826BE007057CE /* BNGMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B95A195826BE007057CE /* BNGMutableURLRequest.m */; };
+		7118B9EB195826BE007057CE /* BNGMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B95A195826BE007057CE /* BNGMutableURLRequest.m */; };
+		7118B9EC195826BE007057CE /* BNGOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B95B195826BE007057CE /* BNGOrder.h */; };
+		7118B9ED195826BE007057CE /* BNGOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B95C195826BE007057CE /* BNGOrder.m */; };
+		7118B9EE195826BE007057CE /* BNGOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B95C195826BE007057CE /* BNGOrder.m */; };
+		7118B9EF195826BE007057CE /* BNGPlaceExecutionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B95D195826BE007057CE /* BNGPlaceExecutionReport.h */; };
+		7118B9F0195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B95E195826BE007057CE /* BNGPlaceExecutionReport.m */; };
+		7118B9F1195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B95E195826BE007057CE /* BNGPlaceExecutionReport.m */; };
+		7118B9F2195826BE007057CE /* BNGPlaceInstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B95F195826BE007057CE /* BNGPlaceInstruction.h */; };
+		7118B9F3195826BE007057CE /* BNGPlaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B960195826BE007057CE /* BNGPlaceInstruction.m */; };
+		7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B960195826BE007057CE /* BNGPlaceInstruction.m */; };
+		7118B9F5195826BE007057CE /* BNGPlaceInstructionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B961195826BE007057CE /* BNGPlaceInstructionReport.h */; };
+		7118B9F6195826BE007057CE /* BNGPlaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B962195826BE007057CE /* BNGPlaceInstructionReport.m */; };
+		7118B9F7195826BE007057CE /* BNGPlaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B962195826BE007057CE /* BNGPlaceInstructionReport.m */; };
+		7118B9F8195826BE007057CE /* BNGPriceProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B963195826BE007057CE /* BNGPriceProjection.h */; };
+		7118B9F9195826BE007057CE /* BNGPriceProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B964195826BE007057CE /* BNGPriceProjection.m */; };
+		7118B9FA195826BE007057CE /* BNGPriceProjection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B964195826BE007057CE /* BNGPriceProjection.m */; };
+		7118B9FB195826BE007057CE /* BNGPriceSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B965195826BE007057CE /* BNGPriceSize.h */; };
+		7118B9FC195826BE007057CE /* BNGPriceSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B966195826BE007057CE /* BNGPriceSize.m */; };
+		7118B9FD195826BE007057CE /* BNGPriceSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B966195826BE007057CE /* BNGPriceSize.m */; };
+		7118B9FE195826BE007057CE /* BNGReplaceExecutionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B967195826BE007057CE /* BNGReplaceExecutionReport.h */; };
+		7118B9FF195826BE007057CE /* BNGReplaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B968195826BE007057CE /* BNGReplaceExecutionReport.m */; };
+		7118BA00195826BE007057CE /* BNGReplaceExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B968195826BE007057CE /* BNGReplaceExecutionReport.m */; };
+		7118BA01195826BE007057CE /* BNGReplaceInstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B969195826BE007057CE /* BNGReplaceInstruction.h */; };
+		7118BA02195826BE007057CE /* BNGReplaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B96A195826BE007057CE /* BNGReplaceInstruction.m */; };
+		7118BA03195826BE007057CE /* BNGReplaceInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B96A195826BE007057CE /* BNGReplaceInstruction.m */; };
+		7118BA04195826BE007057CE /* BNGReplaceInstructionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B96B195826BE007057CE /* BNGReplaceInstructionReport.h */; };
+		7118BA05195826BE007057CE /* BNGReplaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B96C195826BE007057CE /* BNGReplaceInstructionReport.m */; };
+		7118BA06195826BE007057CE /* BNGReplaceInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B96C195826BE007057CE /* BNGReplaceInstructionReport.m */; };
+		7118BA07195826BE007057CE /* BNGRunner.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B96D195826BE007057CE /* BNGRunner.h */; };
+		7118BA08195826BE007057CE /* BNGRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B96E195826BE007057CE /* BNGRunner.m */; };
+		7118BA09195826BE007057CE /* BNGRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B96E195826BE007057CE /* BNGRunner.m */; };
+		7118BA0A195826BE007057CE /* BNGStartingPrices.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B96F195826BE007057CE /* BNGStartingPrices.h */; };
+		7118BA0B195826BE007057CE /* BNGStartingPrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B970195826BE007057CE /* BNGStartingPrices.m */; };
+		7118BA0C195826BE007057CE /* BNGStartingPrices.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B970195826BE007057CE /* BNGStartingPrices.m */; };
+		7118BA0D195826BE007057CE /* BNGTimeRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B971195826BE007057CE /* BNGTimeRange.h */; };
+		7118BA0E195826BE007057CE /* BNGTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B972195826BE007057CE /* BNGTimeRange.m */; };
+		7118BA0F195826BE007057CE /* BNGTimeRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B972195826BE007057CE /* BNGTimeRange.m */; };
+		7118BA10195826BE007057CE /* BNGUpdateExecutionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B973195826BE007057CE /* BNGUpdateExecutionReport.h */; };
+		7118BA11195826BE007057CE /* BNGUpdateExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B974195826BE007057CE /* BNGUpdateExecutionReport.m */; };
+		7118BA12195826BE007057CE /* BNGUpdateExecutionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B974195826BE007057CE /* BNGUpdateExecutionReport.m */; };
+		7118BA13195826BE007057CE /* BNGUpdateInstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B975195826BE007057CE /* BNGUpdateInstruction.h */; };
+		7118BA14195826BE007057CE /* BNGUpdateInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B976195826BE007057CE /* BNGUpdateInstruction.m */; };
+		7118BA15195826BE007057CE /* BNGUpdateInstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B976195826BE007057CE /* BNGUpdateInstruction.m */; };
+		7118BA16195826BE007057CE /* BNGUpdateInstructionReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B977195826BE007057CE /* BNGUpdateInstructionReport.h */; };
+		7118BA17195826BE007057CE /* BNGUpdateInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */; };
+		7118BA18195826BE007057CE /* BNGUpdateInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */; };
+		7118BA19195826BE007057CE /* BNGDictionaryRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B97A195826BE007057CE /* BNGDictionaryRepresentation.h */; };
+		711AA3041958B8A400861CD4 /* NSURL+APINGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E21958B8A400861CD4 /* NSURL+APINGTests.m */; };
+		711AA3051958B8A400861CD4 /* BNGAccountTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E51958B8A400861CD4 /* BNGAccountTest.m */; };
+		711AA3061958B8A400861CD4 /* BNGEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E71958B8A400861CD4 /* BNGEventTest.m */; };
+		711AA3071958B8A400861CD4 /* BNGEventTypeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */; };
+		711AA3081958B8A400861CD4 /* BNGMarketBookTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2EB1958B8A400861CD4 /* BNGMarketBookTest.m */; };
+		711AA3091958B8A400861CD4 /* BNGMarketCataloguesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2ED1958B8A400861CD4 /* BNGMarketCataloguesTest.m */; };
+		711AA30A1958B8A400861CD4 /* BNGMarketFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2EF1958B8A400861CD4 /* BNGMarketFilterTests.m */; };
+		711AA30B1958B8A400861CD4 /* BNGMutableURLRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2F11958B8A400861CD4 /* BNGMutableURLRequestTests.m */; };
+		711AA30C1958B8A400861CD4 /* BNGOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2F31958B8A400861CD4 /* BNGOrderTest.m */; };
+		711AA30D1958B8A400861CD4 /* BNGTestUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2F51958B8A400861CD4 /* BNGTestUtilities.m */; };
+		711AA30E1958B8A400861CD4 /* BNGURLProtocolResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2F71958B8A400861CD4 /* BNGURLProtocolResourceLoader.m */; };
+		711AA30F1958B8A400861CD4 /* account_details.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2F91958B8A400861CD4 /* account_details.json */; };
+		711AA3101958B8A400861CD4 /* account_funds.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2FA1958B8A400861CD4 /* account_funds.json */; };
+		711AA3111958B8A400861CD4 /* current_orders.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2FB1958B8A400861CD4 /* current_orders.json */; };
+		711AA3121958B8A400861CD4 /* event_types.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2FC1958B8A400861CD4 /* event_types.json */; };
+		711AA3131958B8A400861CD4 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2FD1958B8A400861CD4 /* events.json */; };
+		711AA3141958B8A400861CD4 /* market_book.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2FE1958B8A400861CD4 /* market_book.json */; };
+		711AA3151958B8A400861CD4 /* market_catalogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA2FF1958B8A400861CD4 /* market_catalogue.json */; };
+		711AA3161958B8A400861CD4 /* place_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3001958B8A400861CD4 /* place_order.json */; };
+		711AA3171958B8A400861CD4 /* replace_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3011958B8A400861CD4 /* replace_order.json */; };
+		711AA3181958B8A400861CD4 /* replace_order_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3021958B8A400861CD4 /* replace_order_failure.json */; };
+		711AA3191958B8A400861CD4 /* update_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3031958B8A400861CD4 /* update_order.json */; };
+		711BC3E71958270400EF8945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BC3E61958270400EF8945 /* Foundation.framework */; };
+		71D9BBD1195823C10006B520 /* BNGAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71D9BBD0195823C10006B520 /* BNGAPI.h */; };
+		71D9BBD3195823C10006B520 /* BNGAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9BBD2195823C10006B520 /* BNGAPI.m */; };
+		71D9BBD9195823C10006B520 /* libBNGAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D9BBCD195823C10006B520 /* libBNGAPI.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7118B90A1958263F007057CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71D9BBC5195823C10006B520 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71D9BBCC195823C10006B520;
+			remoteInfo = BNGAPI;
+		};
+		71D9BBDA195823C10006B520 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71D9BBC5195823C10006B520 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71D9BBCC195823C10006B520;
+			remoteInfo = BNGAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		71D9BBCB195823C10006B520 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				71D9BBD1195823C10006B520 /* BNGAPI.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7118B90D195826BE007057CE /* BNGAPI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BNGAPI-Prefix.pch"; sourceTree = "<group>"; };
+		7118B90E195826BE007057CE /* APING.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APING.h; sourceTree = "<group>"; };
+		7118B90F195826BE007057CE /* APING.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APING.m; sourceTree = "<group>"; };
+		7118B911195826BE007057CE /* NSNumber+DecimalConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DecimalConversion.h"; sourceTree = "<group>"; };
+		7118B912195826BE007057CE /* NSNumber+DecimalConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DecimalConversion.m"; sourceTree = "<group>"; };
+		7118B913195826BE007057CE /* NSString+RandomCustomerReferenceId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RandomCustomerReferenceId.h"; sourceTree = "<group>"; };
+		7118B914195826BE007057CE /* NSString+RandomCustomerReferenceId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RandomCustomerReferenceId.m"; sourceTree = "<group>"; };
+		7118B915195826BE007057CE /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		7118B916195826BE007057CE /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		7118B917195826BE007057CE /* NSURL+APING.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+APING.h"; sourceTree = "<group>"; };
+		7118B918195826BE007057CE /* NSURL+APING.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+APING.m"; sourceTree = "<group>"; };
+		7118B919195826BE007057CE /* NSURLConnection+BNGJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+BNGJSON.h"; sourceTree = "<group>"; };
+		7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+BNGJSON.m"; sourceTree = "<group>"; };
+		7118B91B195826BE007057CE /* NSURLRequest+HTTPBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+HTTPBody.h"; sourceTree = "<group>"; };
+		7118B91C195826BE007057CE /* NSURLRequest+HTTPBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+HTTPBody.m"; sourceTree = "<group>"; };
+		7118B91E195826BE007057CE /* BNGAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccount.h; sourceTree = "<group>"; };
+		7118B91F195826BE007057CE /* BNGAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccount.m; sourceTree = "<group>"; };
+		7118B920195826BE007057CE /* BNGAccountDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountDetails.h; sourceTree = "<group>"; };
+		7118B921195826BE007057CE /* BNGAccountDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountDetails.m; sourceTree = "<group>"; };
+		7118B922195826BE007057CE /* BNGAccountFunds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountFunds.h; sourceTree = "<group>"; };
+		7118B923195826BE007057CE /* BNGAccountFunds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountFunds.m; sourceTree = "<group>"; };
+		7118B924195826BE007057CE /* BNGAPIError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAPIError.h; sourceTree = "<group>"; };
+		7118B925195826BE007057CE /* BNGAPIError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAPIError.m; sourceTree = "<group>"; };
+		7118B926195826BE007057CE /* BNGAPIError_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAPIError_Private.h; sourceTree = "<group>"; };
+		7118B927195826BE007057CE /* BNGAPIResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAPIResponseParser.h; sourceTree = "<group>"; };
+		7118B928195826BE007057CE /* BNGAPIResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAPIResponseParser.m; sourceTree = "<group>"; };
+		7118B929195826BE007057CE /* BNGCancelExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCancelExecutionReport.h; sourceTree = "<group>"; };
+		7118B92A195826BE007057CE /* BNGCancelExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCancelExecutionReport.m; sourceTree = "<group>"; };
+		7118B92B195826BE007057CE /* BNGCancelInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCancelInstruction.h; sourceTree = "<group>"; };
+		7118B92C195826BE007057CE /* BNGCancelInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCancelInstruction.m; sourceTree = "<group>"; };
+		7118B92D195826BE007057CE /* BNGCancelInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCancelInstructionReport.h; sourceTree = "<group>"; };
+		7118B92E195826BE007057CE /* BNGCancelInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCancelInstructionReport.m; sourceTree = "<group>"; };
+		7118B92F195826BE007057CE /* BNGCompetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCompetition.h; sourceTree = "<group>"; };
+		7118B930195826BE007057CE /* BNGCompetition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCompetition.m; sourceTree = "<group>"; };
+		7118B931195826BE007057CE /* BNGCompetitionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCompetitionResult.h; sourceTree = "<group>"; };
+		7118B932195826BE007057CE /* BNGCompetitionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCompetitionResult.m; sourceTree = "<group>"; };
+		7118B933195826BE007057CE /* BNGCurrentOrderSummaryReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCurrentOrderSummaryReport.h; sourceTree = "<group>"; };
+		7118B934195826BE007057CE /* BNGCurrentOrderSummaryReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCurrentOrderSummaryReport.m; sourceTree = "<group>"; };
+		7118B935195826BE007057CE /* BNGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEvent.h; sourceTree = "<group>"; };
+		7118B936195826BE007057CE /* BNGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEvent.m; sourceTree = "<group>"; };
+		7118B937195826BE007057CE /* BNGEventResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventResult.h; sourceTree = "<group>"; };
+		7118B938195826BE007057CE /* BNGEventResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventResult.m; sourceTree = "<group>"; };
+		7118B939195826BE007057CE /* BNGEventType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventType.h; sourceTree = "<group>"; };
+		7118B93A195826BE007057CE /* BNGEventType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventType.m; sourceTree = "<group>"; };
+		7118B93B195826BE007057CE /* BNGEventTypeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTypeResult.h; sourceTree = "<group>"; };
+		7118B93C195826BE007057CE /* BNGEventTypeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTypeResult.m; sourceTree = "<group>"; };
+		7118B93D195826BE007057CE /* BNGExBestOffersOverrides.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGExBestOffersOverrides.h; sourceTree = "<group>"; };
+		7118B93E195826BE007057CE /* BNGExBestOffersOverrides.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExBestOffersOverrides.m; sourceTree = "<group>"; };
+		7118B93F195826BE007057CE /* BNGExchangePrices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGExchangePrices.h; sourceTree = "<group>"; };
+		7118B940195826BE007057CE /* BNGExchangePrices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExchangePrices.m; sourceTree = "<group>"; };
+		7118B941195826BE007057CE /* BNGExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGExecutionReport.h; sourceTree = "<group>"; };
+		7118B942195826BE007057CE /* BNGExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExecutionReport.m; sourceTree = "<group>"; };
+		7118B943195826BE007057CE /* BNGInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGInstructionReport.h; sourceTree = "<group>"; };
+		7118B944195826BE007057CE /* BNGInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGInstructionReport.m; sourceTree = "<group>"; };
+		7118B945195826BE007057CE /* BNGLimitOnCloseOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGLimitOnCloseOrder.h; sourceTree = "<group>"; };
+		7118B946195826BE007057CE /* BNGLimitOnCloseOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLimitOnCloseOrder.m; sourceTree = "<group>"; };
+		7118B947195826BE007057CE /* BNGLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGLimitOrder.h; sourceTree = "<group>"; };
+		7118B948195826BE007057CE /* BNGLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLimitOrder.m; sourceTree = "<group>"; };
+		7118B949195826BE007057CE /* BNGLoginURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGLoginURLProtocol.h; sourceTree = "<group>"; };
+		7118B94A195826BE007057CE /* BNGLoginURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLoginURLProtocol.m; sourceTree = "<group>"; };
+		7118B94B195826BE007057CE /* BNGMarketBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketBook.h; sourceTree = "<group>"; };
+		7118B94C195826BE007057CE /* BNGMarketBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketBook.m; sourceTree = "<group>"; };
+		7118B94D195826BE007057CE /* BNGMarketCatalogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCatalogue.h; sourceTree = "<group>"; };
+		7118B94E195826BE007057CE /* BNGMarketCatalogue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogue.m; sourceTree = "<group>"; };
+		7118B94F195826BE007057CE /* BNGMarketCatalogueDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCatalogueDescription.h; sourceTree = "<group>"; };
+		7118B950195826BE007057CE /* BNGMarketCatalogueDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueDescription.m; sourceTree = "<group>"; };
+		7118B951195826BE007057CE /* BNGMarketCatalogueFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCatalogueFilter.h; sourceTree = "<group>"; };
+		7118B952195826BE007057CE /* BNGMarketCatalogueFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueFilter.m; sourceTree = "<group>"; };
+		7118B953195826BE007057CE /* BNGMarketFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketFilter.h; sourceTree = "<group>"; };
+		7118B954195826BE007057CE /* BNGMarketFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketFilter.m; sourceTree = "<group>"; };
+		7118B955195826BE007057CE /* BNGMarketOnCloseOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketOnCloseOrder.h; sourceTree = "<group>"; };
+		7118B956195826BE007057CE /* BNGMarketOnCloseOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketOnCloseOrder.m; sourceTree = "<group>"; };
+		7118B957195826BE007057CE /* BNGMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMatch.h; sourceTree = "<group>"; };
+		7118B958195826BE007057CE /* BNGMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMatch.m; sourceTree = "<group>"; };
+		7118B959195826BE007057CE /* BNGMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMutableURLRequest.h; sourceTree = "<group>"; };
+		7118B95A195826BE007057CE /* BNGMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMutableURLRequest.m; sourceTree = "<group>"; };
+		7118B95B195826BE007057CE /* BNGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGOrder.h; sourceTree = "<group>"; };
+		7118B95C195826BE007057CE /* BNGOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGOrder.m; sourceTree = "<group>"; };
+		7118B95D195826BE007057CE /* BNGPlaceExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPlaceExecutionReport.h; sourceTree = "<group>"; };
+		7118B95E195826BE007057CE /* BNGPlaceExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPlaceExecutionReport.m; sourceTree = "<group>"; };
+		7118B95F195826BE007057CE /* BNGPlaceInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPlaceInstruction.h; sourceTree = "<group>"; };
+		7118B960195826BE007057CE /* BNGPlaceInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPlaceInstruction.m; sourceTree = "<group>"; };
+		7118B961195826BE007057CE /* BNGPlaceInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPlaceInstructionReport.h; sourceTree = "<group>"; };
+		7118B962195826BE007057CE /* BNGPlaceInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPlaceInstructionReport.m; sourceTree = "<group>"; };
+		7118B963195826BE007057CE /* BNGPriceProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPriceProjection.h; sourceTree = "<group>"; };
+		7118B964195826BE007057CE /* BNGPriceProjection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPriceProjection.m; sourceTree = "<group>"; };
+		7118B965195826BE007057CE /* BNGPriceSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGPriceSize.h; sourceTree = "<group>"; };
+		7118B966195826BE007057CE /* BNGPriceSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGPriceSize.m; sourceTree = "<group>"; };
+		7118B967195826BE007057CE /* BNGReplaceExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGReplaceExecutionReport.h; sourceTree = "<group>"; };
+		7118B968195826BE007057CE /* BNGReplaceExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGReplaceExecutionReport.m; sourceTree = "<group>"; };
+		7118B969195826BE007057CE /* BNGReplaceInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGReplaceInstruction.h; sourceTree = "<group>"; };
+		7118B96A195826BE007057CE /* BNGReplaceInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGReplaceInstruction.m; sourceTree = "<group>"; };
+		7118B96B195826BE007057CE /* BNGReplaceInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGReplaceInstructionReport.h; sourceTree = "<group>"; };
+		7118B96C195826BE007057CE /* BNGReplaceInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGReplaceInstructionReport.m; sourceTree = "<group>"; };
+		7118B96D195826BE007057CE /* BNGRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGRunner.h; sourceTree = "<group>"; };
+		7118B96E195826BE007057CE /* BNGRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGRunner.m; sourceTree = "<group>"; };
+		7118B96F195826BE007057CE /* BNGStartingPrices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGStartingPrices.h; sourceTree = "<group>"; };
+		7118B970195826BE007057CE /* BNGStartingPrices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGStartingPrices.m; sourceTree = "<group>"; };
+		7118B971195826BE007057CE /* BNGTimeRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGTimeRange.h; sourceTree = "<group>"; };
+		7118B972195826BE007057CE /* BNGTimeRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGTimeRange.m; sourceTree = "<group>"; };
+		7118B973195826BE007057CE /* BNGUpdateExecutionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateExecutionReport.h; sourceTree = "<group>"; };
+		7118B974195826BE007057CE /* BNGUpdateExecutionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateExecutionReport.m; sourceTree = "<group>"; };
+		7118B975195826BE007057CE /* BNGUpdateInstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateInstruction.h; sourceTree = "<group>"; };
+		7118B976195826BE007057CE /* BNGUpdateInstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateInstruction.m; sourceTree = "<group>"; };
+		7118B977195826BE007057CE /* BNGUpdateInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateInstructionReport.h; sourceTree = "<group>"; };
+		7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateInstructionReport.m; sourceTree = "<group>"; };
+		7118B97A195826BE007057CE /* BNGDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGDictionaryRepresentation.h; sourceTree = "<group>"; };
+		711AA2E11958B8A400861CD4 /* NSURL+APINGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+APINGTests.h"; sourceTree = "<group>"; };
+		711AA2E21958B8A400861CD4 /* NSURL+APINGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+APINGTests.m"; sourceTree = "<group>"; };
+		711AA2E41958B8A400861CD4 /* BNGAccountTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountTest.h; sourceTree = "<group>"; };
+		711AA2E51958B8A400861CD4 /* BNGAccountTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountTest.m; sourceTree = "<group>"; };
+		711AA2E61958B8A400861CD4 /* BNGEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTest.h; sourceTree = "<group>"; };
+		711AA2E71958B8A400861CD4 /* BNGEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTest.m; sourceTree = "<group>"; };
+		711AA2E81958B8A400861CD4 /* BNGEventTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTypeTest.h; sourceTree = "<group>"; };
+		711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTypeTest.m; sourceTree = "<group>"; };
+		711AA2EA1958B8A400861CD4 /* BNGMarketBookTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketBookTest.h; sourceTree = "<group>"; };
+		711AA2EB1958B8A400861CD4 /* BNGMarketBookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketBookTest.m; sourceTree = "<group>"; };
+		711AA2EC1958B8A400861CD4 /* BNGMarketCataloguesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCataloguesTest.h; sourceTree = "<group>"; };
+		711AA2ED1958B8A400861CD4 /* BNGMarketCataloguesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCataloguesTest.m; sourceTree = "<group>"; };
+		711AA2EE1958B8A400861CD4 /* BNGMarketFilterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketFilterTests.h; sourceTree = "<group>"; };
+		711AA2EF1958B8A400861CD4 /* BNGMarketFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketFilterTests.m; sourceTree = "<group>"; };
+		711AA2F01958B8A400861CD4 /* BNGMutableURLRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMutableURLRequestTests.h; sourceTree = "<group>"; };
+		711AA2F11958B8A400861CD4 /* BNGMutableURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMutableURLRequestTests.m; sourceTree = "<group>"; };
+		711AA2F21958B8A400861CD4 /* BNGOrderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGOrderTest.h; sourceTree = "<group>"; };
+		711AA2F31958B8A400861CD4 /* BNGOrderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGOrderTest.m; sourceTree = "<group>"; };
+		711AA2F41958B8A400861CD4 /* BNGTestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGTestUtilities.h; sourceTree = "<group>"; };
+		711AA2F51958B8A400861CD4 /* BNGTestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGTestUtilities.m; sourceTree = "<group>"; };
+		711AA2F61958B8A400861CD4 /* BNGURLProtocolResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGURLProtocolResourceLoader.h; sourceTree = "<group>"; };
+		711AA2F71958B8A400861CD4 /* BNGURLProtocolResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGURLProtocolResourceLoader.m; sourceTree = "<group>"; };
+		711AA2F91958B8A400861CD4 /* account_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_details.json; sourceTree = "<group>"; };
+		711AA2FA1958B8A400861CD4 /* account_funds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_funds.json; sourceTree = "<group>"; };
+		711AA2FB1958B8A400861CD4 /* current_orders.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current_orders.json; sourceTree = "<group>"; };
+		711AA2FC1958B8A400861CD4 /* event_types.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = event_types.json; sourceTree = "<group>"; };
+		711AA2FD1958B8A400861CD4 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = "<group>"; };
+		711AA2FE1958B8A400861CD4 /* market_book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_book.json; sourceTree = "<group>"; };
+		711AA2FF1958B8A400861CD4 /* market_catalogue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_catalogue.json; sourceTree = "<group>"; };
+		711AA3001958B8A400861CD4 /* place_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = place_order.json; sourceTree = "<group>"; };
+		711AA3011958B8A400861CD4 /* replace_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = replace_order.json; sourceTree = "<group>"; };
+		711AA3021958B8A400861CD4 /* replace_order_failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = replace_order_failure.json; sourceTree = "<group>"; };
+		711AA3031958B8A400861CD4 /* update_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_order.json; sourceTree = "<group>"; };
+		711BC3E61958270400EF8945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		71D9BBCD195823C10006B520 /* libBNGAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBNGAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D9BBD0195823C10006B520 /* BNGAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNGAPI.h; sourceTree = "<group>"; };
+		71D9BBD2195823C10006B520 /* BNGAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNGAPI.m; sourceTree = "<group>"; };
+		71D9BBD8195823C10006B520 /* BNGAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BNGAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71D9BBDE195823C10006B520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71D9BBCA195823C10006B520 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				711BC3E71958270400EF8945 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D9BBD5195823C10006B520 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D9BBD9195823C10006B520 /* libBNGAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7118B910195826BE007057CE /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7118B911195826BE007057CE /* NSNumber+DecimalConversion.h */,
+				7118B912195826BE007057CE /* NSNumber+DecimalConversion.m */,
+				7118B913195826BE007057CE /* NSString+RandomCustomerReferenceId.h */,
+				7118B914195826BE007057CE /* NSString+RandomCustomerReferenceId.m */,
+				7118B915195826BE007057CE /* NSString+URLEncoding.h */,
+				7118B916195826BE007057CE /* NSString+URLEncoding.m */,
+				7118B917195826BE007057CE /* NSURL+APING.h */,
+				7118B918195826BE007057CE /* NSURL+APING.m */,
+				7118B919195826BE007057CE /* NSURLConnection+BNGJSON.h */,
+				7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */,
+				7118B91B195826BE007057CE /* NSURLRequest+HTTPBody.h */,
+				7118B91C195826BE007057CE /* NSURLRequest+HTTPBody.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7118B91D195826BE007057CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7118B91E195826BE007057CE /* BNGAccount.h */,
+				7118B91F195826BE007057CE /* BNGAccount.m */,
+				7118B920195826BE007057CE /* BNGAccountDetails.h */,
+				7118B921195826BE007057CE /* BNGAccountDetails.m */,
+				7118B922195826BE007057CE /* BNGAccountFunds.h */,
+				7118B923195826BE007057CE /* BNGAccountFunds.m */,
+				7118B924195826BE007057CE /* BNGAPIError.h */,
+				7118B925195826BE007057CE /* BNGAPIError.m */,
+				7118B926195826BE007057CE /* BNGAPIError_Private.h */,
+				7118B927195826BE007057CE /* BNGAPIResponseParser.h */,
+				7118B928195826BE007057CE /* BNGAPIResponseParser.m */,
+				7118B929195826BE007057CE /* BNGCancelExecutionReport.h */,
+				7118B92A195826BE007057CE /* BNGCancelExecutionReport.m */,
+				7118B92B195826BE007057CE /* BNGCancelInstruction.h */,
+				7118B92C195826BE007057CE /* BNGCancelInstruction.m */,
+				7118B92D195826BE007057CE /* BNGCancelInstructionReport.h */,
+				7118B92E195826BE007057CE /* BNGCancelInstructionReport.m */,
+				7118B92F195826BE007057CE /* BNGCompetition.h */,
+				7118B930195826BE007057CE /* BNGCompetition.m */,
+				7118B931195826BE007057CE /* BNGCompetitionResult.h */,
+				7118B932195826BE007057CE /* BNGCompetitionResult.m */,
+				7118B933195826BE007057CE /* BNGCurrentOrderSummaryReport.h */,
+				7118B934195826BE007057CE /* BNGCurrentOrderSummaryReport.m */,
+				7118B935195826BE007057CE /* BNGEvent.h */,
+				7118B936195826BE007057CE /* BNGEvent.m */,
+				7118B937195826BE007057CE /* BNGEventResult.h */,
+				7118B938195826BE007057CE /* BNGEventResult.m */,
+				7118B939195826BE007057CE /* BNGEventType.h */,
+				7118B93A195826BE007057CE /* BNGEventType.m */,
+				7118B93B195826BE007057CE /* BNGEventTypeResult.h */,
+				7118B93C195826BE007057CE /* BNGEventTypeResult.m */,
+				7118B93D195826BE007057CE /* BNGExBestOffersOverrides.h */,
+				7118B93E195826BE007057CE /* BNGExBestOffersOverrides.m */,
+				7118B93F195826BE007057CE /* BNGExchangePrices.h */,
+				7118B940195826BE007057CE /* BNGExchangePrices.m */,
+				7118B941195826BE007057CE /* BNGExecutionReport.h */,
+				7118B942195826BE007057CE /* BNGExecutionReport.m */,
+				7118B943195826BE007057CE /* BNGInstructionReport.h */,
+				7118B944195826BE007057CE /* BNGInstructionReport.m */,
+				7118B945195826BE007057CE /* BNGLimitOnCloseOrder.h */,
+				7118B946195826BE007057CE /* BNGLimitOnCloseOrder.m */,
+				7118B947195826BE007057CE /* BNGLimitOrder.h */,
+				7118B948195826BE007057CE /* BNGLimitOrder.m */,
+				7118B949195826BE007057CE /* BNGLoginURLProtocol.h */,
+				7118B94A195826BE007057CE /* BNGLoginURLProtocol.m */,
+				7118B94B195826BE007057CE /* BNGMarketBook.h */,
+				7118B94C195826BE007057CE /* BNGMarketBook.m */,
+				7118B94D195826BE007057CE /* BNGMarketCatalogue.h */,
+				7118B94E195826BE007057CE /* BNGMarketCatalogue.m */,
+				7118B94F195826BE007057CE /* BNGMarketCatalogueDescription.h */,
+				7118B950195826BE007057CE /* BNGMarketCatalogueDescription.m */,
+				7118B951195826BE007057CE /* BNGMarketCatalogueFilter.h */,
+				7118B952195826BE007057CE /* BNGMarketCatalogueFilter.m */,
+				7118B953195826BE007057CE /* BNGMarketFilter.h */,
+				7118B954195826BE007057CE /* BNGMarketFilter.m */,
+				7118B955195826BE007057CE /* BNGMarketOnCloseOrder.h */,
+				7118B956195826BE007057CE /* BNGMarketOnCloseOrder.m */,
+				7118B957195826BE007057CE /* BNGMatch.h */,
+				7118B958195826BE007057CE /* BNGMatch.m */,
+				7118B959195826BE007057CE /* BNGMutableURLRequest.h */,
+				7118B95A195826BE007057CE /* BNGMutableURLRequest.m */,
+				7118B95B195826BE007057CE /* BNGOrder.h */,
+				7118B95C195826BE007057CE /* BNGOrder.m */,
+				7118B95D195826BE007057CE /* BNGPlaceExecutionReport.h */,
+				7118B95E195826BE007057CE /* BNGPlaceExecutionReport.m */,
+				7118B95F195826BE007057CE /* BNGPlaceInstruction.h */,
+				7118B960195826BE007057CE /* BNGPlaceInstruction.m */,
+				7118B961195826BE007057CE /* BNGPlaceInstructionReport.h */,
+				7118B962195826BE007057CE /* BNGPlaceInstructionReport.m */,
+				7118B963195826BE007057CE /* BNGPriceProjection.h */,
+				7118B964195826BE007057CE /* BNGPriceProjection.m */,
+				7118B965195826BE007057CE /* BNGPriceSize.h */,
+				7118B966195826BE007057CE /* BNGPriceSize.m */,
+				7118B967195826BE007057CE /* BNGReplaceExecutionReport.h */,
+				7118B968195826BE007057CE /* BNGReplaceExecutionReport.m */,
+				7118B969195826BE007057CE /* BNGReplaceInstruction.h */,
+				7118B96A195826BE007057CE /* BNGReplaceInstruction.m */,
+				7118B96B195826BE007057CE /* BNGReplaceInstructionReport.h */,
+				7118B96C195826BE007057CE /* BNGReplaceInstructionReport.m */,
+				7118B96D195826BE007057CE /* BNGRunner.h */,
+				7118B96E195826BE007057CE /* BNGRunner.m */,
+				7118B96F195826BE007057CE /* BNGStartingPrices.h */,
+				7118B970195826BE007057CE /* BNGStartingPrices.m */,
+				7118B971195826BE007057CE /* BNGTimeRange.h */,
+				7118B972195826BE007057CE /* BNGTimeRange.m */,
+				7118B973195826BE007057CE /* BNGUpdateExecutionReport.h */,
+				7118B974195826BE007057CE /* BNGUpdateExecutionReport.m */,
+				7118B975195826BE007057CE /* BNGUpdateInstruction.h */,
+				7118B976195826BE007057CE /* BNGUpdateInstruction.m */,
+				7118B977195826BE007057CE /* BNGUpdateInstructionReport.h */,
+				7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7118B979195826BE007057CE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7118B97A195826BE007057CE /* BNGDictionaryRepresentation.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		711AA2E01958B8A400861CD4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				711AA2E11958B8A400861CD4 /* NSURL+APINGTests.h */,
+				711AA2E21958B8A400861CD4 /* NSURL+APINGTests.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		711AA2E31958B8A400861CD4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				711AA2E41958B8A400861CD4 /* BNGAccountTest.h */,
+				711AA2E51958B8A400861CD4 /* BNGAccountTest.m */,
+				711AA2E61958B8A400861CD4 /* BNGEventTest.h */,
+				711AA2E71958B8A400861CD4 /* BNGEventTest.m */,
+				711AA2E81958B8A400861CD4 /* BNGEventTypeTest.h */,
+				711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */,
+				711AA2EA1958B8A400861CD4 /* BNGMarketBookTest.h */,
+				711AA2EB1958B8A400861CD4 /* BNGMarketBookTest.m */,
+				711AA2EC1958B8A400861CD4 /* BNGMarketCataloguesTest.h */,
+				711AA2ED1958B8A400861CD4 /* BNGMarketCataloguesTest.m */,
+				711AA2EE1958B8A400861CD4 /* BNGMarketFilterTests.h */,
+				711AA2EF1958B8A400861CD4 /* BNGMarketFilterTests.m */,
+				711AA2F01958B8A400861CD4 /* BNGMutableURLRequestTests.h */,
+				711AA2F11958B8A400861CD4 /* BNGMutableURLRequestTests.m */,
+				711AA2F21958B8A400861CD4 /* BNGOrderTest.h */,
+				711AA2F31958B8A400861CD4 /* BNGOrderTest.m */,
+				711AA2F41958B8A400861CD4 /* BNGTestUtilities.h */,
+				711AA2F51958B8A400861CD4 /* BNGTestUtilities.m */,
+				711AA2F61958B8A400861CD4 /* BNGURLProtocolResourceLoader.h */,
+				711AA2F71958B8A400861CD4 /* BNGURLProtocolResourceLoader.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		711AA2F81958B8A400861CD4 /* TestResources */ = {
+			isa = PBXGroup;
+			children = (
+				711AA2F91958B8A400861CD4 /* account_details.json */,
+				711AA2FA1958B8A400861CD4 /* account_funds.json */,
+				711AA2FB1958B8A400861CD4 /* current_orders.json */,
+				711AA2FC1958B8A400861CD4 /* event_types.json */,
+				711AA2FD1958B8A400861CD4 /* events.json */,
+				711AA2FE1958B8A400861CD4 /* market_book.json */,
+				711AA2FF1958B8A400861CD4 /* market_catalogue.json */,
+				711AA3001958B8A400861CD4 /* place_order.json */,
+				711AA3011958B8A400861CD4 /* replace_order.json */,
+				711AA3021958B8A400861CD4 /* replace_order_failure.json */,
+				711AA3031958B8A400861CD4 /* update_order.json */,
+			);
+			path = TestResources;
+			sourceTree = "<group>";
+		};
+		711AA31A1958B95000861CD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				711BC3E61958270400EF8945 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		71D9BBC4195823C10006B520 = {
+			isa = PBXGroup;
+			children = (
+				71D9BBCF195823C10006B520 /* BNGAPI */,
+				71D9BBDC195823C10006B520 /* BNGAPITests */,
+				711AA31A1958B95000861CD4 /* Frameworks */,
+				71D9BBCE195823C10006B520 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71D9BBCE195823C10006B520 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71D9BBCD195823C10006B520 /* libBNGAPI.a */,
+				71D9BBD8195823C10006B520 /* BNGAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		71D9BBCF195823C10006B520 /* BNGAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7118B90E195826BE007057CE /* APING.h */,
+				7118B90F195826BE007057CE /* APING.m */,
+				7118B90D195826BE007057CE /* BNGAPI-Prefix.pch */,
+				71D9BBD0195823C10006B520 /* BNGAPI.h */,
+				71D9BBD2195823C10006B520 /* BNGAPI.m */,
+				7118B910195826BE007057CE /* Categories */,
+				7118B91D195826BE007057CE /* Classes */,
+				7118B979195826BE007057CE /* Protocols */,
+			);
+			path = BNGAPI;
+			sourceTree = "<group>";
+		};
+		71D9BBDC195823C10006B520 /* BNGAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				711AA2E01958B8A400861CD4 /* Categories */,
+				711AA2E31958B8A400861CD4 /* Classes */,
+				71D9BBDD195823C10006B520 /* Supporting Files */,
+				711AA2F81958B8A400861CD4 /* TestResources */,
+			);
+			path = BNGAPITests;
+			sourceTree = "<group>";
+		};
+		71D9BBDD195823C10006B520 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				71D9BBDE195823C10006B520 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7118B90219582511007057CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7118B9E9195826BE007057CE /* BNGMutableURLRequest.h in Headers */,
+				7118B997195826BE007057CE /* BNGAccountFunds.h in Headers */,
+				7118B988195826BE007057CE /* NSURL+APING.h in Headers */,
+				7118B982195826BE007057CE /* NSString+RandomCustomerReferenceId.h in Headers */,
+				7118B97C195826BE007057CE /* APING.h in Headers */,
+				7118B994195826BE007057CE /* BNGAccountDetails.h in Headers */,
+				7118B9D1195826BE007057CE /* BNGLoginURLProtocol.h in Headers */,
+				7118B991195826BE007057CE /* BNGAccount.h in Headers */,
+				7118B99A195826BE007057CE /* BNGAPIError.h in Headers */,
+				7118BA01195826BE007057CE /* BNGReplaceInstruction.h in Headers */,
+				7118BA19195826BE007057CE /* BNGDictionaryRepresentation.h in Headers */,
+				7118B97F195826BE007057CE /* NSNumber+DecimalConversion.h in Headers */,
+				7118B9D4195826BE007057CE /* BNGMarketBook.h in Headers */,
+				7118B9A7195826BE007057CE /* BNGCancelInstructionReport.h in Headers */,
+				7118B9EC195826BE007057CE /* BNGOrder.h in Headers */,
+				7118B9F2195826BE007057CE /* BNGPlaceInstruction.h in Headers */,
+				7118B9E0195826BE007057CE /* BNGMarketFilter.h in Headers */,
+				7118B9B6195826BE007057CE /* BNGEventResult.h in Headers */,
+				7118B9B9195826BE007057CE /* BNGEventType.h in Headers */,
+				7118B9C2195826BE007057CE /* BNGExchangePrices.h in Headers */,
+				7118BA13195826BE007057CE /* BNGUpdateInstruction.h in Headers */,
+				7118B9BF195826BE007057CE /* BNGExBestOffersOverrides.h in Headers */,
+				7118B9C8195826BE007057CE /* BNGInstructionReport.h in Headers */,
+				7118BA0D195826BE007057CE /* BNGTimeRange.h in Headers */,
+				7118B9DD195826BE007057CE /* BNGMarketCatalogueFilter.h in Headers */,
+				7118B9FB195826BE007057CE /* BNGPriceSize.h in Headers */,
+				7118B9B0195826BE007057CE /* BNGCurrentOrderSummaryReport.h in Headers */,
+				7118BA0A195826BE007057CE /* BNGStartingPrices.h in Headers */,
+				7118B97B195826BE007057CE /* BNGAPI-Prefix.pch in Headers */,
+				7118BA10195826BE007057CE /* BNGUpdateExecutionReport.h in Headers */,
+				7118BA07195826BE007057CE /* BNGRunner.h in Headers */,
+				7118B9AD195826BE007057CE /* BNGCompetitionResult.h in Headers */,
+				7118B9DA195826BE007057CE /* BNGMarketCatalogueDescription.h in Headers */,
+				7118B90419582542007057CE /* BNGAPI.h in Headers */,
+				7118B9A4195826BE007057CE /* BNGCancelInstruction.h in Headers */,
+				7118B9FE195826BE007057CE /* BNGReplaceExecutionReport.h in Headers */,
+				7118B9E3195826BE007057CE /* BNGMarketOnCloseOrder.h in Headers */,
+				7118B99E195826BE007057CE /* BNGAPIResponseParser.h in Headers */,
+				7118B9E6195826BE007057CE /* BNGMatch.h in Headers */,
+				7118B99D195826BE007057CE /* BNGAPIError_Private.h in Headers */,
+				7118BA16195826BE007057CE /* BNGUpdateInstructionReport.h in Headers */,
+				7118B9BC195826BE007057CE /* BNGEventTypeResult.h in Headers */,
+				7118B9D7195826BE007057CE /* BNGMarketCatalogue.h in Headers */,
+				7118B9CE195826BE007057CE /* BNGLimitOrder.h in Headers */,
+				7118B9C5195826BE007057CE /* BNGExecutionReport.h in Headers */,
+				7118B985195826BE007057CE /* NSString+URLEncoding.h in Headers */,
+				7118B9F8195826BE007057CE /* BNGPriceProjection.h in Headers */,
+				7118B9A1195826BE007057CE /* BNGCancelExecutionReport.h in Headers */,
+				7118B98B195826BE007057CE /* NSURLConnection+BNGJSON.h in Headers */,
+				7118B98E195826BE007057CE /* NSURLRequest+HTTPBody.h in Headers */,
+				7118B9CB195826BE007057CE /* BNGLimitOnCloseOrder.h in Headers */,
+				7118B9AA195826BE007057CE /* BNGCompetition.h in Headers */,
+				7118B9B3195826BE007057CE /* BNGEvent.h in Headers */,
+				7118B9EF195826BE007057CE /* BNGPlaceExecutionReport.h in Headers */,
+				7118BA04195826BE007057CE /* BNGReplaceInstructionReport.h in Headers */,
+				7118B9F5195826BE007057CE /* BNGPlaceInstructionReport.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		71D9BBCC195823C10006B520 /* BNGAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71D9BBE1195823C10006B520 /* Build configuration list for PBXNativeTarget "BNGAPI" */;
+			buildPhases = (
+				71D9BBC9195823C10006B520 /* Sources */,
+				71D9BBCA195823C10006B520 /* Frameworks */,
+				71D9BBCB195823C10006B520 /* CopyFiles */,
+				7118B90219582511007057CE /* Headers */,
+				7118B905195825D8007057CE /* Prepare Framework */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BNGAPI;
+			productName = BNGAPI;
+			productReference = 71D9BBCD195823C10006B520 /* libBNGAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		71D9BBD7195823C10006B520 /* BNGAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71D9BBE4195823C10006B520 /* Build configuration list for PBXNativeTarget "BNGAPITests" */;
+			buildPhases = (
+				71D9BBD4195823C10006B520 /* Sources */,
+				71D9BBD5195823C10006B520 /* Frameworks */,
+				71D9BBD6195823C10006B520 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71D9BBDB195823C10006B520 /* PBXTargetDependency */,
+			);
+			name = BNGAPITests;
+			productName = BNGAPITests;
+			productReference = 71D9BBD8195823C10006B520 /* BNGAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		71D9BBC5195823C10006B520 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Betfair;
+				TargetAttributes = {
+					71D9BBCC195823C10006B520 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					71D9BBD7195823C10006B520 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 71D9BBCC195823C10006B520;
+					};
+				};
+			};
+			buildConfigurationList = 71D9BBC8195823C10006B520 /* Build configuration list for PBXProject "BNGAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 71D9BBC4195823C10006B520;
+			productRefGroup = 71D9BBCE195823C10006B520 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				71D9BBCC195823C10006B520 /* BNGAPI */,
+				71D9BBD7195823C10006B520 /* BNGAPITests */,
+				7118B90619582636007057CE /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		71D9BBD6195823C10006B520 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				711AA3161958B8A400861CD4 /* place_order.json in Resources */,
+				711AA3191958B8A400861CD4 /* update_order.json in Resources */,
+				711AA3171958B8A400861CD4 /* replace_order.json in Resources */,
+				711AA3111958B8A400861CD4 /* current_orders.json in Resources */,
+				711AA3101958B8A400861CD4 /* account_funds.json in Resources */,
+				711AA3131958B8A400861CD4 /* events.json in Resources */,
+				711AA3151958B8A400861CD4 /* market_catalogue.json in Resources */,
+				711AA3121958B8A400861CD4 /* event_types.json in Resources */,
+				711AA3141958B8A400861CD4 /* market_book.json in Resources */,
+				711AA3181958B8A400861CD4 /* replace_order_failure.json in Resources */,
+				711AA30F1958B8A400861CD4 /* account_details.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7118B905195825D8007057CE /* Prepare Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Prepare Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
+		};
+		7118B90C19582657007057CE /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nxcrun lipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		71D9BBC9195823C10006B520 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7118B98F195826BE007057CE /* NSURLRequest+HTTPBody.m in Sources */,
+				7118B9C3195826BE007057CE /* BNGExchangePrices.m in Sources */,
+				7118BA11195826BE007057CE /* BNGUpdateExecutionReport.m in Sources */,
+				7118B9FC195826BE007057CE /* BNGPriceSize.m in Sources */,
+				7118B986195826BE007057CE /* NSString+URLEncoding.m in Sources */,
+				7118B9A8195826BE007057CE /* BNGCancelInstructionReport.m in Sources */,
+				7118B9F6195826BE007057CE /* BNGPlaceInstructionReport.m in Sources */,
+				7118B9B1195826BE007057CE /* BNGCurrentOrderSummaryReport.m in Sources */,
+				7118B980195826BE007057CE /* NSNumber+DecimalConversion.m in Sources */,
+				7118B983195826BE007057CE /* NSString+RandomCustomerReferenceId.m in Sources */,
+				7118BA0B195826BE007057CE /* BNGStartingPrices.m in Sources */,
+				7118B9E7195826BE007057CE /* BNGMatch.m in Sources */,
+				7118B9F0195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */,
+				7118B9B4195826BE007057CE /* BNGEvent.m in Sources */,
+				7118B9C6195826BE007057CE /* BNGExecutionReport.m in Sources */,
+				7118B9C0195826BE007057CE /* BNGExBestOffersOverrides.m in Sources */,
+				7118B9AB195826BE007057CE /* BNGCompetition.m in Sources */,
+				7118BA14195826BE007057CE /* BNGUpdateInstruction.m in Sources */,
+				7118B9A2195826BE007057CE /* BNGCancelExecutionReport.m in Sources */,
+				7118B9E4195826BE007057CE /* BNGMarketOnCloseOrder.m in Sources */,
+				71D9BBD3195823C10006B520 /* BNGAPI.m in Sources */,
+				7118B9F3195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
+				7118B9ED195826BE007057CE /* BNGOrder.m in Sources */,
+				7118B9DE195826BE007057CE /* BNGMarketCatalogueFilter.m in Sources */,
+				7118B9B7195826BE007057CE /* BNGEventResult.m in Sources */,
+				7118B989195826BE007057CE /* NSURL+APING.m in Sources */,
+				7118B9EA195826BE007057CE /* BNGMutableURLRequest.m in Sources */,
+				7118B995195826BE007057CE /* BNGAccountDetails.m in Sources */,
+				7118B99B195826BE007057CE /* BNGAPIError.m in Sources */,
+				7118B9BA195826BE007057CE /* BNGEventType.m in Sources */,
+				7118B9DB195826BE007057CE /* BNGMarketCatalogueDescription.m in Sources */,
+				7118B9E1195826BE007057CE /* BNGMarketFilter.m in Sources */,
+				7118BA02195826BE007057CE /* BNGReplaceInstruction.m in Sources */,
+				7118B9D5195826BE007057CE /* BNGMarketBook.m in Sources */,
+				7118BA17195826BE007057CE /* BNGUpdateInstructionReport.m in Sources */,
+				7118B9CC195826BE007057CE /* BNGLimitOnCloseOrder.m in Sources */,
+				7118B99F195826BE007057CE /* BNGAPIResponseParser.m in Sources */,
+				7118B992195826BE007057CE /* BNGAccount.m in Sources */,
+				7118B9BD195826BE007057CE /* BNGEventTypeResult.m in Sources */,
+				7118B9CF195826BE007057CE /* BNGLimitOrder.m in Sources */,
+				7118B9FF195826BE007057CE /* BNGReplaceExecutionReport.m in Sources */,
+				7118B9D2195826BE007057CE /* BNGLoginURLProtocol.m in Sources */,
+				7118B9A5195826BE007057CE /* BNGCancelInstruction.m in Sources */,
+				7118BA08195826BE007057CE /* BNGRunner.m in Sources */,
+				7118B9C9195826BE007057CE /* BNGInstructionReport.m in Sources */,
+				7118BA05195826BE007057CE /* BNGReplaceInstructionReport.m in Sources */,
+				7118B9AE195826BE007057CE /* BNGCompetitionResult.m in Sources */,
+				7118B98C195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */,
+				7118B97D195826BE007057CE /* APING.m in Sources */,
+				7118BA0E195826BE007057CE /* BNGTimeRange.m in Sources */,
+				7118B9F9195826BE007057CE /* BNGPriceProjection.m in Sources */,
+				7118B998195826BE007057CE /* BNGAccountFunds.m in Sources */,
+				7118B9D8195826BE007057CE /* BNGMarketCatalogue.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		71D9BBD4195823C10006B520 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				711AA3081958B8A400861CD4 /* BNGMarketBookTest.m in Sources */,
+				711AA3071958B8A400861CD4 /* BNGEventTypeTest.m in Sources */,
+				7118B9CA195826BE007057CE /* BNGInstructionReport.m in Sources */,
+				7118B9A6195826BE007057CE /* BNGCancelInstruction.m in Sources */,
+				711AA3061958B8A400861CD4 /* BNGEventTest.m in Sources */,
+				7118BA15195826BE007057CE /* BNGUpdateInstruction.m in Sources */,
+				7118B9C1195826BE007057CE /* BNGExBestOffersOverrides.m in Sources */,
+				7118BA12195826BE007057CE /* BNGUpdateExecutionReport.m in Sources */,
+				711AA30D1958B8A400861CD4 /* BNGTestUtilities.m in Sources */,
+				7118B9AF195826BE007057CE /* BNGCompetitionResult.m in Sources */,
+				7118B9BB195826BE007057CE /* BNGEventType.m in Sources */,
+				7118BA00195826BE007057CE /* BNGReplaceExecutionReport.m in Sources */,
+				7118BA0F195826BE007057CE /* BNGTimeRange.m in Sources */,
+				7118B9E8195826BE007057CE /* BNGMatch.m in Sources */,
+				7118BA0C195826BE007057CE /* BNGStartingPrices.m in Sources */,
+				7118B9B5195826BE007057CE /* BNGEvent.m in Sources */,
+				7118B9D9195826BE007057CE /* BNGMarketCatalogue.m in Sources */,
+				7118B9E2195826BE007057CE /* BNGMarketFilter.m in Sources */,
+				711AA30E1958B8A400861CD4 /* BNGURLProtocolResourceLoader.m in Sources */,
+				711AA3091958B8A400861CD4 /* BNGMarketCataloguesTest.m in Sources */,
+				7118B9D3195826BE007057CE /* BNGLoginURLProtocol.m in Sources */,
+				7118B98D195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */,
+				7118B9BE195826BE007057CE /* BNGEventTypeResult.m in Sources */,
+				7118B9D0195826BE007057CE /* BNGLimitOrder.m in Sources */,
+				7118B9D6195826BE007057CE /* BNGMarketBook.m in Sources */,
+				7118BA09195826BE007057CE /* BNGRunner.m in Sources */,
+				7118BA06195826BE007057CE /* BNGReplaceInstructionReport.m in Sources */,
+				7118B97E195826BE007057CE /* APING.m in Sources */,
+				7118B999195826BE007057CE /* BNGAccountFunds.m in Sources */,
+				7118B9DC195826BE007057CE /* BNGMarketCatalogueDescription.m in Sources */,
+				7118B984195826BE007057CE /* NSString+RandomCustomerReferenceId.m in Sources */,
+				7118B993195826BE007057CE /* BNGAccount.m in Sources */,
+				7118B987195826BE007057CE /* NSString+URLEncoding.m in Sources */,
+				7118B996195826BE007057CE /* BNGAccountDetails.m in Sources */,
+				7118B9C7195826BE007057CE /* BNGExecutionReport.m in Sources */,
+				7118B98A195826BE007057CE /* NSURL+APING.m in Sources */,
+				7118B9C4195826BE007057CE /* BNGExchangePrices.m in Sources */,
+				7118B9EE195826BE007057CE /* BNGOrder.m in Sources */,
+				7118B9A9195826BE007057CE /* BNGCancelInstructionReport.m in Sources */,
+				7118B9A3195826BE007057CE /* BNGCancelExecutionReport.m in Sources */,
+				7118B9FD195826BE007057CE /* BNGPriceSize.m in Sources */,
+				711AA3051958B8A400861CD4 /* BNGAccountTest.m in Sources */,
+				7118B9F7195826BE007057CE /* BNGPlaceInstructionReport.m in Sources */,
+				7118B9E5195826BE007057CE /* BNGMarketOnCloseOrder.m in Sources */,
+				7118B9DF195826BE007057CE /* BNGMarketCatalogueFilter.m in Sources */,
+				7118B99C195826BE007057CE /* BNGAPIError.m in Sources */,
+				7118BA18195826BE007057CE /* BNGUpdateInstructionReport.m in Sources */,
+				711AA30C1958B8A400861CD4 /* BNGOrderTest.m in Sources */,
+				711AA30A1958B8A400861CD4 /* BNGMarketFilterTests.m in Sources */,
+				7118B990195826BE007057CE /* NSURLRequest+HTTPBody.m in Sources */,
+				7118B9AC195826BE007057CE /* BNGCompetition.m in Sources */,
+				7118B9CD195826BE007057CE /* BNGLimitOnCloseOrder.m in Sources */,
+				7118B9FA195826BE007057CE /* BNGPriceProjection.m in Sources */,
+				711AA30B1958B8A400861CD4 /* BNGMutableURLRequestTests.m in Sources */,
+				7118B9A0195826BE007057CE /* BNGAPIResponseParser.m in Sources */,
+				7118BA03195826BE007057CE /* BNGReplaceInstruction.m in Sources */,
+				7118B981195826BE007057CE /* NSNumber+DecimalConversion.m in Sources */,
+				7118B9B2195826BE007057CE /* BNGCurrentOrderSummaryReport.m in Sources */,
+				711AA3041958B8A400861CD4 /* NSURL+APINGTests.m in Sources */,
+				7118B9EB195826BE007057CE /* BNGMutableURLRequest.m in Sources */,
+				7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */,
+				7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
+				7118B9F1195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7118B90B1958263F007057CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71D9BBCC195823C10006B520 /* BNGAPI */;
+			targetProxy = 7118B90A1958263F007057CE /* PBXContainerItemProxy */;
+		};
+		71D9BBDB195823C10006B520 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71D9BBCC195823C10006B520 /* BNGAPI */;
+			targetProxy = 71D9BBDA195823C10006B520 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7118B90819582636007057CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7118B90919582636007057CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		71D9BBDF195823C10006B520 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		71D9BBE0195823C10006B520 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		71D9BBE2195823C10006B520 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEAD_CODE_STRIPPING = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		71D9BBE3195823C10006B520 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		71D9BBE5195823C10006B520 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BNGAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		71D9BBE6195823C10006B520 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BNGAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7118B90719582636007057CE /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7118B90819582636007057CE /* Debug */,
+				7118B90919582636007057CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71D9BBC8195823C10006B520 /* Build configuration list for PBXProject "BNGAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D9BBDF195823C10006B520 /* Debug */,
+				71D9BBE0195823C10006B520 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71D9BBE1195823C10006B520 /* Build configuration list for PBXNativeTarget "BNGAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D9BBE2195823C10006B520 /* Debug */,
+				71D9BBE3195823C10006B520 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		71D9BBE4195823C10006B520 /* Build configuration list for PBXNativeTarget "BNGAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D9BBE5195823C10006B520 /* Debug */,
+				71D9BBE6195823C10006B520 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 71D9BBC5195823C10006B520 /* Project object */;
+}
