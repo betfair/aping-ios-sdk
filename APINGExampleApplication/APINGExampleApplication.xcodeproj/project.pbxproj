@@ -24,23 +24,10 @@
 		76909884183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76909882183D6C4E0056C074 /* APINGExampleAccountDetailViewController.m */; };
 		76909886183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76909885183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib */; };
 		76909887183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76909885183D6ED00056C074 /* APINGExampleAccountDetailViewController.xib */; };
+		8BB8CFCFE7254C60920E22CC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E86285D808149BC989D0D45 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		71C26C3C1958C2D3000C74FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71C26C361958C2D3000C74FC /* BNGAPI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 71D9BBCD195823C10006B520;
-			remoteInfo = BNGAPI;
-		};
-		71C26C3E1958C2D3000C74FC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 71C26C361958C2D3000C74FC /* BNGAPI.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 71D9BBD8195823C10006B520;
-			remoteInfo = BNGAPITests;
-		};
 		71FD84B117E9FF4700D56599 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 71FD848017E9FF4700D56599 /* Project object */;
@@ -51,7 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		71C26C361958C2D3000C74FC /* BNGAPI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BNGAPI.xcodeproj; path = ../BNGAPI/BNGAPI.xcodeproj; sourceTree = "<group>"; };
+		1E86285D808149BC989D0D45 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BEC8FB770D24D44BE7AAA3D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		71FD848817E9FF4700D56599 /* APINGExampleApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APINGExampleApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71FD848B17E9FF4700D56599 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		71FD848D17E9FF4700D56599 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +70,7 @@
 				71FD848E17E9FF4700D56599 /* CoreGraphics.framework in Frameworks */,
 				71FD849017E9FF4700D56599 /* UIKit.framework in Frameworks */,
 				71FD848C17E9FF4700D56599 /* Foundation.framework in Frameworks */,
+				8BB8CFCFE7254C60920E22CC /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,21 +87,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		71C26C371958C2D3000C74FC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				71C26C3D1958C2D3000C74FC /* libBNGAPI.a */,
-				71C26C3F1958C2D3000C74FC /* BNGAPITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		71FD847F17E9FF4700D56599 = {
 			isa = PBXGroup;
 			children = (
 				71FD849117E9FF4700D56599 /* APINGExampleApplication */,
 				71FD848A17E9FF4700D56599 /* Frameworks */,
 				71FD848917E9FF4700D56599 /* Products */,
+				3BEC8FB770D24D44BE7AAA3D /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,11 +109,11 @@
 		71FD848A17E9FF4700D56599 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				71C26C361958C2D3000C74FC /* BNGAPI.xcodeproj */,
 				71FD848B17E9FF4700D56599 /* Foundation.framework */,
 				71FD848D17E9FF4700D56599 /* CoreGraphics.framework */,
 				71FD848F17E9FF4700D56599 /* UIKit.framework */,
 				71FD84AD17E9FF4700D56599 /* XCTest.framework */,
+				1E86285D808149BC989D0D45 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71FD84BD17E9FF4700D56599 /* Build configuration list for PBXNativeTarget "APINGExampleApplication" */;
 			buildPhases = (
+				9D33DC80BAC94F7E9ACAE635 /* Check Pods Manifest.lock */,
 				71FD848417E9FF4700D56599 /* Sources */,
 				71FD848517E9FF4700D56599 /* Frameworks */,
 				71FD848617E9FF4700D56599 /* Resources */,
+				AF9F2F334B334D8B84CE0869 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,12 +213,6 @@
 			mainGroup = 71FD847F17E9FF4700D56599;
 			productRefGroup = 71FD848917E9FF4700D56599 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 71C26C371958C2D3000C74FC /* Products */;
-					ProjectRef = 71C26C361958C2D3000C74FC /* BNGAPI.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				71FD848717E9FF4700D56599 /* APINGExampleApplication */,
@@ -243,23 +220,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		71C26C3D1958C2D3000C74FC /* libBNGAPI.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libBNGAPI.a;
-			remoteRef = 71C26C3C1958C2D3000C74FC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		71C26C3F1958C2D3000C74FC /* BNGAPITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BNGAPITests.xctest;
-			remoteRef = 71C26C3E1958C2D3000C74FC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		71FD848617E9FF4700D56599 /* Resources */ = {
@@ -283,6 +243,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D33DC80BAC94F7E9ACAE635 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF9F2F334B334D8B84CE0869 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71FD848417E9FF4700D56599 /* Sources */ = {
@@ -416,13 +409,14 @@
 		};
 		71FD84BE17E9FF4700D56599 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BEC8FB770D24D44BE7AAA3D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APINGExampleApplication/APINGExampleApplication-Prefix.pch";
 				INFOPLIST_FILE = "APINGExampleApplication/APINGExampleApplication-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
@@ -431,13 +425,14 @@
 		};
 		71FD84BF17E9FF4700D56599 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BEC8FB770D24D44BE7AAA3D /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APINGExampleApplication/APINGExampleApplication-Prefix.pch";
 				INFOPLIST_FILE = "APINGExampleApplication/APINGExampleApplication-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
 				WRAPPER_EXTENSION = app;
