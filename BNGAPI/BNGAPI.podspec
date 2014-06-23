@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'BNGAPI/*.{h,m}', 'BNGAPI/**/*.{h,m}'
   s.exclude_files = 'BNGAPITests/'
-
+  s.framework = 'XCTest'
   s.requires_arc = true
 
 end
