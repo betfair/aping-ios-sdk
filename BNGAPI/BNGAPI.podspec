@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.8'
 
-  s.source_files = 'BNGAPI/*.{h,m}'
+  s.source_files = 'BNGAPI/*.{h,m}', 'BNGAPI/**/*.{h,m}'
   s.exclude_files = 'BNGAPITests/'
 
   s.requires_arc = true
