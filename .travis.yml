@@ -2,7 +2,7 @@ language: objective-c
 before_install:
   - chmod a+x travis/before_script.sh
   - chmod a+x travis/script.sh
-  - git submodule sync
-  - git submodule update --init --recursive
 before_script: travis/before_script.sh
 script: travis/script.sh
+after_success:
+  - ./travis/coveralls.rb --extension m --exclude-folder Demo --exclude-folder Test --exclude-folder Externals
