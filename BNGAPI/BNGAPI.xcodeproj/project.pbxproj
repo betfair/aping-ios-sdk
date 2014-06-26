@@ -1114,6 +1114,7 @@
 					"$(inherited)",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1134,6 +1135,7 @@
 					"$(inherited)",
 				);
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = BNGAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
