@@ -36,7 +36,7 @@
 
 @implementation BNGExecutionReportTest
 
-- (void)testa
+- (void)testStringFromBNGExecutionReportStatus
 {
     XCTAssertTrue([[BNGExecutionReport stringFromBNGExecutionReportStatus:BNGExecutionReportStatusSuccess] isEqualToString:@"SUCCESS"], @"stringFromBNGExecutionReportStatus should return the appropriate string for BNGExecutionReportStatusSuccess");
     XCTAssertTrue([[BNGExecutionReport stringFromBNGExecutionReportStatus:BNGExecutionReportStatusFailure] isEqualToString:@"FAILURE"], @"stringFromBNGExecutionReportStatus should return the appropriate string for BNGExecutionReportStatusFailure");

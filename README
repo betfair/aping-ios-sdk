@@ -10,7 +10,12 @@ The sample application code must be modified to include your own APING applicati
 
 An application key can be requested from https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG
 
-See `APINGExampleViewController` for more details on how the sample application can be run.
+See `BNGExampleViewController` for more details on how to login to Betfair's services.
+
+== Build Status ==
+
+  [![Build Status](https://travis-ci.org/betfair/aping-ios-sdk.svg?branch=master)](https://travis-ci.org/betfair/aping-ios-sdk)
+  [![Coverage Status](https://img.shields.io/coveralls/betfair/aping-ios-sdk.svg)](https://coveralls.io/r/betfair/aping-ios-sdk)
 
 == Documentation ==
 
