@@ -46,6 +46,7 @@
 #import "BNGReplaceExecutionReport.h"
 #import "BNGReplaceInstructionReport.h"
 #import "BNGReplaceInstruction.h"
+#import "BNGCancelInstructionReport.h"
 
 @implementation BNGOrderTest
 
@@ -74,6 +75,68 @@
         
         dispatch_semaphore_signal(semaphore);
         
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
+- (void)testCurrentOrdersForBetsApiCall
+{
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    [BNGOrder listCurrentOrdersForBetIds:@[@"123"] completionBlock:^(BNGCurrentOrderSummaryReport *report, NSError *connectionError, BNGAPIError *apiError) {
+        
+        XCTAssertFalse(report.moreAvailable, @"There should not be any more orders available for this request");
+        XCTAssertTrue(report.currentOrders.count, @"There should be 5 current orders available for this request");
+        for (BNGOrder *order in report.currentOrders) {
+            if ([order.betId isEqualToString:@"28764485239"]) {
+                XCTAssertTrue([order.marketId isEqualToString:@"1.109165222"], @"The market id should be equal to 1.109165222 for the order with bet id 28764485239");
+                XCTAssertTrue(order.selectionId == 55190, @"The selection id should be equal to 55190 for the order with bet id 28764485239");
+                XCTAssertTrue(order.side == BNGSideBack, @"The BNGOrder should be marked as a back bet for the order with bet id 28764485239");
+                XCTAssertTrue(order.status == BNGOrderStatusExecutionComplete, @"The status should be marked as complete for the order with bet id 28764485239");
+                XCTAssertTrue(order.persistenceType == BNGPersistanceTypeLapse, @"The persistenceType should be marked as 'LAPSE' for the order with bet id 28764485239");
+                XCTAssertTrue([order.avgPriceMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"3.35"]], @"The average price matched for the order with bet id 28764485239 should be 3.35");
+            }
+        }
+        
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
+- (void)testCurrentOrdersForMarketIdsApiCall
+{
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    [BNGOrder listCurrentOrdersForMarketIds:@[@"1.1234567"] completionBlock:^(BNGCurrentOrderSummaryReport *report, NSError *connectionError, BNGAPIError *apiError) {
+       
+        XCTAssertFalse(report.moreAvailable, @"There should not be any more orders available for this request");
+        XCTAssertTrue(report.currentOrders.count, @"There should be 5 current orders available for this request");
+        for (BNGOrder *order in report.currentOrders) {
+            if ([order.betId isEqualToString:@"28764485239"]) {
+                XCTAssertTrue([order.marketId isEqualToString:@"1.109165222"], @"The market id should be equal to 1.109165222 for the order with bet id 28764485239");
+                XCTAssertTrue(order.selectionId == 55190, @"The selection id should be equal to 55190 for the order with bet id 28764485239");
+                XCTAssertTrue(order.side == BNGSideBack, @"The BNGOrder should be marked as a back bet for the order with bet id 28764485239");
+                XCTAssertTrue(order.status == BNGOrderStatusExecutionComplete, @"The status should be marked as complete for the order with bet id 28764485239");
+                XCTAssertTrue(order.persistenceType == BNGPersistanceTypeLapse, @"The persistenceType should be marked as 'LAPSE' for the order with bet id 28764485239");
+                XCTAssertTrue([order.avgPriceMatched isEqual:[NSDecimalNumber decimalNumberWithString:@"3.35"]], @"The average price matched for the order with bet id 28764485239 should be 3.35");
+            }
+        }
+        
+        dispatch_semaphore_signal(semaphore);
     }];
     
     while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
@@ -136,6 +199,46 @@
     while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
                                  beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
+- (void)testCancelOrderApiCall
+{
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    BNGCancelInstruction *instruction = [[BNGCancelInstruction alloc] initWithBetId:@"1234" sizeReduction:[NSDecimalNumber decimalNumberWithString:@"2"]];
+    
+    [BNGOrder cancelOrdersForMarketId:@"1.109165222" instructions:@[instruction] customerRef:@"123" completionBlock:^(BNGCancelExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
+        
+        XCTAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this cancel bet request.");
+        XCTAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this replace bet request");
+        
+        BNGCancelInstructionReport *cancelInstructionReport = report.instructionReports[0];
+        XCTAssertTrue([[cancelInstructionReport.sizeCancelled stringValue] isEqualToString:@"2"], @"The size cancelled should be 2");
+        
+        dispatch_semaphore_signal(semaphore);
+        
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
+- (void)testStringFromOrderStatus
+{
+    XCTAssertTrue([[BNGOrder stringFromOrderStatus:BNGOrderStatusExecutable] isEqualToString:@"EXECUTABLE"], @"The stringFromOrderStatus should return the appropriate string for BNGOrderStatusExecutable");
+    XCTAssertTrue([[BNGOrder stringFromOrderStatus:BNGOrderStatusExecutionComplete] isEqualToString:@"EXECUTION_COMPLETE"], @"The stringFromOrderStatus should return the appropriate string for BNGOrderStatusExecutionComplete");
+}
+
+- (void)testStringFromOrderProjection
+{
+    XCTAssertTrue([[BNGOrder stringFromOrderProjection:BNGOrderProjectionAll] isEqualToString:@"ALL"], @"The stringFromOrderProjection should return the appropriate string for BNGOrderProjectionAll");
+    XCTAssertTrue([[BNGOrder stringFromOrderProjection:BNGOrderProjectionExecutable] isEqualToString:@"EXECUTABLE"], @"The stringFromOrderProjection should return the appropriate string for BNGOrderProjectionExecutable");
+    XCTAssertTrue([[BNGOrder stringFromOrderProjection:BNGOrderProjectionExecutionComplete] isEqualToString:@"EXECUTION_COMPLETE"], @"The stringFromOrderProjection should return the appropriate string for BNGOrderProjectionExecutionComplete");
 }
 
 @end

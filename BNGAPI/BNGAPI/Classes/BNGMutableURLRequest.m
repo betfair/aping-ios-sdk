@@ -102,7 +102,6 @@ static const struct BNGDefaultParameterField BNGDefaultParameterField = {
     if (data) {
         [self setHTTPMethod:@"POST"];
         [self setHTTPBody:data];
-        
         return YES;
     } else {
         return NO;
