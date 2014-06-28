@@ -192,8 +192,165 @@
 
 + (NSString *)stringFromMarketType:(BNGMarketType)marketType
 {
-    //TODO: inverse of the above
-    return @"UNKNOWN";
+    NSString *marketTypeString = @"UNKNOWN";
+    switch (marketType) {
+        case BNGMarketTypeMatchOdds: {
+            marketTypeString = @"MATCH_ODDS";
+        } break;
+        case BNGMarketTypeAsianHandicap: {
+            marketTypeString = @"ASIAN_HANDICAP";
+        } break;
+        case BNGMarketTypeBookingOdds: {
+            marketTypeString = @"BOOKING_ODDS";
+        } break;
+        case BNGMarketTypeBothTeamsToScore: {
+            marketTypeString = @"BOTH_TEAMS_TO_SCORE";
+        } break;
+        case BNGMarketTypeCleanSheet: {
+            marketTypeString = @"CLEAN_SHEET";
+        } break;
+        case BNGMarketTypeCornerMatchBet: {
+            marketTypeString = @"CORNER_MATCH_BET";
+        } break;
+        case BNGMarketTypeCornerOdds: {
+            marketTypeString = @"CORNER_ODDS";
+        } break;
+        case BNGMarketTypeCorrectScore: {
+            marketTypeString = @"CORRECT_SCORE";
+        } break;
+        case BNGMarketTypeCorrectScore2: {
+            marketTypeString = @"CORRECT_SCORE_2";
+        } break;
+        case BNGMarketTypeDrawNoBet: {
+            marketTypeString = @"DRAW_NO_BET";
+        } break;
+        case BNGMarketTypeET: {
+            marketTypeString = @"ET";
+        } break;
+        case BNGMarketTypeFirstCorner: {
+            marketTypeString = @"FIRST_CORNER";
+        } break;
+        case BNGMarketTypeFirstGoalOdds: {
+            marketTypeString = @"FIRST_GOAL_ODDS";
+        } break;
+        case BNGMarketTypeFirstGoalScorer: {
+            marketTypeString = @"FIRST_GOAL_SCORER";
+        } break;
+        case BNGMarketTypeFirstHalfGoals: {
+            marketTypeString = @"FIRST_HALF_GOALS";
+        } break;
+        case BNGMarketTypeHalfTime: {
+            marketTypeString = @"HALF_TIME";
+        } break;
+        case BNGMarketTypeHalfTimeFullTime: {
+            marketTypeString = @"HALF_TIME_FULL_TIME";
+        } break;
+        case BNGMarketTypeHalfTimeScore: {
+            marketTypeString = @"HALF_TIME_SCORE";
+        } break;
+        case BNGMarketTypeHalfWithMostGoals: {
+            marketTypeString = @"HALF_WITH_MOST_GOALS";
+        } break;
+        case BNGMarketTypeHatTrickScored: {
+            marketTypeString = @"HAT_TRICK_SCORED";
+        } break;
+        case BNGMarketTypeMoneyline: {
+            marketTypeString = @"MONEYLINE";
+        } break;
+        case BNGMarketTypeNextGoal: {
+            marketTypeString = @"NEXT_GOAL";
+        } break;
+        case BNGMarketTypeOddOrEven: {
+            marketTypeString = @"ODD_OR_EVEN";
+        } break;
+        case BNGMarketTypeOverUnder5: {
+            marketTypeString = @"OVER_UNDER_05";
+        } break;
+        case BNGMarketTypeOverUnder15: {
+            marketTypeString = @"OVER_UNDER_15";
+        } break;
+        case BNGMarketTypeOverUnder25: {
+            marketTypeString = @"OVER_UNDER_25";
+        } break;
+        case BNGMarketTypeOverUnder35: {
+            marketTypeString = @"OVER_UNDER_35";
+        } break;
+        case BNGMarketTypeOverUnder45: {
+            marketTypeString = @"OVER_UNDER_45";
+        } break;
+        case BNGMarketTypeOverUnder55: {
+            marketTypeString = @"OVER_UNDER_55";
+        } break;
+        case BNGMarketTypeOverUnder65: {
+            marketTypeString = @"OVER_UNDER_65";
+        } break;
+        case BNGMarketTypeOverUnder75: {
+            marketTypeString = @"OVER_UNDER_75";
+        } break;
+        case BNGMarketTypeOverUnder85: {
+            marketTypeString = @"OVER_UNDER_85";
+        } break;
+        case BNGMarketTypeOverUnder: {
+            marketTypeString = @"OVER_UNDER";
+        } break;
+        case BNGMarketTypePenaltyTaken: {
+            marketTypeString = @"PENALTY_TAKEN";
+        } break;
+        case BNGMarketTypeScoreCast: {
+            marketTypeString = @"SCORE_CAST";
+        } break;
+        case BNGMarketTypeSendingOff: {
+            marketTypeString = @"SENDING_OFF";
+        } break;
+        case BNGMarketTypeShownACard: {
+            marketTypeString = @"SHOWN_A_CARD";
+        } break;
+        case BNGMarketTypeTeamTotalGoals: {
+            marketTypeString = @"TEAM_TOTAL_GOALS";
+        } break;
+        case BNGMarketTypeToScoreBothHalves: {
+            marketTypeString = @"TO_SCORE_BOTH_HALVES";
+        } break;
+        case BNGMarketTypeToScore: {
+            marketTypeString = @"TO_SCORE";
+        } break;
+        case BNGMarketTypeToQualify: {
+            marketTypeString = @"TO_QUALIFY";
+        } break;
+        case BNGMarketTypeTotalCorners: {
+            marketTypeString = @"TOTAL_CORNERS";
+        } break;
+        case BNGMarketTypeTotalGoals: {
+            marketTypeString = @"TOTAL_GOALS";
+        } break;
+        case BNGMarketTypeTotalGoalsIndex: {
+            marketTypeString = @"TOTAL_GOALS_INDEX";
+        } break;
+        case BNGMarketTypeTournamentWinner: {
+            marketTypeString = @"TOURNAMENT_WINNER";
+        } break;
+        case BNGMarketTypeWinBothHalves: {
+            marketTypeString = @"WIN_BOTH_HALVES";
+        } break;
+        case BNGMarketTypeWinFromBehind: {
+            marketTypeString = @"WIN_FROM_BEHIND";
+        } break;
+        case BNGMarketTypeWinToNil: {
+            marketTypeString = @"WIN_TO_NIL";
+        } break;
+        case BNGMarketTypeWinHalf: {
+            marketTypeString = @"WIN_HALF";
+        } break;
+        case BNGMarketTypeWinner: {
+            marketTypeString = @"WINNER";
+        } break;
+        case BNGMarketTypeUndifferentiated: {
+            marketTypeString = @"UNDIFFERENTIATED";
+        } break;
+        default:
+            break;
+    }
+    return marketTypeString;
 }
 
 #pragma mark Description

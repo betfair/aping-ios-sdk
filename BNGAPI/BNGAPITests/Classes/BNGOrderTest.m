@@ -47,6 +47,15 @@
 #import "BNGReplaceInstructionReport.h"
 #import "BNGReplaceInstruction.h"
 #import "BNGCancelInstructionReport.h"
+#import "BNGUpdateExecutionReport.h"
+#import "BNGUpdateInstruction.h"
+
+@interface BNGOrder ()
+
++ (NSString *)stringFromOrderBy:(BNGOrderBy)orderBy;
++ (NSString *)stringFromSortDir:(BNGOrderSortDir)sortDir;
+
+@end
 
 @implementation BNGOrderTest
 
@@ -239,6 +248,32 @@
     XCTAssertTrue([[BNGOrder stringFromOrderProjection:BNGOrderProjectionAll] isEqualToString:@"ALL"], @"The stringFromOrderProjection should return the appropriate string for BNGOrderProjectionAll");
     XCTAssertTrue([[BNGOrder stringFromOrderProjection:BNGOrderProjectionExecutable] isEqualToString:@"EXECUTABLE"], @"The stringFromOrderProjection should return the appropriate string for BNGOrderProjectionExecutable");
     XCTAssertTrue([[BNGOrder stringFromOrderProjection:BNGOrderProjectionExecutionComplete] isEqualToString:@"EXECUTION_COMPLETE"], @"The stringFromOrderProjection should return the appropriate string for BNGOrderProjectionExecutionComplete");
+}
+
+- (void)testStringFromOrderType
+{
+    XCTAssertTrue([[BNGOrder stringFromOrderType:BNGOrderTypeLimitOnClose] isEqualToString:@"LIMIT_ON_CLOSE"], @"The stringFromOrderType should return the appropriate string for BNGOrderTypeLimitOnClose");
+    XCTAssertTrue([[BNGOrder stringFromOrderType:BNGOrderTypeMarketOnClose] isEqualToString:@"MARKET_ON_CLOSE"], @"The stringFromOrderType should return the appropriate string for BNGOrderTypeMarketOnClose");
+}
+
+- (void)testOrderTypeFromString
+{
+    BNGOrderType limitOnCloseOrderType = [BNGOrder orderTypeFromString:@"LIMIT_ON_CLOSE"];
+    BNGOrderType marketOnCloseOrderType = [BNGOrder orderTypeFromString:@"MARKET_ON_CLOSE"];
+    XCTAssertTrue(limitOnCloseOrderType == BNGOrderTypeLimitOnClose, @"The orderTypeFromString method should return the appropriate BNGOrderType for LIMIT_ON_CLOSE");
+    XCTAssertTrue(marketOnCloseOrderType == BNGOrderTypeMarketOnClose, @"The orderTypeFromString method should return the appropriate BNGOrderType for MARKET_ON_CLOSE");
+}
+
+- (void)testStringFromSide
+{
+    XCTAssertTrue([[BNGOrder stringFromSide:BNGSideBack] isEqualToString:@"BACK"], @"The stringFromSide method should return the appropriate BNGSide for BACK");
+    XCTAssertTrue([[BNGOrder stringFromSide:BNGSideLay] isEqualToString:@"LAY"], @"The stringFromSide method should return the appropriate BNGSide for LAY");
+}
+
+- (void)testStringFromOrderBy
+{
+    XCTAssertTrue([[BNGOrder stringFromOrderBy:BNGOrderByBet] isEqualToString:@"BY_BET"], @"The stringFromOrderBy method should return the appropriate string for BNGOrderByBet");
+    XCTAssertTrue([[BNGOrder stringFromOrderBy:BNGOrderByMarket] isEqualToString:@"BY_MARKET"], @"The stringFromOrderBy method should return the appropriate string for BNGOrderByMarket");
 }
 
 @end
