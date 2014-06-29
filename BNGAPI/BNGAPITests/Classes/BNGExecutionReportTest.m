@@ -44,4 +44,11 @@
     XCTAssertTrue([[BNGExecutionReport stringFromBNGExecutionReportStatus:BNGExecutionReportStatusTimeout] isEqualToString:@"TIMEOUT"], @"stringFromBNGExecutionReportStatus should return the appropriate string for BNGExecutionReportStatusTimeout");
 }
 
+- (void)testExecutionReportErrorCodeFromString
+{
+    XCTAssertTrue([BNGExecutionReport executionReportErrorCodeFromString:@"ERROR_IN_MATCHER"] == BNGExecutionReportErrorCodeErrorInMatcher, @"executionReportErrorCodeFromString should return the appropriate BNGExecutionReportErrorCode for `ERROR_IN_MATCHER`");
+    XCTAssertTrue([BNGExecutionReport executionReportErrorCodeFromString:@"PROCESSED_WITH_ERRORS"] == BNGExecutionReportErrorCodeProcessedWithErrors, @"executionReportErrorCodeFromString should return the appropriate BNGExecutionReportErrorCode for `PROCESSED_WITH_ERRORS`");
+    XCTAssertTrue([BNGExecutionReport executionReportErrorCodeFromString:@"INSUFFICIENT_FUNDS"] == BNGExecutionReportErrorCodeInsufficientFunds, @"executionReportErrorCodeFromString should return the appropriate BNGExecutionReportErrorCode for `INSUFFICIENT_FUNDS`");
+}
+
 @end

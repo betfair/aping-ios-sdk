@@ -72,44 +72,36 @@
 
 + (BNGExecutionReportErrorCode)executionReportErrorCodeFromString:(NSString *)errorString
 {
-    BNGExecutionReportErrorCode code = BNGExecutionReportErrorCodeUnknown;
-    NSString *errorStringUppercase = [errorString uppercaseString];
-    if ([errorStringUppercase isEqualToString:@"ERROR_IN_MATCHER"]) {
-        code = BNGExecutionReportErrorCodeErrorInMatcher;
-    } else if ([errorStringUppercase isEqualToString:@"PROCESSED_WITH_ERRORS"]) {
-        code = BNGExecutionReportErrorCodeProcessedWithErrors;
-    } else if ([errorStringUppercase isEqualToString:@"BET_ACTION_ERROR"]) {
-        code = BNGExecutionReportErrorCodeBetActionError;
-    } else if ([errorStringUppercase isEqualToString:@"INVALID_ACCOUNT_STATE"]) {
-        code = BNGExecutionReportErrorCodeInvalidAccountState;
-    } else if ([errorStringUppercase isEqualToString:@"INVALID_WALLET_STATUS"]) {
-        code = BNGExecutionReportErrorCodeInvalidWalletStatus;
-    } else if ([errorStringUppercase isEqualToString:@"INSUFFICIENT_FUNDS"]) {
-        code = BNGExecutionReportErrorCodeInsufficientFunds;
-    } else if ([errorStringUppercase isEqualToString:@"LOSS_LIMIT_EXCEEDED"]) {
-        code = BNGExecutionReportErrorCodeLossLimitExceeded;
-    } else if ([errorStringUppercase isEqualToString:@"MARKET_SUSPENDED"]) {
-        code = BNGExecutionReportErrorCodeMarketSuspended;
-    } else if ([errorStringUppercase isEqualToString:@"MARKET_NOT_OPEN_FOR_BETTING"]) {
-        code = BNGExecutionReportErrorCodeMarketNotOpenForBetting;
-    } else if ([errorStringUppercase isEqualToString:@"DUPLICATE_TRANSACTION"]) {
-        code = BNGExecutionReportErrorCodeDuplicateTransaction;
-    } else if ([errorStringUppercase isEqualToString:@"INVALID_ORDER"]) {
-        code = BNGExecutionReportErrorCodeInvalidOrder;
-    } else if ([errorStringUppercase isEqualToString:@"INVALID_MARKET_ID"]) {
-        code = BNGExecutionReportErrorCodeInvalidMarketId;
-    } else if ([errorStringUppercase isEqualToString:@"PERMISSION_DENIED"]) {
-        code = BNGExecutionReportErrorCodePermissionDenied;
-    } else if ([errorStringUppercase isEqualToString:@"DUPLICATE_BETIDS"]) {
-        code = BNGExecutionReportErrorCodeDuplicateBetIds;
-    } else if ([errorStringUppercase isEqualToString:@"NO_ACTION_REQUIRED"]) {
-        code = BNGExecutionReportErrorCodeNoActionRequired;
-    } else if ([errorStringUppercase isEqualToString:@"SERVICE_UNAVAILABLE"]) {
-        code = BNGExecutionReportErrorCodeServiceUnavailable;
-    } else if ([errorStringUppercase isEqualToString:@"REJECTED_BY_REGULATOR"]) {
-        code = BNGExecutionReportErrorCodeRejectedByRegulartor;
+    BNGExecutionReportErrorCode errorCode = BNGExecutionReportErrorCodeUnknown;
+    static NSDictionary *errorMap;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        errorMap = @{
+                     @"ERROR_IN_MATCHER": @(BNGExecutionReportErrorCodeErrorInMatcher),
+                     @"PROCESSED_WITH_ERRORS": @(BNGExecutionReportErrorCodeProcessedWithErrors),
+                     @"BET_ACTION_ERROR": @(BNGExecutionReportErrorCodeBetActionError),
+                     @"INVALID_ACCOUNT_STATE": @(BNGExecutionReportErrorCodeInvalidAccountState),
+                     @"INVALID_WALLET_STATUS": @(BNGExecutionReportErrorCodeInvalidWalletStatus),
+                     @"INSUFFICIENT_FUNDS": @(BNGExecutionReportErrorCodeInsufficientFunds),
+                     @"LOSS_LIMIT_EXCEEDED": @(BNGExecutionReportErrorCodeLossLimitExceeded),
+                     @"MARKET_SUSPENDED": @(BNGExecutionReportErrorCodeMarketSuspended),
+                     @"MARKET_NOT_OPEN_FOR_BETTING": @(BNGExecutionReportErrorCodeMarketNotOpenForBetting),
+                     @"DUPLICATE_TRANSACTION": @(BNGExecutionReportErrorCodeDuplicateTransaction),
+                     @"INVALID_ORDER": @(BNGExecutionReportErrorCodeInvalidOrder),
+                     @"INVALID_MARKET_ID": @(BNGExecutionReportErrorCodeInvalidMarketId),
+                     @"PERMISSION_DENIED": @(BNGExecutionReportErrorCodePermissionDenied),
+                     @"DUPLICATE_BETIDS": @(BNGExecutionReportErrorCodeDuplicateBetIds),
+                     @"NO_ACTION_REQUIRED": @(BNGExecutionReportErrorCodeNoActionRequired),
+                     @"SERVICE_UNAVAILABLE": @(BNGExecutionReportErrorCodeServiceUnavailable),
+                     @"REJECTED_BY_REGULATOR": @(BNGExecutionReportErrorCodeRejectedByRegulartor),
+                     };
+    });
+
+    if (errorMap[errorString]) {
+        errorCode = [errorMap[errorString] integerValue];
     }
-    return code;
+    
+    return errorCode;
 }
 
 + (NSString *)stringFromBNGExecutionReportErrorCode:(BNGExecutionReportErrorCode)errorCode
