@@ -14,8 +14,8 @@ See `BNGExampleViewController` for more details on how to login to Betfair's ser
 
 == Build Status ==
 
-  [![Build Status](https://travis-ci.org/betfair/aping-ios-sdk.svg?branch=master)](https://travis-ci.org/betfair/aping-ios-sdk)
-  [![Coverage Status](https://img.shields.io/coveralls/betfair/aping-ios-sdk.svg)](https://coveralls.io/r/betfair/aping-ios-sdk)
+  [![Build Status](https://travis-ci.org/betfair/aping-ios-sdk.svg?branch=master)]
+  [![Coverage Status](https://img.shields.io/coveralls/betfair/aping-ios-sdk.svg)]
 
 == Documentation ==
 
