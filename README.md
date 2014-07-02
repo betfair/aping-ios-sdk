@@ -28,6 +28,8 @@ Alternatively, you can just git submodule BNGAPI into your project. All steps in
 
 All documentation for BNG API is available at http://cocoadocs.org/docsets/BNGAPI/.
 
+All APING documentation is available at https://api.developer.betfair.com/services/webapps/docs/dashboard.action
+
 ### Usage
 
 The sample application in this repository include a simple example of how to log into Betfair's services and retrieve a session token. Session tokens uniquely identify an authorised session & is a prerequisite for a lot of betting operations.
@@ -36,7 +38,3 @@ The sample application code **must be modified** to include your own APING appli
 An application key can be requested from https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG
 
 See `BNGExampleViewController` for more details on how to login to Betfair's services.
-
-### Documentation
-
-All APING documentation is available at https://api.developer.betfair.com/services/webapps/docs/dashboard.action
