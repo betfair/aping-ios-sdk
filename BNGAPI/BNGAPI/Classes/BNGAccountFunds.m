@@ -55,8 +55,8 @@
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                        completionBlock([BNGAPIResponseParser parseBNGAccountFundsFromResponse:JSONData], nil, nil);
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                            code:APINGErrorCodeNoData
+                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                            code:BNGErrorCodeNoData
                                                                         userInfo:nil];
                                        completionBlock(nil, error, nil);
                                    }

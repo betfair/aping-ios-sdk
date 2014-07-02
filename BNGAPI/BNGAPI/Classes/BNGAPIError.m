@@ -29,7 +29,7 @@
 #import "BNGAPIError.h"
 #import "BNGAPIError_Private.h"
 
-NSString * const APINGErrorDomain = @"APINGErrorDomain";
+NSString * const BNGErrorDomain = @"BNGErrorDomain";
 
 @implementation BNGAPIError
 
@@ -37,7 +37,7 @@ NSString * const APINGErrorDomain = @"APINGErrorDomain";
 
 - (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
 {
-    self = [super initWithDomain:APINGErrorDomain
+    self = [super initWithDomain:BNGErrorDomain
                             code:[dictionary[@"error"][@"code"] integerValue]
                         userInfo:dictionary];
     

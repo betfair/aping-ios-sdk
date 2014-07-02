@@ -28,7 +28,7 @@
 
 #import <Foundation/Foundation.h>
 
-struct APINGSupportedLocales {
+struct BNGSupportedLocales {
     __unsafe_unretained NSString *en;
     __unsafe_unretained NSString *da;
     __unsafe_unretained NSString *sv;
@@ -46,7 +46,7 @@ struct APINGSupportedLocales {
     __unsafe_unretained NSString *th;
 };
 
-struct APINGSupportedCurrencyCodes {
+struct BNGSupportedCurrencyCodes {
     __unsafe_unretained NSString *gbp;
     __unsafe_unretained NSString *eur;
     __unsafe_unretained NSString *aud;
@@ -58,25 +58,28 @@ struct APINGSupportedCurrencyCodes {
     __unsafe_unretained NSString *hkd;
 };
 
+/**
+ * Singleton object for registering application keys, sso keys (session tokens) and locales. `APING` is your one-stop-shop for configurating how you interact with Betfair's APING services.
+ */
 @interface APING : NSObject
 
 /**
- * This is the application key the developer should request from https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG
+ * This is the application key the developer should request from https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG. This key needs to be set before you can access any API calls.
  */
 @property (nonatomic, copy) NSString *applicationKey;
 
 /**
- * This is the SSO token the developer receives after the user authentictes with Betfair.
+ * This is the SSO token the developer receives after the user authenticates with Betfair.
  */
 @property (nonatomic, copy) NSString *ssoKey;
 
 /**
- * A locale parameter is sent with each API call.
+ * A locale parameter is sent with each API call. See `BNGSupportedLocales` for details on what locales are supported. Set this parameter if you want to have error codes or event names, market names, competition names in a particular language.
  */
 @property (nonatomic, copy) NSString *locale;
 
 /**
- * A currencyCode parameter is sent with each API call.
+ * A currencyCode parameter is sent with each API call. See `BNGSupportedCurrencyCodes` for details on what currency codes are supported. It's important to set this parameter to the user's currency when they log in to ensure that liquidity is communicated in the correct currency.
  */
 @property (nonatomic, copy) NSString *currencyCode;
 

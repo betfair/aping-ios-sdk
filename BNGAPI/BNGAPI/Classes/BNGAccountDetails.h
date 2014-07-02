@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "NSURL+APING.h"
+#import "NSURL+BNG.h"
 
 /**
  * Contains details on a user's account. Does NOT contain any wallet/funds information.

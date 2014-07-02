@@ -28,7 +28,7 @@
 
 #import "APING.h"
 
-static const struct APINGSupportedLocales APINGSupportedLocales = {
+static const struct BNGSupportedLocales BNGSupportedLocales = {
     .en = @"en",
     .da = @"da",
     .sv = @"sv",
@@ -46,7 +46,7 @@ static const struct APINGSupportedLocales APINGSupportedLocales = {
     .th = @"th",
 };
 
-static const struct APINGSupportedCurrencyCodes APINGSupportedCurrencyCodes = {
+static const struct BNGSupportedCurrencyCodes BNGSupportedCurrencyCodes = {
     .gbp = @"GBP",
     .eur = @"EUR",
     .aud = @"AUD",
@@ -86,8 +86,8 @@ static const struct APINGSupportedCurrencyCodes APINGSupportedCurrencyCodes = {
     self = [super init];
     
     if (self) {
-        _supportedLocales       = [NSSet setWithArray:@[APINGSupportedLocales.en, APINGSupportedLocales.da, APINGSupportedLocales.sv, APINGSupportedLocales.de, APINGSupportedLocales.it, APINGSupportedLocales.el, APINGSupportedLocales.es, APINGSupportedLocales.tr, APINGSupportedLocales.ko, APINGSupportedLocales.cz, APINGSupportedLocales.bg, APINGSupportedLocales.ru, APINGSupportedLocales.fr, APINGSupportedLocales.pt, APINGSupportedLocales.th]];
-        _supportedCurrencyCodes = [NSSet setWithArray:@[APINGSupportedCurrencyCodes.gbp, APINGSupportedCurrencyCodes.eur, APINGSupportedCurrencyCodes.aud, APINGSupportedCurrencyCodes.cad, APINGSupportedCurrencyCodes.sek, APINGSupportedCurrencyCodes.nok, APINGSupportedCurrencyCodes.dkk, APINGSupportedCurrencyCodes.sgd, APINGSupportedCurrencyCodes.hkd]];
+        _supportedLocales       = [NSSet setWithArray:@[BNGSupportedLocales.en, BNGSupportedLocales.da, BNGSupportedLocales.sv, BNGSupportedLocales.de, BNGSupportedLocales.it, BNGSupportedLocales.el, BNGSupportedLocales.es, BNGSupportedLocales.tr, BNGSupportedLocales.ko, BNGSupportedLocales.cz, BNGSupportedLocales.bg, BNGSupportedLocales.ru, BNGSupportedLocales.fr, BNGSupportedLocales.pt, BNGSupportedLocales.th]];
+        _supportedCurrencyCodes = [NSSet setWithArray:@[BNGSupportedCurrencyCodes.gbp, BNGSupportedCurrencyCodes.eur, BNGSupportedCurrencyCodes.aud, BNGSupportedCurrencyCodes.cad, BNGSupportedCurrencyCodes.sek, BNGSupportedCurrencyCodes.nok, BNGSupportedCurrencyCodes.dkk, BNGSupportedCurrencyCodes.sgd, BNGSupportedCurrencyCodes.hkd]];
     }
     
     return self;
@@ -120,7 +120,7 @@ static const struct APINGSupportedCurrencyCodes APINGSupportedCurrencyCodes = {
 
 - (NSString *)defaultCurrencyCode
 {
-    return APINGSupportedCurrencyCodes.gbp;
+    return BNGSupportedCurrencyCodes.gbp;
 }
 
 - (void)setLocale:(NSString *)locale
@@ -135,7 +135,7 @@ static const struct APINGSupportedCurrencyCodes APINGSupportedCurrencyCodes = {
 
 - (NSString *)locale
 {
-    return _locale ?: APINGSupportedLocales.en; // always have a default ready
+    return _locale ?: BNGSupportedLocales.en; // always have a default ready
 }
 
 - (void)setCurrencyCode:(NSString *)currencyCode
@@ -149,7 +149,7 @@ static const struct APINGSupportedCurrencyCodes APINGSupportedCurrencyCodes = {
 
 - (NSString *)currencyCode
 {
-    return _currencyCode ?: APINGSupportedCurrencyCodes.gbp; // always have a default ready
+    return _currencyCode ?: BNGSupportedCurrencyCodes.gbp; // always have a default ready
 }
 
 @end

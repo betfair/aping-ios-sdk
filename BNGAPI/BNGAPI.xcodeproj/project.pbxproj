@@ -36,9 +36,9 @@
 		7118B985195826BE007057CE /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B915195826BE007057CE /* NSString+URLEncoding.h */; };
 		7118B986195826BE007057CE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B916195826BE007057CE /* NSString+URLEncoding.m */; };
 		7118B987195826BE007057CE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B916195826BE007057CE /* NSString+URLEncoding.m */; };
-		7118B988195826BE007057CE /* NSURL+APING.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B917195826BE007057CE /* NSURL+APING.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7118B989195826BE007057CE /* NSURL+APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B918195826BE007057CE /* NSURL+APING.m */; };
-		7118B98A195826BE007057CE /* NSURL+APING.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B918195826BE007057CE /* NSURL+APING.m */; };
+		7118B988195826BE007057CE /* NSURL+BNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B917195826BE007057CE /* NSURL+BNG.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7118B989195826BE007057CE /* NSURL+BNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B918195826BE007057CE /* NSURL+BNG.m */; };
+		7118B98A195826BE007057CE /* NSURL+BNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B918195826BE007057CE /* NSURL+BNG.m */; };
 		7118B98B195826BE007057CE /* NSURLConnection+BNGJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B919195826BE007057CE /* NSURLConnection+BNGJSON.h */; };
 		7118B98C195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */; };
 		7118B98D195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */; };
@@ -182,7 +182,7 @@
 		7118BA17195826BE007057CE /* BNGUpdateInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */; };
 		7118BA18195826BE007057CE /* BNGUpdateInstructionReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */; };
 		7118BA19195826BE007057CE /* BNGDictionaryRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7118B97A195826BE007057CE /* BNGDictionaryRepresentation.h */; };
-		711AA3041958B8A400861CD4 /* NSURL+APINGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E21958B8A400861CD4 /* NSURL+APINGTests.m */; };
+		711AA3041958B8A400861CD4 /* NSURL+BNGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */; };
 		711AA3051958B8A400861CD4 /* BNGAccountTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E51958B8A400861CD4 /* BNGAccountTest.m */; };
 		711AA3061958B8A400861CD4 /* BNGEventTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E71958B8A400861CD4 /* BNGEventTest.m */; };
 		711AA3071958B8A400861CD4 /* BNGEventTypeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */; };
@@ -255,8 +255,8 @@
 		7118B914195826BE007057CE /* NSString+RandomCustomerReferenceId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RandomCustomerReferenceId.m"; sourceTree = "<group>"; };
 		7118B915195826BE007057CE /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		7118B916195826BE007057CE /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
-		7118B917195826BE007057CE /* NSURL+APING.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+APING.h"; sourceTree = "<group>"; };
-		7118B918195826BE007057CE /* NSURL+APING.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+APING.m"; sourceTree = "<group>"; };
+		7118B917195826BE007057CE /* NSURL+BNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+BNG.h"; sourceTree = "<group>"; };
+		7118B918195826BE007057CE /* NSURL+BNG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+BNG.m"; sourceTree = "<group>"; };
 		7118B919195826BE007057CE /* NSURLConnection+BNGJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+BNGJSON.h"; sourceTree = "<group>"; };
 		7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+BNGJSON.m"; sourceTree = "<group>"; };
 		7118B91B195826BE007057CE /* NSURLRequest+HTTPBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+HTTPBody.h"; sourceTree = "<group>"; };
@@ -353,8 +353,8 @@
 		7118B977195826BE007057CE /* BNGUpdateInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateInstructionReport.h; sourceTree = "<group>"; };
 		7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateInstructionReport.m; sourceTree = "<group>"; };
 		7118B97A195826BE007057CE /* BNGDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGDictionaryRepresentation.h; sourceTree = "<group>"; };
-		711AA2E11958B8A400861CD4 /* NSURL+APINGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+APINGTests.h"; sourceTree = "<group>"; };
-		711AA2E21958B8A400861CD4 /* NSURL+APINGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+APINGTests.m"; sourceTree = "<group>"; };
+		711AA2E11958B8A400861CD4 /* NSURL+BNGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+BNGTests.h"; sourceTree = "<group>"; };
+		711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+BNGTests.m"; sourceTree = "<group>"; };
 		711AA2E41958B8A400861CD4 /* BNGAccountTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountTest.h; sourceTree = "<group>"; };
 		711AA2E51958B8A400861CD4 /* BNGAccountTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountTest.m; sourceTree = "<group>"; };
 		711AA2E61958B8A400861CD4 /* BNGEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTest.h; sourceTree = "<group>"; };
@@ -428,8 +428,8 @@
 				7118B914195826BE007057CE /* NSString+RandomCustomerReferenceId.m */,
 				7118B915195826BE007057CE /* NSString+URLEncoding.h */,
 				7118B916195826BE007057CE /* NSString+URLEncoding.m */,
-				7118B917195826BE007057CE /* NSURL+APING.h */,
-				7118B918195826BE007057CE /* NSURL+APING.m */,
+				7118B917195826BE007057CE /* NSURL+BNG.h */,
+				7118B918195826BE007057CE /* NSURL+BNG.m */,
 				7118B919195826BE007057CE /* NSURLConnection+BNGJSON.h */,
 				7118B91A195826BE007057CE /* NSURLConnection+BNGJSON.m */,
 				7118B91B195826BE007057CE /* NSURLRequest+HTTPBody.h */,
@@ -547,8 +547,8 @@
 		711AA2E01958B8A400861CD4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				711AA2E11958B8A400861CD4 /* NSURL+APINGTests.h */,
-				711AA2E21958B8A400861CD4 /* NSURL+APINGTests.m */,
+				711AA2E11958B8A400861CD4 /* NSURL+BNGTests.h */,
+				711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -673,7 +673,7 @@
 			files = (
 				7118B9E9195826BE007057CE /* BNGMutableURLRequest.h in Headers */,
 				7118B997195826BE007057CE /* BNGAccountFunds.h in Headers */,
-				7118B988195826BE007057CE /* NSURL+APING.h in Headers */,
+				7118B988195826BE007057CE /* NSURL+BNG.h in Headers */,
 				7118B982195826BE007057CE /* NSString+RandomCustomerReferenceId.h in Headers */,
 				7118B97C195826BE007057CE /* APING.h in Headers */,
 				7118B994195826BE007057CE /* BNGAccountDetails.h in Headers */,
@@ -890,7 +890,7 @@
 				7118B9ED195826BE007057CE /* BNGOrder.m in Sources */,
 				7118B9DE195826BE007057CE /* BNGMarketCatalogueFilter.m in Sources */,
 				7118B9B7195826BE007057CE /* BNGEventResult.m in Sources */,
-				7118B989195826BE007057CE /* NSURL+APING.m in Sources */,
+				7118B989195826BE007057CE /* NSURL+BNG.m in Sources */,
 				7118B9EA195826BE007057CE /* BNGMutableURLRequest.m in Sources */,
 				7118B995195826BE007057CE /* BNGAccountDetails.m in Sources */,
 				7118B99B195826BE007057CE /* BNGAPIError.m in Sources */,
@@ -962,7 +962,7 @@
 				7118B987195826BE007057CE /* NSString+URLEncoding.m in Sources */,
 				7118B996195826BE007057CE /* BNGAccountDetails.m in Sources */,
 				7118B9C7195826BE007057CE /* BNGExecutionReport.m in Sources */,
-				7118B98A195826BE007057CE /* NSURL+APING.m in Sources */,
+				7118B98A195826BE007057CE /* NSURL+BNG.m in Sources */,
 				7118B9C4195826BE007057CE /* BNGExchangePrices.m in Sources */,
 				7118B9EE195826BE007057CE /* BNGOrder.m in Sources */,
 				7118B9A9195826BE007057CE /* BNGCancelInstructionReport.m in Sources */,
@@ -987,7 +987,7 @@
 				7118BA03195826BE007057CE /* BNGReplaceInstruction.m in Sources */,
 				7118B981195826BE007057CE /* NSNumber+DecimalConversion.m in Sources */,
 				7118B9B2195826BE007057CE /* BNGCurrentOrderSummaryReport.m in Sources */,
-				711AA3041958B8A400861CD4 /* NSURL+APINGTests.m in Sources */,
+				711AA3041958B8A400861CD4 /* NSURL+BNGTests.m in Sources */,
 				7118B9EB195826BE007057CE /* BNGMutableURLRequest.m in Sources */,
 				7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */,
 				7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */,

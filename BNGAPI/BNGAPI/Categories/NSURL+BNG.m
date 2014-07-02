@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "NSURL+APING.h"
+#import "NSURL+BNG.h"
 
 const struct BNGLoginOperation BNGLoginOperation = {
     .login = @"login",
@@ -58,7 +58,7 @@ NSString *const BNGBaseURLString    = @"https://api.betfair.com/exchange";
 NSString *const BNGBaseLoginString  = @"https://identitysso.betfair.com";
 NSString *const BNGAPIVersion       = @"1.0";
 
-@implementation NSURL (APING)
+@implementation NSURL (BNG)
 
 + (NSURL *)betfairNGLoginURLForOperation:(NSString *)operation
 {

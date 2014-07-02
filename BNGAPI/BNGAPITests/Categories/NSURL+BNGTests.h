@@ -28,6 +28,6 @@
 
 #import <XCTest/XCTest.h>
 
-@interface NSURL_APINGTests : XCTestCase
+@interface NSURL_BNGTests : XCTestCase
 
 @end

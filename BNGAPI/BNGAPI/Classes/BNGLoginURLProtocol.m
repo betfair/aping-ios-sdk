@@ -29,7 +29,7 @@
 #import "BNGLoginURLProtocol.h"
 
 #import "NSURLRequest+HTTPBody.h"
-#import "NSURL+APING.h"
+#import "NSURL+BNG.h"
 
 NSString * const BNGLoginURLProtocolDidLoginNotification    = @"BNGLoginURLProtocolDidLoginNotification";
 NSString * const BNGLoginURLProtocolErrorKey                = @"BNGLoginURLProtocolErrorKey";

@@ -84,7 +84,7 @@ extern NSString *const BNGAPIVersion;
 /**
  * Simple category on `NSURL` which includes two methods for returning betting and accounts APIs.
  */
-@interface NSURL (APING)
+@interface NSURL (BNG)
 
 /**
  * @param operation String for the opertation to be performed. This should be one of the BNGLoginOperation* constants.

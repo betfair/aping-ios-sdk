@@ -26,11 +26,11 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "NSURL+APINGTests.h"
+#import "NSURL+BNGTests.h"
 
-#import "NSURL+APING.h"
+#import "NSURL+BNG.h"
 
-@implementation NSURL_APINGTests
+@implementation NSURL_BNGTests
 
 - (void)testURLMatchesSuffix
 {

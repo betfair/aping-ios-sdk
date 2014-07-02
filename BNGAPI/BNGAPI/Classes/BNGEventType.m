@@ -84,8 +84,8 @@
                                } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                    completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
                                } else {
-                                   NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                        code:APINGErrorCodeNoData
+                                   NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                        code:BNGErrorCodeNoData
                                                                     userInfo:nil];
                                    completionBlock(nil, error, nil);
                                }

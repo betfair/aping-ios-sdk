@@ -139,8 +139,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                        completionBlock([BNGAPIResponseParser parseBNGCurrentOrderSummaryReportFromResponse:JSONData], nil, nil);
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                            code:APINGErrorCodeNoData
+                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                            code:BNGErrorCodeNoData
                                                                         userInfo:nil];
                                        completionBlock(nil, error, nil);
                                    }
@@ -179,8 +179,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                            code:APINGErrorCodeNoData
+                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                            code:BNGErrorCodeNoData
                                                                         userInfo:nil];
                                        completionBlock(nil, error, nil);
                                    }
@@ -219,8 +219,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                            code:APINGErrorCodeNoData
+                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                            code:BNGErrorCodeNoData
                                                                         userInfo:nil];
                                        completionBlock(nil, error, nil);
                                    }
@@ -255,8 +255,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                        // first check to see that its not an error
                                        completionBlock([BNGAPIResponseParser parseBNGReplaceExecutionReportFromResponse:JSONData], nil, nil);
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                            code:APINGErrorCodeNoData
+                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                            code:BNGErrorCodeNoData
                                                                         userInfo:nil];
                                        completionBlock(nil, error, nil);
                                    }
@@ -291,8 +291,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                        // first check to see that its not an error
                                        completionBlock([BNGAPIResponseParser parseBNGUpdateExecutionReportFromResponse:JSONData], nil, nil);
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:APINGErrorDomain
-                                                                            code:APINGErrorCodeNoData
+                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
+                                                                            code:BNGErrorCodeNoData
                                                                         userInfo:nil];
                                        completionBlock(nil, error, nil);
                                    }

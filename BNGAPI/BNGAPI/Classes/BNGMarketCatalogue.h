@@ -41,7 +41,7 @@ typedef NS_ENUM(NSInteger, BNGMarketProjection) {
     BNGMarketProjectionRunnerMarketStartTime,
 };
 
-#import "NSURL+APING.h"
+#import "NSURL+BNG.h"
 
 @class BNGMarketFilter;
 @class BNGCompetition;

@@ -62,7 +62,7 @@ static const struct BNGDefaultParameterField BNGDefaultParameterField = {
     
     if (self) {
         
-        // Ensure All APING required headers are set.
+        // Ensure All BNG required headers are set.
         [self addDefaultHeadersToRequest];
     }
     

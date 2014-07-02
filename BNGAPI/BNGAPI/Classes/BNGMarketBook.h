@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, BNGMatchProjection) {
     BNGMatchProjectionRolledUpByAvgPrice,
 };
 
-#import "NSURL+APING.h"
+#import "NSURL+BNG.h"
 
 @class BNGMarketFilter;
 @class BNGPriceProjection;

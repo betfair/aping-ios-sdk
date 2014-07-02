@@ -24,6 +24,10 @@ pod "BNGAPI", "1.1"
 
 Alternatively, you can just git submodule BNGAPI into your project. All steps in [Jeff Verokey's iOS Framework guide](https://github.com/jverkoey/iOS-Framework) are followed for BNGAPI.
 
+### Documentation
+
+All documentation for BNG API is available at http://cocoadocs.org/docsets/BNGAPI/.
+
 ### Usage
 
 The sample application in this repository include a simple example of how to log into Betfair's services and retrieve a session token. Session tokens uniquely identify an authorised session & is a prerequisite for a lot of betting operations.

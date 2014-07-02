@@ -39,7 +39,7 @@ extern NSString * const BNGHTTPHeaderValueAcceptCharsetDefault;
 #pragma mark Enums
 
 typedef NS_ENUM(NSInteger, APINGErrorCode) {
-    APINGErrorCodeNoData = 500,
+    BNGErrorCodeNoData = 500,
 };
 
 @class BNGMarketFilter;

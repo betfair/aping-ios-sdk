@@ -29,11 +29,11 @@
 #import <Foundation/Foundation.h>
 
 /**
- * The APINGErrorDomain is used as the domain for BNGAPIError and custom NSErrors returned by APING.
+ * The APINGErrorDomain is used as the domain for BNGAPIError and custom NSErrors returned by BNG.
  * Errors in this domain are in addition to errors returned by underlying frameworks that are passed up.
  * The nature of errors passed through may change in the furture.
  */
-extern NSString * const APINGErrorDomain;
+extern NSString * const BNGErrorDomain;
 
 typedef NS_ENUM(NSInteger, BNGAPIErrorCode) {
     
