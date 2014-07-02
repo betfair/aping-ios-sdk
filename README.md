@@ -1,7 +1,7 @@
 ### Build Status
 
-[![Build Status](https://travis-ci.org/betfair/aping-ios-sdk.svg?branch=master)
-[![Coverage Status](https://img.shields.io/coveralls/betfair/aping-ios-sdk.svg)
+[![Build Status](https://travis-ci.org/betfair/aping-ios-sdk.svg?branch=master)]
+[![Coverage Status](https://img.shields.io/coveralls/betfair/aping-ios-sdk.svg)]
 
 ### APING iOS Client
 
