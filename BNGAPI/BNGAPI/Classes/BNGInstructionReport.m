@@ -67,49 +67,40 @@
 
 + (BNGInstructionReportErrorCode)instructionReportErrorCodeFromString:(NSString *)errorCode
 {
+    
     BNGInstructionReportErrorCode code = BNGInstructionReportErrorCodeUnknown;
-    NSString *errorCodeUppercase = [errorCode uppercaseString];
-    if ([errorCodeUppercase isEqualToString:@"INVALID_BET_SIZE"]) {
-        code = BNGInstructionReportErrorCodeInvalidBetSize;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_RUNNER"]) {
-        code = BNGInstructionReportErrorCodeInvalidRunner;
-    } else if ([errorCodeUppercase isEqualToString:@"BET_TAKEN_OR_LAPSED"]) {
-        code = BNGInstructionReportErrorCodeBetTakenOrLapsed;
-    } else if ([errorCodeUppercase isEqualToString:@"BET_IN_PROGRESS"]) {
-        code = BNGInstructionReportErrorCodeBetInProgress;
-    } else if ([errorCodeUppercase isEqualToString:@"RUNNER_REMOVED"]) {
-        code = BNGInstructionReportErrorCodeRunnerRemoved;
-    } else if ([errorCodeUppercase isEqualToString:@"MARKET_NOT_OPEN_FOR_BETTING"]) {
-        code = BNGInstructionReportErrorCodeMarketNotOpenForBetting;
-    } else if ([errorCodeUppercase isEqualToString:@"LOSS_LIMIT_EXCEEDED"]) {
-        code = BNGInstructionReportErrorCodeLossLimitExceeded;
-    } else if ([errorCodeUppercase isEqualToString:@"MARKET_NOT_OPEN_FOR_BSP_BETTING"]) {
-        code = BNGInstructionReportErrorCodeMarketNotOpenForBSPBetting;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_PRICE_EDIT"]) {
-        code = BNGInstructionReportErrorCodeInvalidPriceEdit;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_ODDS"]) {
-        code = BNGInstructionReportErrorCodeInvalidOdds;
-    } else if ([errorCodeUppercase isEqualToString:@"INSUFFICIENT_FUNDS"]) {
-        code = BNGInstructionReportErrorCodeInsufficientFunds;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_PERSISTENCE_TYPE"]) {
-        code = BNGInstructionReportErrorCodeInvalidPersistenceType;
-    } else if ([errorCodeUppercase isEqualToString:@"ERROR_IN_MATCHER"]) {
-        code = BNGInstructionReportErrorCodeErrorInMatcher;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_BACK_LAY_COMBINATION"]) {
-        code = BNGInstructionReportErrorCodeInvalidBackLayCombination;
-    } else if ([errorCodeUppercase isEqualToString:@"ERROR_IN_ORDER"]) {
-        code = BNGInstructionReportErrorCodeErrorInOrder;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_BID_TYPE"]) {
-        code = BNGInstructionReportErrorCodeInvalidBidType;
-    } else if ([errorCodeUppercase isEqualToString:@"INVALID_BET_ID"]) {
-        code = BNGInstructionReportErrorCodeInvalidBetId;
-    } else if ([errorCodeUppercase isEqualToString:@"CANCELLED_NOT_PLACED"]) {
-        code = BNGInstructionReportErrorCodeCancelledNotPlaced;
-    } else if ([errorCodeUppercase isEqualToString:@"RELATED_ACTION_FAILED"]) {
-        code = BNGInstructionReportErrorCodeRelatedActionFailed;
-    } else if ([errorCodeUppercase isEqualToString:@"NO_ACTION_REQUIRED"]) {
-        code = BNGInstructionReportErrorCodeNoActionRequired;
+    NSString *uppercaseErrorCode = [errorCode uppercaseString];
+    static NSDictionary *errorCodeMap;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        errorCodeMap = @{
+                      @"INVALID_BET_SIZE": @(BNGInstructionReportErrorCodeInvalidBetSize),
+                      @"INVALID_RUNNER": @(BNGInstructionReportErrorCodeInvalidRunner),
+                      @"BET_TAKEN_OR_LAPSED": @(BNGInstructionReportErrorCodeBetTakenOrLapsed),
+                      @"BET_IN_PROGRESS": @(BNGInstructionReportErrorCodeBetInProgress),
+                      @"RUNNER_REMOVED": @(BNGInstructionReportErrorCodeRunnerRemoved),
+                      @"MARKET_NOT_OPEN_FOR_BETTING": @(BNGInstructionReportErrorCodeMarketNotOpenForBetting),
+                      @"LOSS_LIMIT_EXCEEDED": @(BNGInstructionReportErrorCodeLossLimitExceeded),
+                      @"MARKET_NOT_OPEN_FOR_BSP_BETTING": @(BNGInstructionReportErrorCodeMarketNotOpenForBSPBetting),
+                      @"INVALID_PRICE_EDIT": @(BNGInstructionReportErrorCodeInvalidPriceEdit),
+                      @"INVALID_ODDS": @(BNGInstructionReportErrorCodeInvalidOdds),
+                      @"INSUFFICIENT_FUNDS": @(BNGInstructionReportErrorCodeInsufficientFunds),
+                      @"INVALID_PERSISTENCE_TYPE": @(BNGInstructionReportErrorCodeInvalidPersistenceType),
+                      @"ERROR_IN_MATCHER": @(BNGInstructionReportErrorCodeErrorInMatcher),
+                      @"INVALID_BACK_LAY_COMBINATION": @(BNGInstructionReportErrorCodeInvalidBackLayCombination),
+                      @"ERROR_IN_ORDER": @(BNGInstructionReportErrorCodeErrorInOrder),
+                      @"INVALID_BID_TYPE": @(BNGInstructionReportErrorCodeInvalidBidType),
+                      @"INVALID_BET_ID": @(BNGInstructionReportErrorCodeInvalidBetId),
+                      @"CANCELLED_NOT_PLACED": @(BNGInstructionReportErrorCodeCancelledNotPlaced),
+                      @"RELATED_ACTION_FAILED": @(BNGInstructionReportErrorCodeRelatedActionFailed),
+                      @"NO_ACTION_REQUIRED": @(BNGInstructionReportErrorCodeNoActionRequired),
+                      };
+    });
+    
+    if (errorCodeMap[uppercaseErrorCode]) {
+        code = [errorCodeMap[uppercaseErrorCode] integerValue];
     }
+    
     return code;
 }
 

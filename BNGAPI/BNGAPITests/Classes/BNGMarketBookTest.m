@@ -95,4 +95,11 @@
     XCTAssertTrue([BNGMarketBook marketStatusFromString:@"INACTIVE"] == BNGMarketStatusInactive, @"A string of 'INACTIVE' should return an inactive market status from marketStatusFromString");
 }
 
+- (void)testStringFromMatchProjection
+{
+    XCTAssertTrue([[BNGMarketBook stringFromMatchProjection:BNGMatchProjectionNoRollup] isEqualToString:@"NO_ROLLUP"], @"stringFromMatchProjection should return the appropriate value for NO_ROLLUP");
+    XCTAssertTrue([[BNGMarketBook stringFromMatchProjection:BNGMatchProjectionRolledUpByAvgPrice] isEqualToString:@"ROLLED_UP_BY_AVG_PRICE"], @"stringFromMatchProjection should return the appropriate value for ROLLED_UP_BY_AVG_PRICE");
+    XCTAssertTrue([[BNGMarketBook stringFromMatchProjection:BNGMatchProjectionRolledUpByPrice] isEqualToString:@"ROLLED_UP_BY_PRICE"], @"stringFromMatchProjection should return the appropriate value for ROLLED_UP_BY_PRICE");
+}
+
 @end

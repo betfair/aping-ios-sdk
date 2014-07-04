@@ -43,4 +43,23 @@
     XCTAssertTrue([[BNGInstructionReport stringFromBNGInstructionReportStatus:BNGInstructionReportStatusTimeout] isEqualToString:@"TIMEOUT"], @"stringFromBNGInstructionReportStatus should return the appropriate string for BNGInstructionReportStatusTimeout");
 }
 
+- (void)testInstructionReportStatusFromString
+{
+    XCTAssertTrue([BNGInstructionReport instructionReportStatusFromString:@"FAILURE"] == BNGInstructionReportStatusFailure, @"instructionReportStatusFromString should return the appropriate value for FAILURE");
+    XCTAssertTrue([BNGInstructionReport instructionReportStatusFromString:@"SUCCESS"] == BNGInstructionReportStatusSuccess, @"instructionReportStatusFromString should return the appropriate value for SUCCESS");
+    XCTAssertTrue([BNGInstructionReport instructionReportStatusFromString:@"TIMEOUT"] == BNGInstructionReportStatusTimeout, @"instructionReportStatusFromString should return the appropriate value for TIMEOUT");
+}
+
+- (void)testInstructionReportErrorCodeFromString
+{
+    XCTAssertTrue([BNGInstructionReport instructionReportErrorCodeFromString:@"INVALID_BET_SIZE"] == BNGInstructionReportErrorCodeInvalidBetSize, @"instructionReportErrorCodeFromString should return the correct BNGInstructionReportErrorCode for INVALID_BET_SIZE");
+    XCTAssertTrue([BNGInstructionReport instructionReportErrorCodeFromString:@"INVALID_RUNNER"] == BNGInstructionReportErrorCodeInvalidRunner, @"instructionReportErrorCodeFromString should return the correct BNGInstructionReportErrorCode for INVALID_RUNNER");
+}
+
+- (void)testStringFromInstructionReportErrorCode
+{
+    XCTAssertTrue([[BNGInstructionReport stringFromBNGInstructionReportErrorCode:BNGInstructionReportErrorCodeInvalidBetSize] isEqualToString:@"INVALID_BET_SIZE"], @"stringFromBNGInstructionReportErrorCode should return the correct String for BNGInstructionReportErrorCodeInvalidBetSize");
+    XCTAssertTrue([[BNGInstructionReport stringFromBNGInstructionReportErrorCode:BNGInstructionReportErrorCodeInvalidRunner] isEqualToString:@"INVALID_RUNNER"], @"stringFromBNGInstructionReportErrorCode should return the correct String for BNGInstructionReportErrorCodeInvalidRunner");
+}
+
 @end

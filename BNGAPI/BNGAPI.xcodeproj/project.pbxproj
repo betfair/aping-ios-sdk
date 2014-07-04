@@ -213,6 +213,7 @@
 		71D9BBD1195823C10006B520 /* BNGAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71D9BBD0195823C10006B520 /* BNGAPI.h */; };
 		71D9BBD3195823C10006B520 /* BNGAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9BBD2195823C10006B520 /* BNGAPI.m */; };
 		71D9BBD9195823C10006B520 /* libBNGAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D9BBCD195823C10006B520 /* libBNGAPI.a */; };
+		71FF4F7B196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -397,6 +398,7 @@
 		71D9BBD2195823C10006B520 /* BNGAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNGAPI.m; sourceTree = "<group>"; };
 		71D9BBD8195823C10006B520 /* BNGAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BNGAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D9BBDE195823C10006B520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+HTTPBodyTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -549,6 +551,7 @@
 			children = (
 				711AA2E11958B8A400861CD4 /* NSURL+BNGTests.h */,
 				711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */,
+				71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -961,6 +964,7 @@
 				7118B993195826BE007057CE /* BNGAccount.m in Sources */,
 				7118B987195826BE007057CE /* NSString+URLEncoding.m in Sources */,
 				7118B996195826BE007057CE /* BNGAccountDetails.m in Sources */,
+				71FF4F7B196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m in Sources */,
 				7118B9C7195826BE007057CE /* BNGExecutionReport.m in Sources */,
 				7118B98A195826BE007057CE /* NSURL+BNG.m in Sources */,
 				7118B9C4195826BE007057CE /* BNGExchangePrices.m in Sources */,

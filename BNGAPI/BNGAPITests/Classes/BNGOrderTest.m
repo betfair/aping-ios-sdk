@@ -276,4 +276,30 @@
     XCTAssertTrue([[BNGOrder stringFromOrderBy:BNGOrderByMarket] isEqualToString:@"BY_MARKET"], @"The stringFromOrderBy method should return the appropriate string for BNGOrderByMarket");
 }
 
+- (void)testPersistenceTypeFromString
+{
+    XCTAssertTrue([BNGOrder persistenceTypeFromString:@"LAPSE"] == BNGPersistanceTypeLapse, @"The persistenceTypeFromString method should return the appropriate BNGPersistenceType for LAPSE");
+    XCTAssertTrue([BNGOrder persistenceTypeFromString:@"MARKET_ON_CLOSE"] == BNGPersistanceTypeMarketOnClose, @"The persistenceTypeFromString method should return the appropriate BNGPersistenceType for MARKET_ON_CLOSE");
+    XCTAssertTrue([BNGOrder persistenceTypeFromString:@"PERSIST"] == BNGPersistanceTypePersist, @"The persistenceTypeFromString method should return the appropriate BNGPersistenceType for PERSIST");
+}
+
+- (void)testStringFromPersistenceType
+{
+    XCTAssertTrue([[BNGOrder stringFromPersistenceType:BNGPersistanceTypeLapse] isEqualToString:@"LAPSE"], @"The stringFromPersistenceType method should return the appropriate string");
+    XCTAssertTrue([[BNGOrder stringFromPersistenceType:BNGPersistanceTypeMarketOnClose] isEqualToString:@"MARKET_ON_CLOSE"], @"The stringFromPersistenceType method should return the appropriate string");
+    XCTAssertTrue([[BNGOrder stringFromPersistenceType:BNGPersistanceTypePersist] isEqualToString:@"PERSIST"], @"The stringFromPersistenceType method should return the appropriate string");
+}
+
+- (void)testOrderStatusFromString
+{
+    XCTAssertTrue([BNGOrder orderStatusFromString:@"EXECUTION_COMPLETE"] == BNGOrderStatusExecutionComplete, @"The orderStatusFromString method should return the appropriate value for EXECUTION_COMPLETE");
+    XCTAssertTrue([BNGOrder orderStatusFromString:@"EXECUTABLE"] == BNGOrderStatusExecutable, @"The orderStatusFromString method should return the appropriate value for EXECUTABLE");
+}
+
+- (void)testStringFromSortDir
+{
+    XCTAssertTrue([[BNGOrder stringFromSortDir:BNGOrderSortDirEarliestToLatest] isEqualToString:@"EARLIEST_TO_LATEST"], @"The stringFromSortDir method should return the appropriate string for BNGOrderSortDirEarliestToLatest");
+    XCTAssertTrue([[BNGOrder stringFromSortDir:BNGOrderSortDirLatestToEarliest] isEqualToString:@"LATEST_TO_EARLIEST"], @"The stringFromSortDir method should return the appropriate string for BNGOrderSortDirLatestToEarliest");
+}
+
 @end

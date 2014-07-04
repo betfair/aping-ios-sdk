@@ -51,4 +51,18 @@
     XCTAssertTrue([BNGExecutionReport executionReportErrorCodeFromString:@"INSUFFICIENT_FUNDS"] == BNGExecutionReportErrorCodeInsufficientFunds, @"executionReportErrorCodeFromString should return the appropriate BNGExecutionReportErrorCode for `INSUFFICIENT_FUNDS`");
 }
 
+- (void)testExecutionReportStatusFromString
+{
+    XCTAssertTrue([BNGExecutionReport executionReportStatusFromString:@"SUCCESS"] == BNGExecutionReportStatusSuccess, @"executionReportStatusFromString should return the appropriate BNGExecutionReportStatus for SUCCESS");
+    XCTAssertTrue([BNGExecutionReport executionReportStatusFromString:@"FAILURE"] == BNGExecutionReportStatusFailure, @"executionReportStatusFromString should return the appropriate BNGExecutionReportStatus for FAILURE");
+    XCTAssertTrue([BNGExecutionReport executionReportStatusFromString:@"PROCESSED_WITH_ERRORS"] == BNGExecutionReportStatusProcessedWithErrors, @"executionReportStatusFromString should return the appropriate BNGExecutionReportStatus for PROCESSED_WITH_ERRORS");
+    XCTAssertTrue([BNGExecutionReport executionReportStatusFromString:@"TIMEOUT"] == BNGExecutionReportStatusTimeout, @"executionReportStatusFromString should return the appropriate BNGExecutionReportStatus for TIMEOUT");
+}
+
+- (void)testStringFromBNGExecutionReportErrorCode
+{
+    XCTAssertTrue([[BNGExecutionReport stringFromBNGExecutionReportErrorCode:BNGExecutionReportErrorCodeBetActionError] isEqualToString:@"BET_ACTION_ERROR"], @"stringFromBNGExecutionReportErrorCode should return the appropriate value for BET_ACTION_ERROR");
+    XCTAssertTrue([[BNGExecutionReport stringFromBNGExecutionReportErrorCode:BNGExecutionReportErrorCodeDuplicateBetIds] isEqualToString:@"DUPLICATE_BET_IDS"], @"stringFromBNGExecutionReportErrorCode should return the appropriate value for DUPLICATE_BET_IDS");
+}
+
 @end
