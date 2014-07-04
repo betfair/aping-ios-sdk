@@ -34,6 +34,7 @@
 #import "BNGAccountDetails.h"
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
+#import "BNGAccount.h"
 
 @implementation BNGAccountTest
 
@@ -86,6 +87,17 @@
     while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
                                  beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
+- (void)testLoginWithUserName
+{
+    BNGMutableURLRequest *request = [BNGAccount loginWithUserName:@"username" password:@"password" product:@"product" redirectUrl:@"redirect_url" completionBlock:^(NSString *ssoKey, NSError *connectionError, BNGAPIError *apiError) {
+        
+    }];
+    
+    XCTAssertTrue([request.HTTPMethod isEqualToString:@"POST"], @"loginWithUserName should be executed over POST");
+    NSString *dataInStringFormat = [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding];
+    XCTAssertTrue([dataInStringFormat isEqualToString:@"username=username&password=password&applicationId=product&url=redirect_url&product=product&redirectMethod=POST"], @"");
 }
 
 @end
