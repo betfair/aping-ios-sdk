@@ -214,6 +214,8 @@
 		71D9BBD3195823C10006B520 /* BNGAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9BBD2195823C10006B520 /* BNGAPI.m */; };
 		71D9BBD9195823C10006B520 /* libBNGAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D9BBCD195823C10006B520 /* libBNGAPI.a */; };
 		71FF4F7B196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */; };
+		71FF4F7D19673E2A00E5BC88 /* BNGRunnerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FF4F7C19673E2A00E5BC88 /* BNGRunnerTest.m */; };
+		71FF4F7F196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FF4F7E196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -399,6 +401,8 @@
 		71D9BBD8195823C10006B520 /* BNGAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BNGAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D9BBDE195823C10006B520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+HTTPBodyTests.m"; sourceTree = "<group>"; };
+		71FF4F7C19673E2A00E5BC88 /* BNGRunnerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGRunnerTest.m; sourceTree = "<group>"; };
+		71FF4F7E196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGLimitOnCloseOrderTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -568,6 +572,7 @@
 				71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */,
 				7157A1DD195F4D7400D203B9 /* BNGExecutionReportTest.m */,
 				7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */,
+				71FF4F7E196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m */,
 				711AA2EA1958B8A400861CD4 /* BNGMarketBookTest.h */,
 				711AA2EB1958B8A400861CD4 /* BNGMarketBookTest.m */,
 				7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */,
@@ -579,6 +584,7 @@
 				711AA2F11958B8A400861CD4 /* BNGMutableURLRequestTests.m */,
 				711AA2F21958B8A400861CD4 /* BNGOrderTest.h */,
 				711AA2F31958B8A400861CD4 /* BNGOrderTest.m */,
+				71FF4F7C19673E2A00E5BC88 /* BNGRunnerTest.m */,
 				711AA2F41958B8A400861CD4 /* BNGTestUtilities.h */,
 				711AA2F51958B8A400861CD4 /* BNGTestUtilities.m */,
 				711AA2F61958B8A400861CD4 /* BNGURLProtocolResourceLoader.h */,
@@ -984,6 +990,7 @@
 				7118B990195826BE007057CE /* NSURLRequest+HTTPBody.m in Sources */,
 				7118B9AC195826BE007057CE /* BNGCompetition.m in Sources */,
 				7118B9CD195826BE007057CE /* BNGLimitOnCloseOrder.m in Sources */,
+				71FF4F7D19673E2A00E5BC88 /* BNGRunnerTest.m in Sources */,
 				7118B9FA195826BE007057CE /* BNGPriceProjection.m in Sources */,
 				711AA30B1958B8A400861CD4 /* BNGMutableURLRequestTests.m in Sources */,
 				7157A1DE195F4D7400D203B9 /* BNGExecutionReportTest.m in Sources */,
@@ -995,6 +1002,7 @@
 				7118B9EB195826BE007057CE /* BNGMutableURLRequest.m in Sources */,
 				7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */,
 				7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
+				71FF4F7F196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m in Sources */,
 				7118B9F1195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

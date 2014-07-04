@@ -55,4 +55,11 @@
     XCTAssertTrue([[BNGMarketCatalogueDescription stringFromMarketBettingType:BNGMarketBettingTypeFixedOdds] isEqualToString:@"FIXED_ODDS"], @"stringFromMarketBettingType should return the appropriate String for BNGMarketBettingTypeFixedOdds");
 }
 
+- (void)testStringFromMarketType
+{
+    XCTAssertTrue([[BNGMarketCatalogueDescription stringFromMarketType:BNGMarketTypeMatchOdds] isEqualToString:@"MATCH_ODDS"], @"stringFromMarketType should return the appropriate String for BNGMarketTypeMatchOdds");
+    XCTAssertTrue([[BNGMarketCatalogueDescription stringFromMarketType:BNGMarketTypeAsianHandicap] isEqualToString:@"ASIAN_HANDICAP"], @"stringFromMarketType should return the appropriate String for BNGMarketTypeAsianHandicap");
+    XCTAssertTrue([[BNGMarketCatalogueDescription stringFromMarketType:BNGMarketTypeUndifferentiated] isEqualToString:@"UNDIFFERENTIATED"], @"stringFromMarketType should return the appropriate String for BNGMarketTypeUndifferentiated");
+}
+
 @end

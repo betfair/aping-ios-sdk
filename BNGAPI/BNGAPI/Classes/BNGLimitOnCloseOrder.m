@@ -38,7 +38,7 @@
     
     if (self) {
         _price = price;
-        _price = liability;
+        _liability = liability;
     }
     
     return self;
@@ -50,7 +50,7 @@
 {
     NSMutableDictionary *dictionaryRepresentation = [NSMutableDictionary dictionaryWithCapacity:2];
     //TODO: NSNumberFormatter
-    dictionaryRepresentation[@"price"] = [self.liability stringValue];
+    dictionaryRepresentation[@"price"] = [self.price stringValue];
     dictionaryRepresentation[@"liability"] = [self.liability stringValue];
     return dictionaryRepresentation;
 }

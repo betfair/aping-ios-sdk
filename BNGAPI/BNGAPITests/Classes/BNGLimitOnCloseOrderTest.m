@@ -26,48 +26,23 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "NSURL+BNGTests.h"
+#import <XCTest/XCTest.h>
 
-#import "NSURL+BNG.h"
+#import "BNGLimitOnCloseOrder.h"
 
-@implementation NSURL_BNGTests
+@interface BNGLimitOnCloseOrderTest : XCTestCase
 
-- (void)testURLMatchesSuffix
+@end
+
+@implementation BNGLimitOnCloseOrderTest
+
+- (void)testDictionaryRepresentation
 {
-    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
+    BNGLimitOnCloseOrder *limitOnCloseOrder = [[BNGLimitOnCloseOrder alloc] initWithPrice:[NSDecimalNumber decimalNumberWithString:@"20"] liability:[NSDecimalNumber decimalNumberWithString:@"10"]];
+    NSDictionary *dictionaryRepresentation = limitOnCloseOrder.dictionaryRepresentation;
     
-    XCTAssertTrue((BNGBettingOperation.listEvents.length > 0),
-                 @"`BNGBettingOperation.listEvents` is %@.", (BNGBettingOperation.listEvents == nil) ? @"nil" : @"empty");
-    
-    XCTAssertTrue(([url.absoluteString rangeOfString:BNGBettingOperation.listEvents].location != NSNotFound),
-                 @"The URL (%@) should have a suffix of %@.", url, BNGBettingOperation.listEvents);
-}
-
-- (void)testURLUsesBaseURL
-{
-    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
-    
-    XCTAssertTrue((BNGBaseURLString.length > 0),
-                 @"BNGBaseURLString is %@.", (BNGBaseURLString == nil) ? @"nil" : @"empty");
-    
-    XCTAssertTrue(([url.absoluteString hasPrefix:BNGBaseURLString]),
-                 @"The URL (%@) should have a prefix of %@.", url, BNGBaseURLString);
-}
-
-- (void)testURLContainsVersion
-{
-    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
-    
-    XCTAssertTrue((BNGAPIVersion.length > 0),
-                 @"BNGAPIVersion is %@.", (BNGAPIVersion == nil) ? @"nil" : @"empty");
-    
-    XCTAssertTrue(([url.absoluteString rangeOfString:[NSString stringWithFormat:@"/v%@/", BNGAPIVersion]].location != NSNotFound),
-                 @"The URL (%@) should contain the version (v%@).", url, BNGAPIVersion);
-}
-
-- (void)testLoginURL
-{
-    XCTAssertTrue([[NSURL betfairNGLoginURLForOperation:@"login"].absoluteString isEqualToString:@"https://identitysso.betfair.com/api/login"], @"betfairNGAccountURLForOperation should return a login URL");
+    XCTAssert([dictionaryRepresentation[@"price"] isEqualToString:@"20"], @"");
+    XCTAssert([dictionaryRepresentation[@"liability"] isEqualToString:@"10"], @"");
 }
 
 @end
