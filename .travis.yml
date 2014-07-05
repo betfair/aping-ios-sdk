@@ -1,4 +1,20 @@
 language: objective-c
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "H3E0SqjDWfRybsyMn4C0FUbQcKlpUU0fzgD31vsRsJqDx2ZGnhNnALfxp/zYHDL5/rlO+ak0BO0/gOn+R46MzAz4Vej4MKt5x1UXjxW2JDWOH+vSGJb4z/dT1OHBZi+85XUQ3m2+MZeo1X1hehF+6MajH7mFSHaulxJflbFpe84="
+
+addons:
+  coverity_scan:
+    project:
+      name: "betfair/aping-ios-sdk"
+      description: "iOS API-NG Client"
+    notification_email: oshea.ie@gmail.com
+    build_command_prepend:
+    build_command: travis/script.sh
+    branch_pattern: coverity_scan
+
 before_install:
   - chmod a+x travis/before_script.sh
   - chmod a+x travis/script.sh
