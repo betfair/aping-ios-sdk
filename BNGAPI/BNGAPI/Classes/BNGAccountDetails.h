@@ -33,13 +33,44 @@
  */
 @interface BNGAccountDetails : NSObject
 
+/**
+ * Currency code associated with this `BNGAccountDetails`. @see `BNGSupportedCurrencyCodes` for details.
+ */
 @property (nonatomic, copy) NSString *currencyCode;
+
+/**
+ * This user's first name.
+ */
 @property (nonatomic, copy) NSString *firstName;
+
+/**
+ * This user's last name.
+ */
 @property (nonatomic, copy) NSString *lastName;
+
+/**
+ * Locale associated with this `BNGAccountDetails`. @see `BNGSupportedLocales` for details.
+ */
 @property (nonatomic, copy) NSString *localeCode;
+
+/**
+ * Defines where this user is located.
+ */
 @property (nonatomic, copy) NSString *region;
+
+/**
+ * Timezone associated with this `BNGAccountDetails`
+ */
 @property (nonatomic) NSTimeZone *timezone;
+
+/**
+ * Determines whether there is any discount associated with this `BNGAccountDetails`
+ */
 @property (nonatomic) NSDecimalNumber *discountRate;
+
+/**
+ * How many points are associated with this `BNGAccountDetails`
+ */
 @property (nonatomic) NSInteger pointsBalance;
 
 /**

@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAccountTest.h"
+#import <XCTest/XCTest.h>
 
 #import "APING.h"
 
@@ -35,6 +35,10 @@
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
 #import "BNGAccount.h"
+
+@interface BNGAccountTest : XCTestCase
+
+@end
 
 @implementation BNGAccountTest
 

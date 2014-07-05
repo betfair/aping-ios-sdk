@@ -40,6 +40,11 @@
  */
 @property (nonatomic) NSDecimalNumber *liability;
 
+/**
+ * Simple initialiser.
+ * @param liability amount of money the client wishes to place on the market.
+ * @return a `BNGMarketOnCloseOrder`
+ */
 - (instancetype)initWithLiability:(NSDecimalNumber *)liability;
 
 @end

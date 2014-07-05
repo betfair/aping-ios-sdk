@@ -57,7 +57,6 @@ const NSUInteger DecimalConversionOddsStyle  = 2;
         numberFormatter.minimumFractionDigits = 0;
         numberFormatter.usesGroupingSeparator = NO;
         numberFormatter.decimalSeparator      = decimalSeparator;
-        
         locale = @{NSLocaleDecimalSeparator: decimalSeparator};
     });
     

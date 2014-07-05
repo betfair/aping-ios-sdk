@@ -28,12 +28,39 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Constant header definition for the 'X-Application' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderXApplication;
+
+/**
+ * Constant header definition for the 'X-Authentication' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderXAuthentication;
+
+/**
+ * Constant header definition for the 'Content-Type' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderContentType;
+
+/**
+ * Constant header value for the 'Content-Type' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderValueContentTypeDefault;
+
+/**
+ * Constant header definition for the 'Accept' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderAccept;
+
+/**
+ * Constant header definition for the 'Accept-Charset' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderAcceptCharset;
+
+/**
+ * Constant header value for the 'Accept-Charset' HTTP header.
+ */
 extern NSString * const BNGHTTPHeaderValueAcceptCharsetDefault;
 
 #pragma mark Enums

@@ -41,7 +41,7 @@
 @class BNGUpdateExecutionReport;
 
 /**
- * Parses JSON responses from the API server into domain objects.
+ * Parses JSON responses from the API server into domain objects. Typically, this class is used internally by BNG classes and shouldn't have to be used by client code.
  */
 @interface BNGAPIResponseParser : NSObject
 

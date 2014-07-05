@@ -28,6 +28,9 @@
 
 #import "BNGExecutionReport.h"
 
+/**
+ * Returned by a cancel order API call and can be used to see whether the cancel request was successful or not.
+ */
 @interface BNGCancelExecutionReport : BNGExecutionReport
 
 @end

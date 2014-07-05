@@ -28,7 +28,7 @@
 
 #import "NSString+RandomCustomerReferenceId.h"
 
-const NSUInteger maxCustomerReferenceIdLength = 32;
+const NSUInteger BNGMaxCustomerReferenceIdLength = 32;
 
 @implementation NSString (RandomCustomerReferenceId)
 
@@ -36,9 +36,9 @@ const NSUInteger maxCustomerReferenceIdLength = 32;
 {
     static NSString *const characters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    NSMutableString *randomString = [NSMutableString stringWithCapacity:maxCustomerReferenceIdLength];
+    NSMutableString *randomString = [NSMutableString stringWithCapacity:BNGMaxCustomerReferenceIdLength];
     
-    for (NSUInteger i = 0; i < maxCustomerReferenceIdLength; i++) {
+    for (NSUInteger i = 0; i < BNGMaxCustomerReferenceIdLength; i++) {
         [randomString appendFormat:@"%C", [characters characterAtIndex:arc4random_uniform(characters.length)]];
     }
     

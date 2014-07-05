@@ -28,9 +28,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Provides utility methods for encoding/decoding `NSURL`s when they are represented as `NSString`s
+ */
 @interface NSString (URLEncoding)
 
+/**
+ * Returns a url encoded representation of a `NSURL`
+ */
 @property (nonatomic, readonly) NSString *urlEncodedString;
+
+/**
+ * Returns a url decoded representation of a `NSURL`
+ */
 @property (nonatomic, readonly) NSString *urlDecodedString;
 
 @end

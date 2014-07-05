@@ -125,6 +125,10 @@ typedef NS_ENUM(NSInteger, BNGOrderSortDir) {
  * Optional property which identifies the regulartor associated with this `BNGOrder`.
  */
 @property (nonatomic, copy) NSString *regulatorCode;
+
+/**
+ * Size of the BSP liability associated with the bet.
+ */
 @property (nonatomic) NSDecimalNumber *bspLiability;
 @property (nonatomic) NSDecimalNumber *handicap;
 
@@ -132,6 +136,10 @@ typedef NS_ENUM(NSInteger, BNGOrderSortDir) {
  * Indicates when this `BNGOrder` was placed.
  */
 @property (nonatomic) NSDate *placedDate;
+
+/**
+ * Average price at which this bet was matched (if any)
+ */
 @property (nonatomic) NSDecimalNumber *avgPriceMatched;
 
 /**
@@ -144,7 +152,15 @@ typedef NS_ENUM(NSInteger, BNGOrderSortDir) {
  */
 @property (nonatomic) NSDecimalNumber *sizeRemaining;
 @property (nonatomic) NSDecimalNumber *sizeLapsed;
+
+/**
+ * How much of the bet was cancelled (if any)
+ */
 @property (nonatomic) NSDecimalNumber *sizeCancelled;
+
+/**
+ * How much of the bet was voided (if any)
+ */
 @property (nonatomic) NSDecimalNumber *sizeVoided;
 
 #pragma mark API Calls

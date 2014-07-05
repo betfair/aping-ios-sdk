@@ -28,6 +28,9 @@
 
 #import "BNGExecutionReport.h"
 
+/**
+ * Used during replace API operations to update an open bet on a market.
+ */
 @interface BNGReplaceExecutionReport : BNGExecutionReport
 
 @end

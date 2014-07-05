@@ -35,6 +35,9 @@
  */
 @interface BNGEventTypeResult : NSObject
 
+/**
+ * What time of event this `BNGEventTypeResult` is.
+ */
 @property (nonatomic) BNGEventType *eventType;
 
 /**

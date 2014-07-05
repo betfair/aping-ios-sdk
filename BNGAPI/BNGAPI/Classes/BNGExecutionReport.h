@@ -74,6 +74,10 @@ typedef NS_ENUM(NSInteger, BNGExecutionReportErrorCode) {
  * whether the API call failed, succeeded fully or partially succeeded.
  */
 @property (nonatomic) BNGExecutionReportStatus status;
+
+/**
+ * Any potential errors associated with this execution are detailed in `errorCode`.
+ */
 @property (nonatomic) BNGExecutionReportErrorCode errorCode;
 
 /**

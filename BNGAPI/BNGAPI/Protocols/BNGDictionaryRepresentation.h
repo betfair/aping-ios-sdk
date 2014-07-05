@@ -30,6 +30,9 @@
 
 @class NSDictionary;
 
+/**
+ * Protocol for key/value representation of a particular class. Any class implementing this protocol is responsible for determining which key/values should be returned in the `dictionaryRepresentation` property.
+ */
 @protocol BNGDictionaryRepresentation <NSObject>
 
 @required

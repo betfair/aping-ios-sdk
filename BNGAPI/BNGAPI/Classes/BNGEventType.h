@@ -36,12 +36,12 @@
 @interface BNGEventType : NSObject
 
 /**
- * Unique identifier for this `BNGEventType`.
+ * Unique identifier for this `BNGEventType`
  */
 @property (nonatomic, copy) NSString *identifier;
 
 /**
- * Name for this `BNGEventType`.
+ * Name for this `BNGEventType`
  */
 @property (nonatomic, copy) NSString *name;
 

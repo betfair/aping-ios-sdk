@@ -28,6 +28,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Utility category on `NSURLConnection` for sending asynchronous requests. Used internally for BNG API calls to contact Betfair services.
+ */
 @interface NSURLConnection (BNGJSON)
 
 /**

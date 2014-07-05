@@ -63,7 +63,14 @@ typedef NS_ENUM(NSInteger, BNGInstructionReportErrorCode) {
 
 @interface BNGInstructionReport : NSObject
 
+/**
+ * Gives an overall status for the `BNGInstructionReport`. Client code should inspect this status to see whether the API call succeeded or not.
+ */
 @property (nonatomic) BNGInstructionReportStatus status;
+
+/**
+ * If there are any errors with the API call, this `errorCode` property will be populated to give client code an understanding of what went wrong (if anything)
+ */
 @property (nonatomic) BNGInstructionReportErrorCode errorCode;
 
 /**

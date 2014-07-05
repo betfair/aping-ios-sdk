@@ -358,23 +358,14 @@
 		7118B977195826BE007057CE /* BNGUpdateInstructionReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGUpdateInstructionReport.h; sourceTree = "<group>"; };
 		7118B978195826BE007057CE /* BNGUpdateInstructionReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGUpdateInstructionReport.m; sourceTree = "<group>"; };
 		7118B97A195826BE007057CE /* BNGDictionaryRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGDictionaryRepresentation.h; sourceTree = "<group>"; };
-		711AA2E11958B8A400861CD4 /* NSURL+BNGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+BNGTests.h"; sourceTree = "<group>"; };
 		711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+BNGTests.m"; sourceTree = "<group>"; };
-		711AA2E41958B8A400861CD4 /* BNGAccountTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGAccountTest.h; sourceTree = "<group>"; };
 		711AA2E51958B8A400861CD4 /* BNGAccountTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAccountTest.m; sourceTree = "<group>"; };
-		711AA2E61958B8A400861CD4 /* BNGEventTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTest.h; sourceTree = "<group>"; };
 		711AA2E71958B8A400861CD4 /* BNGEventTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTest.m; sourceTree = "<group>"; };
-		711AA2E81958B8A400861CD4 /* BNGEventTypeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGEventTypeTest.h; sourceTree = "<group>"; };
 		711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGEventTypeTest.m; sourceTree = "<group>"; };
-		711AA2EA1958B8A400861CD4 /* BNGMarketBookTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketBookTest.h; sourceTree = "<group>"; };
 		711AA2EB1958B8A400861CD4 /* BNGMarketBookTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketBookTest.m; sourceTree = "<group>"; };
-		711AA2EC1958B8A400861CD4 /* BNGMarketCataloguesTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketCataloguesTest.h; sourceTree = "<group>"; };
 		711AA2ED1958B8A400861CD4 /* BNGMarketCataloguesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCataloguesTest.m; sourceTree = "<group>"; };
-		711AA2EE1958B8A400861CD4 /* BNGMarketFilterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketFilterTests.h; sourceTree = "<group>"; };
 		711AA2EF1958B8A400861CD4 /* BNGMarketFilterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketFilterTests.m; sourceTree = "<group>"; };
-		711AA2F01958B8A400861CD4 /* BNGMutableURLRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMutableURLRequestTests.h; sourceTree = "<group>"; };
 		711AA2F11958B8A400861CD4 /* BNGMutableURLRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMutableURLRequestTests.m; sourceTree = "<group>"; };
-		711AA2F21958B8A400861CD4 /* BNGOrderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGOrderTest.h; sourceTree = "<group>"; };
 		711AA2F31958B8A400861CD4 /* BNGOrderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGOrderTest.m; sourceTree = "<group>"; };
 		711AA2F41958B8A400861CD4 /* BNGTestUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGTestUtilities.h; sourceTree = "<group>"; };
 		711AA2F51958B8A400861CD4 /* BNGTestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGTestUtilities.m; sourceTree = "<group>"; };
@@ -557,7 +548,6 @@
 		711AA2E01958B8A400861CD4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				711AA2E11958B8A400861CD4 /* NSURL+BNGTests.h */,
 				711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */,
 				71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */,
 			);
@@ -567,28 +557,20 @@
 		711AA2E31958B8A400861CD4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				711AA2E41958B8A400861CD4 /* BNGAccountTest.h */,
 				711AA2E51958B8A400861CD4 /* BNGAccountTest.m */,
 				719A58A119674CE500FF2CF2 /* BNGAPIErrorTest.m */,
-				711AA2E61958B8A400861CD4 /* BNGEventTest.h */,
 				711AA2E71958B8A400861CD4 /* BNGEventTest.m */,
-				711AA2E81958B8A400861CD4 /* BNGEventTypeTest.h */,
 				711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */,
 				71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */,
 				7157A1DD195F4D7400D203B9 /* BNGExecutionReportTest.m */,
 				7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */,
 				71FF4F7E196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m */,
-				711AA2EA1958B8A400861CD4 /* BNGMarketBookTest.h */,
 				711AA2EB1958B8A400861CD4 /* BNGMarketBookTest.m */,
 				7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */,
-				711AA2EC1958B8A400861CD4 /* BNGMarketCataloguesTest.h */,
 				711AA2ED1958B8A400861CD4 /* BNGMarketCataloguesTest.m */,
-				711AA2EE1958B8A400861CD4 /* BNGMarketFilterTests.h */,
 				711AA2EF1958B8A400861CD4 /* BNGMarketFilterTests.m */,
 				719A589F19674BE100FF2CF2 /* BNGMarketOnCloseOrderTest.m */,
-				711AA2F01958B8A400861CD4 /* BNGMutableURLRequestTests.h */,
 				711AA2F11958B8A400861CD4 /* BNGMutableURLRequestTests.m */,
-				711AA2F21958B8A400861CD4 /* BNGOrderTest.h */,
 				711AA2F31958B8A400861CD4 /* BNGOrderTest.m */,
 				71FF4F7C19673E2A00E5BC88 /* BNGRunnerTest.m */,
 				711AA2F41958B8A400861CD4 /* BNGTestUtilities.h */,

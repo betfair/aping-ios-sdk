@@ -26,9 +26,13 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "NSURL+BNGTests.h"
+#import <XCTest/XCTest.h>
 
 #import "NSURL+BNG.h"
+
+@interface NSURL_BNGTests : XCTestCase
+
+@end
 
 @implementation NSURL_BNGTests
 

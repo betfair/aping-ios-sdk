@@ -26,11 +26,17 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGMarketFilterTests.h"
+#import <XCTest/XCTest.h>
 
 #import "BNGMarketFilter.h"
 
 #import "BNGTimeRange.h"
+
+@interface BNGMarketFilterTests : XCTestCase
+
+@property (nonatomic) BNGMarketFilter *marketFilter;
+
+@end
 
 @implementation BNGMarketFilterTests
 

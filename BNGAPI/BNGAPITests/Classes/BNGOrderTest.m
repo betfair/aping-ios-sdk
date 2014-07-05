@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGOrderTest.h"
+#import <XCTest/XCTest.h>
 
 #import "BNGOrder.h"
 #import "BNGLimitOrder.h"
@@ -49,6 +49,10 @@
 #import "BNGCancelInstructionReport.h"
 #import "BNGUpdateExecutionReport.h"
 #import "BNGUpdateInstruction.h"
+
+@interface BNGOrderTest : XCTestCase
+
+@end
 
 @interface BNGOrder ()
 

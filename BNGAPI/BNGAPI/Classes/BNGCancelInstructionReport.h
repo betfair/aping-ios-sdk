@@ -32,8 +32,19 @@
 
 @interface BNGCancelInstructionReport : BNGInstructionReport
 
+/**
+ * Dictates how much of the bet was cancelled.
+ */
 @property (nonatomic) NSDecimalNumber *sizeCancelled;
+
+/**
+ * When the bet was cancelled.
+ */
 @property (nonatomic) NSDate *cancelledDate;
+
+/**
+ * Contains additional details about the bet cancellation.
+ */
 @property (nonatomic) BNGCancelInstruction *cancelInstruction;
 
 @end

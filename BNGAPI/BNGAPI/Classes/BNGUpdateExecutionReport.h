@@ -28,6 +28,9 @@
 
 #import "BNGExecutionReport.h"
 
+/**
+ * Returned from the API as a result of an update bet API operation.
+ */
 @interface BNGUpdateExecutionReport : BNGExecutionReport
 
 @end

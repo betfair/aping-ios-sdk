@@ -30,10 +30,24 @@
 
 @class BNGCompetition;
 
+/**
+ * Wrapper class around `BNGCompetition` which gives the client top-level information about the competition such as how many markets are associated with the comptition.
+ */
 @interface BNGCompetitionResult : NSObject
 
+/**
+ * The competition which backs this wrapper class.
+ */
 @property (nonatomic) BNGCompetition *competition;
+
+/**
+ * How many markets are associated with this `BNGCompetition`
+ */
 @property (nonatomic) NSInteger marketCount;
+
+/**
+ * Where in the world this competition is being held.
+ */
 @property (nonatomic, copy) NSString *competitionRegion;
 
 @end

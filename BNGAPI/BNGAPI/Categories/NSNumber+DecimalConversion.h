@@ -28,14 +28,39 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * A constant for decimal conversion which can be passed to either of the two methods in this category.
+ */
 extern const NSUInteger DecimalConversionIntegerStyle;
+
+/**
+ * A constant for money-style conversion which can be passed to either of the two methods in this category.
+ */
 extern const NSUInteger DecimalConversionMoneyStyle;
+
+/**
+ * A constant for odds (think `BNGPriceSize`) conversion which can be passed to either of the two methods in this category.
+ */
 extern const NSUInteger DecimalConversionOddsStyle;
 
+/**
+ * Utility methods for dealing with `NSDecimalNumber`s and rounding.
+ */
 @interface NSNumber (DecimalConversion)
 
+/**
+ * `NSDecimalNumber` associated with this `NSNumber`
+ */
 @property (nonatomic, readonly) NSDecimalNumber *decimalNumber;
+
+/**
+ * @return a `NSDecimalNumber` corresponding to the `numberOfFractionalDigits` parameter
+ */
 - (NSDecimalNumber *)decimalNumberWithNumberOfFractionalDigits:(NSUInteger)numberOfFractionalDigits;
+
+/**
+ * @return a `NSDecimalNumber` corresponding to the `numberOfFractionalDigits` & `roundingMode` parameters
+ */
 - (NSDecimalNumber *)decimalNumberWithNumberOfFractionalDigits:(NSUInteger)numberOfFractionalDigits roundingMode:(NSNumberFormatterRoundingMode)roundingMode;
 
 @end

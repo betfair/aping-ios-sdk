@@ -28,7 +28,14 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * NSNotification which gets posted to when the client successfully authenticates.
+ */
 extern NSString * const BNGLoginURLProtocolDidLoginNotification;
+
+/**
+ * Constant which is used to determine the cause of a failed authentication attempt.
+ */
 extern NSString * const BNGLoginURLProtocolErrorKey;
 extern NSString * const BNGLoginURLProtocolHTTPBodyKey;
 
@@ -69,6 +76,9 @@ typedef enum BNGLoginErrorCode : NSInteger {
     BNGLoginUnknownErrorCode = NSIntegerMin,
 } BNGLoginErrorCode;
 
+/**
+ * Used extensively to authenticate with APING.
+ */
 @interface BNGLoginURLProtocol : NSURLProtocol
 
 + (NSString *)registeredScheme;

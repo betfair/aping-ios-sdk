@@ -35,6 +35,9 @@
  */
 extern NSString * const BNGErrorDomain;
 
+/**
+ * A set of generic error codes which can be returned for the API server for any operation.
+ */
 typedef NS_ENUM(NSInteger, BNGAPIErrorCode) {
     
     BNGAPIErrorCodeTooMuchData               =  1,

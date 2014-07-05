@@ -35,11 +35,34 @@
  */
 @interface BNGEvent : NSObject
 
+/**
+ * Unique identifier for this `BNGEvent`
+ */
 @property (nonatomic, copy) NSString *eventId;
+
+/**
+ * Human readable name for this `BNGEvent`
+ */
 @property (nonatomic, copy) NSString *name;
+
+/**
+ * Country where this `BNGEvent` is being held.
+ */
 @property (nonatomic, copy) NSString *countryCode;
+
+/**
+ * Timezone in which this `BNGEvent` is being held.
+ */
 @property (nonatomic, copy) NSTimeZone *timezone;
+
+/**
+ * Where this `BNGEvent` is being held. This is optional and is not always available.
+ */
 @property (nonatomic, copy) NSString *venue;
+
+/**
+ * When this `BNGEvent` will go in play.
+ */
 @property (nonatomic) NSDate *openDate;
 
 /**

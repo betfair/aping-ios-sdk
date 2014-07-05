@@ -28,9 +28,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * A `BNGCompetition` is a competition like the Champions League or the English Premiership.
+ */
 @interface BNGCompetition : NSObject
 
+/**
+ * Unique identifier for this `BNGCompetition`
+ */
 @property (nonatomic, copy) NSString *identifier;
+
+/**
+ * Human readable name associated with this `BNGCompetition`
+ */
 @property (nonatomic, copy) NSString *name;
 
 /**

@@ -28,7 +28,10 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSUInteger const maxCustomerReferenceIdLength;
+/**
+ * The maximum length of a customer reference id.
+ */
+extern NSUInteger const BNGMaxCustomerReferenceIdLength;
 
 /**
  * Use this category for generating a random set of characters to send in

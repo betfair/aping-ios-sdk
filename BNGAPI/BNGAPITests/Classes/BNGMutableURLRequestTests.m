@@ -26,10 +26,14 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGMutableURLRequestTests.h"
+#import <XCTest/XCTest.h>
 
 #import "BNGMutableURLRequest.h"
 #import "APING.h"
+
+@interface BNGMutableURLRequestTests : XCTestCase
+
+@end
 
 @implementation BNGMutableURLRequestTests
 

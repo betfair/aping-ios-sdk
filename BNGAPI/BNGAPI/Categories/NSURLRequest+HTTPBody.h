@@ -28,15 +28,33 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Utility category on `NSURLRequest` which makes it easier to add body parameters or query string parameters to a `NSURLRequest`. Used internally for BNG API calls to contact Betfair services.
+ */
 @interface NSURLRequest (HTTPBody)
 
+/**
+ * Returns the current set of body parameters (UTF-8 decoded) in a handy `NSDictionary`
+ */
 @property (nonatomic, readonly) NSDictionary *httpBodyDictionary;
+
+/**
+ * Returns the current set of query string parameters (UTF-8 decoded) in a handy `NSDictionary`
+ */
 @property (nonatomic, readonly) NSDictionary *httpQueryParams;
 
 @end
 
+/**
+ * Allows for body parameters to be easily added to a `NSMutableURLRequest`.
+ */
 @interface NSMutableURLRequest (HTTPBody)
 
+/**
+ * Adds a parameter to the HTTP POST body.
+ * @param key the key which uniquely identifies this parameter in the POST body.
+ * @param value the value associated with the key in the POST body.
+ */
 - (void)addBodyKey:(NSString *)key value:(NSString *)value;
 
 @end

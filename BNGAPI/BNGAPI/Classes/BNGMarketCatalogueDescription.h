@@ -100,9 +100,24 @@ typedef NS_ENUM(NSInteger, BNGMarketType) {
  */
 @interface BNGMarketCatalogueDescription : NSObject
 
+/**
+ * The type of betting allowed on this market.
+ */
 @property (nonatomic) BNGMarketBettingType bettingType;
+
+/**
+ * Whether or not this market supports BSP (Betfair Starting Price - `BNGMarketOnCloseOrder`) betting.
+ */
 @property (nonatomic) BOOL bspMarket;
+
+/**
+ * Any additional information about this market which might need to be presented to an end-user.
+ */
 @property (nonatomic, copy) NSString *clarifications;
+
+/**
+ * Whether or not the market allows for a user's discount rate.
+ */
 @property (nonatomic) BOOL discountAllowed;
 @property (nonatomic) NSInteger marketBaseRate;
 @property (nonatomic) NSDate *marketTime;
@@ -120,9 +135,25 @@ typedef NS_ENUM(NSInteger, BNGMarketType) {
 @property (nonatomic) BOOL rulesHasDate;
 
 @property (nonatomic, copy) NSString *regulator;
+
+/**
+ * Details when the market was settled. Could be nil if the market has yet to be settled.
+ */
 @property (nonatomic) NSDate *settleTime;
+
+/**
+ * The last time this market was suspended.
+ */
 @property (nonatomic) NSDate *suspendTime;
+
+/**
+ * Dictates whether this market allows for in play betting.
+ */
 @property (nonatomic) BOOL turnInPlayEnabled;
+
+/**
+ * The wallet from which money will be taken to bet on this market.
+ */
 @property (nonatomic, copy) NSString *wallet;
 
 #pragma mark Transformers

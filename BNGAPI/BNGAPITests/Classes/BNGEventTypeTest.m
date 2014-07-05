@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGEventTypeTest.h"
+#import <XCTest/XCTest.h>
 
 #import "APING.h"
 #import "BNGEventTypeResult.h"
@@ -34,6 +34,10 @@
 #import "BNGMarketFilter.h"
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
+
+@interface BNGEventTypeTest : XCTestCase
+
+@end
 
 @implementation BNGEventTypeTest
 
