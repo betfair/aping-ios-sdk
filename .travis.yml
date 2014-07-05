@@ -8,7 +8,7 @@ env:
 addons:
   coverity_scan:
     project:
-      name: "betfair/aping-ios-sdk"
+      name: "aping-ios-sdk"
       description: "iOS API-NG Client"
     notification_email: oshea.ie@gmail.com
     build_command_prepend:
