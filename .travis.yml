@@ -3,12 +3,12 @@ env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
-   - secure: "H3E0SqjDWfRybsyMn4C0FUbQcKlpUU0fzgD31vsRsJqDx2ZGnhNnALfxp/zYHDL5/rlO+ak0BO0/gOn+R46MzAz4Vej4MKt5x1UXjxW2JDWOH+vSGJb4z/dT1OHBZi+85XUQ3m2+MZeo1X1hehF+6MajH7mFSHaulxJflbFpe84="
+   - secure: "B5sYSEprxH9/4B0x4oIeovOPI6K0dvNhvAyy5bg5HTlpM/tI2rHDl7MOqsLvkO4pi/C4Cfc9WYGUP8UfWH60XtDfv9ne5w0uVStED55VKpzICb76R+TE7qJxf8pH1VJ1iNyjYKy6aW2JaOaV2fFqbbS1oZHEWtgTJDTyTmNt5sI="
 
 addons:
   coverity_scan:
     project:
-      name: "aping-ios-sdk"
+      name: "betfair/aping-ios-sdk"
       description: "iOS API-NG Client"
     notification_email: oshea.ie@gmail.com
     build_command_prepend:
