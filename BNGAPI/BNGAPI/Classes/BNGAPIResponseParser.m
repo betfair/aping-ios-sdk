@@ -57,6 +57,7 @@
 #import "BNGReplaceInstructionReport.h"
 #import "BNGUpdateExecutionReport.h"
 #import "NSNumber+DecimalConversion.h"
+#import "BNGHeartbeatReport.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -536,6 +537,13 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     BNGReplaceExecutionReport *report = [[BNGReplaceExecutionReport alloc] init];
     [BNGAPIResponseParser parseExecutionReportFromResponse:response intoReport:report];
     report.instructionReports = [BNGAPIResponseParser parseBNGReplaceInstructionReportsFromResponse:response[BNGPlaceOrderField.instructionReports]];
+    return report;
+}
+
++ (BNGHeartbeatReport *)parseBNGHeartbeatReportFromResponse:(NSDictionary *)response
+{
+    BNGHeartbeatReport *report = [[BNGHeartbeatReport alloc] init];
+    // TODO: Parse out the response.
     return report;
 }
 

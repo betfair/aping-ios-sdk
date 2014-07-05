@@ -80,6 +80,7 @@ extern const struct BNGAccountOperation {
 extern NSString *const BNGBaseLoginString;
 extern NSString *const BNGBaseURLString;
 extern NSString *const BNGAPIVersion;
+extern NSString *const BNGHeartbeatAPIVersion;
 
 /**
  * Simple category on `NSURL` which includes two methods for returning betting and accounts APIs.
@@ -102,5 +103,11 @@ extern NSString *const BNGAPIVersion;
  * @return URL to the API endpoint for account operations.
  */
 + (NSURL *)betfairNGAccountURLForOperation:(NSString *)operation;
+
+/**
+ * Retrieves an `NSURL` which allows client code to hit APING's heartbeat service.
+ * @return the URL to hit for APING's heartbeat service.
+ */
++ (NSURL *)betfairNGHeartbeatURL;
 
 @end

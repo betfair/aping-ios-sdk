@@ -54,9 +54,10 @@ const struct BNGAccountOperation BNGAccountOperation = {
     .getAccountDetails = @"getAccountDetails",
 };
 
-NSString *const BNGBaseURLString    = @"https://api.betfair.com/exchange";
-NSString *const BNGBaseLoginString  = @"https://identitysso.betfair.com";
-NSString *const BNGAPIVersion       = @"1.0";
+NSString *const BNGBaseURLString        = @"https://api.betfair.com/exchange";
+NSString *const BNGBaseLoginString      = @"https://identitysso.betfair.com";
+NSString *const BNGAPIVersion           = @"1.0";
+NSString *const BNGHeartbeatAPIVersion  = @"1";
 
 @implementation NSURL (BNG)
 
@@ -99,6 +100,13 @@ NSString *const BNGAPIVersion       = @"1.0";
     } else {
         return nil;
     }
+}
+
++ (NSURL *)betfairNGHeartbeatURL {
+    
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/heartbeat/json-rpc/v%@/",
+                                 BNGBaseURLString,
+                                 BNGHeartbeatAPIVersion]];
 }
 
 @end

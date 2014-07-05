@@ -39,6 +39,7 @@
 @class BNGCancelExecutionReport;
 @class BNGReplaceExecutionReport;
 @class BNGUpdateExecutionReport;
+@class BNGHeartbeatReport;
 
 /**
  * Parses JSON responses from the API server into domain objects. Typically, this class is used internally by BNG classes and shouldn't have to be used by client code.
@@ -121,5 +122,12 @@
  * @return a `BNGReplaceExecutionReport` object.
  */
 + (BNGUpdateExecutionReport *)parseBNGUpdateExecutionReportFromResponse:(NSDictionary *)response;
+
+/**
+ * Given a JSON response dictionary, this method returns a `BNGHeartbeatReport`.
+ * @param response JSON from the server based on a `heartbeat` API call.
+ * @return a `BNGHeartbeatReport` object.
+ */
++ (BNGHeartbeatReport *)parseBNGHeartbeatReportFromResponse:(NSDictionary *)response;
 
 @end
