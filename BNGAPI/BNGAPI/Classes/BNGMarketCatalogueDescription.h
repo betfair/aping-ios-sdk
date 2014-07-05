@@ -30,6 +30,9 @@
 
 #pragma mark Enums
 
+/**
+ * Enum which defines all the types of betting available. Usually a market will define which betting types are allowed to be executed on it.
+ */
 typedef NS_ENUM(NSInteger, BNGMarketBettingType) {
     BNGMarketBettingTypeUnknown,
     BNGMarketBettingTypeOdds,
@@ -40,6 +43,9 @@ typedef NS_ENUM(NSInteger, BNGMarketBettingType) {
     BNGMarketBettingTypeFixedOdds,
 };
 
+/**
+ * Enum which documents all the different types of markets available.
+ */
 typedef NS_ENUM(NSInteger, BNGMarketType) {
     BNGMarketTypeUnknown,
     BNGMarketTypeMatchOdds,

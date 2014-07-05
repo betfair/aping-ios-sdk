@@ -30,6 +30,9 @@
 
 #pragma mark Enums
 
+/**
+ * Details the different types of bets which can be placed on a market.
+ */
 typedef NS_ENUM(NSInteger, BNGOrderType) {
     BNGOrderTypeLimitUnknown,
     BNGOrderTypeLimit,
@@ -37,12 +40,18 @@ typedef NS_ENUM(NSInteger, BNGOrderType) {
     BNGOrderTypeMarketOnClose,
 };
 
+/**
+ * Details the state of a BNGOrder.
+ */
 typedef NS_ENUM(NSInteger, BNGOrderStatus) {
     BNGOrderStatusUnknown,
     BNGOrderStatusExecutionComplete,
     BNGOrderStatusExecutable,
 };
 
+/**
+ * Details all the persistence types available to set on the server when updating a bet.
+ */
 typedef NS_ENUM(NSInteger, BNGPersistanceType) {
     BNGPersistanceTypeUnknown,
     BNGPersistanceTypeLapse,
@@ -50,6 +59,9 @@ typedef NS_ENUM(NSInteger, BNGPersistanceType) {
     BNGPersistanceTypeMarketOnClose,
 };
 
+/**
+ * Just like exchange bid or ask prices, this enum is used to differentiate between back and lay prices for a runner in a market.
+ */
 typedef NS_ENUM(NSInteger, BNGSide) {
     BNGSideUnknown,
     BNGSideBack,
@@ -63,12 +75,18 @@ typedef NS_ENUM(NSInteger, BNGOrderProjection) {
     BNGOrderProjectionExecutionComplete,
 };
 
+/**
+ * Enum which dictates how the markets are organised when they are returned from the API server.
+ */
 typedef NS_ENUM(NSInteger, BNGOrderBy) {
     BNGOrderByUnknown,
     BNGOrderByBet,
     BNGOrderByMarket,
 };
 
+/**
+ * Enum which dictates how the markets are sorted when they are returned from the API server.
+ */
 typedef NS_ENUM(NSInteger, BNGOrderSortDir) {
     BNGOrderSortDirUnknown,
     BNGOrderSortDirEarliestToLatest,

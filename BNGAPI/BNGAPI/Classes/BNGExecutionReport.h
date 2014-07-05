@@ -30,6 +30,9 @@
 
 #pragma mark Enums
 
+/**
+ * Series of status codes which can be returned from the API server when client code tries to place a bet.
+ */
 typedef NS_ENUM(NSInteger, BNGExecutionReportStatus) {
     BNGExecutionReportStatusUnknown,
     BNGExecutionReportStatusSuccess,
@@ -38,6 +41,9 @@ typedef NS_ENUM(NSInteger, BNGExecutionReportStatus) {
     BNGExecutionReportStatusTimeout,
 };
 
+/**
+ * Series of error codes which can be returned from the API server when client code tries to place a bet.
+ */
 typedef NS_ENUM(NSInteger, BNGExecutionReportErrorCode) {
     BNGExecutionReportErrorCodeUnknown,
     BNGExecutionReportErrorCodeErrorInMatcher,
@@ -59,6 +65,9 @@ typedef NS_ENUM(NSInteger, BNGExecutionReportErrorCode) {
     BNGExecutionReportErrorCodeRejectedByRegulartor,
 };
 
+/**
+ * Returned to the client when it tries to place a bet on a market.
+ */
 @interface BNGExecutionReport : NSObject
 
 /**
@@ -76,7 +85,7 @@ typedef NS_ENUM(NSInteger, BNGExecutionReportErrorCode) {
 @property (nonatomic) BNGExecutionReportStatus status;
 
 /**
- * Any potential errors associated with this execution are detailed in `errorCode`.
+ * Any potential errors associated with this execution are detailed in `errorCode`
  */
 @property (nonatomic) BNGExecutionReportErrorCode errorCode;
 

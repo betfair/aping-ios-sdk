@@ -65,7 +65,10 @@ extern NSString * const BNGHTTPHeaderValueAcceptCharsetDefault;
 
 #pragma mark Enums
 
-typedef NS_ENUM(NSInteger, APINGErrorCode) {
+/**
+ * Used for generic error codes returned from the API server.
+ */
+typedef NS_ENUM(NSInteger, BNGErrorCode) {
     BNGErrorCodeNoData = 500,
 };
 

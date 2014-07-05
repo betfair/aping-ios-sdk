@@ -30,6 +30,9 @@
 
 #pragma mark Enums
 
+/**
+ * Details the status of a runner in the market.
+ */
 typedef NS_ENUM(NSInteger, BNGRunnerStatus) {
     BNGRunnerStatusUnknown,
     BNGRunnerStatusActive,

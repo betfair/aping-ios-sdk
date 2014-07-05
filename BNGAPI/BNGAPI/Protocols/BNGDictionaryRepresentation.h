@@ -28,8 +28,6 @@
 
 #import <Foundation/Foundation.h>
 
-@class NSDictionary;
-
 /**
  * Protocol for key/value representation of a particular class. Any class implementing this protocol is responsible for determining which key/values should be returned in the `dictionaryRepresentation` property.
  */
@@ -37,6 +35,9 @@
 
 @required
 
+/**
+ * Dictionary representation of the object.
+ */
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 
 @end

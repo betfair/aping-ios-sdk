@@ -30,6 +30,9 @@
 
 #pragma mark Enums
 
+/**
+ * Status enum which details all the status codes which can be returned from the API server when client code places a bet.
+ */
 typedef NS_ENUM(NSInteger, BNGInstructionReportStatus) {
     BNGInstructionReportStatusUnknown,
     BNGInstructionReportStatusSuccess,
@@ -37,6 +40,9 @@ typedef NS_ENUM(NSInteger, BNGInstructionReportStatus) {
     BNGInstructionReportStatusTimeout,
 };
 
+/**
+ * Error enum which details all the possible error responses that could be returned from the API server when trying to place a bet.
+ */
 typedef NS_ENUM(NSInteger, BNGInstructionReportErrorCode) {
     BNGInstructionReportErrorCodeUnknown,
     BNGInstructionReportErrorCodeInvalidBetSize,

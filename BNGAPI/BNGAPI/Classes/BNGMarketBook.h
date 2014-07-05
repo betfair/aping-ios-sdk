@@ -30,6 +30,9 @@
 
 #pragma mark Enums
 
+/**
+ * Enum which outlines all the different market states available.
+ */
 typedef NS_ENUM(NSInteger, BNGMarketStatus) {
     BNGMarketStatusUnknown,
     BNGMarketStatusInactive,
@@ -38,6 +41,9 @@ typedef NS_ENUM(NSInteger, BNGMarketStatus) {
     BNGMarketStatusClosed
 };
 
+/**
+ * The rollup model used when returning prices on the market.
+ */
 typedef NS_ENUM(NSInteger, BNGMatchProjection) {
     BNGMatchProjectionUnknown,
     BNGMatchProjectionNoRollup,
