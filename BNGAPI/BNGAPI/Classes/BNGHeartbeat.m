@@ -38,7 +38,7 @@
 @implementation BNGHeartbeat
 
 + (void)heartbeatForPreferredTimeSeconds:(NSUInteger)preferredTimeoutSeconds
-                         completionBlock:(BNGReplaceOrdersCompletionBlock)completionBlock {
+                         completionBlock:(BNGHeartbeatCompletionBlock)completionBlock {
     
     NSParameterAssert(preferredTimeoutSeconds <= 300);
     
@@ -60,7 +60,7 @@
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                        // first check to see that its not an error
                                        if (!JSONData[@"faultcode"] && !JSONData[@"faultstring"]) {
-                                           completionBlock([BNGAPIResponseParser parseBNGPlaceExecutionReportFromResponse:JSONData], nil, nil);
+                                           completionBlock([BNGAPIResponseParser parseBNGHeartbeatReportFromResponse:JSONData], nil, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
