@@ -122,4 +122,11 @@
  */
 + (BNGUpdateExecutionReport *)parseBNGUpdateExecutionReportFromResponse:(NSDictionary *)response;
 
+/**
+ * Given a JSON response dictionary, this method returns an array of `BNGVenueReport`s
+ * @param response JSON from the server based on a `listVenues` API call.
+ * @return an array of `BNGVenueReport`s
+ */
++ (NSArray *)parseBNGVenueReportsFromResponse:(NSDictionary *)response;
+
 @end
