@@ -54,8 +54,11 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       // first check to see that its not an error
-                                       completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
+                                       } else {
+                                           completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
+                                       }
                                    } else {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
