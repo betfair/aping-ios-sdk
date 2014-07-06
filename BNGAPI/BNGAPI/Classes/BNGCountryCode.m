@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAccountFunds.h"
+#import "BNGCountryCode.h"
 
 #import "APING.h"
 #import "BNGAPIError_Private.h"
@@ -34,18 +34,19 @@
 #import "NSURLConnection+BNGJSON.h"
 #import "BNGAPIResponseParser.h"
 
-@implementation BNGAccountFunds
+@implementation BNGCountryCode
 
-#pragma mark API Calls
-
-+ (void)getAccountFundsWithCompletionBlock:(BNGAccountFundsCompletionBlock)completionBlock
-{
-    NSParameterAssert(completionBlock);
++ (void)listCountriesWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock {
     
-    if (!completionBlock) return;
+    NSParameterAssert(marketFilter);
     
-    NSURL *url = [NSURL betfairNGAccountURLForOperation:BNGAccountOperation.getAccountFunds];
+    if (!marketFilter) return;
+    
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listCountries];
+    
     BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
+    [request setPostParameters:marketFilter.dictionaryRepresentation];
+    
     [NSURLConnection sendAsynchronousJSONRequest:request
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
@@ -53,23 +54,12 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGAccountFundsFromResponse:JSONData], connectionError, nil);
+                                       // first check to see that its not an error
+                                       completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
                                    } else {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
-}
-
-#pragma mark Description
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ [availableToBetBalance: %@] [exposure: %@] [retainedCommission: %@] [exposureLimit: %@]",
-            [super description],
-            self.availableToBetBalance,
-            self.exposure,
-            self.retainedCommission,
-            self.exposureLimit];
 }
 
 @end
