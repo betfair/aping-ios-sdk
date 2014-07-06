@@ -65,10 +65,9 @@
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       completionBlock(nil, connectionError, [NSError errorWithDomain:BNGErrorDomain
+                                                                                       code:BNGErrorCodeNoData
+                                                                                   userInfo:nil]);
                                    }
                                }];
 }

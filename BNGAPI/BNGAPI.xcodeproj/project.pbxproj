@@ -211,10 +211,10 @@
 		7157A1DE195F4D7400D203B9 /* BNGExecutionReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1DD195F4D7400D203B9 /* BNGExecutionReportTest.m */; };
 		719A58A019674BE100FF2CF2 /* BNGMarketOnCloseOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A589F19674BE100FF2CF2 /* BNGMarketOnCloseOrderTest.m */; };
 		719A58A219674CE500FF2CF2 /* BNGAPIErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A119674CE500FF2CF2 /* BNGAPIErrorTest.m */; };
-		719A58A519689E8900FF2CF2 /* BNGHeartbeatReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 719A58A319689E8900FF2CF2 /* BNGHeartbeatReport.h */; };
+		719A58A519689E8900FF2CF2 /* BNGHeartbeatReport.h in Headers */ = {isa = PBXBuildFile; fileRef = 719A58A319689E8900FF2CF2 /* BNGHeartbeatReport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		719A58A619689E8900FF2CF2 /* BNGHeartbeatReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A419689E8900FF2CF2 /* BNGHeartbeatReport.m */; };
 		719A58A719689E8900FF2CF2 /* BNGHeartbeatReport.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A419689E8900FF2CF2 /* BNGHeartbeatReport.m */; };
-		719A58AA1968A02900FF2CF2 /* BNGHeartbeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 719A58A81968A02900FF2CF2 /* BNGHeartbeat.h */; };
+		719A58AA1968A02900FF2CF2 /* BNGHeartbeat.h in Headers */ = {isa = PBXBuildFile; fileRef = 719A58A81968A02900FF2CF2 /* BNGHeartbeat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		719A58AB1968A02900FF2CF2 /* BNGHeartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */; };
 		719A58AC1968A02900FF2CF2 /* BNGHeartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */; };
 		719A58AE1968A35900FF2CF2 /* BNGHeartbeatTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58AD1968A35900FF2CF2 /* BNGHeartbeatTest.m */; };
@@ -685,6 +685,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719A58AA1968A02900FF2CF2 /* BNGHeartbeat.h in Headers */,
+				719A58A519689E8900FF2CF2 /* BNGHeartbeatReport.h in Headers */,
 				7118B9E9195826BE007057CE /* BNGMutableURLRequest.h in Headers */,
 				7118B997195826BE007057CE /* BNGAccountFunds.h in Headers */,
 				7118B988195826BE007057CE /* NSURL+BNG.h in Headers */,
@@ -710,13 +712,11 @@
 				7118B9C8195826BE007057CE /* BNGInstructionReport.h in Headers */,
 				7118BA0D195826BE007057CE /* BNGTimeRange.h in Headers */,
 				7118B9DD195826BE007057CE /* BNGMarketCatalogueFilter.h in Headers */,
-				719A58AA1968A02900FF2CF2 /* BNGHeartbeat.h in Headers */,
 				7118B9FB195826BE007057CE /* BNGPriceSize.h in Headers */,
 				7118B9B0195826BE007057CE /* BNGCurrentOrderSummaryReport.h in Headers */,
 				7118BA0A195826BE007057CE /* BNGStartingPrices.h in Headers */,
 				7118B97B195826BE007057CE /* BNGAPI-Prefix.pch in Headers */,
 				7118BA10195826BE007057CE /* BNGUpdateExecutionReport.h in Headers */,
-				719A58A519689E8900FF2CF2 /* BNGHeartbeatReport.h in Headers */,
 				7118BA07195826BE007057CE /* BNGRunner.h in Headers */,
 				7118B9AD195826BE007057CE /* BNGCompetitionResult.h in Headers */,
 				7118B9DA195826BE007057CE /* BNGMarketCatalogueDescription.h in Headers */,

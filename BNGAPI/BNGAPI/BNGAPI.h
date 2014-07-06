@@ -29,14 +29,16 @@
 #import <Foundation/Foundation.h>
 
 #import "APING.h"
+#import "BNGLoginURLProtocol.h"
+#import "BNGMutableURLRequest.h"
+#import "NSURL+BNG.h"
+#import "NSString+RandomCustomerReferenceId.h"
+
 #import "BNGAccountDetails.h"
 #import "BNGAccount.h"
 #import "BNGAccountFunds.h"
-#import "BNGLoginURLProtocol.h"
-#import "BNGMutableURLRequest.h"
-
-#import "NSURL+BNG.h"
-#import "NSString+RandomCustomerReferenceId.h"
+#import "BNGHeartbeat.h"
+#import "BNGHeartbeatReport.h"
 
 /**
  * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
