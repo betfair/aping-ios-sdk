@@ -51,14 +51,12 @@
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                    
                                    if (connectionError) {
-                                       completionBlock(nil, connectionError, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                        completionBlock([BNGAPIResponseParser parseBNGAccountDetailsFromResponse:JSONData], nil, nil);
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       BNGAPIError *error = [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil];
+                                       completionBlock(nil, connectionError, error);
                                    }
                                }];
 }

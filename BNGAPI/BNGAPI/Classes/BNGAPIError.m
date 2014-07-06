@@ -31,6 +31,8 @@
 
 NSString * const BNGErrorDomain = @"BNGErrorDomain";
 
+static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
+
 @implementation BNGAPIError
 
 #pragma mark Initialisation
@@ -42,6 +44,23 @@ NSString * const BNGErrorDomain = @"BNGErrorDomain";
                         userInfo:dictionary];
     
     if (self) {
+        
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithURLResponse:(NSURLResponse *)response
+{
+    NSInteger code = BNGAPIErrorCodeUnexpectedError;
+    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
+        code = BNGAPIErrorCodeServiceBusy;
+    }
+    
+    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
+    
+    if (self) {
+        
         
     }
     

@@ -29,6 +29,7 @@
 #import <XCTest/XCTest.h>
 
 #import "BNGAPIError.h"
+#import "BNGAPIError_Private.h"
 
 @interface BNGAPIErrorTest : XCTestCase
 
@@ -43,6 +44,22 @@
     XCTAssert([error.domain isEqualToString:@"domain"], @"the domain should be set for the error object");
     XCTAssert(error.code  == 404, @"the code should be set for the error object");
     XCTAssert([error.userInfo[@"error"] isEqualToString:@"details"], @"the code should be set for the error object");
+}
+
+- (void)testAPIErrorInitialisationAPISplashed
+{
+    NSURLResponse *response = [[NSURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://content.betfair.com/content/splash/unplanned/index.asp"] MIMEType:@"application/json" expectedContentLength:402 textEncodingName:@"UTF-8"];
+    BNGAPIError *error = [[BNGAPIError alloc] initWithURLResponse:response];
+
+    XCTAssert(error.code  == BNGAPIErrorCodeServiceBusy, @"the error code should be set to 'service busy' when the API is splashed");
+}
+
+- (void)testAPIErrorInitialisedUnexpectedError
+{
+    NSURLResponse *response = [[NSURLResponse alloc] initWithURL:[NSURL URLWithString:@"https://identitysso.betfair.com"] MIMEType:@"application/json" expectedContentLength:402 textEncodingName:@"UTF-8"];
+    BNGAPIError *error = [[BNGAPIError alloc] initWithURLResponse:response];
+    
+    XCTAssert(error.code  == BNGAPIErrorCodeUnexpectedError, @"the error code should be set to 'unexpected' when the API returns a generic error");
 }
 
 @end

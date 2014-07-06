@@ -69,7 +69,7 @@
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                
                                if (connectionError) {
-                                   completionBlock(nil, connectionError, nil);
+                                   completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                } else if ([JSONData isKindOfClass:[NSArray class]]) {
                                    NSArray *data = JSONData;
                                    NSMutableArray *eventTypes = [[NSMutableArray alloc] initWithCapacity:data.count];
@@ -80,14 +80,11 @@
                                    }
                                    
                                    completionBlock([eventTypes copy], nil, nil);
-                                   
                                } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                    completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
                                } else {
-                                   NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                        code:BNGErrorCodeNoData
-                                                                    userInfo:nil];
-                                   completionBlock(nil, error, nil);
+                                   BNGAPIError *error = [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil];
+                                   completionBlock(nil, connectionError, error);
                                }
                            }];
 }
