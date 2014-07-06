@@ -28,6 +28,13 @@
 
 #import "BNGCompetition.h"
 
+#import "APING.h"
+#import "BNGAPIError_Private.h"
+#import "BNGMutableURLRequest.h"
+#import "NSURLConnection+BNGJSON.h"
+#import "BNGAPIResponseParser.h"
+#import "BNGMarketFilter.h"
+
 @implementation BNGCompetition
 
 #pragma mark Initialisation
@@ -42,6 +49,34 @@
     }
     
     return self;
+}
+
++ (void)listCompetitionsWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock {
+    
+    NSParameterAssert(marketFilter);
+    NSParameterAssert(completionBlock);
+    
+    if (!marketFilter || !completionBlock) return;
+    
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listCompetitions];
+    
+    BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
+    [request setPostParameters:marketFilter.dictionaryRepresentation];
+    
+    [NSURLConnection sendAsynchronousJSONRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
+                                   
+                                   if (connectionError) {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
+                                   } else if ([JSONData isKindOfClass:[NSArray class]]) {
+                                       completionBlock([BNGAPIResponseParser parseBNGCompetitionResultsFromResponse:JSONData], nil, nil);
+                                   } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
+                                       completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
+                                   } else {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
+                                   }
+                               }];
 }
 
 @end

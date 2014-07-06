@@ -539,6 +539,12 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     return report;
 }
 
++ (NSArray *)parseBNGCompetitionResultsFromResponse:(NSDictionary *)response
+{
+    // TODO: Parsing
+    return nil;
+}
+
 #pragma mark Private Methods
 
 + (BNGMarketBook *)parseBNGMarketBookFromResponse:(NSDictionary *)response

@@ -122,4 +122,11 @@
  */
 + (BNGUpdateExecutionReport *)parseBNGUpdateExecutionReportFromResponse:(NSDictionary *)response;
 
+/**
+ * Given a JSON response dictionary, this method returns an array of `BNGCompetitionResult`s
+ * @param response JSON from the server based on a `listCompetitions` API call.
+ * @return an array of `BNGCompetitionResult`s
+ */
++ (NSArray *)parseBNGCompetitionResultsFromResponse:(NSDictionary *)response;
+
 @end

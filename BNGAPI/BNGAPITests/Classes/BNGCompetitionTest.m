@@ -26,40 +26,39 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-#import "NSURL+BNG.h"
+#import "APING.h"
+#import "BNGCompetition.h"
+#import "BNGMarketFilter.h"
+#import "BNGURLProtocolResourceLoader.h"
+#import "BNGTestUtilities.h"
 
-@class BNGMarketFilter;
+@interface BNGCompetitionTest : XCTestCase
 
-/**
- * A `BNGCompetition` is a competition like the Champions League or the English Premiership.
- */
-@interface BNGCompetition : NSObject
+@end
 
-/**
- * Unique identifier for this `BNGCompetition`
- */
-@property (nonatomic, copy) NSString *identifier;
+@implementation BNGCompetitionTest
 
-/**
- * Human readable name associated with this `BNGCompetition`
- */
-@property (nonatomic, copy) NSString *name;
-
-/**
- * Simple initialiser.
- * @param identifier uniquely identifies the `BNGCompetition`.
- * @param name the human-readable name associated with the competition.
- * @return a `BNGCompetition` object.
- */
-- (instancetype)initWithIdentifier:(NSString *)identifier name:(NSString *)name;
-
-/**
- * Given a `BNGMarketFilter`, this method finds a list of `BNGCompetition`s.
- * @param marketFilter used to filter out certain types of `BNGCompetition`s from the response
- * @param completionBlock executed once the API call returns.
- */
-+ (void)listCompetitionsWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock;
+- (void)testListCompetitions {
+    
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    BNGMarketFilter *marketFilter = [[BNGMarketFilter alloc] init];
+    marketFilter.eventTypeIds = @[@(1)];
+    [BNGCompetition listCompetitionsWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+     
+        // TODO: Asserts
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
 
 @end
