@@ -39,12 +39,12 @@
 
 #pragma mark Initialisation
 
-- (instancetype)initWithIdentifier:(NSString *)identifier name:(NSString *)name
+- (instancetype)initWithIdentifier:(long long)identifier name:(NSString *)name
 {
     self = [super init];
     
     if (self) {
-        _identifier = [identifier copy];
+        _identifier = identifier;
         _name       = [name copy];
     }
     
@@ -77,6 +77,14 @@
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ [identifier: %lld] [name: %@]",
+            [super description],
+            self.identifier,
+            self.name];
 }
 
 @end

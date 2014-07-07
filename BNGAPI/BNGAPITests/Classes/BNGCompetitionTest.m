@@ -33,6 +33,7 @@
 #import "BNGMarketFilter.h"
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
+#import "BNGCompetitionResult.h"
 
 @interface BNGCompetitionTest : XCTestCase
 
@@ -50,9 +51,28 @@
     
     BNGMarketFilter *marketFilter = [[BNGMarketFilter alloc] init];
     marketFilter.eventTypeIds = @[@(1)];
+    
     [BNGCompetition listCompetitionsWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
      
-        // TODO: Asserts
+        int numberOfAsserts = 0;
+        
+        for (BNGCompetitionResult *competitionResult in results) {
+            
+            BNGCompetition *competition = competitionResult.competition;
+            if ([competition.name isEqualToString:@"Russian Cup"]) {
+                XCTAssert(competition.identifier == 33051, @"");
+                numberOfAsserts++;
+            } else if ([competition.name isEqualToString:@"W League Western Conference"]) {
+                XCTAssert(competition.identifier == 3244079, @"");
+                numberOfAsserts++;
+            } else if ([competition.name isEqualToString:@"2014 Womens U20 World Championship"]) {
+                XCTAssert(competition.identifier == 5517677, @"");
+                numberOfAsserts++;
+            }
+        }
+        
+        XCTAssert(numberOfAsserts == 3, @"The test should have executed 3 separate asserts");
+        
         dispatch_semaphore_signal(semaphore);
     }];
     

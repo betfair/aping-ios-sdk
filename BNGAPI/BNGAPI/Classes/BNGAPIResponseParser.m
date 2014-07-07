@@ -59,6 +59,7 @@
 #import "NSNumber+DecimalConversion.h"
 #import "BNGCountryCode.h"
 #import "BNGCountryCodeResult.h"
+#import "BNGCompetitionResult.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -230,6 +231,12 @@ struct BNGReplaceOrderField {
 
 struct BNGCountryCodeField {
     __unsafe_unretained NSString *countryCode;
+    __unsafe_unretained NSString *marketCount;
+};
+
+struct BNGCompetitionResultField {
+    __unsafe_unretained NSString *competition;
+    __unsafe_unretained NSString *competitionRegion;
     __unsafe_unretained NSString *marketCount;
 };
 
@@ -406,6 +413,12 @@ static const struct BNGCountryCodeField BNGCountryCodeField = {
     .marketCount = @"marketCount"
 };
 
+static const struct BNGCompetitionResultField BNGCompetitionResultField = {
+    .competition = @"competition",
+    .competitionRegion = @"competitionRegion",
+    .marketCount = @"marketCount"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
@@ -551,17 +564,20 @@ static const struct BNGCountryCodeField BNGCountryCodeField = {
     return report;
 }
 
-+ (NSArray *)parseBNGCompetitionResultsFromResponse:(NSDictionary *)response
++ (NSArray *)parseBNGCompetitionResultsFromResponse:(NSArray *)response
 {
-    // TODO: Parsing
-    return nil;
+    NSMutableArray *competitions = [[NSMutableArray alloc] initWithCapacity:response.count];
+    for (NSDictionary *competition in response) {
+        [competitions addObject:[BNGAPIResponseParser parseBNGCompetitionResultFromResponse:competition]];
+    }
+    return [competitions copy];
 }
 
 + (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response
 {
     NSMutableArray *countryCodes = [[NSMutableArray alloc] initWithCapacity:response.count];
     for (NSDictionary *country in response) {
-        [countryCodes addObject:[BNGAPIResponseParser parseBNGCountryCodeFromResponse:country]];
+        [countryCodes addObject:[BNGAPIResponseParser parseBNGCountryCodeResultFromResponse:country]];
     }
     return [countryCodes copy];
 }
@@ -669,7 +685,7 @@ static const struct BNGCountryCodeField BNGCountryCodeField = {
 {
     BNGCompetition *competition;
     if (response) {
-        competition = [[BNGCompetition alloc] initWithIdentifier:response[BNGCompetitionField.identifier]
+        competition = [[BNGCompetition alloc] initWithIdentifier:[response[BNGCompetitionField.identifier] longLongValue]
                                                             name:response[BNGCompetitionField.name]];
     }
     return competition;
@@ -941,12 +957,21 @@ static const struct BNGCountryCodeField BNGCountryCodeField = {
     return prices;
 }
 
-+ (BNGCountryCodeResult *)parseBNGCountryCodeFromResponse:(NSDictionary *)response
++ (BNGCountryCodeResult *)parseBNGCountryCodeResultFromResponse:(NSDictionary *)response
 {
     BNGCountryCodeResult *countryCodeResult = [[BNGCountryCodeResult alloc] init];
     countryCodeResult.countryCode = [[BNGCountryCode alloc] initWithCountryCodeName:response[BNGCountryCodeField.countryCode]];
     countryCodeResult.marketCount = [response[BNGCountryCodeField.marketCount] intValue];
     return countryCodeResult;
+}
+
++ (BNGCompetitionResult *)parseBNGCompetitionResultFromResponse:(NSDictionary *)response
+{
+    BNGCompetitionResult *competitionResult = [[BNGCompetitionResult alloc] init];
+    competitionResult.marketCount = [response[BNGCompetitionResultField.marketCount] intValue];
+    competitionResult.competitionRegion = response[BNGCompetitionResultField.competitionRegion];
+    competitionResult.competition = [BNGAPIResponseParser parseBNGCompetitionFromResponse:response[BNGCompetitionResultField.competition]];
+    return competitionResult;
 }
 
 @end

@@ -40,7 +40,7 @@
 /**
  * Unique identifier for this `BNGCompetition`
  */
-@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) long long identifier;
 
 /**
  * Human readable name associated with this `BNGCompetition`
@@ -53,7 +53,7 @@
  * @param name the human-readable name associated with the competition.
  * @return a `BNGCompetition` object.
  */
-- (instancetype)initWithIdentifier:(NSString *)identifier name:(NSString *)name;
+- (instancetype)initWithIdentifier:(long long)identifier name:(NSString *)name;
 
 /**
  * Given a `BNGMarketFilter`, this method finds a list of `BNGCompetition`s.

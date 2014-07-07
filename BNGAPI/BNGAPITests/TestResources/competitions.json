@@ -1,0 +1,26 @@
+ [
+  {
+  "competition": {
+  "id": 33051,
+  "name": "Russian Cup"
+  },
+  "competitionRegion": "RUS",
+  "marketCount": 40
+  },
+  {
+  "competition": {
+  "id": 3244079,
+  "name": "W League Western Conference"
+  },
+  "competitionRegion": "GBR",
+  "marketCount": 15
+  },
+  {
+  "competition": {
+  "id": 5517677,
+  "name": "2014 Womens U20 World Championship"
+  },
+  "competitionRegion": "GBR",
+  "marketCount": 15
+  }
+  ]

@@ -38,7 +38,8 @@
 #import "NSURL+BNG.h"
 #import "NSString+RandomCustomerReferenceId.h"
 
-
+#import "BNGCompetition.h"
+#import "BNGCompetitionResult.h"
 #import "BNGCountryCode.h"
 #import "BNGCountryCodeResult.h"
 
