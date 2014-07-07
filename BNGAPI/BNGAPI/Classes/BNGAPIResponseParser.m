@@ -60,6 +60,7 @@
 #import "BNGCountryCode.h"
 #import "BNGCountryCodeResult.h"
 #import "BNGCompetitionResult.h"
+#import "BNGVenueResult.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -237,6 +238,11 @@ struct BNGCountryCodeField {
 struct BNGCompetitionResultField {
     __unsafe_unretained NSString *competition;
     __unsafe_unretained NSString *competitionRegion;
+    __unsafe_unretained NSString *marketCount;
+};
+
+struct BNGVenueResultField {
+    __unsafe_unretained NSString *venue;
     __unsafe_unretained NSString *marketCount;
 };
 
@@ -419,6 +425,11 @@ static const struct BNGCompetitionResultField BNGCompetitionResultField = {
     .marketCount = @"marketCount"
 };
 
+static const struct BNGVenueResultField BNGVenueResultField = {
+    .venue = @"venue",
+    .marketCount = @"marketCount"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
@@ -564,10 +575,13 @@ static const struct BNGCompetitionResultField BNGCompetitionResultField = {
     return report;
 }
 
-+ (NSArray *)parseBNGVenueReportsFromResponse:(NSDictionary *)response
++ (NSArray *)parseBNGVenueResultsFromResponse:(NSArray *)response
 {
-    // TODO: Parsing
-    return nil;
+    NSMutableArray *venues = [[NSMutableArray alloc] initWithCapacity:response.count];
+    for (NSDictionary *venue in response) {
+        [venues addObject:[BNGAPIResponseParser parseBNGVenueResultFromResponse:venue]];
+    }
+    return [venues copy];
 }
 
 + (NSArray *)parseBNGCompetitionResultsFromResponse:(NSArray *)response
@@ -978,6 +992,14 @@ static const struct BNGCompetitionResultField BNGCompetitionResultField = {
     competitionResult.competitionRegion = response[BNGCompetitionResultField.competitionRegion];
     competitionResult.competition = [BNGAPIResponseParser parseBNGCompetitionFromResponse:response[BNGCompetitionResultField.competition]];
     return competitionResult;
+}
+
++ (BNGVenueResult *)parseBNGVenueResultFromResponse:(NSDictionary *)response
+{
+    BNGVenueResult *result = [[BNGVenueResult alloc] init];
+    result.venue = [[BNGVenue alloc] initWithVenueName:response[BNGVenueResultField.venue]];
+    result.marketCount = [response[BNGVenueResultField.marketCount] intValue];
+    return result;
 }
 
 @end

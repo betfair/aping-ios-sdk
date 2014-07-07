@@ -37,6 +37,18 @@
 
 @implementation BNGVenue
 
+- (instancetype)initWithVenueName:(NSString *)venueName
+{
+    self = [super init];
+    
+    if (self) {
+        
+        _venueName = [venueName copy];
+    }
+    
+    return self;
+}
+
 + (void)venuesWithFilter:(BNGMarketFilter *)marketFilter
          completionBlock:(BNGResultsCompletionBlock)completionBlock
 {
@@ -56,8 +68,8 @@
                                    
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
-                                   } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGVenueReportsFromResponse:JSONData], nil, nil);
+                                   } else if ([JSONData isKindOfClass:[NSArray class]]) {
+                                       completionBlock([BNGAPIResponseParser parseBNGVenueResultsFromResponse:JSONData], nil, nil);
                                    } else {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }

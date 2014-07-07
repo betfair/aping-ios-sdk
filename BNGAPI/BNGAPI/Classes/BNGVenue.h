@@ -42,6 +42,15 @@
  */
 @property (nonatomic, copy) NSString *venueName;
 
+#pragma mark Initialisation
+
+/**
+ * Simple initialiser which takes in the venueName
+ * @param venueName the name by which this venue is humanly identifiable
+ * @return an instance of `BNGVenue`
+ */
+- (instancetype)initWithVenueName:(NSString *)venueName;
+
 #pragma mark API Calls
 
 /**

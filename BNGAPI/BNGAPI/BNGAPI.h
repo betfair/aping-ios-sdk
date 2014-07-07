@@ -42,6 +42,8 @@
 #import "BNGCompetitionResult.h"
 #import "BNGCountryCode.h"
 #import "BNGCountryCodeResult.h"
+#import "BNGVenue.h"
+#import "BNGVenueResult.h"
 
 /**
  * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.

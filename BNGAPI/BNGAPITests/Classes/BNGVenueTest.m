@@ -13,6 +13,7 @@
 #import "BNGMarketFilter.h"
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
+#import "BNGVenueResult.h"
 
 @interface BNGVenueTest : XCTestCase
 
@@ -32,8 +33,26 @@
     marketFilter.eventTypeIds = @[@(1)];
     
     [BNGVenue venuesWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
-       
-        // TODO: asserts
+
+        int numberOfAsserts = 0;
+        
+        for (BNGVenueResult *venueResult in results) {
+            
+            BNGVenue *venue = venueResult.venue;
+            if ([venue.venueName isEqualToString:@"Roscommon"]) {
+                XCTAssert(venueResult.marketCount == 40, @"the venue result should have the correct number of markets");
+                numberOfAsserts++;
+            } else if ([venue.venueName isEqualToString:@"Swindon"]) {
+                XCTAssert(venueResult.marketCount == 6, @"the venue result should have the correct number of markets");
+                numberOfAsserts++;
+            } else if ([venue.venueName isEqualToString:@"Monmore"]) {
+                XCTAssert(venueResult.marketCount == 3, @"the venue result should have the correct number of markets");
+                numberOfAsserts++;
+            }
+        }
+        
+        XCTAssert(numberOfAsserts == 3, @"The test should have executed 3 separate asserts");
+        
         dispatch_semaphore_signal(semaphore);
     }];
     
