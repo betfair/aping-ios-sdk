@@ -205,6 +205,7 @@
 		711AA3181958B8A400861CD4 /* replace_order_failure.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3021958B8A400861CD4 /* replace_order_failure.json */; };
 		711AA3191958B8A400861CD4 /* update_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3031958B8A400861CD4 /* update_order.json */; };
 		711BC3E71958270400EF8945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BC3E61958270400EF8945 /* Foundation.framework */; };
+		7134BA96196AD52E004C5818 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 7134BA95196AD52E004C5818 /* countries.json */; };
 		7157A1D8195F3A3B00D203B9 /* cancel_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 7157A1D7195F3A3B00D203B9 /* cancel_order.json */; };
 		7157A1DA195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */; };
 		7157A1DC195F4C9A00D203B9 /* BNGInstructionReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */; };
@@ -390,6 +391,7 @@
 		711AA3021958B8A400861CD4 /* replace_order_failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = replace_order_failure.json; sourceTree = "<group>"; };
 		711AA3031958B8A400861CD4 /* update_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_order.json; sourceTree = "<group>"; };
 		711BC3E61958270400EF8945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7134BA95196AD52E004C5818 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		7157A1D7195F3A3B00D203B9 /* cancel_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancel_order.json; sourceTree = "<group>"; };
 		7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueDescriptionTest.m; sourceTree = "<group>"; };
 		7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGInstructionReportTest.m; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				711AA2F91958B8A400861CD4 /* account_details.json */,
 				711AA2FA1958B8A400861CD4 /* account_funds.json */,
 				7157A1D7195F3A3B00D203B9 /* cancel_order.json */,
+				7134BA95196AD52E004C5818 /* countries.json */,
 				711AA2FB1958B8A400861CD4 /* current_orders.json */,
 				711AA2FC1958B8A400861CD4 /* event_types.json */,
 				711AA2FD1958B8A400861CD4 /* events.json */,
@@ -837,6 +840,7 @@
 				7157A1D8195F3A3B00D203B9 /* cancel_order.json in Resources */,
 				711AA3151958B8A400861CD4 /* market_catalogue.json in Resources */,
 				711AA3121958B8A400861CD4 /* event_types.json in Resources */,
+				7134BA96196AD52E004C5818 /* countries.json in Resources */,
 				711AA3141958B8A400861CD4 /* market_book.json in Resources */,
 				711AA3181958B8A400861CD4 /* replace_order_failure.json in Resources */,
 				711AA30F1958B8A400861CD4 /* account_details.json in Resources */,

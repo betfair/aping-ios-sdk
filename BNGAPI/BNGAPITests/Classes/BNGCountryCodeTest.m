@@ -33,6 +33,7 @@
 #import "BNGMarketFilter.h"
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
+#import "BNGCountryCodeResult.h"
 
 @interface BNGCountryCodeTest : XCTestCase
 
@@ -52,7 +53,17 @@
     
     [BNGCountryCode listCountriesWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
        
-        // TODOs: Asserts here
+        for (BNGCountryCodeResult *countryCodeResult in results) {
+            
+            if ([countryCodeResult.countryCode.countryCode isEqualToString:@"GB"]) {
+                XCTAssert(countryCodeResult.marketCount == 1345, @"");
+            } else if ([countryCodeResult.countryCode.countryCode isEqualToString:@"IE"]) {
+                XCTAssert(countryCodeResult.marketCount == 305, @"");
+            } else if ([countryCodeResult.countryCode.countryCode isEqualToString:@"US"]) {
+                XCTAssert(countryCodeResult.marketCount == 1045, @"");
+            }
+        }
+
         dispatch_semaphore_signal(semaphore);
     }];
     
