@@ -53,10 +53,13 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGAccountFundsFromResponse:JSONData], nil, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGAccountFundsFromResponse:JSONData], connectionError, nil);
+                                       } else {
+                                           completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
+                                       }
                                    } else {
-                                       BNGAPIError *error = [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil];
-                                       completionBlock(nil, connectionError, error);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }

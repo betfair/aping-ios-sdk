@@ -30,6 +30,8 @@
 #import "BNGAPIError_Private.h"
 
 NSString * const BNGErrorDomain = @"BNGErrorDomain";
+NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
+NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
 
 static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
 

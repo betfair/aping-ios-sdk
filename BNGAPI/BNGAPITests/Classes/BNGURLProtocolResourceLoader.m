@@ -47,6 +47,8 @@ static NSDictionary *responses;
             @"https://api.betfair.com/exchange/betting/rest/v1.0/replaceOrders/": @"replace_order.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/updateOrders/": @"update_order.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/cancelOrders/": @"cancel_order.json",
+            @"https://api.betfair.com/exchange/betting/rest/v1.0/listCountries/": @"countries.json",
+            @"https://api.betfair.com/exchange/betting/rest/v1.0/listCompetitions/": @"competitions.json",
             };
     }
 //    return NO;

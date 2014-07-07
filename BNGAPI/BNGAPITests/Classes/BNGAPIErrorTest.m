@@ -62,4 +62,25 @@
     XCTAssert(error.code  == BNGAPIErrorCodeUnexpectedError, @"the error code should be set to 'unexpected' when the API returns a generic error");
 }
 
+- (void)testAPIErrorInitialisationWithDictionary
+{
+    NSDictionary *dictionary = @{
+        @"detail": @{
+            @"APINGException": @{
+                @"errorCode": @"INVALID_APP_KEY",
+                @"errorDetails": @"The application key passed is invalid",
+                @"requestUUID": @"prdang001-07021049-000afdf7a9"
+            },
+            @"exceptionname": @"APINGException"
+        },
+        @"faultcode": @"Client",
+        @"faultstring": @"ANGX-0007"
+        };
+    
+    BNGAPIError *error = [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:dictionary];
+    
+    XCTAssert([error.userInfo[@"faultcode"] isEqualToString:@"Client"], @"the userInfo dictionary should be equal to the raw response from the API server");
+    XCTAssert([error.userInfo[@"faultstring"] isEqualToString:@"ANGX-0007"], @"the userInfo dictionary should be equal to the raw response from the API server");
+}
+
 @end

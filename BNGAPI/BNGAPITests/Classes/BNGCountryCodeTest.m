@@ -26,26 +26,57 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
 #import "APING.h"
-#import "BNGAccountDetails.h"
-#import "BNGAccount.h"
-#import "BNGAccountFunds.h"
-#import "BNGLoginURLProtocol.h"
-#import "BNGMutableURLRequest.h"
-
-#import "NSURL+BNG.h"
-#import "NSString+RandomCustomerReferenceId.h"
-
-#import "BNGCompetition.h"
-#import "BNGCompetitionResult.h"
 #import "BNGCountryCode.h"
+#import "BNGMarketFilter.h"
+#import "BNGURLProtocolResourceLoader.h"
+#import "BNGTestUtilities.h"
 #import "BNGCountryCodeResult.h"
 
-/**
- * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
- */
-@interface BNGAPI : NSObject
+@interface BNGCountryCodeTest : XCTestCase
+
+@end
+
+@implementation BNGCountryCodeTest
+
+- (void)testListCountriesWithFilter
+{
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    BNGMarketFilter *marketFilter = [[BNGMarketFilter alloc] init];
+    
+    [BNGCountryCode listCountriesWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+       
+        int numberOfAsserts = 0;
+        
+        for (BNGCountryCodeResult *countryCodeResult in results) {
+            
+            if ([countryCodeResult.countryCode.countryCode isEqualToString:@"GB"]) {
+                XCTAssert(countryCodeResult.marketCount == 1345, @"");
+                numberOfAsserts++;
+            } else if ([countryCodeResult.countryCode.countryCode isEqualToString:@"IE"]) {
+                XCTAssert(countryCodeResult.marketCount == 305, @"");
+                numberOfAsserts++;
+            } else if ([countryCodeResult.countryCode.countryCode isEqualToString:@"US"]) {
+                XCTAssert(countryCodeResult.marketCount == 1045, @"");
+                numberOfAsserts++;
+            }
+        }
+        
+        XCTAssert(numberOfAsserts == 3, @"The test should have executed 3 separate asserts");
+
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
 
 @end
