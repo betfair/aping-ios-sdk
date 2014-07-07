@@ -30,9 +30,19 @@
 
 #import "BNGCountryCode.h"
 
+/**
+ * Simple wrapper class around `BNGCountryCode` which includes information on how many open markets are associated with the country code in question.
+ */
 @interface BNGCountryCodeResult : NSObject
 
+/**
+ * How many markets are associated with this `BNGCountryCode`
+ */
 @property (nonatomic) NSUInteger marketCount;
+
+/**
+ * Has information on the unique identifier for this country.
+ */
 @property (nonatomic) BNGCountryCode *countryCode;
 
 @end

@@ -31,9 +31,22 @@
 #import "NSURL+BNG.h"
 #import "BNGMarketFilter.h"
 
+/**
+ * A `BNGCountryCode` is a unique identifier for a country in which a market/event/competition is happening. Not all markets/events/competitions have country codes associated with them.
+ */
 @interface BNGCountryCode : NSObject
 
+/**
+ * Uniquely identifies this country. See http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for details.
+ */
 @property (nonatomic, copy) NSString *countryCode;
+
+/**
+ * Simple initialiser for `BNGCountryCode`
+ * @param countryCode the name of the country code associated with this `BNGCountryCode`
+ * @return an instance of `BNGCountryCode`
+ */
+- (instancetype)initWithCountryCodeName:(NSString *)countryCode;
 
 /**
  * Given a BNGMarketFilter, this method finds a list of http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ISO country codes.

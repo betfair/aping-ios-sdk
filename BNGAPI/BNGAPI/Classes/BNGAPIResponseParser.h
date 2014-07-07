@@ -127,6 +127,6 @@
  * @param response JSON from the server based on a `replaceOrder` API call.
  * @return a `BNGReplaceExecutionReport` object.
  */
-+ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSDictionary *)response;
++ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response;
 
 @end

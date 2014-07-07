@@ -57,6 +57,8 @@
 #import "BNGReplaceInstructionReport.h"
 #import "BNGUpdateExecutionReport.h"
 #import "NSNumber+DecimalConversion.h"
+#import "BNGCountryCode.h"
+#import "BNGCountryCodeResult.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -224,6 +226,11 @@ struct BNGCancelOrderField {
 struct BNGReplaceOrderField {
     __unsafe_unretained NSString *cancelInstructionReport;
     __unsafe_unretained NSString *placeInstructionReport;
+};
+
+struct BNGCountryCodeField {
+    __unsafe_unretained NSString *countryCode;
+    __unsafe_unretained NSString *marketCount;
 };
 
 static const struct BNGAccountFundsField BNGAccountFundsField = {
@@ -394,6 +401,11 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     .placeInstructionReport = @"placeInstructionReport",
 };
 
+static const struct BNGCountryCodeField BNGCountryCodeField = {
+    .countryCode = @"countryCode",
+    .marketCount = @"marketCount"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
@@ -539,10 +551,13 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     return report;
 }
 
-+ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSDictionary *)response
++ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response
 {
-    // TODO: Parsing
-    return nil;
+    NSMutableArray *countryCodes = [[NSMutableArray alloc] initWithCapacity:response.count];
+    for (NSDictionary *country in response) {
+        [countryCodes addObject:[BNGAPIResponseParser parseBNGCountryCodeFromResponse:country]];
+    }
+    return [countryCodes copy];
 }
 
 #pragma mark Private Methods
@@ -918,6 +933,14 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
                                                          size:[price[BNGOrderField.size] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor]]];
     }
     return prices;
+}
+
++ (BNGCountryCodeResult *)parseBNGCountryCodeFromResponse:(NSDictionary *)response
+{
+    BNGCountryCodeResult *countryCodeResult = [[BNGCountryCodeResult alloc] init];
+    countryCodeResult.countryCode = [[BNGCountryCode alloc] initWithCountryCodeName:response[BNGCountryCodeField.countryCode]];
+    countryCodeResult.marketCount = [response[BNGCountryCodeField.marketCount] intValue];
+    return countryCodeResult;
 }
 
 @end

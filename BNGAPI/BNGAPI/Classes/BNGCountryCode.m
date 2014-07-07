@@ -36,6 +36,18 @@
 
 @implementation BNGCountryCode
 
+- (instancetype)initWithCountryCodeName:(NSString *)countryCode {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        _countryCode = [countryCode copy];
+    }
+    
+    return self;
+}
+
 + (void)listCountriesWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock {
     
     NSParameterAssert(marketFilter);
@@ -53,12 +65,8 @@
                                    
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
-                                   } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
-                                           completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
-                                       } else {
-                                           completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
-                                       }
+                                   } else if ([JSONData isKindOfClass:[NSArray class]]) {
+                                       completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
                                    } else {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }

@@ -53,16 +53,23 @@
     
     [BNGCountryCode listCountriesWithFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
        
+        int numberOfAsserts = 0;
+        
         for (BNGCountryCodeResult *countryCodeResult in results) {
             
             if ([countryCodeResult.countryCode.countryCode isEqualToString:@"GB"]) {
                 XCTAssert(countryCodeResult.marketCount == 1345, @"");
+                numberOfAsserts++;
             } else if ([countryCodeResult.countryCode.countryCode isEqualToString:@"IE"]) {
                 XCTAssert(countryCodeResult.marketCount == 305, @"");
+                numberOfAsserts++;
             } else if ([countryCodeResult.countryCode.countryCode isEqualToString:@"US"]) {
                 XCTAssert(countryCodeResult.marketCount == 1045, @"");
+                numberOfAsserts++;
             }
         }
+        
+        XCTAssert(numberOfAsserts == 3, @"The test should have executed 3 separate asserts");
 
         dispatch_semaphore_signal(semaphore);
     }];
