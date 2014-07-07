@@ -26,47 +26,33 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAPIError.h"
-#import "BNGAPIError_Private.h"
+#import <Foundation/Foundation.h>
 
-NSString * const BNGErrorDomain = @"BNGErrorDomain";
-NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
-NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
+#import "NSURL+BNG.h"
+#import "BNGMarketFilter.h"
 
-static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
+/**
+ * A `BNGCountryCode` is a unique identifier for a country in which a market/event/competition is happening. Not all markets/events/competitions have country codes associated with them.
+ */
+@interface BNGCountryCode : NSObject
 
-@implementation BNGAPIError
+/**
+ * Uniquely identifies this country. See http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for details.
+ */
+@property (nonatomic, copy) NSString *countryCode;
 
-#pragma mark Initialisation
+/**
+ * Simple initialiser for `BNGCountryCode`
+ * @param countryCode the name of the country code associated with this `BNGCountryCode`
+ * @return an instance of `BNGCountryCode`
+ */
+- (instancetype)initWithCountryCodeName:(NSString *)countryCode;
 
-- (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
-{
-    self = [super initWithDomain:BNGErrorDomain
-                            code:[dictionary[@"error"][@"code"] integerValue]
-                        userInfo:dictionary];
-    
-    if (self) {
-        
-    }
-    
-    return self;
-}
+/**
+ * Given a BNGMarketFilter, this method finds a list of http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ISO country codes.
+ * @param marketFilter used to filter out certain types of country codes from the response
+ * @param completionBlock executed once the API call returns.
+ */
++ (void)listCountriesWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock;
 
-- (instancetype)initWithURLResponse:(NSURLResponse *)response
-{
-    NSInteger code = BNGAPIErrorCodeUnexpectedError;
-    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
-        code = BNGAPIErrorCodeServiceBusy;
-    }
-    
-    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
-    
-    if (self) {
-        
-        
-    }
-    
-    return self;
-}
-            
 @end

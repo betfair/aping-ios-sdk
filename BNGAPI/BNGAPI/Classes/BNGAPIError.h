@@ -36,10 +36,19 @@
 extern NSString * const BNGErrorDomain;
 
 /**
+ * Unique identifier for the fault code reported in APING errors.
+ */
+extern NSString * const BNGErrorFaultCodeIdentifier;
+
+/**
+ * Unique identifier for the fault string reported in APING errors.
+ */
+extern NSString * const BNGErrorFaultStringIdentifier;
+
+/**
  * A set of generic error codes which can be returned for the API server for any operation.
  */
 typedef NS_ENUM(NSInteger, BNGAPIErrorCode) {
-    
     BNGAPIErrorCodeTooMuchData               =  1,
     BNGAPIErrorCodeInvalidInputData          =  2,
     BNGAPIErrorCodeInvalidSessionInformation =  3,

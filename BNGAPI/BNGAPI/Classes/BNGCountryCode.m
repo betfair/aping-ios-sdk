@@ -26,26 +26,35 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGEvent.h"
+#import "BNGCountryCode.h"
 
 #import "APING.h"
 #import "BNGAPIError_Private.h"
 #import "BNGMutableURLRequest.h"
 #import "NSURLConnection+BNGJSON.h"
 #import "BNGAPIResponseParser.h"
-#import "BNGMarketFilter.h"
 
-@implementation BNGEvent
+@implementation BNGCountryCode
 
-#pragma mark API Calls
-
-+ (void)listEventsWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock
-{
-    NSParameterAssert(completionBlock);
+- (instancetype)initWithCountryCodeName:(NSString *)countryCode {
     
-    if (!completionBlock) return;
+    self = [super init];
     
-    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
+    if (self) {
+        
+        _countryCode = [countryCode copy];
+    }
+    
+    return self;
+}
+
++ (void)listCountriesWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock {
+    
+    NSParameterAssert(marketFilter);
+    
+    if (!marketFilter) return;
+    
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listCountries];
     
     BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
     [request setPostParameters:marketFilter.dictionaryRepresentation];
@@ -57,25 +66,11 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSArray class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGEventsFromResponse:JSONData], connectionError, nil);
-                                   } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
+                                       completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
                                    } else {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
-}
-
-#pragma mark Description
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ [eventId: %@] [name: %@] [countryCode: %@] [venue: %@]",
-            [super description],
-            self.eventId,
-            self.name,
-            self.countryCode,
-            self.venue];
 }
 
 @end

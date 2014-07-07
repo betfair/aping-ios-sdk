@@ -130,4 +130,25 @@
  */
 + (BNGHeartbeatReport *)parseBNGHeartbeatReportFromResponse:(NSDictionary *)response;
 
+ * Given a JSON response dictionary, this method returns an array of `BNGVenueResult`s
+ * @param response JSON from the server based on a `listVenues` API call.
+ * @return an array of `BNGVenueResult`s
+ */
++ (NSArray *)parseBNGVenueResultsFromResponse:(NSArray *)response;
+
+/*
+ * Given a JSON response dictionary, this method returns an array of `BNGCompetitionResult`s
+ * @param response JSON from the server based on a `listCompetitions` API call.
+ * @return an array of `BNGCompetitionResult`s
+ */
++ (NSArray *)parseBNGCompetitionResultsFromResponse:(NSArray *)response;
+
+/**
+ * Given a JSON response dictionary, this method returns an array of `BNGCountryCodeResult`s
+ * @param response JSON from the server based on a `replaceOrder` API call.
+ * @return a `BNGReplaceExecutionReport` object.
+ */
++ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response;
+>>>>>>> develop
+
 @end

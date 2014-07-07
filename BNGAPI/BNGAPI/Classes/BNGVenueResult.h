@@ -26,47 +26,23 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAPIError.h"
-#import "BNGAPIError_Private.h"
+#import <Foundation/Foundation.h>
 
-NSString * const BNGErrorDomain = @"BNGErrorDomain";
-NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
-NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
+#import "BNGVenue.h"
 
-static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
+/**
+ * Wrapper class for `BNGVenue` which includes some information on how many markets are associated with the venue.
+ */
+@interface BNGVenueResult : NSObject
 
-@implementation BNGAPIError
+/**
+ * The `BNGVenue` associated with the `BNGVenueResult`
+ */
+@property (nonatomic) BNGVenue *venue;
 
-#pragma mark Initialisation
+/**
+ * Defines how many markets are associated with the `BNGVenue` property
+ */
+@property (nonatomic) NSUInteger marketCount;
 
-- (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
-{
-    self = [super initWithDomain:BNGErrorDomain
-                            code:[dictionary[@"error"][@"code"] integerValue]
-                        userInfo:dictionary];
-    
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
-- (instancetype)initWithURLResponse:(NSURLResponse *)response
-{
-    NSInteger code = BNGAPIErrorCodeUnexpectedError;
-    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
-        code = BNGAPIErrorCodeServiceBusy;
-    }
-    
-    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
-    
-    if (self) {
-        
-        
-    }
-    
-    return self;
-}
-            
 @end

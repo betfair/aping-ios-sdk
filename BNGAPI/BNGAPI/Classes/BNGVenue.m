@@ -26,7 +26,7 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGEvent.h"
+#import "BNGVenue.h"
 
 #import "APING.h"
 #import "BNGAPIError_Private.h"
@@ -35,17 +35,29 @@
 #import "BNGAPIResponseParser.h"
 #import "BNGMarketFilter.h"
 
-@implementation BNGEvent
+@implementation BNGVenue
 
-#pragma mark API Calls
-
-+ (void)listEventsWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock
+- (instancetype)initWithVenueName:(NSString *)venueName
 {
+    self = [super init];
+    
+    if (self) {
+        
+        _venueName = [venueName copy];
+    }
+    
+    return self;
+}
+
++ (void)venuesWithFilter:(BNGMarketFilter *)marketFilter
+         completionBlock:(BNGResultsCompletionBlock)completionBlock
+{
+    NSParameterAssert(marketFilter);
     NSParameterAssert(completionBlock);
     
-    if (!completionBlock) return;
+    if (!marketFilter || !completionBlock) return;
     
-    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listEvents];
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listVenues];
     
     BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
     [request setPostParameters:marketFilter.dictionaryRepresentation];
@@ -57,25 +69,11 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSArray class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGEventsFromResponse:JSONData], connectionError, nil);
-                                   } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
+                                       completionBlock([BNGAPIResponseParser parseBNGVenueResultsFromResponse:JSONData], nil, nil);
                                    } else {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
-}
-
-#pragma mark Description
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ [eventId: %@] [name: %@] [countryCode: %@] [venue: %@]",
-            [super description],
-            self.eventId,
-            self.name,
-            self.countryCode,
-            self.venue];
 }
 
 @end

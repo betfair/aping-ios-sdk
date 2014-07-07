@@ -26,47 +26,39 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAPIError.h"
-#import "BNGAPIError_Private.h"
+#import <Foundation/Foundation.h>
 
-NSString * const BNGErrorDomain = @"BNGErrorDomain";
-NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
-NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
+#import "NSURL+BNG.h"
 
-static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
+@class BNGMarketFilter;
 
-@implementation BNGAPIError
+/**
+ * A venue represents a place where an event/market is taking place. Currently, only Horse Racing markets have venues associated with them (i.e. Cheltenham, Ascot).
+ */
+@interface BNGVenue : NSObject
+
+/**
+ * The human-readable name for this venue.
+ */
+@property (nonatomic, copy) NSString *venueName;
 
 #pragma mark Initialisation
 
-- (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
-{
-    self = [super initWithDomain:BNGErrorDomain
-                            code:[dictionary[@"error"][@"code"] integerValue]
-                        userInfo:dictionary];
-    
-    if (self) {
-        
-    }
-    
-    return self;
-}
+/**
+ * Simple initialiser which takes in the venueName
+ * @param venueName the name by which this venue is humanly identifiable
+ * @return an instance of `BNGVenue`
+ */
+- (instancetype)initWithVenueName:(NSString *)venueName;
 
-- (instancetype)initWithURLResponse:(NSURLResponse *)response
-{
-    NSInteger code = BNGAPIErrorCodeUnexpectedError;
-    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
-        code = BNGAPIErrorCodeServiceBusy;
-    }
-    
-    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
-    
-    if (self) {
-        
-        
-    }
-    
-    return self;
-}
-            
+#pragma mark API Calls
+
+/**
+ * Allows a client to request all the known venues with a specific filter.
+ * @param marketFilter allows client code to filter out specific venues from the response.
+ * @param completionBlock executed once the API call returns.
+ */
++ (void)venuesWithFilter:(BNGMarketFilter *)marketFilter
+         completionBlock:(BNGResultsCompletionBlock)completionBlock;
+
 @end

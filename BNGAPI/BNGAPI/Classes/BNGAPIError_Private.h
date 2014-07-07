@@ -30,6 +30,18 @@
 
 @interface BNGAPIError ()
 
+/**
+ * Initialiser used when the API returns a specific error code.
+ * @param dictionary key/value pair of error code form the API server.
+ * @return a `BNGAPIError` instance.
+ */
 - (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary;
+
+/**
+ * Initialiser used when the API does not return a specific error code but returns a connection error instead.
+ * @param the raw response from the API server.
+ * @return a `BNGAPIError` instance.
+ */
+- (instancetype)initWithURLResponse:(NSURLResponse *)response;
 
 @end

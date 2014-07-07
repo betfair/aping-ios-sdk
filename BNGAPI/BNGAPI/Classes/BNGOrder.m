@@ -135,14 +135,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                    
                                    if (connectionError) {
-                                       completionBlock(nil, connectionError, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGCurrentOrderSummaryReportFromResponse:JSONData], nil, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGCurrentOrderSummaryReportFromResponse:JSONData], connectionError, nil);
+                                       } else {
+                                           completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
+                                       }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }
@@ -170,19 +171,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                    
                                    if (connectionError) {
-                                       completionBlock(nil, connectionError, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       // first check to see that its not an error
-                                       if (!JSONData[@"faultcode"] && !JSONData[@"faultstring"]) {
-                                           completionBlock([BNGAPIResponseParser parseBNGPlaceExecutionReportFromResponse:JSONData], nil, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGPlaceExecutionReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }
@@ -210,19 +207,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                    
                                    if (connectionError) {
-                                       completionBlock(nil, connectionError, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       // first check to see that its not an error
-                                       if (!JSONData[@"faultcode"] && !JSONData[@"faultstring"]) {
-                                           completionBlock([BNGAPIResponseParser parseBNGCancelExecutionReportFromResponse:JSONData], nil, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGCancelExecutionReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }
@@ -250,15 +243,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                    
                                    if (connectionError) {
-                                       completionBlock(nil, connectionError, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       // first check to see that its not an error
-                                       completionBlock([BNGAPIResponseParser parseBNGReplaceExecutionReportFromResponse:JSONData], nil, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGReplaceExecutionReportFromResponse:JSONData], connectionError, nil);
+                                       } else {
+                                           completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
+                                       }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }
@@ -286,15 +279,15 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
                                    
                                    if (connectionError) {
-                                       completionBlock(nil, connectionError, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       // first check to see that its not an error
-                                       completionBlock([BNGAPIResponseParser parseBNGUpdateExecutionReportFromResponse:JSONData], nil, nil);
+                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                           completionBlock([BNGAPIResponseParser parseBNGUpdateExecutionReportFromResponse: JSONData], connectionError, nil);
+                                       } else {
+                                           completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
+                                       }
                                    } else {
-                                       NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                            code:BNGErrorCodeNoData
-                                                                        userInfo:nil];
-                                       completionBlock(nil, error, nil);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }

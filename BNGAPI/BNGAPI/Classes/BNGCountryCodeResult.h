@@ -26,47 +26,23 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAPIError.h"
-#import "BNGAPIError_Private.h"
+#import <Foundation/Foundation.h>
 
-NSString * const BNGErrorDomain = @"BNGErrorDomain";
-NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
-NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
+#import "BNGCountryCode.h"
 
-static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
+/**
+ * Simple wrapper class around `BNGCountryCode` which includes information on how many open markets are associated with the country code in question.
+ */
+@interface BNGCountryCodeResult : NSObject
 
-@implementation BNGAPIError
+/**
+ * How many markets are associated with this `BNGCountryCode`
+ */
+@property (nonatomic) NSUInteger marketCount;
 
-#pragma mark Initialisation
+/**
+ * Has information on the unique identifier for this country.
+ */
+@property (nonatomic) BNGCountryCode *countryCode;
 
-- (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
-{
-    self = [super initWithDomain:BNGErrorDomain
-                            code:[dictionary[@"error"][@"code"] integerValue]
-                        userInfo:dictionary];
-    
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
-- (instancetype)initWithURLResponse:(NSURLResponse *)response
-{
-    NSInteger code = BNGAPIErrorCodeUnexpectedError;
-    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
-        code = BNGAPIErrorCodeServiceBusy;
-    }
-    
-    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
-    
-    if (self) {
-        
-        
-    }
-    
-    return self;
-}
-            
 @end
