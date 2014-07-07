@@ -206,10 +206,18 @@
 		711AA3191958B8A400861CD4 /* update_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 711AA3031958B8A400861CD4 /* update_order.json */; };
 		711BC3E71958270400EF8945 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711BC3E61958270400EF8945 /* Foundation.framework */; };
 		7142E4721969959300EFA61D /* BNGCompetitionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7142E4711969959300EFA61D /* BNGCompetitionTest.m */; };
+		7134BA96196AD52E004C5818 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 7134BA95196AD52E004C5818 /* countries.json */; };
 		7157A1D8195F3A3B00D203B9 /* cancel_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 7157A1D7195F3A3B00D203B9 /* cancel_order.json */; };
 		7157A1DA195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */; };
 		7157A1DC195F4C9A00D203B9 /* BNGInstructionReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */; };
 		7157A1DE195F4D7400D203B9 /* BNGExecutionReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1DD195F4D7400D203B9 /* BNGExecutionReportTest.m */; };
+		71747C33196974CF00335435 /* BNGCountryCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 71747C31196974CF00335435 /* BNGCountryCode.h */; };
+		71747C34196974CF00335435 /* BNGCountryCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 71747C32196974CF00335435 /* BNGCountryCode.m */; };
+		71747C35196974CF00335435 /* BNGCountryCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 71747C32196974CF00335435 /* BNGCountryCode.m */; };
+		71747C381969776800335435 /* BNGCountryCodeResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 71747C361969776800335435 /* BNGCountryCodeResult.h */; };
+		71747C391969776800335435 /* BNGCountryCodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71747C371969776800335435 /* BNGCountryCodeResult.m */; };
+		71747C3A1969776800335435 /* BNGCountryCodeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 71747C371969776800335435 /* BNGCountryCodeResult.m */; };
+		71747C3C19697AC900335435 /* BNGCountryCodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71747C3B19697AC900335435 /* BNGCountryCodeTest.m */; };
 		719A58A019674BE100FF2CF2 /* BNGMarketOnCloseOrderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A589F19674BE100FF2CF2 /* BNGMarketOnCloseOrderTest.m */; };
 		719A58A219674CE500FF2CF2 /* BNGAPIErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A119674CE500FF2CF2 /* BNGAPIErrorTest.m */; };
 		71C50CBA195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */; };
@@ -385,10 +393,16 @@
 		711AA3031958B8A400861CD4 /* update_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = update_order.json; sourceTree = "<group>"; };
 		711BC3E61958270400EF8945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7142E4711969959300EFA61D /* BNGCompetitionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCompetitionTest.m; sourceTree = "<group>"; };
+		7134BA95196AD52E004C5818 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		7157A1D7195F3A3B00D203B9 /* cancel_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancel_order.json; sourceTree = "<group>"; };
 		7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueDescriptionTest.m; sourceTree = "<group>"; };
 		7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGInstructionReportTest.m; sourceTree = "<group>"; };
 		7157A1DD195F4D7400D203B9 /* BNGExecutionReportTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExecutionReportTest.m; sourceTree = "<group>"; };
+		71747C31196974CF00335435 /* BNGCountryCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCountryCode.h; sourceTree = "<group>"; };
+		71747C32196974CF00335435 /* BNGCountryCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCountryCode.m; sourceTree = "<group>"; };
+		71747C361969776800335435 /* BNGCountryCodeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGCountryCodeResult.h; sourceTree = "<group>"; };
+		71747C371969776800335435 /* BNGCountryCodeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCountryCodeResult.m; sourceTree = "<group>"; };
+		71747C3B19697AC900335435 /* BNGCountryCodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCountryCodeTest.m; sourceTree = "<group>"; };
 		719A589F19674BE100FF2CF2 /* BNGMarketOnCloseOrderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketOnCloseOrderTest.m; sourceTree = "<group>"; };
 		719A58A119674CE500FF2CF2 /* BNGAPIErrorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGAPIErrorTest.m; sourceTree = "<group>"; };
 		71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExBestOffersOverridesTest.m; sourceTree = "<group>"; };
@@ -465,6 +479,10 @@
 				7118B930195826BE007057CE /* BNGCompetition.m */,
 				7118B931195826BE007057CE /* BNGCompetitionResult.h */,
 				7118B932195826BE007057CE /* BNGCompetitionResult.m */,
+				71747C31196974CF00335435 /* BNGCountryCode.h */,
+				71747C32196974CF00335435 /* BNGCountryCode.m */,
+				71747C361969776800335435 /* BNGCountryCodeResult.h */,
+				71747C371969776800335435 /* BNGCountryCodeResult.m */,
 				7118B933195826BE007057CE /* BNGCurrentOrderSummaryReport.h */,
 				7118B934195826BE007057CE /* BNGCurrentOrderSummaryReport.m */,
 				7118B935195826BE007057CE /* BNGEvent.h */,
@@ -562,6 +580,7 @@
 				711AA2E51958B8A400861CD4 /* BNGAccountTest.m */,
 				719A58A119674CE500FF2CF2 /* BNGAPIErrorTest.m */,
 				7142E4711969959300EFA61D /* BNGCompetitionTest.m */,
+				71747C3B19697AC900335435 /* BNGCountryCodeTest.m */,
 				711AA2E71958B8A400861CD4 /* BNGEventTest.m */,
 				711AA2E91958B8A400861CD4 /* BNGEventTypeTest.m */,
 				71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */,
@@ -590,6 +609,7 @@
 				711AA2F91958B8A400861CD4 /* account_details.json */,
 				711AA2FA1958B8A400861CD4 /* account_funds.json */,
 				7157A1D7195F3A3B00D203B9 /* cancel_order.json */,
+				7134BA95196AD52E004C5818 /* countries.json */,
 				711AA2FB1958B8A400861CD4 /* current_orders.json */,
 				711AA2FC1958B8A400861CD4 /* event_types.json */,
 				711AA2FD1958B8A400861CD4 /* events.json */,
@@ -682,6 +702,7 @@
 				7118B99A195826BE007057CE /* BNGAPIError.h in Headers */,
 				7118BA01195826BE007057CE /* BNGReplaceInstruction.h in Headers */,
 				7118BA19195826BE007057CE /* BNGDictionaryRepresentation.h in Headers */,
+				71747C33196974CF00335435 /* BNGCountryCode.h in Headers */,
 				7118B97F195826BE007057CE /* NSNumber+DecimalConversion.h in Headers */,
 				7118B9D4195826BE007057CE /* BNGMarketBook.h in Headers */,
 				7118B9A7195826BE007057CE /* BNGCancelInstructionReport.h in Headers */,
@@ -723,6 +744,7 @@
 				7118B98E195826BE007057CE /* NSURLRequest+HTTPBody.h in Headers */,
 				7118B9CB195826BE007057CE /* BNGLimitOnCloseOrder.h in Headers */,
 				7118B9AA195826BE007057CE /* BNGCompetition.h in Headers */,
+				71747C381969776800335435 /* BNGCountryCodeResult.h in Headers */,
 				7118B9B3195826BE007057CE /* BNGEvent.h in Headers */,
 				7118B9EF195826BE007057CE /* BNGPlaceExecutionReport.h in Headers */,
 				7118BA04195826BE007057CE /* BNGReplaceInstructionReport.h in Headers */,
@@ -821,6 +843,7 @@
 				7157A1D8195F3A3B00D203B9 /* cancel_order.json in Resources */,
 				711AA3151958B8A400861CD4 /* market_catalogue.json in Resources */,
 				711AA3121958B8A400861CD4 /* event_types.json in Resources */,
+				7134BA96196AD52E004C5818 /* countries.json in Resources */,
 				711AA3141958B8A400861CD4 /* market_book.json in Resources */,
 				711AA3181958B8A400861CD4 /* replace_order_failure.json in Resources */,
 				711AA30F1958B8A400861CD4 /* account_details.json in Resources */,
@@ -879,6 +902,7 @@
 				7118B9E7195826BE007057CE /* BNGMatch.m in Sources */,
 				7118B9F0195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */,
 				7118B9B4195826BE007057CE /* BNGEvent.m in Sources */,
+				71747C391969776800335435 /* BNGCountryCodeResult.m in Sources */,
 				7118B9C6195826BE007057CE /* BNGExecutionReport.m in Sources */,
 				7118B9C0195826BE007057CE /* BNGExBestOffersOverrides.m in Sources */,
 				7118B9AB195826BE007057CE /* BNGCompetition.m in Sources */,
@@ -916,6 +940,7 @@
 				7118B97D195826BE007057CE /* APING.m in Sources */,
 				7118BA0E195826BE007057CE /* BNGTimeRange.m in Sources */,
 				7118B9F9195826BE007057CE /* BNGPriceProjection.m in Sources */,
+				71747C34196974CF00335435 /* BNGCountryCode.m in Sources */,
 				7118B998195826BE007057CE /* BNGAccountFunds.m in Sources */,
 				7118B9D8195826BE007057CE /* BNGMarketCatalogue.m in Sources */,
 			);
@@ -928,6 +953,7 @@
 				711AA3081958B8A400861CD4 /* BNGMarketBookTest.m in Sources */,
 				711AA3071958B8A400861CD4 /* BNGEventTypeTest.m in Sources */,
 				7118B9CA195826BE007057CE /* BNGInstructionReport.m in Sources */,
+				71747C3C19697AC900335435 /* BNGCountryCodeTest.m in Sources */,
 				7118B9A6195826BE007057CE /* BNGCancelInstruction.m in Sources */,
 				711AA3061958B8A400861CD4 /* BNGEventTest.m in Sources */,
 				7118BA15195826BE007057CE /* BNGUpdateInstruction.m in Sources */,
@@ -971,6 +997,7 @@
 				7118B9A9195826BE007057CE /* BNGCancelInstructionReport.m in Sources */,
 				7118B9A3195826BE007057CE /* BNGCancelExecutionReport.m in Sources */,
 				7118B9FD195826BE007057CE /* BNGPriceSize.m in Sources */,
+				71747C35196974CF00335435 /* BNGCountryCode.m in Sources */,
 				711AA3051958B8A400861CD4 /* BNGAccountTest.m in Sources */,
 				7118B9F7195826BE007057CE /* BNGPlaceInstructionReport.m in Sources */,
 				7157A1DA195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m in Sources */,
@@ -997,6 +1024,7 @@
 				7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */,
 				7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
 				71FF4F7F196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m in Sources */,
+				71747C3A1969776800335435 /* BNGCountryCodeResult.m in Sources */,
 				7118B9F1195826BE007057CE /* BNGPlaceExecutionReport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

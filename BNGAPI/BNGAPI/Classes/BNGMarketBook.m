@@ -82,18 +82,14 @@
                                    } else if ([JSONData isKindOfClass:[NSArray class]]) {
                                        NSArray *jsonArray = (NSArray *)JSONData;
                                        if (jsonArray.count) {
-                                           completionBlock([BNGAPIResponseParser parseBNGMarketBooksFromResponse:JSONData], nil, nil);
+                                           completionBlock([BNGAPIResponseParser parseBNGMarketBooksFromResponse:JSONData], connectionError, nil);
                                        } else {
-                                           NSError *error = [NSError errorWithDomain:BNGErrorDomain
-                                                                                code:BNGErrorCodeNoData
-                                                                            userInfo:nil];
-                                           completionBlock(nil, error, nil);
+                                           completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
                                        }
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
                                    } else {
-                                       BNGAPIError *error = [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil];
-                                       completionBlock(nil, connectionError, error);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }

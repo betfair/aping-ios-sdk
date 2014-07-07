@@ -129,4 +129,11 @@
  */
 + (NSArray *)parseBNGCompetitionResultsFromResponse:(NSDictionary *)response;
 
+/**
+ * Given a JSON response dictionary, this method returns an array of `BNGCountryCodeResult`s
+ * @param response JSON from the server based on a `replaceOrder` API call.
+ * @return a `BNGReplaceExecutionReport` object.
+ */
++ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response;
+
 @end

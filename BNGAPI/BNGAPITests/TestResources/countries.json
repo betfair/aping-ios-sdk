@@ -1,0 +1,106 @@
+[
+  {
+  "countryCode": "GB",
+  "marketCount": 1345
+  },
+  {
+  "countryCode": "IE",
+  "marketCount": 305
+  },
+  {
+  "countryCode": "US",
+  "marketCount": 1045
+  },
+  {
+  "countryCode": "NO",
+  "marketCount": 322
+  },
+  {
+  "countryCode": "SE",
+  "marketCount": 690
+  },
+  {
+  "countryCode": "FR",
+  "marketCount": 39
+  },
+  {
+  "countryCode": "BR",
+  "marketCount": 340
+  },
+  {
+  "countryCode": "NL",
+  "marketCount": 19
+  },
+  {
+  "countryCode": "CA",
+  "marketCount": 138
+  },
+  {
+  "countryCode": "LK",
+  "marketCount": 20
+  },
+  {
+  "countryCode": "AT",
+  "marketCount": 109
+  },
+  {
+  "countryCode": "RO",
+  "marketCount": 155
+  },
+  {
+  "countryCode": "DE",
+  "marketCount": 97
+  },
+  {
+  "countryCode": "SG",
+  "marketCount": 134
+  },
+  {
+  "countryCode": "HR",
+  "marketCount": 24
+  },
+  {
+  "countryCode": "IT",
+  "marketCount": 97
+  },
+  {
+  "countryCode": "PH",
+  "marketCount": 8
+  },
+  {
+  "countryCode": "SI",
+  "marketCount": 90
+  },
+  {
+  "countryCode": "ZA",
+  "marketCount": 24
+  },
+  {
+  "countryCode": "LV",
+  "marketCount": 195
+  },
+  {
+  "countryCode": "FI",
+  "marketCount": 320
+  },
+  {
+  "countryCode": "EE",
+  "marketCount": 162
+  },
+  {
+  "countryCode": "IS",
+  "marketCount": 618
+  },
+  {
+  "countryCode": "EG",
+  "marketCount": 50
+  },
+  {
+  "countryCode": "IN",
+  "marketCount": 16
+  },
+  {
+  "countryCode": "RU",
+  "marketCount": 40
+  }
+]

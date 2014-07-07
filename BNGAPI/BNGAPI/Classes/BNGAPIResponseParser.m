@@ -57,6 +57,8 @@
 #import "BNGReplaceInstructionReport.h"
 #import "BNGUpdateExecutionReport.h"
 #import "NSNumber+DecimalConversion.h"
+#import "BNGCountryCode.h"
+#import "BNGCountryCodeResult.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -224,6 +226,11 @@ struct BNGCancelOrderField {
 struct BNGReplaceOrderField {
     __unsafe_unretained NSString *cancelInstructionReport;
     __unsafe_unretained NSString *placeInstructionReport;
+};
+
+struct BNGCountryCodeField {
+    __unsafe_unretained NSString *countryCode;
+    __unsafe_unretained NSString *marketCount;
 };
 
 static const struct BNGAccountFundsField BNGAccountFundsField = {
@@ -394,42 +401,47 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     .placeInstructionReport = @"placeInstructionReport",
 };
 
+static const struct BNGCountryCodeField BNGCountryCodeField = {
+    .countryCode = @"countryCode",
+    .marketCount = @"marketCount"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
 {
     NSMutableArray *eventResults = [NSMutableArray array];
-    
+
     for (id result in response) {
         BNGEventResult * eventResult = [[BNGEventResult alloc] initWithBNGEvent:[BNGAPIResponseParser parseBNGEventFromResponse:result[BNGEventField.event]]
                                                                     marketCount:[result[BNGEventField.marketCount] intValue]];
         [eventResults addObject:eventResult];
     }
-    
+
     return eventResults;
 }
 
 + (NSArray *)parseBNGMarketBooksFromResponse:(NSArray *)response
 {
     NSMutableArray *marketBooks = [NSMutableArray array];
-    
+
     for (id result in response) {
-        
+
         [marketBooks addObject:[BNGAPIResponseParser parseBNGMarketBookFromResponse:result]];
     }
-    
+
     return marketBooks;
 }
 
 + (NSArray *)parseBNGMarketCataloguesFromResponse:(NSArray *)response
 {
     NSMutableArray *marketCatalogues = [NSMutableArray array];
-    
+
     for (id result in response) {
-        
+
         [marketCatalogues addObject:[BNGAPIResponseParser parseBNGMarketCatalogueFromResponse:result]];
     }
-    
+
     return marketCatalogues;
 }
 
@@ -471,7 +483,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     event.countryCode = response[BNGEventField.countryCode];
     event.eventId = response[BNGEventField.identifier];
     event.name = response[BNGEventField.name];
-    
+
     static NSDateFormatter *dateFormatter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -481,7 +493,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     });
     event.openDate = [dateFormatter dateFromString:response[BNGEventField.openDate]];
-    
+
     event.timezone = [NSTimeZone timeZoneWithName:response[BNGEventField.timezone]];
     return event;
 }
@@ -545,10 +557,19 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     return nil;
 }
 
++ (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response
+{
+    NSMutableArray *countryCodes = [[NSMutableArray alloc] initWithCapacity:response.count];
+    for (NSDictionary *country in response) {
+        [countryCodes addObject:[BNGAPIResponseParser parseBNGCountryCodeFromResponse:country]];
+    }
+    return [countryCodes copy];
+}
+
 #pragma mark Private Methods
 
 + (BNGMarketBook *)parseBNGMarketBookFromResponse:(NSDictionary *)response
-{    
+{
     BNGMarketBook *marketBook = [[BNGMarketBook alloc] init];
     marketBook.betDelay = [response[BNGMarketBookField.betDelay] integerValue];
     marketBook.BSPReconciled = [response[BNGMarketBookField.bspReconciled] boolValue];
@@ -556,7 +577,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     marketBook.crossMatching = [response[BNGMarketBookField.crossMatching] boolValue];
     marketBook.inplay = [response[BNGMarketBookField.inplay] boolValue];
     marketBook.marketDataDelayed = [response[BNGMarketBookField.isMarketDataDelayed] boolValue];
-    
+
     static NSDateFormatter *dateFormatter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -566,26 +587,26 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     });
     marketBook.lastMatchTime = [dateFormatter dateFromString:response[BNGMarketBookField.lastMatchTime]];
-    
+
     marketBook.marketId = response[BNGMarketBookField.marketId];
     marketBook.numberOfActiveRunners = [response[BNGMarketBookField.numberOfActiveRunners] integerValue];
     marketBook.numberOfRunners = [response[BNGMarketBookField.numberOfRunners] integerValue];
     marketBook.numberOfWinners = [response[BNGMarketBookField.numberOfWinners] integerValue];
-    
+
     NSMutableArray *marketRunners = [[NSMutableArray alloc] initWithCapacity:marketBook.numberOfRunners];
     NSArray *runners = response[BNGMarketBookField.runners];
     for (id runner in runners) {
         [marketRunners addObject:[BNGAPIResponseParser parseBNGRunnerFromResponse:runner]];
     }
     marketBook.runners = [marketRunners copy];
-    
+
     marketBook.runnersVoidable = [response[BNGMarketBookField.runnersVoidable] integerValue];
     marketBook.status = [BNGMarketBook marketStatusFromString:response[BNGMarketBookField.status]];
     marketBook.totalAvailable = [response[BNGMarketBookField.totalAvailable] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
     marketBook.totalMatched = [response[BNGMarketBookField.totalMatched] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
     marketBook.version = [response[BNGMarketBookField.version] longLongValue];
 
-    return marketBook;   
+    return marketBook;
 }
 
 + (BNGMarketCatalogue *)parseBNGMarketCatalogueFromResponse:(NSDictionary *)response
@@ -597,7 +618,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     catalogue.eventType = [BNGAPIResponseParser parseBNGEventTypeFromResponse:response[BNGMarketCatalogueField.event]];
     catalogue.marketId = response[BNGMarketCatalogueField.marketId];
     catalogue.marketName = response[BNGMarketCatalogueField.marketName];
-    
+
     static NSDateFormatter *dateFormatter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -607,14 +628,14 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     });
     catalogue.marketStartTime = [dateFormatter dateFromString:response[BNGMarketCatalogueField.marketStartTime]];
-    
+
     NSArray *runners = response[BNGMarketBookField.runners];
     NSMutableArray *marketCatalogueRunners = [[NSMutableArray alloc] initWithCapacity:runners.count];
     for (id runner in runners) {
         [marketCatalogueRunners addObject:[BNGAPIResponseParser parseBNGRunnerFromResponse:runner]];
     }
     catalogue.runners = [marketCatalogueRunners copy];
-    
+
     return catalogue;
 }
 
@@ -664,7 +685,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
         description.clarifications = response[BNGMarketCatalogueDescriptionField.clarifications];
         description.discountAllowed = [response[BNGMarketCatalogueDescriptionField.discountAllowed] boolValue];
         description.marketBaseRate = [response[BNGMarketCatalogueDescriptionField.marketBaseRate] integerValue];
-        
+
         static NSDateFormatter *dateFormatter = nil;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
@@ -674,7 +695,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
             [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
         });
         description.marketTime = [dateFormatter dateFromString:response[BNGMarketCatalogueDescriptionField.marketTime]];
-        
+
         description.marketType = [BNGMarketCatalogueDescription marketTypeFromString:response[BNGMarketCatalogueDescriptionField.marketType]];
         description.persistenceEnabled = [response[BNGMarketCatalogueDescriptionField.persistenceEnabled] boolValue];
         description.regulator = response[BNGMarketCatalogueDescriptionField.regulator];
@@ -724,7 +745,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
             [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
         });
         order.placedDate = [dateFormatter dateFromString:response[BNGOrderField.placedDate]];
-        
+
         order.priceSize = [[BNGPriceSize alloc] initWithPrice:[response[BNGOrderField.priceSize][BNGOrderField.price] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor]
                                                          size:[response[BNGOrderField.priceSize][BNGOrderField.size] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor]];
         order.regulatorCode = response[BNGOrderField.regulatorCode];
@@ -765,7 +786,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     [BNGAPIResponseParser parseBNGInstructionReportFromInstruction:instruction intoReport:report];
     report.instruction = [BNGAPIResponseParser parseBNGPlaceInstructionFromResponse:instruction[BNGPlaceOrderField.instruction]];
     report.betId = instruction[BNGPlaceOrderField.betId];
-    
+
     static NSDateFormatter *dateFormatter = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -775,7 +796,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
     });
     report.placedDate = [dateFormatter dateFromString:instruction[BNGPlaceOrderField.placedDate]];
-    
+
     report.averagePriceMatched = [instruction[BNGPlaceOrderField.averagePriceMatched] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
     report.sizeMatched = [instruction[BNGPlaceOrderField.sizeMatched] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
     return report;
@@ -797,7 +818,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
     BNGCancelInstructionReport *report = [[BNGCancelInstructionReport alloc] init];
     [BNGAPIResponseParser parseBNGInstructionReportFromInstruction:instruction intoReport:report];
     report.cancelInstruction = [BNGAPIResponseParser parseBNGCancelInstructionFromResponse:instruction[BNGPlaceOrderField.instruction]];
-    
+
     if (instruction[BNGCancelOrderField.cancelledDate]) {
         static NSDateFormatter *dateFormatter = nil;
         static dispatch_once_t onceToken;
@@ -809,7 +830,7 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
         });
         report.cancelledDate = [dateFormatter dateFromString:instruction[BNGCancelOrderField.cancelledDate]];
     }
-    
+
     report.sizeCancelled = [instruction[BNGCancelOrderField.sizeCancelled] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
     return report;
 }
@@ -918,6 +939,14 @@ static const struct BNGReplaceOrderField BNGReplaceOrderField = {
                                                          size:[price[BNGOrderField.size] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor]]];
     }
     return prices;
+}
+
++ (BNGCountryCodeResult *)parseBNGCountryCodeFromResponse:(NSDictionary *)response
+{
+    BNGCountryCodeResult *countryCodeResult = [[BNGCountryCodeResult alloc] init];
+    countryCodeResult.countryCode = [[BNGCountryCode alloc] initWithCountryCodeName:response[BNGCountryCodeField.countryCode]];
+    countryCodeResult.marketCount = [response[BNGCountryCodeField.marketCount] intValue];
+    return countryCodeResult;
 }
 
 @end

@@ -57,13 +57,11 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSArray class]]) {
-                                       completionBlock([BNGAPIResponseParser parseBNGEventsFromResponse:JSONData], nil, nil);
-                                       
+                                       completionBlock([BNGAPIResponseParser parseBNGEventsFromResponse:JSONData], connectionError, nil);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                        completionBlock(nil, nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
                                    } else {
-                                       BNGAPIError *error = [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil];
-                                       completionBlock(nil, connectionError, error);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
                                    }
                                }];
 }

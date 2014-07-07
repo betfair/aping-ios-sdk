@@ -28,23 +28,31 @@
 
 #import <Foundation/Foundation.h>
 
-#import "APING.h"
-#import "BNGAccountDetails.h"
-#import "BNGAccount.h"
-#import "BNGAccountFunds.h"
-#import "BNGLoginURLProtocol.h"
-#import "BNGMutableURLRequest.h"
-
 #import "NSURL+BNG.h"
-#import "NSString+RandomCustomerReferenceId.h"
-
-
-#import "BNGCountryCode.h"
-#import "BNGCountryCodeResult.h"
+#import "BNGMarketFilter.h"
 
 /**
- * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
+ * A `BNGCountryCode` is a unique identifier for a country in which a market/event/competition is happening. Not all markets/events/competitions have country codes associated with them.
  */
-@interface BNGAPI : NSObject
+@interface BNGCountryCode : NSObject
+
+/**
+ * Uniquely identifies this country. See http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 for details.
+ */
+@property (nonatomic, copy) NSString *countryCode;
+
+/**
+ * Simple initialiser for `BNGCountryCode`
+ * @param countryCode the name of the country code associated with this `BNGCountryCode`
+ * @return an instance of `BNGCountryCode`
+ */
+- (instancetype)initWithCountryCodeName:(NSString *)countryCode;
+
+/**
+ * Given a BNGMarketFilter, this method finds a list of http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ISO country codes.
+ * @param marketFilter used to filter out certain types of country codes from the response
+ * @param completionBlock executed once the API call returns.
+ */
++ (void)listCountriesWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock;
 
 @end

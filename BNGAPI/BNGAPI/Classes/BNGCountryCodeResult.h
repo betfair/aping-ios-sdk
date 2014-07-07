@@ -28,23 +28,21 @@
 
 #import <Foundation/Foundation.h>
 
-#import "APING.h"
-#import "BNGAccountDetails.h"
-#import "BNGAccount.h"
-#import "BNGAccountFunds.h"
-#import "BNGLoginURLProtocol.h"
-#import "BNGMutableURLRequest.h"
-
-#import "NSURL+BNG.h"
-#import "NSString+RandomCustomerReferenceId.h"
-
-
 #import "BNGCountryCode.h"
-#import "BNGCountryCodeResult.h"
 
 /**
- * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
+ * Simple wrapper class around `BNGCountryCode` which includes information on how many open markets are associated with the country code in question.
  */
-@interface BNGAPI : NSObject
+@interface BNGCountryCodeResult : NSObject
+
+/**
+ * How many markets are associated with this `BNGCountryCode`
+ */
+@property (nonatomic) NSUInteger marketCount;
+
+/**
+ * Has information on the unique identifier for this country.
+ */
+@property (nonatomic) BNGCountryCode *countryCode;
 
 @end

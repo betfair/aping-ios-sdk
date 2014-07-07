@@ -26,25 +26,8 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
-
-#import "APING.h"
-#import "BNGAccountDetails.h"
-#import "BNGAccount.h"
-#import "BNGAccountFunds.h"
-#import "BNGLoginURLProtocol.h"
-#import "BNGMutableURLRequest.h"
-
-#import "NSURL+BNG.h"
-#import "NSString+RandomCustomerReferenceId.h"
-
-
-#import "BNGCountryCode.h"
 #import "BNGCountryCodeResult.h"
 
-/**
- * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
- */
-@interface BNGAPI : NSObject
+@implementation BNGCountryCodeResult
 
 @end

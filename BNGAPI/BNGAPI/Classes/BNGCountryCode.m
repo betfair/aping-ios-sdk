@@ -26,25 +26,51 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+#import "BNGCountryCode.h"
 
 #import "APING.h"
-#import "BNGAccountDetails.h"
-#import "BNGAccount.h"
-#import "BNGAccountFunds.h"
-#import "BNGLoginURLProtocol.h"
+#import "BNGAPIError_Private.h"
 #import "BNGMutableURLRequest.h"
+#import "NSURLConnection+BNGJSON.h"
+#import "BNGAPIResponseParser.h"
 
-#import "NSURL+BNG.h"
-#import "NSString+RandomCustomerReferenceId.h"
+@implementation BNGCountryCode
 
+- (instancetype)initWithCountryCodeName:(NSString *)countryCode {
+    
+    self = [super init];
+    
+    if (self) {
+        
+        _countryCode = [countryCode copy];
+    }
+    
+    return self;
+}
 
-#import "BNGCountryCode.h"
-#import "BNGCountryCodeResult.h"
-
-/**
- * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
- */
-@interface BNGAPI : NSObject
++ (void)listCountriesWithFilter:(BNGMarketFilter *)marketFilter completionBlock:(BNGResultsCompletionBlock)completionBlock {
+    
+    NSParameterAssert(marketFilter);
+    
+    if (!marketFilter) return;
+    
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listCountries];
+    
+    BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
+    [request setPostParameters:marketFilter.dictionaryRepresentation];
+    
+    [NSURLConnection sendAsynchronousJSONRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
+                                   
+                                   if (connectionError) {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
+                                   } else if ([JSONData isKindOfClass:[NSArray class]]) {
+                                       completionBlock([BNGAPIResponseParser parseBNGCountryCodeResultsFromResponse:JSONData], connectionError, nil);
+                                   } else {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
+                                   }
+                               }];
+}
 
 @end
