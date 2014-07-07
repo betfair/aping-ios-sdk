@@ -26,48 +26,36 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "BNGAPIError.h"
-#import "BNGAPIError_Private.h"
+#import <XCTest/XCTest.h>
 
-NSString * const BNGErrorDomain = @"BNGErrorDomain";
-NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
-NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
-NSString * const BNGErrorErrorStringIdentifier = @"error";
+#import "NSDictionary+BNGError.h"
 
-static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
+@interface NSDictionary_BNGErrorTests : XCTestCase
 
-@implementation BNGAPIError
+@end
 
-#pragma mark Initialisation
+@implementation NSDictionary_BNGErrorTests
 
-- (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
+- (void)testIsBNGError
 {
-    self = [super initWithDomain:BNGErrorDomain
-                            code:[dictionary[@"error"][@"code"] integerValue]
-                        userInfo:dictionary];
+    NSDictionary *hasBNGError = @{@"error": @{}};
+    NSDictionary *hasBNGFaultCode = @{@"faultcode": @{}};
+    NSDictionary *hasBNGFaultString = @{@"faultstring": @{}};
     
-    if (self) {
-        
-    }
-    
-    return self;
+    XCTAssert(hasBNGError.isBNGError, @"a dictionary with an error identifier is a BNGError");
+    XCTAssert(hasBNGFaultCode.isBNGError, @"a dictionary with an faultcode identifier is a BNGError");
+    XCTAssert(hasBNGFaultString.isBNGError, @"a dictionary with an faultstring identifier is a BNGError");
 }
 
-- (instancetype)initWithURLResponse:(NSURLResponse *)response
+- (void)testIsNotBNGError
 {
-    NSInteger code = BNGAPIErrorCodeUnexpectedError;
-    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
-        code = BNGAPIErrorCodeServiceBusy;
-    }
+    NSDictionary *doesNotHaveABNGError = @{@"errr": @{}};
+    NSDictionary *doesNotHaveABNGFaultCode = @{@"faultcodee": @{}};
+    NSDictionary *doesNotHaveABNGFaultString = @{@"faultstringg": @{}};
     
-    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
-    
-    if (self) {
-        
-        
-    }
-    
-    return self;
+    XCTAssertFalse(doesNotHaveABNGError.isBNGError, @"a dictionary with an error identifier is not a BNGError");
+    XCTAssertFalse(doesNotHaveABNGFaultCode.isBNGError, @"a dictionary with an faultcode identifier is not a BNGError");
+    XCTAssertFalse(doesNotHaveABNGFaultString.isBNGError, @"a dictionary with an faultstring identifier is not a BNGError");
 }
-            
+
 @end

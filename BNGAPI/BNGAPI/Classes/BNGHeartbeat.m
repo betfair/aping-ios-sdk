@@ -34,6 +34,7 @@
 #import "BNGMutableURLRequest.h"
 #import "NSURLConnection+BNGJSON.h"
 #import "BNGAPIResponseParser.h"
+#import "NSDictionary+BNGError.h"
 
 @implementation BNGHeartbeat
 
@@ -58,8 +59,8 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, nil);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       // first check to see that its not an error
-                                       if (!JSONData[@"faultcode"] && !JSONData[@"faultstring"]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGHeartbeatReportFromResponse:JSONData], nil, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);

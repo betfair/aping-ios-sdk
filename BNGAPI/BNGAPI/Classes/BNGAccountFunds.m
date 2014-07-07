@@ -33,6 +33,7 @@
 #import "BNGMutableURLRequest.h"
 #import "NSURLConnection+BNGJSON.h"
 #import "BNGAPIResponseParser.h"
+#import "NSDictionary+BNGError.h"
 
 @implementation BNGAccountFunds
 
@@ -53,7 +54,8 @@
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGAccountFundsFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);

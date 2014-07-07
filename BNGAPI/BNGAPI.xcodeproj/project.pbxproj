@@ -237,6 +237,10 @@
 		719A58AC1968A02900FF2CF2 /* BNGHeartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */; };
 		719A58AE1968A35900FF2CF2 /* BNGHeartbeatTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58AD1968A35900FF2CF2 /* BNGHeartbeatTest.m */; };
 		71C50CBA195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */; };
+		71CA740A196B1C3E005FD57E /* NSDictionary+BNGError.h in Headers */ = {isa = PBXBuildFile; fileRef = 71CA7408196B1C3E005FD57E /* NSDictionary+BNGError.h */; };
+		71CA740B196B1C3E005FD57E /* NSDictionary+BNGError.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CA7409196B1C3E005FD57E /* NSDictionary+BNGError.m */; };
+		71CA740C196B1C3E005FD57E /* NSDictionary+BNGError.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CA7409196B1C3E005FD57E /* NSDictionary+BNGError.m */; };
+		71CA740E196B1C87005FD57E /* NSDictionary+BNGErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CA740D196B1C87005FD57E /* NSDictionary+BNGErrorTests.m */; };
 		71D9BBD1195823C10006B520 /* BNGAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71D9BBD0195823C10006B520 /* BNGAPI.h */; };
 		71D9BBD3195823C10006B520 /* BNGAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D9BBD2195823C10006B520 /* BNGAPI.m */; };
 		71D9BBD9195823C10006B520 /* libBNGAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D9BBCD195823C10006B520 /* libBNGAPI.a */; };
@@ -434,6 +438,9 @@
 		719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGHeartbeat.m; sourceTree = "<group>"; };
 		719A58AD1968A35900FF2CF2 /* BNGHeartbeatTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGHeartbeatTest.m; sourceTree = "<group>"; };
 		71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExBestOffersOverridesTest.m; sourceTree = "<group>"; };
+		71CA7408196B1C3E005FD57E /* NSDictionary+BNGError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BNGError.h"; sourceTree = "<group>"; };
+		71CA7409196B1C3E005FD57E /* NSDictionary+BNGError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BNGError.m"; sourceTree = "<group>"; };
+		71CA740D196B1C87005FD57E /* NSDictionary+BNGErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BNGErrorTests.m"; sourceTree = "<group>"; };
 		71D9BBCD195823C10006B520 /* libBNGAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBNGAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D9BBD0195823C10006B520 /* BNGAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNGAPI.h; sourceTree = "<group>"; };
 		71D9BBD2195823C10006B520 /* BNGAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNGAPI.m; sourceTree = "<group>"; };
@@ -467,6 +474,8 @@
 		7118B910195826BE007057CE /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				71CA7408196B1C3E005FD57E /* NSDictionary+BNGError.h */,
+				71CA7409196B1C3E005FD57E /* NSDictionary+BNGError.m */,
 				7118B911195826BE007057CE /* NSNumber+DecimalConversion.h */,
 				7118B912195826BE007057CE /* NSNumber+DecimalConversion.m */,
 				7118B913195826BE007057CE /* NSString+RandomCustomerReferenceId.h */,
@@ -604,6 +613,7 @@
 		711AA2E01958B8A400861CD4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				71CA740D196B1C87005FD57E /* NSDictionary+BNGErrorTests.m */,
 				711AA2E21958B8A400861CD4 /* NSURL+BNGTests.m */,
 				71FF4F7A196738DD00E5BC88 /* NSURLRequest+HTTPBodyTests.m */,
 			);
@@ -785,6 +795,7 @@
 				7118B9A1195826BE007057CE /* BNGCancelExecutionReport.h in Headers */,
 				7118B98B195826BE007057CE /* NSURLConnection+BNGJSON.h in Headers */,
 				7118B98E195826BE007057CE /* NSURLRequest+HTTPBody.h in Headers */,
+				71CA740A196B1C3E005FD57E /* NSDictionary+BNGError.h in Headers */,
 				7142E46C19698ACC00EFA61D /* BNGVenueResult.h in Headers */,
 				7118B9CB195826BE007057CE /* BNGLimitOnCloseOrder.h in Headers */,
 				7118B9AA195826BE007057CE /* BNGCompetition.h in Headers */,
@@ -955,6 +966,7 @@
 				7118BA14195826BE007057CE /* BNGUpdateInstruction.m in Sources */,
 				7118B9A2195826BE007057CE /* BNGCancelExecutionReport.m in Sources */,
 				7118B9E4195826BE007057CE /* BNGMarketOnCloseOrder.m in Sources */,
+				71CA740B196B1C3E005FD57E /* NSDictionary+BNGError.m in Sources */,
 				71D9BBD3195823C10006B520 /* BNGAPI.m in Sources */,
 				7118B9F3195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
 				719A58A619689E8900FF2CF2 /* BNGHeartbeatReport.m in Sources */,
@@ -1053,6 +1065,7 @@
 				71747C35196974CF00335435 /* BNGCountryCode.m in Sources */,
 				711AA3051958B8A400861CD4 /* BNGAccountTest.m in Sources */,
 				7118B9F7195826BE007057CE /* BNGPlaceInstructionReport.m in Sources */,
+				71CA740E196B1C87005FD57E /* NSDictionary+BNGErrorTests.m in Sources */,
 				7157A1DA195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m in Sources */,
 				7118B9E5195826BE007057CE /* BNGMarketOnCloseOrder.m in Sources */,
 				7118B9DF195826BE007057CE /* BNGMarketCatalogueFilter.m in Sources */,
@@ -1078,6 +1091,7 @@
 				7118B9EB195826BE007057CE /* BNGMutableURLRequest.m in Sources */,
 				7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */,
 				7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
+				71CA740C196B1C3E005FD57E /* NSDictionary+BNGError.m in Sources */,
 				71FF4F7F196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m in Sources */,
 				7142E47019698E7A00EFA61D /* BNGVenueTest.m in Sources */,
 				71747C3A1969776800335435 /* BNGCountryCodeResult.m in Sources */,

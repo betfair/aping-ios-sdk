@@ -83,4 +83,19 @@
     XCTAssert([error.userInfo[@"faultstring"] isEqualToString:@"ANGX-0007"], @"the userInfo dictionary should be equal to the raw response from the API server");
 }
 
+- (void)testJSONRPCErrorInitialisationWithDictionary
+{
+    NSDictionary *dictionary = @{
+                                 @"error": @{
+                                         @"code": @"-32700",
+                                         @"message": @"DSC-0008"
+                                         },
+                                 @"jsonrpc": @"2.0"
+                                 };
+    
+    BNGAPIError *error = [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:dictionary];
+    
+    XCTAssert(error.code == -32700, @"the error's code should be set with the code returned from the API server");
+}
+
 @end

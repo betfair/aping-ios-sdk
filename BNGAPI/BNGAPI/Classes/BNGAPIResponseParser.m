@@ -57,14 +57,11 @@
 #import "BNGReplaceInstructionReport.h"
 #import "BNGUpdateExecutionReport.h"
 #import "NSNumber+DecimalConversion.h"
-<<<<<<< HEAD
 #import "BNGHeartbeatReport.h"
-=======
 #import "BNGCountryCode.h"
 #import "BNGCountryCodeResult.h"
 #import "BNGCompetitionResult.h"
 #import "BNGVenueResult.h"
->>>>>>> develop
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -611,7 +608,6 @@ static const struct BNGVenueResultField BNGVenueResultField = {
         [countryCodes addObject:[BNGAPIResponseParser parseBNGCountryCodeResultFromResponse:country]];
     }
     return [countryCodes copy];
->>>>>>> develop
 }
 
 #pragma mark Private Methods

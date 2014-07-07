@@ -26,48 +26,15 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#import "NSDictionary+BNGError.h"
+
 #import "BNGAPIError.h"
-#import "BNGAPIError_Private.h"
 
-NSString * const BNGErrorDomain = @"BNGErrorDomain";
-NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
-NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
-NSString * const BNGErrorErrorStringIdentifier = @"error";
+@implementation NSDictionary (BNGError)
 
-static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
-
-@implementation BNGAPIError
-
-#pragma mark Initialisation
-
-- (instancetype)initWithAPINGErrorResponseDictionary:(NSDictionary *)dictionary
+- (BOOL)isBNGError
 {
-    self = [super initWithDomain:BNGErrorDomain
-                            code:[dictionary[@"error"][@"code"] integerValue]
-                        userInfo:dictionary];
-    
-    if (self) {
-        
-    }
-    
-    return self;
+    return self[BNGErrorFaultCodeIdentifier] || self[BNGErrorFaultStringIdentifier] || self[BNGErrorErrorStringIdentifier];
 }
 
-- (instancetype)initWithURLResponse:(NSURLResponse *)response
-{
-    NSInteger code = BNGAPIErrorCodeUnexpectedError;
-    if ([response.URL.absoluteString rangeOfString:BNGSplashedAPIIdentifier].location != NSNotFound) {
-        code = BNGAPIErrorCodeServiceBusy;
-    }
-    
-    self = [super initWithDomain:BNGErrorDomain code:code userInfo:nil];
-    
-    if (self) {
-        
-        
-    }
-    
-    return self;
-}
-            
 @end

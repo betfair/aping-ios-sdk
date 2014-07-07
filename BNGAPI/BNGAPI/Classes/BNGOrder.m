@@ -38,6 +38,7 @@
 #import "BNGCancelInstruction.h"
 #import "BNGReplaceInstruction.h"
 #import "BNGUpdateInstruction.h"
+#import "NSDictionary+BNGError.h"
 
 struct BNGOrderParameters {
     __unsafe_unretained NSString *betIds;
@@ -137,7 +138,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGCurrentOrderSummaryReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
@@ -173,7 +175,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGPlaceExecutionReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
@@ -209,7 +212,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGCancelExecutionReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
@@ -245,7 +249,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGReplaceExecutionReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
@@ -281,7 +286,8 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    if (connectionError) {
                                        completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
-                                       if (!JSONData[BNGErrorFaultCodeIdentifier] && !JSONData[BNGErrorFaultStringIdentifier]) {
+                                       NSDictionary *data = JSONData;
+                                       if (!data.isBNGError) {
                                            completionBlock([BNGAPIResponseParser parseBNGUpdateExecutionReportFromResponse: JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);

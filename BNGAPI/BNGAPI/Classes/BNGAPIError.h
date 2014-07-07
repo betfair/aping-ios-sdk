@@ -46,6 +46,11 @@ extern NSString * const BNGErrorFaultCodeIdentifier;
 extern NSString * const BNGErrorFaultStringIdentifier;
 
 /**
+ * Unique identifier for the error string reported in APING errors.
+ */
+extern NSString * const BNGErrorErrorStringIdentifier;
+
+/**
  * A set of generic error codes which can be returned for the API server for any operation.
  */
 typedef NS_ENUM(NSInteger, BNGAPIErrorCode) {
