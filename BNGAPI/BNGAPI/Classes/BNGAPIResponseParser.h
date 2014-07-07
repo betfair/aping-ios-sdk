@@ -130,6 +130,7 @@
  */
 + (BNGHeartbeatReport *)parseBNGHeartbeatReportFromResponse:(NSDictionary *)response;
 
+/*
  * Given a JSON response dictionary, this method returns an array of `BNGVenueResult`s
  * @param response JSON from the server based on a `listVenues` API call.
  * @return an array of `BNGVenueResult`s
@@ -149,6 +150,5 @@
  * @return a `BNGReplaceExecutionReport` object.
  */
 + (NSArray *)parseBNGCountryCodeResultsFromResponse:(NSArray *)response;
->>>>>>> develop
 
 @end
