@@ -34,8 +34,8 @@ const struct BNGLoginOperation BNGLoginOperation = {
 
 const struct BNGBettingOperation BNGBettingOperation = {
     .cancelOrders        = @"cancelOrders",
-    .listCompetitions    = @"listCompetitions", // not implemented yet
-    .listCountries       = @"listCountries", // not implemented yet
+    .listCompetitions    = @"listCompetitions",
+    .listCountries       = @"listCountries",
     .listCurrentOrders   = @"listCurrentOrders",
     .listEvents          = @"listEvents",
     .listEventTypes      = @"listEventTypes",
@@ -43,9 +43,9 @@ const struct BNGBettingOperation BNGBettingOperation = {
     .listMarketCatalogue = @"listMarketCatalogue",
     .listMarketTypes     = @"listMarketTypes",
     .listTimeRanges      = @"listTimeRanges", // not implemented yet
-    .listVenues          = @"listVenues", // not implemented yet
+    .listVenues          = @"listVenues",
     .placeOrders         = @"placeOrders",
-    .replaceOrders       = @"replaceOrders",
+    .replaceOrders       = @"replaceOrders", // not implemented yet
     .updateOrders        = @"updateOrders",
 };
 
