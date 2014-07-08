@@ -1,0 +1,8 @@
+{
+    "id": "zafpmWx39bwTgVMrbiuxZmPLLbpiD8TJ",
+    "jsonrpc": "2.0",
+    "result": {
+        "actionPerformed": "ALL_BETS_CANCELLED",
+        "actualTimeoutSeconds": "200"
+    }
+}

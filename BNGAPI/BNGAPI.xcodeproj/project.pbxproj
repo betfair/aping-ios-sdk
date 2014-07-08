@@ -236,6 +236,7 @@
 		719A58AB1968A02900FF2CF2 /* BNGHeartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */; };
 		719A58AC1968A02900FF2CF2 /* BNGHeartbeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */; };
 		719A58AE1968A35900FF2CF2 /* BNGHeartbeatTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A58AD1968A35900FF2CF2 /* BNGHeartbeatTest.m */; };
+		71B6C9C5196BE660003B5AD5 /* heartbeat.json in Resources */ = {isa = PBXBuildFile; fileRef = 71B6C9C4196BE660003B5AD5 /* heartbeat.json */; };
 		71C50CBA195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */; };
 		71CA740A196B1C3E005FD57E /* NSDictionary+BNGError.h in Headers */ = {isa = PBXBuildFile; fileRef = 71CA7408196B1C3E005FD57E /* NSDictionary+BNGError.h */; };
 		71CA740B196B1C3E005FD57E /* NSDictionary+BNGError.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CA7409196B1C3E005FD57E /* NSDictionary+BNGError.m */; };
@@ -437,6 +438,7 @@
 		719A58A81968A02900FF2CF2 /* BNGHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGHeartbeat.h; sourceTree = "<group>"; };
 		719A58A91968A02900FF2CF2 /* BNGHeartbeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGHeartbeat.m; sourceTree = "<group>"; };
 		719A58AD1968A35900FF2CF2 /* BNGHeartbeatTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGHeartbeatTest.m; sourceTree = "<group>"; };
+		71B6C9C4196BE660003B5AD5 /* heartbeat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heartbeat.json; sourceTree = "<group>"; };
 		71C50CB9195C69EE00BAB8AE /* BNGExBestOffersOverridesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGExBestOffersOverridesTest.m; sourceTree = "<group>"; };
 		71CA7408196B1C3E005FD57E /* NSDictionary+BNGError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BNGError.h"; sourceTree = "<group>"; };
 		71CA7409196B1C3E005FD57E /* NSDictionary+BNGError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BNGError.m"; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 				711AA2FB1958B8A400861CD4 /* current_orders.json */,
 				711AA2FC1958B8A400861CD4 /* event_types.json */,
 				711AA2FD1958B8A400861CD4 /* events.json */,
+				71B6C9C4196BE660003B5AD5 /* heartbeat.json */,
 				711AA2FE1958B8A400861CD4 /* market_book.json */,
 				711AA2FF1958B8A400861CD4 /* market_catalogue.json */,
 				711AA3001958B8A400861CD4 /* place_order.json */,
@@ -895,6 +898,7 @@
 				711AA3111958B8A400861CD4 /* current_orders.json in Resources */,
 				711AA3101958B8A400861CD4 /* account_funds.json in Resources */,
 				711AA3131958B8A400861CD4 /* events.json in Resources */,
+				71B6C9C5196BE660003B5AD5 /* heartbeat.json in Resources */,
 				7157A1D8195F3A3B00D203B9 /* cancel_order.json in Resources */,
 				711AA3151958B8A400861CD4 /* market_catalogue.json in Resources */,
 				711AA3121958B8A400861CD4 /* event_types.json in Resources */,

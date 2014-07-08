@@ -62,6 +62,7 @@
 #import "BNGCountryCodeResult.h"
 #import "BNGCompetitionResult.h"
 #import "BNGVenueResult.h"
+#import "BNGHeartbeat.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -245,6 +246,12 @@ struct BNGCompetitionResultField {
 struct BNGVenueResultField {
     __unsafe_unretained NSString *venue;
     __unsafe_unretained NSString *marketCount;
+};
+
+struct BNGHeartbeatReportField {
+    __unsafe_unretained NSString *actionPerformed;
+    __unsafe_unretained NSString *actualTimeoutSeconds;
+    __unsafe_unretained NSString *result;
 };
 
 static const struct BNGAccountFundsField BNGAccountFundsField = {
@@ -431,6 +438,12 @@ static const struct BNGVenueResultField BNGVenueResultField = {
     .marketCount = @"marketCount"
 };
 
+static const struct BNGHeartbeatReportField BNGHeartbeatReportField = {
+    .actionPerformed = @"actionPerformed",
+    .actualTimeoutSeconds = @"actualTimeoutSeconds",
+    .result = @"result"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
@@ -579,7 +592,9 @@ static const struct BNGVenueResultField BNGVenueResultField = {
 + (BNGHeartbeatReport *)parseBNGHeartbeatReportFromResponse:(NSDictionary *)response
 {
     BNGHeartbeatReport *report = [[BNGHeartbeatReport alloc] init];
-    // TODO: Parse out the response.
+    NSDictionary *result = response[BNGHeartbeatReportField.result];
+    report.actionPerformed = [BNGHeartbeat heartbeatActionPerformedFromString:result[BNGHeartbeatReportField.actionPerformed]];
+    report.actualTimeoutSeconds = [result[BNGHeartbeatReportField.actualTimeoutSeconds] intValue];
     return report;
 }
 

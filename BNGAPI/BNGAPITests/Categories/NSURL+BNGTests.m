@@ -76,7 +76,7 @@
 
 - (void)testHeartbeatURL
 {
-    XCTAssertTrue([[NSURL betfairNGHeartbeatURL].absoluteString isEqualToString:@"https://api.betfair.com/exchange/heartbeat/json-rpc/v1/"], @"betfairNGHeartbeatURL should return the correct heartbeat URL");
+    XCTAssertTrue([[NSURL betfairNGHeartbeatURL].absoluteString isEqualToString:@"https://api.betfair.com/exchange/heartbeat/json-rpc/v1"], @"betfairNGHeartbeatURL should return the correct heartbeat URL");
 }
 
 @end

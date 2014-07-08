@@ -104,7 +104,7 @@ NSString *const BNGHeartbeatAPIVersion  = @"1";
 
 + (NSURL *)betfairNGHeartbeatURL {
     
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/heartbeat/json-rpc/v%@/",
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@/heartbeat/json-rpc/v%@",
                                  BNGBaseURLString,
                                  BNGHeartbeatAPIVersion]];
 }

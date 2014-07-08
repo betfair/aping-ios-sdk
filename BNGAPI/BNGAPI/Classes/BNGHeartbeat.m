@@ -35,6 +35,23 @@
 #import "NSURLConnection+BNGJSON.h"
 #import "BNGAPIResponseParser.h"
 #import "NSDictionary+BNGError.h"
+#import "NSString+RandomCustomerReferenceId.h"
+
+struct BNGHeartbeatRequestField {
+    __unsafe_unretained NSString *jsonrpc;
+    __unsafe_unretained NSString *method;
+    __unsafe_unretained NSString *params;
+    __unsafe_unretained NSString *preferredTimeoutSeconds;
+    __unsafe_unretained NSString *identifier;
+};
+
+static const struct BNGHeartbeatRequestField BNGHeartbeatRequestField = {
+    .jsonrpc = @"jsonrpc",
+    .method = @"method",
+    .params = @"params",
+    .preferredTimeoutSeconds = @"preferredTimeoutSeconds",
+    .identifier = @"id",
+};
 
 @implementation BNGHeartbeat
 
@@ -47,10 +64,8 @@
         return;
     }
     
-    NSURL *url = [NSURL betfairNGHeartbeatURL];
-    
-    BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
-    [request setPostParameters:@{@"preferredTimeoutSeconds":@(preferredTimeoutSeconds)}];
+    BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:[NSURL betfairNGHeartbeatURL]];
+    [request setPostParameters:[BNGHeartbeat parametersForPreferredTimeoutSeconds:preferredTimeoutSeconds] error:nil addDefaultParameters:NO];
     
     [NSURLConnection sendAsynchronousJSONRequest:request
                                            queue:[NSOperationQueue mainQueue]
@@ -94,6 +109,11 @@
     }
     
     return performed;
+}
+
++ (NSDictionary *)parametersForPreferredTimeoutSeconds:(NSUInteger)preferredTimeoutSeconds
+{
+    return @{BNGHeartbeatRequestField.jsonrpc: @"2.0", BNGHeartbeatRequestField.method: @"HeartbeatAPING/v1.0/heartbeat", BNGHeartbeatRequestField.params: @{BNGHeartbeatRequestField.preferredTimeoutSeconds: @(preferredTimeoutSeconds)}, BNGHeartbeatRequestField.identifier: [NSString randomCustomerReferenceId]};
 }
 
 @end

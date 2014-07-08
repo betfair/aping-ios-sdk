@@ -50,6 +50,7 @@ static NSDictionary *responses;
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listCountries/": @"countries.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listCompetitions/": @"competitions.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listVenues/": @"venues.json",
+            @"https://api.betfair.com/exchange/heartbeat/json-rpc/v1": @"heartbeat.json",
             };
     }
 //    return NO;

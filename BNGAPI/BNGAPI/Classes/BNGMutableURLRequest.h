@@ -94,4 +94,13 @@ typedef NS_ENUM(NSInteger, BNGErrorCode) {
  */
 - (BOOL)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error;
 
+/**
+ * Sets the parameters parameter as the body of the POST request.
+ * @param parameters key/value pairs which should be sent as part of the POST request.
+ * @param error JSON Encoding error if any.
+ * @param addDefaultParameters dictates whether or not the default parameters (locale/currencyCode) are added to the request.
+ * @return success
+ */
+- (BOOL)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error addDefaultParameters:(BOOL)addDefaultParameters;
+
 @end

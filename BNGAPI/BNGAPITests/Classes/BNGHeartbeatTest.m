@@ -49,6 +49,9 @@
     
     [BNGHeartbeat heartbeatForPreferredTimeSeconds:200 completionBlock:^(BNGHeartbeatReport *report, NSError *connectionError, BNGAPIError *apiError) {
         
+        XCTAssertTrue(report.actionPerformed == BNGHeartBeatActionPerformedAllBetsCancelled, @"the action performed should indicate that all bets were cancelled");
+        XCTAssertTrue(report.actualTimeoutSeconds == 200, @"the actualTimeoutSeconds should be set correctly in the response");
+        
         dispatch_semaphore_signal(semaphore);
     }];
     

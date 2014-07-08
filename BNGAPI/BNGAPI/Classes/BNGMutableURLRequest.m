@@ -83,17 +83,24 @@ static const struct BNGDefaultParameterField BNGDefaultParameterField = {
 
 - (void)setPostParameters:(NSDictionary *)parameters
 {
-    [self setPostParameters:parameters error:nil];
+    [self setPostParameters:parameters error:nil addDefaultParameters:YES];
 }
 
 - (BOOL)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error
 {
-    // make sure to always add the two parameters which should be included in each and every request
+    return [self setPostParameters:parameters error:error addDefaultParameters:YES];
+}
+
+- (BOOL)setPostParameters:(NSDictionary *)parameters error:(NSError *__autoreleasing *)error addDefaultParameters:(BOOL)addDefaultParameters
+{
     NSMutableDictionary *allParameters = [parameters mutableCopy];
-    [allParameters addEntriesFromDictionary:@{
-     BNGDefaultParameterField.locale: [APING sharedInstance].locale,
-     BNGDefaultParameterField.currencyCode: [APING sharedInstance].currencyCode,
-     }];
+    if (addDefaultParameters) {
+        // make sure to always add the two parameters which should be included in each and every request
+        [allParameters addEntriesFromDictionary:@{
+                                                  BNGDefaultParameterField.locale: [APING sharedInstance].locale,
+                                                  BNGDefaultParameterField.currencyCode: [APING sharedInstance].currencyCode,
+                                                  }];
+    }
     
     NSData *data = [NSJSONSerialization dataWithJSONObject:allParameters
                                                    options:kNilOptions
