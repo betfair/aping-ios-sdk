@@ -48,17 +48,123 @@
             [APING sharedInstance].ssoKey = ssoKey;
             
             // lets see if we can figure out the account details for this user
-            [BNGAccountDetails getAccountDetailsWithCompletionBlock:^(BNGAccountDetails *accountDetails, NSError *connectionError, BNGAPIError *apiError) {
+            [BNGAccountFunds getAccountFundsWithCompletionBlock:^(BNGAccountFunds *accountFunds, NSError *connectionError, BNGAPIError *apiError) {
                 
-                self.accountDetails = accountDetails;
-                
-                // tell the table to reload after it has retrieved data from the API server ...
-                [self.tableView reloadData];
+                if (!connectionError && !apiError) {
+                    
+                    NSLog(@"Got the account funds back for this user %@", accountFunds.availableToBetBalance);
+                    
+                    if ([accountFunds.availableToBetBalance compare:[NSNumber numberWithInt:2]] == NSOrderedAscending) {
+                        NSLog(@"The accounts funds is less than 2. Will have issues placing a bet with this account as the minimum exchange bet is 2 GBP.");
+                    }
+                    
+                    // try to get some event types
+                    BNGMarketFilter *marketFilter = [[BNGMarketFilter alloc] init];
+                    [BNGEventType listEventTypesWithMarketFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+                        
+                        if (results.count) {
+                            // take the event type with the most amount of open markets
+                            NSArray *sortedEventTypes = [results sortedArrayUsingComparator:^NSComparisonResult(BNGEventTypeResult *one, BNGEventTypeResult *two) {
+                                return one.marketCount < two.marketCount;
+                            }];
+                            
+                            BNGEventTypeResult *eventTypeWithMostOpenMarkets = (BNGEventTypeResult *)sortedEventTypes[0];
+                            BNGMarketFilter *eventMarketFilter = [[BNGMarketFilter alloc] init];
+                            eventMarketFilter.eventTypeIds = @[eventTypeWithMostOpenMarkets.eventType.identifier];
+                            
+                            // get a few events associated with this event type.
+                            [BNGEvent listEventsWithFilter:eventMarketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+                                
+                                if (results.count) {
+                                    // take the first event and see if we can get a market id
+                                    BNGEventResult *eventResult = results[0];
+                                    BNGMarketCatalogueFilter *eventFilter = [[BNGMarketCatalogueFilter alloc] init];
+                                    eventFilter.eventIds = @[eventResult.event.eventId];
+                                    eventFilter.marketBettingTypes = @[@"ODDS"];
+                                    
+                                    [BNGMarketCatalogue listMarketCataloguesWithFilter:eventFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+                                        
+                                        if (results.count) {
+                                            // take the first result and see if we can get some prices for this market ...
+                                            BNGMarketCatalogue *marketCatalogue = results[0];
+                                            BNGPriceProjection *priceProjection = [[BNGPriceProjection alloc] init];
+                                            priceProjection.priceData = @[[BNGPriceProjection stringFromPriceData:BNGPriceDataExTraded],
+                                                                          [BNGPriceProjection stringFromPriceData:BNGPriceDataExAllOffers],
+                                                                          [BNGPriceProjection stringFromPriceData:BNGPriceDataExBestOffers],
+                                                                          [BNGPriceProjection stringFromPriceData:BNGPriceDataSPAvailable],
+                                                                          [BNGPriceProjection stringFromPriceData:BNGPriceDataSPTraded]];
+                                            [BNGMarketBook listMarketBooksForMarketIds:@[marketCatalogue.marketId]
+                                                                       priceProjection:priceProjection
+                                                                       completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+                                                                           
+                                                                           if (results.count) {
+                                                                               BNGMarketBook *marketBook = results[0];
+                                                                               
+                                                                               NSArray *runners = [marketBook.runners sortedArrayUsingComparator:^NSComparisonResult(BNGRunner *one, BNGRunner *two) {
+                                                                                   return one.lastPriceTraded < two.lastPriceTraded;
+                                                                               }];
+                                                                               
+                                                                               // find an active runner ...
+                                                                               for (BNGRunner *runner in runners) {
+                                                                                   if (runner.status == BNGRunnerStatusActive) {
+                                                                                       // place an unmatched bet on an active runner
+                                                                                       BNGLimitOrder *order = [[BNGLimitOrder alloc] init];
+                                                                                       order.priceSize = [[BNGPriceSize alloc] initWithPrice:[NSDecimalNumber decimalNumberWithString:@"100"] size:[NSDecimalNumber decimalNumberWithString:@"2"]];
+                                                                                       order.selectionId = runner.selectionId;
+                                                                                       order.persistenceType = BNGPersistanceTypeLapse;
+                                                                                       
+                                                                                       BNGPlaceInstruction *placeOrder = [[BNGPlaceInstruction alloc] init];
+                                                                                       placeOrder.selectionId = runner.selectionId;
+                                                                                       placeOrder.limitOrder = order;
+                                                                                       placeOrder.side = BNGSideBack;
+                                                                                       placeOrder.orderType = BNGOrderTypeLimit;
+                                                                                       
+                                                                                       [BNGOrder placeOrdersForMarketId:marketBook.marketId instructions:@[placeOrder] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGPlaceExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
+                                                                                           
+                                                                                           if (!connectionError && !apiError && report.errorCode == BNGExecutionReportErrorCodeUnknown && report.instructionReports.count) {
+                                                                                               // turn around and cancel the bet immediately
+                                                                                               BNGPlaceInstructionReport *placedBetReport = report.instructionReports[0];
+                                                                                               BNGCancelInstruction *cancelInstruction = [[BNGCancelInstruction alloc] init];
+                                                                                               cancelInstruction.betId = placedBetReport.betId;
+                                                                                               [BNGOrder cancelOrdersForMarketId:marketBook.marketId instructions:@[cancelInstruction] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGCancelExecutionReport *cancelExecutionReport, NSError *cancelConnectionError, BNGAPIError *cancelApiError) {
+                                                                                                   
+                                                                                                   if (!connectionError && !apiError && cancelExecutionReport.errorCode == BNGExecutionReportErrorCodeUnknown && cancelExecutionReport.instructionReports.count) {
+                                                                                                       NSLog(@"Successfully cancelled the bet");
+                                                                                                   } else {
+                                                                                                       NSLog(@"There was an error while cancelling the bet %@ %@ %d", cancelConnectionError.localizedDescription, cancelApiError, report.errorCode);
+                                                                                                   }
+                                                                                               }];
+                                                                                           } else {
+                                                                                               NSLog(@"There was an error while placing the bet %@ %@ %d", connectionError.localizedDescription, apiError, report.errorCode);
+                                                                                           }
+                                                                                       }];
+                                                                                       break;
+                                                                                   }
+                                                                               }
+                                                                               
+                                                                           } else {
+                                                                               NSLog(@"There was an error while retrieving the market book %@ %@", connectionError.localizedDescription, apiError);
+                                                                           }
+                                                                       }];
+                                            
+                                        } else {
+                                            NSLog(@"There was an error while retrieving the market catalog %@ %@", connectionError.localizedDescription, apiError);
+                                        }
+                                    }];
+                                } else {
+                                    NSLog(@"There was an error while retrieving the event %@ %@", connectionError.localizedDescription, apiError);
+                                }
+                            }];
+                        } else {
+                            NSLog(@"There was an error while retrieving the event types %@ %@", connectionError.localizedDescription, apiError);
+                        }
+                    }];
+                } else {
+                    NSLog(@"There was an error while retrieving the event types %@ %@", connectionError.localizedDescription, apiError);
+                }
             }];
         } else {
             NSLog(@"There was an error while logging in %@ %@", connectionError.localizedDescription, apiError);
-            NSLog(@"This error can happen if your product key is out of date or if your redirect url has been suspended");
-            // see https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Getting+Started+with+API-NG for details on how to request an an application key
         }
     }];
     
