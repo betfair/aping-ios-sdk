@@ -49,6 +49,7 @@
 #import "BNGCancelInstructionReport.h"
 #import "BNGUpdateExecutionReport.h"
 #import "BNGUpdateInstruction.h"
+#import "BNGUpdateInstructionReport.h"
 
 @interface BNGOrderTest : XCTestCase
 
@@ -227,10 +228,39 @@
     [BNGOrder cancelOrdersForMarketId:@"1.109165222" instructions:@[instruction] customerRef:@"123" completionBlock:^(BNGCancelExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
         
         XCTAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this cancel bet request.");
-        XCTAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this replace bet request");
+        XCTAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this cancel bet request");
         
         BNGCancelInstructionReport *cancelInstructionReport = report.instructionReports[0];
         XCTAssertTrue([[cancelInstructionReport.sizeCancelled stringValue] isEqualToString:@"2"], @"The size cancelled should be 2");
+        
+        dispatch_semaphore_signal(semaphore);
+        
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
+- (void)testUpdateOrderApiCall
+{
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    BNGUpdateInstruction *instruction = [[BNGUpdateInstruction alloc] initWithBetId:@"123" newPersistanceType:BNGPersistanceTypePersist];
+    
+    [BNGOrder updateOrdersForMarketId:@"1.114084208" instructions:@[instruction] customerRef:@"123" completionBlock:^(BNGUpdateExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
+        
+        XCTAssertTrue(report.instructionReports.count, @"There should be at least one instruction report available for this update bet request.");
+        XCTAssertTrue(report.errorCode == BNGExecutionReportErrorCodeUnknown, @"There should be no error code associated with this update bet request");
+        
+        BNGUpdateInstructionReport *updateInstructionReport = report.instructionReports[0];
+        
+        XCTAssertTrue(updateInstructionReport.updateInstruction.persistenceType == BNGPersistanceTypePersist, @"The persistence type of the updated bet should be `BNGPersistanceTypePersist`");
+        XCTAssertTrue([updateInstructionReport.updateInstruction.betId longLongValue] == 39047245474, @"The bet id of the updated bet should be parsed correctly");
         
         dispatch_semaphore_signal(semaphore);
         

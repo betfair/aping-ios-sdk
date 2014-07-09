@@ -63,6 +63,8 @@
 #import "BNGCompetitionResult.h"
 #import "BNGVenueResult.h"
 #import "BNGHeartbeat.h"
+#import "BNGUpdateInstructionReport.h"
+#import "BNGUpdateInstruction.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -252,6 +254,12 @@ struct BNGHeartbeatReportField {
     __unsafe_unretained NSString *actionPerformed;
     __unsafe_unretained NSString *actualTimeoutSeconds;
     __unsafe_unretained NSString *result;
+};
+
+struct BNGUpdateInstructionField {
+    __unsafe_unretained NSString *betId;
+    __unsafe_unretained NSString *newPersistenceType;
+    __unsafe_unretained NSString *instruction;
 };
 
 static const struct BNGAccountFundsField BNGAccountFundsField = {
@@ -444,6 +452,12 @@ static const struct BNGHeartbeatReportField BNGHeartbeatReportField = {
     .result = @"result"
 };
 
+static const struct BNGUpdateInstructionField BNGUpdateInstructionField = {
+    .betId = @"betId",
+    .newPersistenceType = @"newPersistenceType",
+    .instruction = @"instruction"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
@@ -569,7 +583,7 @@ static const struct BNGHeartbeatReportField BNGHeartbeatReportField = {
 {
     BNGUpdateExecutionReport *report = [[BNGUpdateExecutionReport alloc] init];
     [BNGAPIResponseParser parseExecutionReportFromResponse:response intoReport:report];
-    // TODO: Parse out the response.
+    report.instructionReports = [BNGAPIResponseParser parseBNGUpdateInstructionReportsFromResponse:response[BNGPlaceOrderField.instructionReports]];
     return report;
 }
 
@@ -839,6 +853,17 @@ static const struct BNGHeartbeatReportField BNGHeartbeatReportField = {
     return [instructions copy];
 }
 
++ (NSArray *)parseBNGUpdateInstructionReportsFromResponse:(NSArray *)response
+{
+    NSMutableArray *instructions = [NSMutableArray arrayWithCapacity:response.count];
+    if (response) {
+        for (NSDictionary *instruction in response) {
+            [instructions addObject:[BNGAPIResponseParser parseBNGUpdateInstructionReportFromInstruction:instruction]];
+        }
+    }
+    return [instructions copy];
+}
+
 + (BNGPlaceInstructionReport *)parseBNGPlaceInstructionReportFromInstruction:(NSDictionary *)instruction
 {
     BNGPlaceInstructionReport *report = [[BNGPlaceInstructionReport alloc] init];
@@ -858,6 +883,14 @@ static const struct BNGHeartbeatReportField BNGHeartbeatReportField = {
 
     report.averagePriceMatched = [instruction[BNGPlaceOrderField.averagePriceMatched] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
     report.sizeMatched = [instruction[BNGPlaceOrderField.sizeMatched] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
+    return report;
+}
+
++ (BNGUpdateInstructionReport *)parseBNGUpdateInstructionReportFromInstruction:(NSDictionary *)instruction
+{
+    BNGUpdateInstructionReport *report = [[BNGUpdateInstructionReport alloc] init];
+    NSDictionary *singleInstruction = instruction[BNGUpdateInstructionField.instruction];
+    report.updateInstruction = [[BNGUpdateInstruction alloc] initWithBetId:singleInstruction[BNGUpdateInstructionField.betId] newPersistanceType:[BNGOrder persistenceTypeFromString:singleInstruction[BNGUpdateInstructionField.newPersistenceType]]];
     return report;
 }
 

@@ -1,0 +1,14 @@
+{
+    "customerRef": "qMG47Pz7VnlaqfchfmSpgkNelMAbCJEQ",
+    "instructionReports": [
+                           {
+                           "instruction": {
+                           "betId": 39047245474,
+                           "newPersistenceType": "PERSIST"
+                           },
+                           "status": "SUCCESS"
+                           }
+                           ],
+    "marketId": "1.114084208",
+    "status": "SUCCESS"
+}

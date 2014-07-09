@@ -35,6 +35,9 @@
  */
 @interface BNGUpdateInstructionReport : BNGInstructionReport
 
+/**
+ * Includes details on what was actually updated as a result of the `updateOrders` API call.
+ */
 @property (nonatomic) BNGUpdateInstruction *updateInstruction;
 
 @end
