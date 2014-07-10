@@ -34,6 +34,8 @@ NSString * const BNGErrorFaultCodeIdentifier = @"faultcode";
 NSString * const BNGErrorFaultStringIdentifier = @"faultstring";
 NSString * const BNGErrorErrorStringIdentifier = @"error";
 
+NSString * const BNGErrorCougarCodeIdentifier = @"DSC";
+
 static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
 
 @implementation BNGAPIError
@@ -47,7 +49,7 @@ static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
                         userInfo:dictionary];
     
     if (self) {
-        
+
     }
     
     return self;
@@ -68,6 +70,66 @@ static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
     }
     
     return self;
+}
+
+- (BNGAPICougarErrorCode)cougarErrorCode {
+    
+    BNGAPICougarErrorCode errorCode = BNGAPICougarErrorCodeUnknown;
+    
+    if (self.userInfo && self.userInfo[@"error"]) {
+        NSString *errorMessage = self.userInfo[@"error"][@"message"];
+        if (errorMessage) {
+            static NSDictionary *errorCodesMap;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                errorCodesMap = @{@"DSC-0001" : @(BNGAPICougarErrorCodeStartupError),
+                                  @"DSC-0002" : @(BNGAPICougarErrorCodeFrameworkError),
+                                  @"DSC-0003" : @(BNGAPICougarErrorCodeInvocationResultIncorrect),
+                                  @"DSC-0005" : @(BNGAPICougarErrorCodeServiceRuntimeException),
+                                  @"DSC-0006" : @(BNGAPICougarErrorCodeSOAPDeserialisationFailure),
+                                  @"DSC-0007" : @(BNGAPICougarErrorCodeXMLDeserialisationFailure),
+                                  @"DSC-0008" : @(BNGAPICougarErrorCodeJSONDeserialisationParseFailure),
+                                  @"DSC-0009" : @(BNGAPICougarErrorCodeClassConversionFailure),
+                                  @"DSC-0010" : @(BNGAPICougarErrorCodeInvalidInputMediaType),
+                                  @"DSC-0011" : @(BNGAPICougarErrorCodeContentTypeNotValid),
+                                  @"DSC-0012" : @(BNGAPICougarErrorCodeMediaTypeParseFailure),
+                                  @"DSC-0013" : @(BNGAPICougarErrorCodeAcceptTypeNotValid),
+                                  @"DSC-0014" : @(BNGAPICougarErrorCodeResponseContentTypeNotValid),
+                                  @"DSC-0015" : @(BNGAPICougarErrorCodeSecurityException),
+                                  @"DSC-0016" : @(BNGAPICougarErrorCodeServiceDisabled),
+                                  @"DSC-0017" : @(BNGAPICougarErrorCodeOperationDisabled),
+                                  @"DSC-0018" : @(BNGAPICougarErrorCodeMandatoryNotDefined),
+                                  @"DSC-0019" : @(BNGAPICougarErrorCodeTimeout),
+                                  @"DSC-0020" : @(BNGAPICougarErrorCodeBinDeserialisationParseFailure),
+                                  @"DSC-0021" : @(BNGAPICougarErrorCodeNoSuchOperation),
+                                  @"DSC-0022" : @(BNGAPICougarErrorCodeSubscriptionAlreadyActiveForEvent),
+                                  @"DSC-0023" : @(BNGAPICougarErrorCodeNoSuchService),
+                                  @"DSC-0024" : @(BNGAPICougarErrorCodeRescriptDeserialisationFailure),
+                                  @"DSC-0025" : @(BNGAPICougarErrorCodeJMSTransportCommunicationFailure),
+                                  @"DSC-0026" : @(BNGAPICougarErrorCodeRemoteCougarCommunicationFailure),
+                                  @"DSC-0027" : @(BNGAPICougarErrorCodeOutputChannelClosedCantWrite),
+                                  @"DSC-0028" : @(BNGAPICougarErrorCodeXMLSerialisationFailure),
+                                  @"DSC-0029" : @(BNGAPICougarErrorCodeJSONSerialisationFailure),
+                                  @"DSC-0030" : @(BNGAPICougarErrorCodeSOAPSerialisationFailure),
+                                  @"DSC-0031" : @(BNGAPICougarErrorCodeNoRequestsFound),
+                                  @"DSC-0032" : @(BNGAPICougarErrorCodeEPNSerialisationFailure),
+                                  @"DSC-0033" : @(BNGAPICougarErrorCodeUnidentifiedCaller),
+                                  @"DSC-0034" : @(BNGAPICougarErrorCodeUnknownCaller),
+                                  @"DSC-0035" : @(BNGAPICougarErrorCodeUnrecognisedCredentials),
+                                  @"DSC-0036" : @(BNGAPICougarErrorCodeInvalidCredentials),
+                                  @"DSC-0037" : @(BNGAPICougarErrorCodeSubscriptionRequired),
+                                  @"DSC-0038" : @(BNGAPICougarErrorCodeOperationForbidden),
+                                  @"DSC-0039" : @(BNGAPICougarErrorCodeNoLocationSupplied),
+                                  @"DSC-0040" : @(BNGAPICougarErrorCodeBannedLocation),
+                                  };
+            });
+            if (errorCodesMap[errorMessage]) {
+                errorCode = [errorCodesMap[errorMessage] intValue];
+            }
+        }
+    }
+    
+    return errorCode;
 }
             
 @end

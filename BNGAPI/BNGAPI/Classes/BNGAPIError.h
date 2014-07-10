@@ -67,9 +67,60 @@ typedef NS_ENUM(NSInteger, BNGAPIErrorCode) {
 };
 
 /**
+ * A set of cougar error codes which can be returned from the API server for any operation. Cougar is the container in which API-NG resides (see https://github.com/betfair/cougar for details). See https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/Common+Error+Codes and https://github.com/betfair/cougar-documentation/blob/master/legacy/Cougar_Fault_Reporting.md for some explanations of the error codes.
+ */
+typedef NS_ENUM(NSInteger, BNGAPICougarErrorCode) {
+    BNGAPICougarErrorCodeUnknown                            = 0,
+    BNGAPICougarErrorCodeStartupError                       = 1,
+    BNGAPICougarErrorCodeFrameworkError                     = 2,
+    BNGAPICougarErrorCodeInvocationResultIncorrect          = 3,
+    BNGAPICougarErrorCodeServiceRuntimeException            = 4,
+    BNGAPICougarErrorCodeSOAPDeserialisationFailure         = 5,
+    BNGAPICougarErrorCodeXMLDeserialisationFailure          = 6,
+    BNGAPICougarErrorCodeJSONDeserialisationParseFailure    = 7,
+    BNGAPICougarErrorCodeClassConversionFailure             = 8,
+    BNGAPICougarErrorCodeInvalidInputMediaType              = 9,
+    BNGAPICougarErrorCodeContentTypeNotValid                = 10,
+    BNGAPICougarErrorCodeMediaTypeParseFailure              = 11,
+    BNGAPICougarErrorCodeAcceptTypeNotValid                 = 12,
+    BNGAPICougarErrorCodeResponseContentTypeNotValid        = 13,
+    BNGAPICougarErrorCodeSecurityException                  = 14,
+    BNGAPICougarErrorCodeServiceDisabled                    = 15,
+    BNGAPICougarErrorCodeOperationDisabled                  = 16,
+    BNGAPICougarErrorCodeMandatoryNotDefined                = 17,
+    BNGAPICougarErrorCodeTimeout                            = 18,
+    BNGAPICougarErrorCodeBinDeserialisationParseFailure     = 19,
+    BNGAPICougarErrorCodeNoSuchOperation                    = 20,
+    BNGAPICougarErrorCodeSubscriptionAlreadyActiveForEvent  = 21,
+    BNGAPICougarErrorCodeNoSuchService                      = 22,
+    BNGAPICougarErrorCodeRescriptDeserialisationFailure     = 23,
+    BNGAPICougarErrorCodeJMSTransportCommunicationFailure   = 24,
+    BNGAPICougarErrorCodeRemoteCougarCommunicationFailure   = 25,
+    BNGAPICougarErrorCodeOutputChannelClosedCantWrite       = 26,
+    BNGAPICougarErrorCodeXMLSerialisationFailure            = 27,
+    BNGAPICougarErrorCodeJSONSerialisationFailure           = 28,
+    BNGAPICougarErrorCodeSOAPSerialisationFailure           = 29,
+    BNGAPICougarErrorCodeNoRequestsFound                    = 30,
+    BNGAPICougarErrorCodeEPNSerialisationFailure            = 31,
+    BNGAPICougarErrorCodeUnidentifiedCaller                 = 32,
+    BNGAPICougarErrorCodeUnknownCaller                      = 33,
+    BNGAPICougarErrorCodeUnrecognisedCredentials            = 34,
+    BNGAPICougarErrorCodeInvalidCredentials                 = 35,
+    BNGAPICougarErrorCodeSubscriptionRequired               = 36,
+    BNGAPICougarErrorCodeOperationForbidden                 = 37,
+    BNGAPICougarErrorCodeNoLocationSupplied                 = 38,
+    BNGAPICougarErrorCodeBannedLocation                     = 39
+};
+
+/**
  * Simple extension of NSError which includes BNG specific fields which help to
  * uniquely identify and describe the error.
  */
 @interface BNGAPIError : NSError
+
+/**
+ * Cougar specific identifier for this `BNGAPIError`. Not all `BNGAPIErrors` are directly related to cougar errors, but this property will be set accordingly if the response from the API server indicates an underlying cougar error.
+ */
+@property (nonatomic, readonly) BNGAPICougarErrorCode cougarErrorCode;
 
 @end

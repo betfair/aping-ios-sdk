@@ -98,4 +98,19 @@
     XCTAssert(error.code == -32700, @"the error's code should be set with the code returned from the API server");
 }
 
+- (void)testCougarAPIErrorCodes {
+    
+    NSDictionary *dictionary = @{
+                                 @"error": @{
+                                         @"code": @"-32700",
+                                         @"message": @"DSC-0008"
+                                         },
+                                 @"jsonrpc": @"2.0"
+                                 };
+    
+    BNGAPIError *error = [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:dictionary];
+    
+    XCTAssert(error.cougarErrorCode == BNGAPICougarErrorCodeJSONDeserialisationParseFailure, @"the error's code cougarErrorCode property should be set correctly");
+}
+
 @end
