@@ -49,11 +49,12 @@
     self.logMessages = [NSMutableArray array];
     
     // some preliminary APING setup first. You will need to change this to your specific appKey/scheme/product/username/password
-    NSString *appKey = @"ExchangeForiPhone";
-    NSString *scheme = @"bfexsc";
-    NSString *product = @"ExchangeForiPhone";
-    NSString *username = @"testaccountUS2";
-    NSString *password = @"password01";
+    NSString *appKey    = @"YOUR_APP_KEY_GOES_HERE";
+    NSString *scheme    = @"YOUR_SCHEME_GOES_HERE";
+    NSString *product   = @"YOUR_PRODUCT_GOES_HERE";
+    NSString *username  = @"YOUR_USERNAME_GOES_HERE";
+    NSString *password  = @"YOUR_PASSWORD_GOES_HERE";
+
     [[APING sharedInstance] registerApplicationKey:appKey ssoKey:nil];
     // need to register the login URL protocol which the redirect url will hit once the login API call succeeds.
     [BNGLoginURLProtocol registerWithScheme:scheme];
@@ -93,9 +94,10 @@
     [BNGAccountFunds getAccountFundsWithCompletionBlock:^(BNGAccountFunds *accountFunds, NSError *connectionError, BNGAPIError *apiError) {
         
         if (!connectionError && !apiError) {
-            NSLog(@"Got the account funds back for this user %@", accountFunds.availableToBetBalance);
+            [self addLogMessage:[NSString stringWithFormat:NSLocalizedString(@"Retrieved funds for user %@", nil), accountFunds.availableToBetBalance]];
             if ([accountFunds.availableToBetBalance compare:[NSNumber numberWithInt:2]] == NSOrderedAscending) {
                 NSLog(@"The accounts funds is less than 2. Will have issues placing a bet with this account as the minimum exchange bet is 2 GBP.");
+                [self addLogMessage:NSLocalizedString(@"The users funds is less than the bet minimum", nil)];
             }
             [self listEventTypes];
         } else {
@@ -113,6 +115,7 @@
     [BNGEventType listEventTypesWithMarketFilter:marketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
         
         if (!connectionError && !apiError && results.count) {
+            [self addLogMessage:NSLocalizedString(@"Listed Event Types", nil)];
             // take the event type with the most amount of open markets
             NSArray *sortedEventTypes = [results sortedArrayUsingComparator:^NSComparisonResult(BNGEventTypeResult *one, BNGEventTypeResult *two) {
                 return one.marketCount < two.marketCount;
@@ -135,6 +138,7 @@
     [BNGEvent listEventsWithFilter:eventMarketFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
         
         if (!connectionError && !apiError && results.count) {
+            [self addLogMessage:NSLocalizedString(@"Listed Events", nil)];
             // take the first event and see if we can get a market id
             BNGEventResult *eventResult = results[0];
             [self listMarketCataloguesForEvent:eventResult.event];
@@ -150,10 +154,12 @@
     
     BNGMarketCatalogueFilter *eventFilter = [[BNGMarketCatalogueFilter alloc] init];
     eventFilter.eventIds = @[event.eventId];
-    eventFilter.marketBettingTypes = @[@"ODDS"];
+    eventFilter.marketBettingTypes = @[[BNGMarketCatalogueDescription stringFromMarketBettingType:BNGMarketBettingTypeOdds]];
+    eventFilter.inPlayOnly = @(0);
     [BNGMarketCatalogue listMarketCataloguesWithFilter:eventFilter completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
         
         if (!connectionError && !apiError && results.count) {
+            [self addLogMessage:NSLocalizedString(@"Listed Market Catalogues", nil)];
             // take the first result and see if we can get some prices for this market ...
             BNGMarketCatalogue *marketCatalogue = results[0];
             [self listMarketBooksForMarketCatalogue:marketCatalogue];
@@ -179,6 +185,7 @@
                                    
                                    if (!connectionError && !apiError && results.count) {
                                        BNGMarketBook *marketBook = results[0];
+                                       [self addLogMessage:NSLocalizedString(@"Listed Market Books", nil)];
                                        // we have a market, lets place a bet
                                        [self placeOrdersForMarketBook:marketBook];
                                    } else {
@@ -201,7 +208,7 @@
         if (runner.status == BNGRunnerStatusActive) {
             // place an unmatched bet on an active runner
             BNGLimitOrder *order = [[BNGLimitOrder alloc] init];
-            order.priceSize = [[BNGPriceSize alloc] initWithPrice:[NSDecimalNumber decimalNumberWithString:@"100"] size:[NSDecimalNumber decimalNumberWithString:@"2"]];
+            order.priceSize = [[BNGPriceSize alloc] initWithPrice:[NSDecimalNumber decimalNumberWithString:@"500"] size:[NSDecimalNumber decimalNumberWithString:@"2"]];
             order.selectionId = runner.selectionId;
             order.persistenceType = BNGPersistanceTypeLapse;
             
@@ -211,12 +218,15 @@
             placeOrder.side = BNGSideBack;
             placeOrder.orderType = BNGOrderTypeLimit;
             
-            [BNGOrder placeOrdersForMarketId:marketBook.marketId instructions:@[placeOrder] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGPlaceExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
+            __block NSString *marketId = marketBook.marketId;
+            
+            [BNGOrder placeOrdersForMarketId:marketId instructions:@[placeOrder] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGPlaceExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
                 
                 if (!connectionError && !apiError && report.errorCode == BNGExecutionReportErrorCodeUnknown && report.instructionReports.count) {
-                    // turn around and cancel the bet immediately
+                    [self addLogMessage:NSLocalizedString(@"Placed Bet", nil)];
+                    // try to update this bet immediately with a new persistence type
                     BNGPlaceInstructionReport *placedBetReport = report.instructionReports[0];
-                    [self cancelOrdersForMarketId:marketBook.marketId betId:placedBetReport.betId];
+                    [self updateOrderForMarketId:marketId betId:placedBetReport.betId];
                 } else {
                     [self logError:@"There was an error while placing the bet %@ %@" connectionError:connectionError apiError:apiError];
                 }
@@ -224,6 +234,41 @@
             break;
         }
     }
+}
+
+- (void)updateOrderForMarketId:(NSString *)marketId betId:(NSString *)betId
+{
+    [self addLogMessage:NSLocalizedString(@"Updating Bet", nil)];
+    
+    BNGUpdateInstruction *instruction = [[BNGUpdateInstruction alloc] initWithBetId:betId newPersistanceType:BNGPersistanceTypePersist];
+    [BNGOrder updateOrdersForMarketId:marketId instructions:@[instruction] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGUpdateExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
+        
+        if (!connectionError && !apiError && report.errorCode == BNGExecutionReportErrorCodeUnknown && report.instructionReports.count) {
+            [self addLogMessage:NSLocalizedString(@"Updated Bet", nil)];
+            // try to replace this bet immediately with a new price
+            [self replaceOrderForMarketId:marketId betId:betId];
+        } else {
+            [self logError:@"There was an error while updating the bet %@ %@" connectionError:connectionError apiError:apiError];
+        }
+    }];
+}
+
+- (void)replaceOrderForMarketId:(NSString *)marketId betId:(NSString *)betId
+{
+    [self addLogMessage:NSLocalizedString(@"Replacing Bet", nil)];
+    
+    BNGReplaceInstruction *instruction = [[BNGReplaceInstruction alloc] initWithBetId:betId newPrice:[NSDecimalNumber decimalNumberWithString:@"600"]];
+    [BNGOrder replaceOrdersForMarketId:marketId instructions:@[instruction] customerRef:[NSString randomCustomerReferenceId] completionBlock:^(BNGReplaceExecutionReport *report, NSError *connectionError, BNGAPIError *apiError) {
+        
+        if (!connectionError && !apiError && report.errorCode == BNGExecutionReportErrorCodeUnknown && report.instructionReports.count) {
+            [self addLogMessage:NSLocalizedString(@"Replaced Bet", nil)];
+            // try to cancel this bet and get out of the market
+            BNGReplaceInstructionReport *replaceInstructionReport = report.instructionReports[0];
+            [self cancelOrdersForMarketId:marketId betId:replaceInstructionReport.placeInstructionReport.betId];
+        } else {
+            [self logError:@"There was an error while replacing the bet %@ %@" connectionError:connectionError apiError:apiError];
+        }
+    }];
 }
 
 - (void)cancelOrdersForMarketId:(NSString *)marketId betId:(NSString *)betId
@@ -251,18 +296,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.logMessages.count ? 1 : 0;
+    return self.logMessages.count ? self.logMessages.count : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *accountDetailsIdentifier = @"accountDetailsIdentifier";
+    static NSString *logMessageIdentifier = @"logMessageIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:accountDetailsIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:logMessageIdentifier];
     
     if (!cell) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:accountDetailsIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:logMessageIdentifier];
         cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.font = [UIFont systemFontOfSize:16.0f];
         cell.backgroundColor = [UIColor whiteColor];

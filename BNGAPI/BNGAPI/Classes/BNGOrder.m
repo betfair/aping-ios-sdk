@@ -288,7 +288,7 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
                                    } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
                                        NSDictionary *data = JSONData;
                                        if (!data.isBNGError) {
-                                           completionBlock([BNGAPIResponseParser parseBNGUpdateExecutionReportFromResponse: JSONData], connectionError, nil);
+                                           completionBlock([BNGAPIResponseParser parseBNGUpdateExecutionReportFromResponse:JSONData], connectionError, nil);
                                        } else {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
