@@ -104,7 +104,7 @@
     
     if (!completionBlock || !marketIds || !marketIds.count) return;
     
-    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listMarketBook];
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listMarketProfitAndLoss];
     
     BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
     [request setPostParameters:[BNGMarketBook determinePostParametersForMarketIds:marketIds
@@ -156,7 +156,7 @@
                                       netOfCommission:(BOOL)netOfCommission
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    parameters[@"marketIds"] = marketIds;
+    parameters[@"marketIds"] = [marketIds allObjects];
     parameters[@"includeSettledBets"] = @(includeSettledBets);
     parameters[@"includeBspBets"] = @(includeBspBets);
     parameters[@"netOfCommission"] = @(netOfCommission);

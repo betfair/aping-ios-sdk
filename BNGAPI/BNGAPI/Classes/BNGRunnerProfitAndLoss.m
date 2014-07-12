@@ -45,4 +45,11 @@
     return self;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"BNGRunnerProfitAndLoss[selectionId, ifWin, ifLose]: %lld %@ %@", self.selectionId, self.ifWin, self.ifLose];
+}
+
 @end

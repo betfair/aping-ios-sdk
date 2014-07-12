@@ -30,4 +30,11 @@
 
 @implementation BNGMarketProfitAndLoss
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"BNGMarketProfitAndLoss[marketId, commissionApplied, profitAndLosses]: %@ %@ %@", self.marketId, self.commissionApplied, self.profitAndLosses];
+}
+
 @end

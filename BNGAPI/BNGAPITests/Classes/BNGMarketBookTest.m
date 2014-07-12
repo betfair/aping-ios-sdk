@@ -34,6 +34,8 @@
 #import "BNGPriceProjection.h"
 #import "BNGURLProtocolResourceLoader.h"
 #import "BNGTestUtilities.h"
+#import "BNGMarketProfitAndLoss.h"
+#import "BNGRunnerProfitAndLoss.h"
 
 @interface BNGMarketBookTest : XCTestCase
 
@@ -101,7 +103,20 @@
     
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
-    [BNGMarketBook listMarketProfitAndLossForMarketIds:[[NSSet alloc] initWithArray:@[@"1.1234567"]] includeSettledBets:NO includeBspBets:NO netOfCommission:NO completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+    [BNGMarketBook listMarketProfitAndLossForMarketIds:[[NSSet alloc] initWithArray:@[@"1.114084208"]] includeSettledBets:NO includeBspBets:NO netOfCommission:NO completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+        
+        XCTAssertTrue(results.count == 1, @"Only one record should be returned from the listMarketProfitAndLoss API call");
+        BNGMarketProfitAndLoss *marketProfitAndLoss = results[0];
+        
+        XCTAssertTrue([marketProfitAndLoss.marketId isEqualToString:@"1.114084208"], @"The marketId string should be parsed correctly");
+        XCTAssertTrue(marketProfitAndLoss.profitAndLosses.count == 20, @"There should be 20 pnls in the response");
+        
+        for (BNGRunnerProfitAndLoss *runnerProfitAndLoss in marketProfitAndLoss.profitAndLosses) {
+            if (runnerProfitAndLoss.selectionId == 48351) {
+                XCTAssertTrue([runnerProfitAndLoss.ifWin isEqualToNumber:[NSNumber numberWithInt:40]], @"The ifWin parameter should be parsed correctly");
+                XCTAssertTrue([runnerProfitAndLoss.ifLose isEqualToNumber:[NSNumber numberWithInt:10]], @"The ifLose parameter should be parsed correctly");
+            }
+        }
         
         dispatch_semaphore_signal(semaphore);
     }];

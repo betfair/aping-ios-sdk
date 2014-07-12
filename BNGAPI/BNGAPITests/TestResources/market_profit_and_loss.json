@@ -1,0 +1,107 @@
+[
+  {
+  "marketId": "1.114084208",
+  "profitAndLosses": [
+                      {
+                      "ifLose": 10,
+                      "ifWin": 40,
+                      "selectionId": 48351
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 1703
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 63908
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 56343
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 48756
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 1096
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 48461
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 62783
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 70385
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 55190
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 69720
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 56299
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 62683
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 47999
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 48224
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 56323
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 62684
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 25422
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 58943
+                      },
+                      {
+                      "ifLose": 0,
+                      "ifWin": 0,
+                      "selectionId": 62523
+                      }
+                      ]
+  }
+  ]
