@@ -39,7 +39,7 @@ const NSUInteger BNGMaxCustomerReferenceIdLength = 32;
     NSMutableString *randomString = [NSMutableString stringWithCapacity:BNGMaxCustomerReferenceIdLength];
     
     for (NSUInteger i = 0; i < BNGMaxCustomerReferenceIdLength; i++) {
-        [randomString appendFormat:@"%C", [characters characterAtIndex:arc4random_uniform(characters.length)]];
+        [randomString appendFormat:@"%C", [characters characterAtIndex:arc4random_uniform((int)characters.length)]];
     }
     
     return [randomString copy];
