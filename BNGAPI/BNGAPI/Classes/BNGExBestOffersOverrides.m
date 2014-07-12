@@ -85,11 +85,11 @@
 {
     return [NSString stringWithFormat:@"%@ BNGExBestOffersOverrides [bestPricesDepth: %ld] [rollupModel: %@] [rollupLimit: %ld] [rollupLiabilityThreshold: %@] [rollupLiabilityFactor: %ld]",
             [super description],
-            self.bestPricesDepth,
+            (long)self.bestPricesDepth,
             [BNGExBestOffersOverrides stringFromRollupModel:self.rollupLimit],
-            self.rollupLimit,
+            (long)self.rollupLimit,
             self.rollupLiabilityThreshold,
-            self.rollupLiabilityFactor];
+            (long)self.rollupLiabilityFactor];
 }
 
 @end

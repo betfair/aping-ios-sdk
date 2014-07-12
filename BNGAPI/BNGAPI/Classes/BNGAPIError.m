@@ -138,7 +138,7 @@ static NSString *BNGSplashedAPIIdentifier = @"splash/unplanned";
 {
     return [NSString stringWithFormat:@"%@ BNGAPIError [code: %ld] [userInfo: %@] [domain: %@]",
             [super description],
-            self.code,
+            (long)self.code,
             self.userInfo,
             self.domain];
 }

@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ BNGVenueResult [venue: %@] [marketCount: %ld]", [super description], self.venue, self.marketCount];
+    return [NSString stringWithFormat:@"%@ BNGVenueResult [venue: %@] [marketCount: %lu]", [super description], self.venue, (unsigned long)self.marketCount];
 }
 
 @end

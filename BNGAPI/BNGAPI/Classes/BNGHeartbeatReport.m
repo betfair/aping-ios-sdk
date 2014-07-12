@@ -36,7 +36,7 @@
 {
     return [NSString stringWithFormat:@"%@ BNGHeartbeatReport [actualTimeoutSeconds: %ld]",
             [super description],
-            self.actualTimeoutSeconds];
+            (long)self.actualTimeoutSeconds];
 }
 
 @end
