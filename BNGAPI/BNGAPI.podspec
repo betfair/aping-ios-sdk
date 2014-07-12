@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "BNGAPI"
-  s.version      = "1.0"
+  s.version      = "2.0"
   s.summary      = "Simple API client for interacting with Betfair API services."
   s.homepage     = "https://github.com/betfair/aping-ios-sdk"
 

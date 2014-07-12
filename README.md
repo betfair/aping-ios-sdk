@@ -9,7 +9,7 @@ This package includes a library for interacting with Betfair's [APING](https://a
 
 ### Requirements
 
-Your project will need a deployment target of iOS5 or above.
+Your project will need a deployment target of iOS 5 or above.
 
 ### Installation
 
@@ -18,8 +18,8 @@ Your project will need a deployment target of iOS5 or above.
 #### Podfile
 
 ```ruby
-platform :ios, '6.0'
-pod "BNGAPI", "1.0"
+platform :ios, '5.0'
+pod "BNGAPI", "2.0"
 ```
 
 Alternatively, you can just git submodule BNGAPI into your project. All steps in [Jeff Verokey's iOS Framework guide](https://github.com/jverkoey/iOS-Framework) are followed for BNGAPI.
