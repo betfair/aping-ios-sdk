@@ -262,11 +262,28 @@
         
         if (!connectionError && !apiError && report.errorCode == BNGExecutionReportErrorCodeUnknown && report.instructionReports.count) {
             [self addLogMessage:NSLocalizedString(@"Replaced Bet", nil)];
-            // try to cancel this bet and get out of the market
+            // see if we can get the profit and loss position for this market
             BNGReplaceInstructionReport *replaceInstructionReport = report.instructionReports[0];
-            [self cancelOrdersForMarketId:marketId betId:replaceInstructionReport.placeInstructionReport.betId];
+            [self listMarketProfitAndLossForMarketId:marketId betId:replaceInstructionReport.placeInstructionReport.betId];
         } else {
             [self logError:@"There was an error while replacing the bet %@ %@" connectionError:connectionError apiError:apiError];
+        }
+    }];
+}
+
+- (void)listMarketProfitAndLossForMarketId:(NSString *)marketId betId:(NSString *)betId
+{
+    [self addLogMessage:NSLocalizedString(@"Listing Market Profit and Loss", nil)];
+    
+    NSSet *marketIds = [[NSSet alloc] initWithArray:@[marketId]];
+    [BNGMarketBook listMarketProfitAndLossForMarketIds:marketIds includeSettledBets:NO includeBspBets:NO netOfCommission:NO completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+        
+        if (!connectionError && !apiError) {
+            [self addLogMessage:NSLocalizedString(@"Listed Market Profit and Loss", nil)];
+            // cancel out of this position
+            [self cancelOrdersForMarketId:marketId betId:betId];
+        } else {
+            [self logError:@"There was an error while listing the market profit and loss %@ %@" connectionError:connectionError apiError:apiError];
         }
     }];
 }

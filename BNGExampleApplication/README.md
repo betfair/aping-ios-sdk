@@ -1,16 +1,18 @@
 ### BNG Example Application
 
 This application gives a quick demo of the [aping-ios-sdk](https://github.com/betfair/aping-ios-sdk). Examples include:
-1. Logging into APING
-2. Getting a user's funds (how much money does a user have in their wallets)
-3. Retrieving a list of `BNGEventType` objects.
-4. Retrieving a list of `BNGEvent` objects.
-5. Retrieving a list of `BNGMarketCatalogue` objects.
-6. Retrieving a list of `BNGMarketBook` objects.
-7. Placing a `BNGLimitOrder` on a `BNGMarketBook` (i.e placing a regular exchange bet)
-8. Updating an existing `BNGLimitOrder` on a `BNGMarketBook` with a type of `BNGPersistanceTypePersist`
-9. Replacing an existing `BNGLimitOrder` on a `BNGMarketBook` (i.e updating a bet to have a different price)
-10. Cancelling a `BNGLimitOrder` on a `BNGMarketBook`
+
++   Logging into APING
++   Getting a user's funds (how much money does a user have in their wallets)
++   Retrieving a list of `BNGEventType` objects.
++   Retrieving a list of `BNGEvent` objects.
++   Retrieving a list of `BNGMarketCatalogue` objects.
++   Retrieving a list of `BNGMarketBook` objects.
++   Placing a `BNGLimitOrder` on a `BNGMarketBook` (i.e placing a regular exchange bet)
++   Updating an existing `BNGLimitOrder` on a `BNGMarketBook` with a type of `BNGPersistanceTypePersist`
++   Replacing an existing `BNGLimitOrder` on a `BNGMarketBook` (i.e updating a bet to have a different price)
++   Getting the `BNGMarketProfitAndLoss` for a `BNGMarketBook`.
++   Cancelling a `BNGLimitOrder` on a `BNGMarketBook`
 
 When you run the application, you should see a list of opertions executed on a market.
 
