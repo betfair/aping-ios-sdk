@@ -50,7 +50,7 @@
 {
     NSMutableDictionary *dictionaryRepresentation = [NSMutableDictionary dictionary];
     dictionaryRepresentation[@"betId"] = self.betId;
-    dictionaryRepresentation[@"newPersistence"] = [BNGOrder stringFromPersistenceType:self.persistenceType];
+    dictionaryRepresentation[@"newPersistenceType"] = [BNGOrder stringFromPersistenceType:self.persistenceType];
     return [dictionaryRepresentation copy];
 }
 

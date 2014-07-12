@@ -58,6 +58,12 @@
 #import "BNGExecutionReport.h"
 #import "BNGCancelExecutionReport.h"
 #import "BNGPlaceExecutionReport.h"
+#import "BNGUpdateInstruction.h"
+#import "BNGReplaceInstruction.h"
+#import "BNGUpdateExecutionReport.h"
+#import "BNGReplaceExecutionReport.h"
+#import "BNGReplaceInstructionReport.h"
+#import "BNGMarketCatalogueDescription.h"
 
 /**
  * Import this file via `#import <BNGAPI/BNGAPI.h>` to start accessing Betfair's services. This import is just a convenience header so you don't have to clutter up your .h files with a bunch of imports.
