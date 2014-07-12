@@ -74,7 +74,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [betId: %@] [sizeReduction: %@]",
+    return [NSString stringWithFormat:@"%@ BNGCancelInstruction [betId: %@] [sizeReduction: %@]",
             [super description],
             self.betId,
             self.sizeReduction];

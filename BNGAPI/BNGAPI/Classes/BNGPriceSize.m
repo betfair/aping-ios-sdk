@@ -48,7 +48,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGPriceSize[price, size]: %@ %@", self.price, self.size];
+    return [NSString stringWithFormat:@"%@ BNGPriceSize [price %@] [size %@]", [super description], self.price, self.size];
 }
 
 @end

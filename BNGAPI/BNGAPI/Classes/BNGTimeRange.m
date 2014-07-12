@@ -60,7 +60,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [from: %@] [to: %@]",
+    return [NSString stringWithFormat:@"%@ BNGTimeRange [from: %@] [to: %@]",
             [super description],
             self.from,
             self.to];

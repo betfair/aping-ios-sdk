@@ -30,4 +30,11 @@
 
 @implementation BNGCountryCodeResult
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGCountryCodeResult [marketCount: %ld] [marketCount: %@] ", [super description], self.marketCount, self.countryCode];
+}
+
 @end

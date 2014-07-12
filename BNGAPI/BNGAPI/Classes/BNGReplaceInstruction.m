@@ -71,7 +71,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGReplaceInstruction[betId, newPrice]: %@ %@", self.betId, self.price];
+    return [NSString stringWithFormat:@"%@ BNGReplaceInstruction [betId %@] [newPrice %@]", [super description], self.betId, self.price];
 }
 
 @end

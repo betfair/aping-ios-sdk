@@ -30,4 +30,13 @@
 
 @implementation BNGHeartbeatReport
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGHeartbeatReport [actualTimeoutSeconds: %ld]",
+            [super description],
+            self.actualTimeoutSeconds];
+}
+
 @end

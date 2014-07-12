@@ -42,7 +42,7 @@ inline NSString * NSStringFromBOOL(BOOL boolean)
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [currentOrders: %@] [moreAvailable: %@]",
+    return [NSString stringWithFormat:@"%@ BNGCurrentOrderSummaryReport [currentOrders: %@] [moreAvailable: %@]",
             [super description],
             self.currentOrders,
             NSStringFromBOOL(self.moreAvailable)];

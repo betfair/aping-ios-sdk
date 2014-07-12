@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGReplaceInstructionReport[cancelInstructionReport, placeInstructionReport]: %@ %@", self.cancelInstructionReport, self.placeInstructionReport];
+    return [NSString stringWithFormat:@"%@ BNGReplaceInstructionReport[cancelInstructionReport, placeInstructionReport]: %@ %@", [super description], self.cancelInstructionReport, self.placeInstructionReport];
 }
 
 @end

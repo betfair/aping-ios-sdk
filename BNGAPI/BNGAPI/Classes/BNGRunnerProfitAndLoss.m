@@ -49,7 +49,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGRunnerProfitAndLoss[selectionId, ifWin, ifLose]: %lld %@ %@", self.selectionId, self.ifWin, self.ifLose];
+    return [NSString stringWithFormat:@"%@ BNGRunnerProfitAndLoss [selectionId %lld] [ifWin %@] [ifLose %@]", [super description ], self.selectionId, self.ifWin, self.ifLose];
 }
 
 @end

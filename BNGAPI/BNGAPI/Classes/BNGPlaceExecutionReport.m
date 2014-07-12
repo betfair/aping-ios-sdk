@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {   
-    return [NSString stringWithFormat:@"BNGPlaceExecutionReport[customerRef, status, errorCode, marketId, instructionReports]: %@ %@ %@ %@ %@", self.customerRef, [BNGExecutionReport stringFromBNGExecutionReportStatus:self.status], [BNGExecutionReport stringFromBNGExecutionReportErrorCode:self.errorCode], self.marketId, self.instructionReports];
+    return [NSString stringWithFormat:@"%@ BNGPlaceExecutionReport [customerRef %@] [status %@] [errorCode %@] [marketId %@] [instructionReports %@]", [super description], self.customerRef, [BNGExecutionReport stringFromBNGExecutionReportStatus:self.status], [BNGExecutionReport stringFromBNGExecutionReportErrorCode:self.errorCode], self.marketId, self.instructionReports];
 }
 
 @end

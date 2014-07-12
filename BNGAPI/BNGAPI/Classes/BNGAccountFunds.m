@@ -70,7 +70,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [availableToBetBalance: %@] [exposure: %@] [retainedCommission: %@] [exposureLimit: %@]",
+    return [NSString stringWithFormat:@"%@ BNGAccountFunds [availableToBetBalance: %@] [exposure: %@] [retainedCommission: %@] [exposureLimit: %@]",
             [super description],
             self.availableToBetBalance,
             self.exposure,

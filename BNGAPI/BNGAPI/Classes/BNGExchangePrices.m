@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [availableToBack: %@] [availableToLay: %@] [tradedVolume: %@]",
+    return [NSString stringWithFormat:@"%@ BNGExchangePrices [availableToBack: %@] [availableToLay: %@] [tradedVolume: %@]",
             [super description],
             self.availableToBack,
             self.availableToLay,

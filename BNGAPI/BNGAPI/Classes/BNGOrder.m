@@ -568,7 +568,7 @@ static const struct BNGPlaceOrderParameters BNGPlaceOrderParameters = {
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGOrder[betId, marketId, selectionId, orderType, status, side, priceSize]: %@ %@ %lld %@ %@ %@ %@", self.betId, self.marketId, self.selectionId, [BNGOrder stringFromOrderType:self.orderType], [BNGOrder stringFromOrderStatus:self.status], [BNGOrder stringFromSide:self.side], self.priceSize];
+    return [NSString stringWithFormat:@"%@ BNGOrder [betId %@] [marketId %@] [selectionId %lld] [orderType %@] [status %@] [side %@] [priceSize %@]", [super description], self.betId, self.marketId, self.selectionId, [BNGOrder stringFromOrderType:self.orderType], [BNGOrder stringFromOrderStatus:self.status], [BNGOrder stringFromSide:self.side], self.priceSize];
 }
 
 @end

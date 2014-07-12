@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGPlaceInstructionReport[status, errorCode, instruction, betId, placedDate, averagePriceMatched, sizeMatched]: %@ %@ %@ %@ %@ %@ %@", [BNGPlaceInstructionReport stringFromBNGInstructionReportStatus:self.status], [BNGPlaceInstructionReport stringFromBNGInstructionReportErrorCode:self.errorCode], self.instruction, self.betId, self.placedDate, self.averagePriceMatched, self.sizeMatched];
+    return [NSString stringWithFormat:@"%@ BNGPlaceInstructionReport [status %@] [errorCode %@] [instruction %@] [betId %@] [placedDate %@] [averagePriceMatched %@] [sizeMatched %@]", [super description], [BNGPlaceInstructionReport stringFromBNGInstructionReportStatus:self.status], [BNGPlaceInstructionReport stringFromBNGInstructionReportErrorCode:self.errorCode], self.instruction, self.betId, self.placedDate, self.averagePriceMatched, self.sizeMatched];
 }
 
 @end

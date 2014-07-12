@@ -43,4 +43,11 @@
     return dictionaryRepresentation;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGLimitOrder", [super description]];
+}
+
 @end

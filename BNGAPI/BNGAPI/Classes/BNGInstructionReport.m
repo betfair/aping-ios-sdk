@@ -174,4 +174,14 @@
     return errorCode;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGInstructionReport [status: %@] [errorCode: %@]",
+            [super description],
+            [BNGInstructionReport stringFromBNGInstructionReportStatus:self.status],
+            [BNGInstructionReport stringFromBNGInstructionReportErrorCode:self.errorCode]];
+}
+
 @end

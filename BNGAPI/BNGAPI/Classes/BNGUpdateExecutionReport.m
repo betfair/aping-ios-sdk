@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [customerRef: %@] [status: %@] [errorCode: %@] [marketId: %@] [instructionReports: %@]",
+    return [NSString stringWithFormat:@"%@ BNGUpdateExecutionReport [customerRef: %@] [status: %@] [errorCode: %@] [marketId: %@] [instructionReports: %@]",
             [super description],
             self.customerRef,
             [BNGExecutionReport stringFromBNGExecutionReportStatus:self.status],

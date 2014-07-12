@@ -55,4 +55,14 @@
     return dictionaryRepresentation;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGLimitOnCloseOrder [price: %@] [liability: %@]",
+            [super description],
+            self.price,
+            self.liability];
+}
+
 @end

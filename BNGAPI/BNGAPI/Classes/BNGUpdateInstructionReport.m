@@ -30,4 +30,11 @@
 
 @implementation BNGUpdateInstructionReport
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGUpdateInstructionReport [updateInstruction: %@]", [super description], self.updateInstruction];
+}
+
 @end

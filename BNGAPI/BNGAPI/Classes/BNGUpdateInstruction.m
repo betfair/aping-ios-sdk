@@ -71,7 +71,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [betId: %@] [newPersistenceType: %@]",
+    return [NSString stringWithFormat:@"%@ BNGUpdateInstruction [betId: %@] [newPersistenceType: %@]",
             [super description],
             self.betId,
             [BNGOrder stringFromPersistenceType:self.persistenceType]];

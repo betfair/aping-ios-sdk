@@ -104,7 +104,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGMarketCatalogue[competition, description, event, eventType, marketId, marketName, marketStartTime, runners]: %@ %@ %@ %@ %@ %@ %@ %@", self.competition, self.description, self.event, self.eventType, self.marketId, self.marketName, self.marketStartTime, self.runners];
+    return [NSString stringWithFormat:@"%@ BNGMarketCatalogue [competition %@], [description %@], [event %@], [eventType %@], [marketId %@], [marketName %@], [marketStartTime %@], [runners %@]", [super description], self.competition, self.description, self.event, self.eventType, self.marketId, self.marketName, self.marketStartTime, self.runners];
 }
 
 @end

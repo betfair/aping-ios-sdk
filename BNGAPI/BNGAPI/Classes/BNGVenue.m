@@ -76,4 +76,11 @@
                                }];
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGVenue [venueName: %@]", [super description], self.venueName];
+}
+
 @end

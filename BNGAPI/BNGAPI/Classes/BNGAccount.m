@@ -92,7 +92,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [accountFunds: %@] [accountDetails: %@]",
+    return [NSString stringWithFormat:@"%@ BNGAccount [accountFunds: %@] [accountDetails: %@]",
             [super description],
             self.accountFunds,
             self.accountDetails];

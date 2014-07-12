@@ -52,4 +52,11 @@
     return dictionaryRepresentation;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGMarketProfitAndLoss [liability %@]", [super description], self.liability];
+}
+
 @end

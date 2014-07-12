@@ -30,4 +30,11 @@
 
 @implementation BNGVenueResult
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGVenueResult [venue: %@] [marketCount: %ld]", [super description], self.venue, self.marketCount];
+}
+
 @end

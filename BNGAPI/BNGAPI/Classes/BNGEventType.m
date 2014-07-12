@@ -91,7 +91,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [identifier: %@] [name: %@]",
+    return [NSString stringWithFormat:@"%@ BNGEventType [identifier: %@] [name: %@]",
             [super description],
             self.identifier,
             self.name];

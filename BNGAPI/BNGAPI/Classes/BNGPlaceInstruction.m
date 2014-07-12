@@ -83,7 +83,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGPlaceInstruction[orderType, selectionId, handicap, side, limitOrder, limitOnCloseOrder, marketOnCloseOrder]: %@ %lld %@ %@ %@ %@ %@", [BNGOrder stringFromOrderType:self.orderType], self.selectionId, self.handicap, [BNGOrder stringFromSide:self.side], self.limitOrder, self.limitOnCloseOrder, self.marketOnCloseOrder];
+    return [NSString stringWithFormat:@"%@ BNGPlaceInstruction [orderType %@] [selectionId %lld] [handicap %@] [side %@] [limitOrder %@] [limitOnCloseOrder %@] [marketOnCloseOrder %@]", [super description], [BNGOrder stringFromOrderType:self.orderType], self.selectionId, self.handicap, [BNGOrder stringFromSide:self.side], self.limitOrder, self.limitOnCloseOrder, self.marketOnCloseOrder];
 }
 
 @end

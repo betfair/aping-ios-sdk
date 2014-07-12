@@ -30,4 +30,11 @@
 
 @implementation BNGMatch
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGMatch [betId %@] [matchId %@] [side %ld] [price %@] [size %@] [size %@]", [super description], self.betId, self.matchId, self.side, self.price, self.size, self.matchDate];
+}
+
 @end

@@ -30,4 +30,9 @@
 
 @implementation BNGCancelExecutionReport
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGCancelExecutionReport", [super description]];
+}
+
 @end

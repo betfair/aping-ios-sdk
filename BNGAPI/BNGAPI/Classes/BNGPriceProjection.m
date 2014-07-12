@@ -80,4 +80,11 @@
     return data;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGPriceProjection [priceData %@] [exBestOffersOverrides %@] [virtualise %d] [rolloverStakes %d]", [super description], self.priceData, self.exBestOffersOverrides, self.virtualise, self.rolloverStakes];
+}
+
 @end

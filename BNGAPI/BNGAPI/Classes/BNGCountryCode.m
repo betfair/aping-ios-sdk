@@ -73,4 +73,11 @@
                                }];
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGCountryCode [code: %@] ", [super description], self.countryCode];
+}
+
 @end

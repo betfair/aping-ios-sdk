@@ -79,9 +79,11 @@
                                }];
 }
 
+#pragma mark Description
+
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [identifier: %lld] [name: %@]",
+    return [NSString stringWithFormat:@"%@ BNGCompetition [identifier: %lld] [name: %@]",
             [super description],
             self.identifier,
             self.name];

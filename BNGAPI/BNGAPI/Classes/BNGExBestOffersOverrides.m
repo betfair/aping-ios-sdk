@@ -79,4 +79,17 @@
     return model;
 }
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGExBestOffersOverrides [bestPricesDepth: %ld] [rollupModel: %@] [rollupLimit: %ld] [rollupLiabilityThreshold: %@] [rollupLiabilityFactor: %ld]",
+            [super description],
+            self.bestPricesDepth,
+            [BNGExBestOffersOverrides stringFromRollupModel:self.rollupLimit],
+            self.rollupLimit,
+            self.rollupLiabilityThreshold,
+            self.rollupLiabilityFactor];
+}
+
 @end

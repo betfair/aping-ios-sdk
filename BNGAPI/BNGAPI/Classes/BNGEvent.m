@@ -70,7 +70,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [eventId: %@] [name: %@] [countryCode: %@] [venue: %@]",
+    return [NSString stringWithFormat:@"%@ BNGEvent [eventId: %@] [name: %@] [countryCode: %@] [venue: %@]",
             [super description],
             self.eventId,
             self.name,

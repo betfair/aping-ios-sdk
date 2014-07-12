@@ -34,7 +34,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ [nearPrice: %@] [farPrice: %@] [backStakeTaken: %@] [layLiabilityTaken: %@] [actualSP: %@]",
+    return [NSString stringWithFormat:@"%@ BNGStartingPrices [nearPrice: %@] [farPrice: %@] [backStakeTaken: %@] [layLiabilityTaken: %@] [actualSP: %@]",
             [super description],
             self.nearPrice,
             self.farPrice,

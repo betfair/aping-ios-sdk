@@ -89,7 +89,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"BNGMarketFilter[textQuery, exchangeIds, eventTypeIds, eventIds, competitionIds, marketIds, venues, marketBettingTypes, marketCountries, marketTypeCodes, marketStartTime, withOrders]: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", self.textQuery, self.exchangeIds, self.eventTypeIds, self.eventIds, self.competitionIds, self.marketIds, self.venues, self.marketBettingTypes, self.marketCountries, self.marketTypeCodes, self.marketStartTime, self.withOrders];
+    return [NSString stringWithFormat:@"%@ BNGMarketFilter[textQuery, exchangeIds, eventTypeIds, eventIds, competitionIds, marketIds, venues, marketBettingTypes, marketCountries, marketTypeCodes, marketStartTime, withOrders]: %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@ %@", [super description], self.textQuery, self.exchangeIds, self.eventTypeIds, self.eventIds, self.competitionIds, self.marketIds, self.venues, self.marketBettingTypes, self.marketCountries, self.marketTypeCodes, self.marketStartTime, self.withOrders];
 }
 
 @end

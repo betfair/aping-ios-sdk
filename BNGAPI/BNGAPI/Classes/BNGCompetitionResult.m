@@ -30,4 +30,11 @@
 
 @implementation BNGCompetitionResult
 
+#pragma mark Description
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ BNGCompetitionResult", [super description]];
+}
+
 @end
