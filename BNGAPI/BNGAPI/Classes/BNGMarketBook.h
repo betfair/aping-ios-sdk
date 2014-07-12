@@ -144,6 +144,8 @@ typedef NS_ENUM(NSInteger, BNGMatchProjection) {
  */
 @property (nonatomic, copy) NSArray *runners;
 
+#pragma mark API Calls
+
 /**
  * Given a BNGMarketFilter, this method finds a list of BNGMarketBooks.
  * @param priceProjection defines what prices will be requested.
@@ -165,6 +167,23 @@ typedef NS_ENUM(NSInteger, BNGMatchProjection) {
                     orderProjection:(BNGOrderProjection)orderProjection
                     matchProjection:(BNGMatchProjection)matchProjection
                     completionBlock:(BNGResultsCompletionBlock)completionBlock;
+
+/**
+ * Given a set of unique market ids, this method returns a list of `BNMarketProfitAndLoss` objects.
+ * @param marketIds defines which markets this request will run against.
+ * @param includeSettledBets dictates whether or not settled bets (partially settled markets only) are taken into account when calculating the profit and loss.
+ * @param includeBspBets dictates whether or not BSP bets are taken into account when calculating the profit and loss.
+ * @param netOfCommission dictates whether the return values already have commission taken out of their profits.
+ * @param completionBlock executed once the API call returns.
+ */
++ (void)listMarketProfitAndLossForMarketIds:(NSSet *)marketIds
+                         includeSettledBets:(BOOL)includeSettledBets
+                             includeBspBets:(BOOL)includeBspBets
+                            netOfCommission:(BOOL)netOfCommission
+                    completionBlock:(BNGResultsCompletionBlock)completionBlock;
+
+
+#pragma mark Transformers
 
 /**
  * Given an marketStatus NSString, this method returns the corresponding `BNGMarketStatus`

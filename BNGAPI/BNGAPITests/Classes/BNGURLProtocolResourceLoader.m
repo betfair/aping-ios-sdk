@@ -42,6 +42,7 @@ static NSDictionary *responses;
             @"https://api.betfair.com/exchange/account/rest/v1.0/getAccountDetails/": @"account_details.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listMarketBook/": @"market_book.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listMarketCatalogue/": @"market_catalogue.json",
+            @"https://api.betfair.com/exchange/betting/rest/v1.0/listMarketProfitAndLoss/": @"market_profit_and_loss.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/listCurrentOrders/": @"current_orders.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/placeOrders/": @"place_order.json",
             @"https://api.betfair.com/exchange/betting/rest/v1.0/replaceOrders/": @"replace_order.json",

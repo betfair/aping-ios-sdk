@@ -61,6 +61,13 @@
 + (NSArray *)parseBNGMarketBooksFromResponse:(NSArray *)response;
 
 /**
+ * Given a JSON response dictionary, this method returns a list of `BNGMarketProfitAndLoss` objects.
+ * @param response JSON from the server based on a `listMarketProfitAndLoss` API call.
+ * @return a collection of `BNGMarketProfitAndLoss` objects.
+ */
++ (NSArray *)parseBNGMarketProfitAndLossesFromResponse:(NSArray *)response;
+
+/**
  * Given a JSON response dictionary, this method returns a list of `BNGMarketCatalogue`s.
  * @param response JSON from the server based on a `marketCatalogues` API call.
  * @return a collection of `BNGMarketCatalogue`s.

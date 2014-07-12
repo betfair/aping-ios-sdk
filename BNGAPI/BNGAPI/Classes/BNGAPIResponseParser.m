@@ -65,6 +65,8 @@
 #import "BNGHeartbeat.h"
 #import "BNGUpdateInstructionReport.h"
 #import "BNGUpdateInstruction.h"
+#import "BNGMarketProfitAndLoss.h"
+#import "BNGRunnerProfitAndLoss.h"
 
 struct BNGAccountFundsField {
     __unsafe_unretained NSString *availableToBetBalance;
@@ -260,6 +262,15 @@ struct BNGUpdateInstructionField {
     __unsafe_unretained NSString *betId;
     __unsafe_unretained NSString *newPersistenceType;
     __unsafe_unretained NSString *instruction;
+};
+
+struct BNGMarketProfitAndLossField {
+    __unsafe_unretained NSString *marketId;
+    __unsafe_unretained NSString *commissionApplied;
+    __unsafe_unretained NSString *profitAndLosses;
+    __unsafe_unretained NSString *selectionId;
+    __unsafe_unretained NSString *ifWin;
+    __unsafe_unretained NSString *ifLose;
 };
 
 static const struct BNGAccountFundsField BNGAccountFundsField = {
@@ -458,6 +469,15 @@ static const struct BNGUpdateInstructionField BNGUpdateInstructionField = {
     .instruction = @"instruction"
 };
 
+static const struct BNGMarketProfitAndLossField BNGMarketProfitAndLossField = {
+    .marketId = @"marketId",
+    .commissionApplied = @"commissionApplied",
+    .profitAndLosses = @"profitAndLosses",
+    .selectionId = @"selectionId",
+    .ifWin = @"ifWin",
+    .ifLose = @"ifLose"
+};
+
 @implementation BNGAPIResponseParser
 
 + (NSArray *)parseBNGEventsFromResponse:(NSArray *)response
@@ -483,6 +503,18 @@ static const struct BNGUpdateInstructionField BNGUpdateInstructionField = {
     }
 
     return marketBooks;
+}
+
++ (NSArray *)parseBNGMarketProfitAndLossesFromResponse:(NSArray *)response
+{
+    NSMutableArray *profitAndLosses = [[NSMutableArray alloc] initWithCapacity:response.count];
+    
+    for (id result in response) {
+        
+        [profitAndLosses addObject:[BNGAPIResponseParser parseBNGMarketProfitAndLossFromResponse:result]];
+    }
+    
+    return profitAndLosses;
 }
 
 + (NSArray *)parseBNGMarketCataloguesFromResponse:(NSArray *)response
@@ -1056,6 +1088,27 @@ static const struct BNGUpdateInstructionField BNGUpdateInstructionField = {
     result.venue = [[BNGVenue alloc] initWithVenueName:response[BNGVenueResultField.venue]];
     result.marketCount = [response[BNGVenueResultField.marketCount] intValue];
     return result;
+}
+
++ (BNGMarketProfitAndLoss *)parseBNGMarketProfitAndLossFromResponse:(NSDictionary *)response
+{
+    BNGMarketProfitAndLoss *profitAndLoss = [[BNGMarketProfitAndLoss alloc] init];
+    profitAndLoss.commissionApplied = [response[BNGMarketProfitAndLossField.commissionApplied] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
+    profitAndLoss.marketId = response[BNGMarketProfitAndLossField.marketId];
+    profitAndLoss.profitAndLosses = [BNGAPIResponseParser parseBNGRunnerProfitAndLossFromResponse:response[BNGMarketProfitAndLossField.profitAndLosses]];
+    return profitAndLoss;
+}
+
++ (NSArray *)parseBNGRunnerProfitAndLossFromResponse:(NSDictionary *)response
+{
+    NSMutableArray *profitAndLosses = [[NSMutableArray alloc] initWithCapacity:response.count];
+    for (id profitAndLoss in response) {
+        NSDecimalNumber *ifWin = [profitAndLoss[BNGMarketProfitAndLossField.ifWin] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
+        NSDecimalNumber *ifLose = [profitAndLoss[BNGMarketProfitAndLossField.ifLose] decimalNumberWithNumberOfFractionalDigits:DecimalConversionMoneyStyle roundingMode:NSNumberFormatterRoundFloor];
+        BNGRunnerProfitAndLoss *runnerProfitAndLoss = [[BNGRunnerProfitAndLoss alloc] initWithSelectionId:[profitAndLoss[BNGMarketProfitAndLossField.selectionId] longLongValue] ifWin:ifWin ifLose:ifLose];
+        [profitAndLosses addObject:runnerProfitAndLoss];
+    }
+    return profitAndLosses;
 }
 
 @end

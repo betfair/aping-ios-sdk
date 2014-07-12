@@ -33,20 +33,21 @@ const struct BNGLoginOperation BNGLoginOperation = {
 };
 
 const struct BNGBettingOperation BNGBettingOperation = {
-    .cancelOrders        = @"cancelOrders",
-    .listCompetitions    = @"listCompetitions",
-    .listCountries       = @"listCountries",
-    .listCurrentOrders   = @"listCurrentOrders",
-    .listEvents          = @"listEvents",
-    .listEventTypes      = @"listEventTypes",
-    .listMarketBook      = @"listMarketBook",
-    .listMarketCatalogue = @"listMarketCatalogue",
-    .listMarketTypes     = @"listMarketTypes",
-    .listTimeRanges      = @"listTimeRanges", // not implemented yet
-    .listVenues          = @"listVenues",
-    .placeOrders         = @"placeOrders",
-    .replaceOrders       = @"replaceOrders", // not implemented yet
-    .updateOrders        = @"updateOrders",
+    .cancelOrders               = @"cancelOrders",
+    .listCompetitions           = @"listCompetitions",
+    .listCountries              = @"listCountries",
+    .listCurrentOrders          = @"listCurrentOrders",
+    .listEvents                 = @"listEvents",
+    .listEventTypes             = @"listEventTypes",
+    .listMarketBook             = @"listMarketBook",
+    .listMarketCatalogue        = @"listMarketCatalogue",
+    .listMarketTypes            = @"listMarketTypes",
+    .listMarketProfitAndLoss    = @"listMarketProfitAndLoss",
+    .listTimeRanges             = @"listTimeRanges", // not implemented yet
+    .listVenues                 = @"listVenues",
+    .placeOrders                = @"placeOrders",
+    .replaceOrders              = @"replaceOrders", // not implemented yet
+    .updateOrders               = @"updateOrders",
 };
 
 const struct BNGAccountOperation BNGAccountOperation = {

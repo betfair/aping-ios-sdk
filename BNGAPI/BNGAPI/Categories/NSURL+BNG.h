@@ -64,6 +64,7 @@ extern const struct BNGBettingOperation {
     __unsafe_unretained NSString *listMarketBook;
     __unsafe_unretained NSString *listMarketCatalogue;
     __unsafe_unretained NSString *listMarketTypes;
+    __unsafe_unretained NSString *listMarketProfitAndLoss;
     __unsafe_unretained NSString *listTimeRanges;
     __unsafe_unretained NSString *listVenues;
     __unsafe_unretained NSString *placeOrders;

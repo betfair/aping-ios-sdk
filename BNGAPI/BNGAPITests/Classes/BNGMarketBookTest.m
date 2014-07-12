@@ -93,6 +93,24 @@
                                  beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
 }
 
+- (void)testMarketProfitAndLossApiCall
+{
+    [NSURLProtocol registerClass:[BNGURLProtocolResourceLoader class]];
+    
+    [[APING sharedInstance] registerApplicationKey:BNGTestUtilitiesApplicationKey ssoKey:BNGTestUtilitiesSSOKey];
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
+    [BNGMarketBook listMarketProfitAndLossForMarketIds:[[NSSet alloc] initWithArray:@[@"1.1234567"]] includeSettledBets:NO includeBspBets:NO netOfCommission:NO completionBlock:^(NSArray *results, NSError *connectionError, BNGAPIError *apiError) {
+        
+        dispatch_semaphore_signal(semaphore);
+    }];
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW))
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+}
+
 - (void)testBNGMarketBookTransformers
 {
     XCTAssertTrue([BNGMarketBook marketStatusFromString:@"INVALID_STRING"] == BNGMarketStatusUnknown, @"A string of 'INVALID_STRING' should return an unknown market status from marketStatusFromString");

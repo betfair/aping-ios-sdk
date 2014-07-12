@@ -215,6 +215,13 @@
 		7142E46E19698ACC00EFA61D /* BNGVenueResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7142E46B19698ACC00EFA61D /* BNGVenueResult.m */; };
 		7142E47019698E7A00EFA61D /* BNGVenueTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7142E46F19698E7A00EFA61D /* BNGVenueTest.m */; };
 		7142E4721969959300EFA61D /* BNGCompetitionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7142E4711969959300EFA61D /* BNGCompetitionTest.m */; };
+		7151DF3319714A5600AE19CC /* market_profit_and_loss.json in Resources */ = {isa = PBXBuildFile; fileRef = 7151DF3219714A5600AE19CC /* market_profit_and_loss.json */; };
+		7151DF3619714CF400AE19CC /* BNGMarketProfitAndLoss.h in Headers */ = {isa = PBXBuildFile; fileRef = 7151DF3419714CF400AE19CC /* BNGMarketProfitAndLoss.h */; };
+		7151DF3719714CF400AE19CC /* BNGMarketProfitAndLoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 7151DF3519714CF400AE19CC /* BNGMarketProfitAndLoss.m */; };
+		7151DF3819714CF400AE19CC /* BNGMarketProfitAndLoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 7151DF3519714CF400AE19CC /* BNGMarketProfitAndLoss.m */; };
+		7151DF3B197152AA00AE19CC /* BNGRunnerProfitAndLoss.h in Headers */ = {isa = PBXBuildFile; fileRef = 7151DF39197152AA00AE19CC /* BNGRunnerProfitAndLoss.h */; };
+		7151DF3C197152AA00AE19CC /* BNGRunnerProfitAndLoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 7151DF3A197152AA00AE19CC /* BNGRunnerProfitAndLoss.m */; };
+		7151DF3D197152AA00AE19CC /* BNGRunnerProfitAndLoss.m in Sources */ = {isa = PBXBuildFile; fileRef = 7151DF3A197152AA00AE19CC /* BNGRunnerProfitAndLoss.m */; };
 		7157A1D8195F3A3B00D203B9 /* cancel_order.json in Resources */ = {isa = PBXBuildFile; fileRef = 7157A1D7195F3A3B00D203B9 /* cancel_order.json */; };
 		7157A1DA195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */; };
 		7157A1DC195F4C9A00D203B9 /* BNGInstructionReportTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */; };
@@ -421,6 +428,11 @@
 		7142E46B19698ACC00EFA61D /* BNGVenueResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGVenueResult.m; sourceTree = "<group>"; };
 		7142E46F19698E7A00EFA61D /* BNGVenueTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGVenueTest.m; sourceTree = "<group>"; };
 		7142E4711969959300EFA61D /* BNGCompetitionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGCompetitionTest.m; sourceTree = "<group>"; };
+		7151DF3219714A5600AE19CC /* market_profit_and_loss.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = market_profit_and_loss.json; sourceTree = "<group>"; };
+		7151DF3419714CF400AE19CC /* BNGMarketProfitAndLoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGMarketProfitAndLoss.h; sourceTree = "<group>"; };
+		7151DF3519714CF400AE19CC /* BNGMarketProfitAndLoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketProfitAndLoss.m; sourceTree = "<group>"; };
+		7151DF39197152AA00AE19CC /* BNGRunnerProfitAndLoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNGRunnerProfitAndLoss.h; sourceTree = "<group>"; };
+		7151DF3A197152AA00AE19CC /* BNGRunnerProfitAndLoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGRunnerProfitAndLoss.m; sourceTree = "<group>"; };
 		7157A1D7195F3A3B00D203B9 /* cancel_order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancel_order.json; sourceTree = "<group>"; };
 		7157A1D9195F471B00D203B9 /* BNGMarketCatalogueDescriptionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGMarketCatalogueDescriptionTest.m; sourceTree = "<group>"; };
 		7157A1DB195F4C9A00D203B9 /* BNGInstructionReportTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNGInstructionReportTest.m; sourceTree = "<group>"; };
@@ -562,6 +574,8 @@
 				7118B954195826BE007057CE /* BNGMarketFilter.m */,
 				7118B955195826BE007057CE /* BNGMarketOnCloseOrder.h */,
 				7118B956195826BE007057CE /* BNGMarketOnCloseOrder.m */,
+				7151DF3419714CF400AE19CC /* BNGMarketProfitAndLoss.h */,
+				7151DF3519714CF400AE19CC /* BNGMarketProfitAndLoss.m */,
 				7118B957195826BE007057CE /* BNGMatch.h */,
 				7118B958195826BE007057CE /* BNGMatch.m */,
 				7118B959195826BE007057CE /* BNGMutableURLRequest.h */,
@@ -586,6 +600,8 @@
 				7118B96C195826BE007057CE /* BNGReplaceInstructionReport.m */,
 				7118B96D195826BE007057CE /* BNGRunner.h */,
 				7118B96E195826BE007057CE /* BNGRunner.m */,
+				7151DF39197152AA00AE19CC /* BNGRunnerProfitAndLoss.h */,
+				7151DF3A197152AA00AE19CC /* BNGRunnerProfitAndLoss.m */,
 				7118B96F195826BE007057CE /* BNGStartingPrices.h */,
 				7118B970195826BE007057CE /* BNGStartingPrices.m */,
 				7118B971195826BE007057CE /* BNGTimeRange.h */,
@@ -667,6 +683,7 @@
 				71B6C9C4196BE660003B5AD5 /* heartbeat.json */,
 				711AA2FE1958B8A400861CD4 /* market_book.json */,
 				711AA2FF1958B8A400861CD4 /* market_catalogue.json */,
+				7151DF3219714A5600AE19CC /* market_profit_and_loss.json */,
 				711AA3001958B8A400861CD4 /* place_order.json */,
 				711AA3011958B8A400861CD4 /* replace_order.json */,
 				711AA3021958B8A400861CD4 /* replace_order_failure.json */,
@@ -761,6 +778,7 @@
 				7118B97F195826BE007057CE /* NSNumber+DecimalConversion.h in Headers */,
 				7118B9D4195826BE007057CE /* BNGMarketBook.h in Headers */,
 				7118B9A7195826BE007057CE /* BNGCancelInstructionReport.h in Headers */,
+				7151DF3619714CF400AE19CC /* BNGMarketProfitAndLoss.h in Headers */,
 				7142E46719698A3400EFA61D /* BNGVenue.h in Headers */,
 				7118B9EC195826BE007057CE /* BNGOrder.h in Headers */,
 				7118B9F2195826BE007057CE /* BNGPlaceInstruction.h in Headers */,
@@ -797,6 +815,7 @@
 				7118B9F8195826BE007057CE /* BNGPriceProjection.h in Headers */,
 				7118B9A1195826BE007057CE /* BNGCancelExecutionReport.h in Headers */,
 				7118B98B195826BE007057CE /* NSURLConnection+BNGJSON.h in Headers */,
+				7151DF3B197152AA00AE19CC /* BNGRunnerProfitAndLoss.h in Headers */,
 				7118B98E195826BE007057CE /* NSURLRequest+HTTPBody.h in Headers */,
 				71CA740A196B1C3E005FD57E /* NSDictionary+BNGError.h in Headers */,
 				7142E46C19698ACC00EFA61D /* BNGVenueResult.h in Headers */,
@@ -896,6 +915,7 @@
 				711AA3191958B8A400861CD4 /* update_order.json in Resources */,
 				711AA3171958B8A400861CD4 /* replace_order.json in Resources */,
 				711AA3111958B8A400861CD4 /* current_orders.json in Resources */,
+				7151DF3319714A5600AE19CC /* market_profit_and_loss.json in Resources */,
 				711AA3101958B8A400861CD4 /* account_funds.json in Resources */,
 				711AA3131958B8A400861CD4 /* events.json in Resources */,
 				71B6C9C5196BE660003B5AD5 /* heartbeat.json in Resources */,
@@ -999,6 +1019,7 @@
 				7118B9A5195826BE007057CE /* BNGCancelInstruction.m in Sources */,
 				7118BA08195826BE007057CE /* BNGRunner.m in Sources */,
 				7118B9C9195826BE007057CE /* BNGInstructionReport.m in Sources */,
+				7151DF3719714CF400AE19CC /* BNGMarketProfitAndLoss.m in Sources */,
 				7118BA05195826BE007057CE /* BNGReplaceInstructionReport.m in Sources */,
 				7118B9AE195826BE007057CE /* BNGCompetitionResult.m in Sources */,
 				7118B98C195826BE007057CE /* NSURLConnection+BNGJSON.m in Sources */,
@@ -1008,6 +1029,7 @@
 				7142E46819698A3400EFA61D /* BNGVenue.m in Sources */,
 				71747C34196974CF00335435 /* BNGCountryCode.m in Sources */,
 				7118B998195826BE007057CE /* BNGAccountFunds.m in Sources */,
+				7151DF3C197152AA00AE19CC /* BNGRunnerProfitAndLoss.m in Sources */,
 				7118B9D8195826BE007057CE /* BNGMarketCatalogue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1016,6 +1038,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7151DF3D197152AA00AE19CC /* BNGRunnerProfitAndLoss.m in Sources */,
 				711AA3081958B8A400861CD4 /* BNGMarketBookTest.m in Sources */,
 				711AA3071958B8A400861CD4 /* BNGEventTypeTest.m in Sources */,
 				7118B9CA195826BE007057CE /* BNGInstructionReport.m in Sources */,
@@ -1096,6 +1119,7 @@
 				7118B9B8195826BE007057CE /* BNGEventResult.m in Sources */,
 				7118B9F4195826BE007057CE /* BNGPlaceInstruction.m in Sources */,
 				71CA740C196B1C3E005FD57E /* NSDictionary+BNGError.m in Sources */,
+				7151DF3819714CF400AE19CC /* BNGMarketProfitAndLoss.m in Sources */,
 				71FF4F7F196740A800E5BC88 /* BNGLimitOnCloseOrderTest.m in Sources */,
 				7142E47019698E7A00EFA61D /* BNGVenueTest.m in Sources */,
 				71747C3A1969776800335435 /* BNGCountryCodeResult.m in Sources */,

@@ -58,7 +58,6 @@
                     matchProjection:(BNGMatchProjection)matchProjection
                     completionBlock:(BNGResultsCompletionBlock)completionBlock
 {
-    
     NSParameterAssert(completionBlock);
     NSParameterAssert(marketIds && marketIds.count);
     NSParameterAssert(priceProjection);
@@ -94,24 +93,75 @@
                                }];
 }
 
++ (void)listMarketProfitAndLossForMarketIds:(NSSet *)marketIds
+                         includeSettledBets:(BOOL)includeSettledBets
+                             includeBspBets:(BOOL)includeBspBets
+                            netOfCommission:(BOOL)netOfCommission
+                            completionBlock:(BNGResultsCompletionBlock)completionBlock
+{
+    NSParameterAssert(completionBlock);
+    NSParameterAssert(marketIds && marketIds.count);
+    
+    if (!completionBlock || !marketIds || !marketIds.count) return;
+    
+    NSURL *url = [NSURL betfairNGBettingURLForOperation:BNGBettingOperation.listMarketBook];
+    
+    BNGMutableURLRequest *request = [BNGMutableURLRequest requestWithURL:url];
+    [request setPostParameters:[BNGMarketBook determinePostParametersForMarketIds:marketIds
+                                                               includeSettledBets:includeSettledBets
+                                                                   includeBspBets:includeBspBets
+                                                                  netOfCommission:netOfCommission]];
+    
+    [NSURLConnection sendAsynchronousJSONRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, id JSONData, NSError *connectionError) {
+                                   
+                                   if (connectionError) {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithURLResponse:response]);
+                                   } else if ([JSONData isKindOfClass:[NSArray class]]) {
+                                       NSArray *jsonArray = (NSArray *)JSONData;
+                                       if (jsonArray.count) {
+                                           completionBlock([BNGAPIResponseParser parseBNGMarketProfitAndLossesFromResponse:JSONData], connectionError, nil);
+                                       } else {
+                                           completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
+                                       }
+                                   } else if ([JSONData isKindOfClass:[NSDictionary class]]) {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData]);
+                                   } else {
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain code:BNGErrorCodeNoData userInfo:nil]);
+                                   }
+                               }];
+}
+
 + (NSDictionary *)determinePostParametersForMarketIds:(NSArray *)marketIds
                                       priceProjection:(BNGPriceProjection *)priceProjection
                                       orderProjection:(BNGOrderProjection)orderProjection
                                       matchProjection:(BNGMatchProjection)matchProjection
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setObject:marketIds forKey:@"marketIds"];
-    [parameters setObject:priceProjection.dictionaryRepresentation forKey:@"priceProjection"];
+    parameters[@"marketIds"] = marketIds;
+    parameters[@"priceProjection"] = priceProjection.dictionaryRepresentation;
     if (orderProjection != BNGOrderProjectionUnknown) {
-        [parameters setObject:[BNGOrder stringFromOrderProjection:orderProjection] forKey:@"orderProjection"];        
+        parameters[@"orderProjection"] = [BNGOrder stringFromOrderProjection:orderProjection];
     }
     if (matchProjection != BNGMatchProjectionUnknown) {
-        [parameters setObject:[BNGMarketBook stringFromMatchProjection:matchProjection] forKey:@"matchProjection"];
+        parameters[@"matchProjection"] = [BNGMarketBook stringFromMatchProjection:matchProjection];
     }
     return [parameters copy];
 }
 
-#pragma mark Transformers
++ (NSDictionary *)determinePostParametersForMarketIds:(NSSet *)marketIds
+                                   includeSettledBets:(BOOL)includeSettledBets
+                                       includeBspBets:(BOOL)includeBspBets
+                                      netOfCommission:(BOOL)netOfCommission
+{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"marketIds"] = marketIds;
+    parameters[@"includeSettledBets"] = @(includeSettledBets);
+    parameters[@"includeBspBets"] = @(includeBspBets);
+    parameters[@"netOfCommission"] = @(netOfCommission);
+    return [parameters copy];
+}
 
 + (BNGMarketStatus)marketStatusFromString:(NSString *)marketStatus
 {
