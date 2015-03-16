@@ -1,4 +1,4 @@
-// Copyright (c) 2013 - 2014 The Sporting Exchange Limited
+// Copyright (c) 2013 - 2015 The Sporting Exchange Limited
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -31,7 +31,7 @@
 /**
  * The APINGErrorDomain is used as the domain for BNGAPIError and custom NSErrors returned by BNG.
  * Errors in this domain are in addition to errors returned by underlying frameworks that are passed up.
- * The nature of errors passed through may change in the furture.
+ * The nature of errors passed through may change in the future.
  */
 extern NSString * const BNGErrorDomain;
 

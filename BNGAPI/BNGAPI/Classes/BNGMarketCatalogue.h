@@ -1,4 +1,4 @@
-// Copyright (c) 2013 - 2014 The Sporting Exchange Limited
+// Copyright (c) 2013 - 2015 The Sporting Exchange Limited
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -64,7 +64,7 @@ typedef NS_ENUM(NSInteger, BNGMarketProjection) {
 /**
  * Ancillary information for this `BNGMarketCatalogue`.
  */
-@property (nonatomic) BNGMarketCatalogueDescription *description;
+@property (nonatomic) BNGMarketCatalogueDescription *catalogueDescription;
 
 /**
  * `BNGEvent` associated with this `BNGMarketCatalogue`.

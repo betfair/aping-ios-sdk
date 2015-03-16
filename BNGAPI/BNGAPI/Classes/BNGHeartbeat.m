@@ -1,4 +1,4 @@
-// Copyright (c) 2013 - 2014 The Sporting Exchange Limited
+// Copyright (c) 2013 - 2015 The Sporting Exchange Limited
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -81,9 +81,9 @@ static const struct BNGHeartbeatRequestField BNGHeartbeatRequestField = {
                                            completionBlock(nil, [[BNGAPIError alloc] initWithAPINGErrorResponseDictionary:JSONData], nil);
                                        }
                                    } else {
-                                       completionBlock(nil, connectionError, [NSError errorWithDomain:BNGErrorDomain
-                                                                                       code:BNGErrorCodeNoData
-                                                                                   userInfo:nil]);
+                                       completionBlock(nil, connectionError, [[BNGAPIError alloc] initWithDomain:BNGErrorDomain
+                                                                                                            code:BNGErrorCodeNoData
+                                                                                                        userInfo:nil]);
                                    }
                                }];
 }

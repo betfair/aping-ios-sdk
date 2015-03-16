@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.source       = {
       :git => "https://github.com/betfair/aping-ios-sdk.git",
-      :tag => "#{s.version}"
+      :tag => "tags/2.0"
   }
 
   s.ios.deployment_target = '5.0'
