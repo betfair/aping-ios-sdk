@@ -1,4 +1,4 @@
-// Copyright (c) 2013 - 2014 The Sporting Exchange Limited
+// Copyright (c) 2013 - 2015 The Sporting Exchange Limited
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -104,7 +104,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ BNGMarketCatalogue [competition %@], [description %@], [event %@], [eventType %@], [marketId %@], [marketName %@], [marketStartTime %@], [runners %@]", [super description], self.competition, self.description, self.event, self.eventType, self.marketId, self.marketName, self.marketStartTime, self.runners];
+    return [NSString stringWithFormat:@"%@ BNGMarketCatalogue [competition %@], [catalogueDescription %@], [event %@], [eventType %@], [marketId %@], [marketName %@], [marketStartTime %@], [runners %@]", [super description], self.competition, self.catalogueDescription, self.event, self.eventType, self.marketId, self.marketName, self.marketStartTime, self.runners];
 }
 
 @end

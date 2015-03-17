@@ -18,6 +18,7 @@ Your project will need a deployment target of iOS 5 or above.
 #### Podfile
 
 ```ruby
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '5.0'
 pod "BNGAPI", "2.0"
 ```
