@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "BNGAPI"
-  s.version      = "2.0"
+  s.version      = "2.1"
   s.summary      = "Simple API client for interacting with Betfair API services."
   s.homepage     = "https://github.com/betfair/aping-ios-sdk"
 
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.source       = {
       :git => "https://github.com/betfair/aping-ios-sdk.git",
-      :tag => "tags/2.0"
+      :tag => "tags/2.1"
   }
 
   s.ios.deployment_target = '5.0'
