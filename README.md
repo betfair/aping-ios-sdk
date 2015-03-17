@@ -20,7 +20,7 @@ Your project will need a deployment target of iOS 5 or above.
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '5.0'
-pod "BNGAPI", "2.0"
+pod "BNGAPI", "2.1"
 ```
 
 Alternatively, you can just git submodule BNGAPI into your project. All steps in [Jeff Verokey's iOS Framework guide](https://github.com/jverkoey/iOS-Framework) are followed for BNGAPI.
